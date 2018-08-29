@@ -1,2 +1,2 @@
-# zyyrabbit.github.io
+# vue
 An simple vue component library
