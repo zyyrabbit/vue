@@ -19,12 +19,12 @@
  </div>
 </template>
 <script>
-  import pages from './index.js';
+  import pages from './index.js'
 
   export default {
-    data(){
+    data() {
       return {
-        pages:pages
+        pages: pages
       }
     }
   }
