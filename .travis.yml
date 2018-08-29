@@ -44,5 +44,5 @@ branches:
 env:
  global:
    # 我将其添加到了travis-ci的环境变量中
-   - GH_REF: https://github.com/zyyrabbit/vue.git
+   - GH_REF: github.com/zyyrabbit/vue.git
    - P_BRANCH: gh-pages
