@@ -1,0 +1,61 @@
+/*以下为公告样式*/
+html,body,p,ul,li,h1,h2,h3,h4,form,input,textarea {
+  padding: 0;
+  margin: 0;
+  /*去除点击时，文字出现的蓝色底边*//*火狐*//*webkit浏览器*//*IE10*/
+ /* -moz-user-select: none; 
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;*/
+}
+html {
+    font-size: 10px;
+    height: 100%;
+    font-family: "Microsoft Yahei";
+}
+
+body {
+    font-family: "Microsoft Yahei";
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+#app{
+  width: 100%;
+  height:100%;
+}
+.hljs-tag{
+ /* padding-left:1rem;*/
+ font-size:1.2rem;
+ line-height:2rem;
+ color:#3182bd;
+}
+.wrap-content .item-content{
+  margin-bottom:5rem;
+}
+.wrap-content p{
+  font-size:1.5rem;
+  color: #5e6d82;
+  line-height: 1.5em;
+  margin:1.4rem 0;
+}
