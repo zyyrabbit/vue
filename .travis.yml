@@ -4,14 +4,14 @@ language: node_js
 node_js: 
     - "8"
 
-addons:
-  chrome: stable
+# addons:
+#   chrome: stable
 
-sudo: required
+# sudo: required
 
-before_script:
-  - "sudo chown root /opt/google/chrome/chrome-sandbox"
-  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+# before_script:
+#   - "sudo chown root /opt/google/chrome/chrome-sandbox"
+#   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 # Travis-CI Caching
 cache:
