@@ -1,18 +1,19 @@
 import { throttle, _ } from 'utils/utils.js'
 import Listener from './listener.js'
+const DEFAULT_EVENTS = ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend', 'touchmove']
 const LOADING_IMAGE = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
 export default (Vue, options) => {
 	return new class {
-		constructor({loading, error, delay}) {
+		constructor({loading, error, delay, listenEvents}) {
 			this.loading = loading || LOADING_IMAGE
+			this.listenEvents = listenEvents || DEFAULT_EVENTS
 			this.error = error || ''
 			// this.targetQueue = [];
 			this.listenerQueue = []
 			this.delay = delay || 320
 			// 节流函数
 			this.lazyLoadHandler = throttle(this._lazyLoadHandler.bind(this), this.delay)
-			// 初始化时候注册一个函数
-			_.on(document, 'scroll', this.lazyLoadHandler)
+			this._initEvent()
 		}
 		// 指令初始化时添加相应的监听器
 		add(el, binding, vnode) {
@@ -28,7 +29,8 @@ export default (Vue, options) => {
 						loading: this.loading,
 						error: this.error,
 						src,
-						elRender: this._elRender.bind(this)
+						elRender: this._elRender.bind(this),
+						bindType: binding.arg
 				})
 				// 在相应的元素上注册滚动添加元素，目前仅支持document的scroll事件
 				// this._addTargetEle(document);
@@ -58,7 +60,7 @@ export default (Vue, options) => {
 		// 事件的渲染函数，目前只支持img元素，后续可以添加background-url情况
 		_elRender(listener, state) {
 			if (!listener.el) return
-			const {el} = listener
+			const { el, bindType } = listener
 			let src
 			switch (state) {
 				case 'loading':
@@ -71,32 +73,21 @@ export default (Vue, options) => {
 				src = listener.src
 				break
 			}
-				// 判断是否相同
-			if (el.getAttribute('src') !== src) {
+			if (bindType) {
+				el.style[bindType] = `url("${src}")`
+			} else if (el.getAttribute('src') !== src) {
 				el.setAttribute('src', src)
 			}
-				el.setAttribute('lazy', state)
+			el.setAttribute('lazy', state)
 		}
-
-		// 添加注册事件
-		/* _addTargetEle(el){
-	    	if(this.targetQueue.some(target => target.el === el)){
-	    		el.childrenCount++;
-	    	}else{
-	    		this.targetQueue.push({
-	    			childrenCount:1,
-	    			el
-	    		})
-	    	}
-	    } */
-
-		// 删除注册事件
-		/*  _removeTargetEle(el){
-		    	if(this.targetQueue.some(target => target.el === el)){
-
-		    	}
-		    } */
-	// 异步处理组件
+		// 初始化触发事件
+		_initEvent() {
+			this.listenEvents.forEach(eventName => {
+				// 初始化时候注册一个函数
+				_.on(document, eventName, this.lazyLoadHandler)
+			})
+		}
+		// 异步处理组件
 		_lazyLoadHandler() {
 			let visible
 			this.listenerQueue.forEach(listener => {

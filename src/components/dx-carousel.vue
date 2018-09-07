@@ -7,27 +7,42 @@
 	>
 	    <!-- pre轮播容器 -->
 		<div  
-		 	:class="{'dx-carousel-animate':enableTransition}" 
+		 	:class="{'dx-carousel-animate': enableTransition}" 
 		 	class="dx-carousel-content"
 		 	:style="[{transform: `translateX(${ pre.translateX })`}, itemsSize]" 
 		>
-			<img :src="pre.imgSrc"/>
+			<div 
+				v-if="background"
+				class="dx-carousel-content__inner dx-carousel-content__inner--pre"
+				:style="{ background: `url(${pre.imgSrc})`}"
+			></div>
+			<img v-else :src="pre.imgSrc"/>
 		</div>
 		  <!-- mid轮播容器 -->
 		<div   
-			:class="{'dx-carousel-animate':enableTransition}" 
+			:class="{'dx-carousel-animate': enableTransition}" 
 			class="dx-carousel-content" 
 			:style="[{transform: `translateX(${ mid.translateX })`}, itemsSize]"
 		>
-		  	<img :src="mid.imgSrc"/>
+			<div 
+				v-if="background"
+				class="dx-carousel-content__inner dx-carousel-content__inner--mid"
+				:style="{ background: `url(${mid.imgSrc})`}">
+			</div>
+		  	<img v-else :src="mid.imgSrc"/>
 		</div>
 		<!-- next轮播容器 -->
 		<div  
-			:class="{'dx-carousel-animate':enableTransition}" 
-			class="dx-carousel-content"
+			:class="{'dx-carousel-animate': enableTransition}" 
+			class="dx-carousel-content dx-carousel-content__inner--next"
 			:style="[{transform: `translateX(${ next.translateX })`}, itemsSize]"
 		>
-		  	<img :src="next.imgSrc"/>
+			<div 
+				v-if="background"
+				class="dx-carousel-content__inner"
+				:style="{ background: `url(${next.imgSrc})`}">
+			</div>
+		  	<img v-else :src="next.imgSrc"/>
 		</div>
 		<!-- 向前向后按钮 -->
 		<button 
@@ -76,6 +91,7 @@
 		name: 'DxCarousel',
 		componentName: 'DxCarousel',
 		props: {
+			background: Boolean,
 			height: String,
 			width: String,
 			imageUrls: {
@@ -188,7 +204,7 @@
 							this.pre.translateX = this.mid.translateX
 							this.mid.translateX = this.next.translateX
 							this.next.translateX = '100%'
-							this.activeInd = activeInd || activeInd === 0 ? activeInd : (this.activeInd + 1) % this.imageNum
+							this.activeInd = (activeInd || activeInd === 0) ? activeInd : (this.activeInd + 1) % this.imageNum
 							this.calculPosition()
 						}, 500)
 				} else if (dir === 'right') {
@@ -200,7 +216,7 @@
 						this.next.translateX = this.mid.translateX
 						this.mid.translateX = this.pre.translateX
 						this.pre.translateX = '-100%'
-						this.activeInd = activeInd || activeInd === 0 ? activeInd : (this.activeInd + this.imageNum - 1) % this.imageNum
+						this.activeInd = (activeInd || activeInd === 0) ? activeInd : (this.activeInd + this.imageNum - 1) % this.imageNum
 						this.calculPosition()
 					}, 500)
 				}
@@ -231,6 +247,23 @@
 		position:absolute;
 	}
 
+	.dx-carousel-content__inner{
+		width: 100%;
+		height: 100%;
+	}
+
+	.dx-carousel-content__inner--pre{
+		background-color: #99a9bf;
+	}
+
+	.dx-carousel-content__inner--mid{
+		background-color: #d3dce6;
+	}
+
+	.dx-carousel-content__inner--next{
+		background-color: #666666;
+	}
+
 	.dx-carousel-animate{
 		transition:0.5s;
 	}
@@ -238,7 +271,7 @@
 	.dx-carousel-btn{
 		width:5%;
 		height:15%;
-		position:absolute;
+		position: absolute;
 	    top:50%;
 		transform: translateY(-50%);
 		border: none;
@@ -255,10 +288,10 @@
 	    font-size: 1.2rem;
 	}
 	.dx-carousel-left-btn{
-		left:10%;
+		left: 10%;
 	}
 	.dx-carousel-right-btn{
-	    right:10%;
+	    right: 10%;
 	}
 	.dx-carousel-labels{
 		position:absolute;

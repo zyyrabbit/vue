@@ -16,7 +16,11 @@ import DxPagination from './pagination/dx-pagination.vue'
 import DxCarousel from './dx-carousel.vue'
 import DxCollapseTransition from './transitions/collapse-transition'
 import DxProgress from './dx-progress.vue'
+import DxCalender from './calendar/dx-calendar.vue'
 import DxUpload from './uploader/dx-upload.vue'
+import DxIndicator from './indicator'
+import DxStar from './star/dx-star.vue'
+import DxTabs from './dx-tabs.vue'
 const components = [
 	DxNav,
 	DxRadio,
@@ -33,7 +37,11 @@ const components = [
 	DxCarousel,
 	DxCollapseTransition,
 	DxProgress,
-	DxUpload
+	DxUpload,
+	DxCalender,
+	DxIndicator,
+	DxStar,
+	DxTabs
 ]
 
 const install = function(Vue) {
@@ -65,5 +73,9 @@ module.exports = {
 	DxPagination,
 	DxCarousel,
 	DxProgress,
-	DxUpload
+	DxUpload,
+	DxCalender,
+	DxIndicator,
+	DxStar,
+	DxTabs
 }

@@ -18,7 +18,7 @@
 				@blur="focus=false"
 			>
 		</span>
-		<span class="dx-radio-label">
+		<span v-if="!noLabel" class="dx-radio-label">
 			<slot></slot>
 			<template v-if="!$slots.default">{{label}}</template>
 		</span>
@@ -31,7 +31,8 @@
 			label: {},
 			value: {}, // 必须声明，v-model始终以data中为唯一数据源.
 			disabled: Boolean,
-			name: String
+			name: String,
+			noLabel: Boolean
 		},
 		data() {
 			return {
@@ -121,8 +122,6 @@
 	}
 	/*label样式*/
 	.dx-radio .dx-radio-label{
-		padding-left:0.5rem;
-		font-size:1.4rem;
 		vertical-align: middle;
 	}
 	/*禁用状态*/

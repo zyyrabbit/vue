@@ -6,7 +6,7 @@ export default {
 	install(Vue, options = {}) {
 		const lazy = Lazy(Vue, options)
 		if (Number(Vue.version.split('.')[0]) !== 2) {
-			console.log('目前仅支持Vue2及以上！')
+			console.log('目前仅支持Vue2.0及以上！')
 			return
 		}
 		Vue.directive('lazy', {

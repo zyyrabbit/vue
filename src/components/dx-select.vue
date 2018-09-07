@@ -8,7 +8,7 @@
 			<!-- 下拉选择框部分 -->
 			<div 
 				class="dx-select-input" 
-				@click="toggleItems"
+				@click.stop="openItems"
 			>
 				<input 
 					v-model="selectLabel" 
@@ -35,7 +35,7 @@
 					v-for="(item,index) in items" 
 					:key="index"
 					:data-index="index"
-					:class="{selected:index === selecteIndex}"  
+					:class="{ selected: index === selecteIndex }"  
 					class="dx-select-li" 
 				>
 					{{isObject ? item[labelKey] : item}}
@@ -48,7 +48,7 @@
 	import clickoutside from '../directives/clickoutside.js'
 	export default{
 		name: 'DxSelect',
-		directives: {clickoutside},
+		directives: { clickoutside },
 		props: {
 			items: Array, // 传入的数据
 			labelKey: String, // 传入的数组元素为对象时标签键值
@@ -78,14 +78,14 @@
 				// 如果输入items是对象数组，则进行一些检查
 				if (isObject) {
 					if (this.labelKey && this.valueKey) {
-						if (typeof this.items[0][this.labelKey] === 'undefined' || typeof this.items[0][this.valueKey] === 'undefined') {
+						if (typeof this.items[0][this.labelKey] === 'undefined' || 
+							typeof this.items[0][this.valueKey] === 'undefined') {
 							throw new Error('The label-key and label-vlaue attrs not find in items[0] object!')
 						}
 					} else {
 						throw new Error('If the items is object array,the label-key and label-vlaue attrs is reuqired!')
 					}
 				}
-
 				return isObject
 			}
 		},
@@ -93,8 +93,8 @@
 			closeItems: function() {
 				this.isShow = false
 			},
-			toggleItems: function() {
-				this.isShow = !this.isShow
+			openItems: function() {
+				this.isShow = true
 			},
 			// 选择列表时的处理函数,采用代理函数
 			selectItem: function($event) {
@@ -106,8 +106,8 @@
 				// 根据items中的数据类型取相应的值
 				selectValue = this.isObject ? item[this.valueKey] : item
 				this.selectLabel = this.isObject ? item[this.labelKey] : item
-				this.$emit('input', selectValue)
-				this.onSelect && this.onSelect(selectValue)
+				this.$emit('input', item)
+				this.onSelect && this.onSelect(item)
 				this.closeItems()
 			}
 		}

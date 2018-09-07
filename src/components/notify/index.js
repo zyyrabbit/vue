@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import DxNotify from './dx-notify.vue'
+import { isVNode } from '../../utils/utils.js'
 // 构建构造函数
 const NotifyConstructor = Vue.extend(DxNotify)
 let instance
 let key = 'dx-notify-message'
 let msgId = 0
-const autoClose = (message) => {
+const autoClose = message => {
 	// 标识不会自动关闭
 	if (message.duration === 0) {
-		return
+		return null
 	}
-	return setTimeout(() => { 
-		instance.close && instance.close(message)
+	return setTimeout(() => {
+		instance.close(message)
 	}, message.duration || 8000)
 }
 // 初始化一个全局消息通知实例
@@ -22,14 +23,19 @@ const initInstance = () => {
 	})
 }
 // 打开弹窗
-const Notify = (message) => {
+const Notify = message => {
 	if (!instance) {
 		initInstance()
 	}
-	message.key = key + msgId++
-	message.index = instance.msgQueue.length
-	message.timer = autoClose(message)
-	instance.msgQueue.push(message)
+	let _message = { ...message }
+	_message.key = key + msgId++
+	_message.index = instance.msgQueue.length
+	_message.timer = autoClose(_message)
+	if (isVNode(_message.content)) {
+		instance.$slots[_message.key] = [_message.content]
+		_message.content = null
+	}
+	instance.msgQueue.push(_message)
     // 设置挂载元素
     document.body.appendChild(instance.$el)
 }

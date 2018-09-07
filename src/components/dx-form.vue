@@ -35,12 +35,12 @@
 				if (field) {
 					this.fields.push(field)
 				}
-			})
+			}, this)
 			Bus.$on('dx-form-removeField', (field) => {
 				if (field.prop) {
 					this.fields.splice(this.fields.indexOf(field), 1)
 				}
-			})
+			}, this)
 		},
 		methods: {
 			// 提交表单时候，验证表单输入是否满足所有的验证规则

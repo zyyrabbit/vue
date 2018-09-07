@@ -5,12 +5,21 @@
 	  </header>
 	  <main id="main" class="clearfix">
 	  	 <nav id="nav">
+	  	 	<dx-heading :level="2">pc端组件</dx-heading>
 	  	 	<ul>
-	  	 		<li v-for="page in pages">
+	  	 		<li v-for="pcPage in pcPages">
 	  	 		   <!-- <a :href="page.path" >{{page.title}}</a> -->
-	  	 		   <router-link :to="page.path">{{page.title}}</router-link>
+	  	 		   <router-link :to="pcPage.path">{{pcPage.title}}</router-link>
 	  	 		</li>
 	  	 	</ul>
+			<dx-heading :level="2">移动端组件</dx-heading>
+	  	 	<ul class="mobile">
+	  	 		<li v-for="mobilePage in mobilePages">
+	  	 		   <!-- <a :href="page.path" >{{page.title}}</a> -->
+	  	 		   <router-link :to="mobilePage.path">{{mobilePage.title}}</router-link>
+	  	 		</li>
+	  	 	</ul>
+
 	  	 </nav>
 	  	 <div id="main-content">
 	  	 	<router-view></router-view>
@@ -19,12 +28,16 @@
  </div>
 </template>
 <script>
-  import pages from './index.js'
+  import {
+  	pcPages,
+  	mobilePages
+  } from './index.js'
 
   export default {
     data() {
       return {
-        pages: pages
+        pcPages: pcPages,
+        mobilePages: mobilePages
       }
     }
   }
@@ -65,6 +78,9 @@
 		color:#aaa;
 		cursor:pointer;
 		font-size:1.4rem;
+	}
+	#nav ul{
+		margin-top: 1rem;
 	}
 	/*右边说明文档样式*/
 	#main-content{

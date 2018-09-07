@@ -9,6 +9,7 @@
 	    <p>默认消息通知</p>
 	    <dx-show-code :htmlString="htmlString1"  :scriptString="scriptString1">
         <dx-button @dx-button-click="open()">自动关闭</dx-button>
+        <dx-button @dx-button-click="open1()">消息内容为Vnode</dx-button>
         <dx-button @dx-button-click="open2()" type="primary">不会自动关闭</dx-button>
 	    </dx-show-code>
   </div>
@@ -48,7 +49,7 @@
                      {
                       param: 'content',
                       illustrate: '消息内容',
-                      type: 'String',
+                      type: 'String,vnode',
                       optionVal: '---',
                       defaultVal: '---'
                     },
@@ -76,6 +77,13 @@
                   content: '自动关闭'
                 })
             },
+            open1() {
+              let h = this.$createElement
+              this.$notify({
+                title: '提示' + this.ind++,
+                content: h('div', {}, ['自定义vnode'])
+              })  
+            },
             open2() {
                 this.$notify({
                   duration: 0,
@@ -92,6 +100,13 @@
               title: '提示' + this.ind++,
               content: '自动关闭'
             })
+        },
+        open1() {
+            let h = this.$createElement
+            this.$notify({
+              title: '提示' + this.ind++,
+              content: h('div', {}, ['自定义vnode'])
+            })  
         },
         open2() {
             this.$notify({

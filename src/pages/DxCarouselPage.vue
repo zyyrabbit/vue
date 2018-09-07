@@ -1,7 +1,7 @@
 <template>
  <div class="wrap-content">
  	<div class="item-content">
-	    <dx-heading :level="1">Carousel 轮播</dx-heading>
+	    <dx-heading :level="1">Carousel 轮播(至少三张图片)</dx-heading>
 	    <p>用于图片展示</p>
   </div>
   <div class="item-content">
@@ -29,6 +29,11 @@
  </div>
 </template>
 <script>
+  import pic1 from '../images/carousel/1.jpg'
+  import pic2 from '../images/carousel/2.jpg'
+  import pic3 from '../images/carousel/3.jpg'
+  import pic4 from '../images/carousel/4.jpg'
+
   export default {
     data() {
       return {
@@ -48,6 +53,12 @@
                       defaultVal: '---'
                     },
                     {
+                      param: 'background',
+                      illustrate: '是否采用background模式',
+                      type: 'Boolean',
+                      defaultVal: 'false'
+                    },
+                    {
                       param: 'imgUrls',
                       illustrate: '轮播图片地址',
                       type: 'Array',
@@ -55,10 +66,10 @@
                     }
                   ],
         imgUrls: [
-                  'images/carousel/1.jpg',
-                  'images/carousel/2.jpg',
-                  'images/carousel/3.jpg',
-                  'images/carousel/4.jpg'
+                    pic1,
+                    pic2,
+                    pic3,
+                    pic4
                   ]
       }
     },

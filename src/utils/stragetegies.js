@@ -4,16 +4,16 @@ const caluStrLen = (str) => { return str.replace(/[^\x00-\xff]/g, 'aa').length }
 
 export default {
     // args值为单个rule对象
-	required: (rule, value, callback) => {
+    required: (rule, value, callback) => {
         if (value === '') {
             callback && typeof callback === 'function' && callback()
             return true
         }
         return false
-     },
+    },
     minLength: (rule, value, callback) => {
         if (caluStrLen(value) < rule.min) {
-             callback && typeof callback === 'function' && callback()
+            callback && typeof callback === 'function' && callback()
             return true
         }
         return false
@@ -29,7 +29,7 @@ export default {
         if (!/^1[34578][0-9]{9}$/.test(+value)) {
             return true
         }
-         callback && typeof callback === 'function' && callback()
+        callback && typeof callback === 'function' && callback()
         return false
     },
     confirmSame: (rule, value, callback) => {

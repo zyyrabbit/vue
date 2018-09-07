@@ -1,4 +1,5 @@
 // https://eslint.org/docs/user-guide/configuring
+
 module.exports = {
     //将 ESLint 限制到一个特定的项目
     root: true,
@@ -28,10 +29,6 @@ module.exports = {
         'generator-star-spacing': 0,
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-        "space-before-function-paren": ["error",{
-            "anonymous": "never",
-            "named": "never",
-            "asyncArrow": "always"
-        }]
+        "space-before-function-paren": ["error", "never"]
     }
 }

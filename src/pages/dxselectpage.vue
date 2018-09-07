@@ -45,7 +45,7 @@
         htmlString1:'',
         scriptString1:'',
 
-        items2:[{name:'选项1',value:0},{name:'选项2',value:1}],
+        items2:[{name:'选项1',value:0}, {name:'选项2',value:1}],
         selectValue2:'',
         htmlString2:'',
         scriptString2:'',

@@ -16,10 +16,14 @@
 		     			class="dx-msg-list-close" 
 		     			@click="close(msg)" 
 		     		> 
-		     			x 
+		     			x
 		     		</span>
 		     	</p>
-				<p class="dx-msg-list-message" >{{msg.content}}</p>
+				<p class="dx-msg-list-message" >
+					<slot :name="msg.key">
+						{{msg.content}}
+					</slot>
+				</p>
 		    </li>
   		</transition-group>
 	</div>
@@ -41,7 +45,7 @@
 				for (let i = message.index + 1; i < this.msgQueue.length; i++) {
 					this.msgQueue[i].index--
 				}
-					this.msgQueue.splice(message.index, 1)
+				this.msgQueue.splice(message.index, 1)
 			}
 		}
 	}

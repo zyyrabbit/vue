@@ -1,5 +1,5 @@
 <template>
-	 <ul class="dx-ul clearfix">
+	 <ul class="dx-ul">
 	   <slot></slot>
 	 </ul>
 </template>
@@ -9,3 +9,13 @@
 		componentName: 'DxUl'
 	}
 </script>
+<style>
+	.dx-ul {
+		display: webkit-flex;
+        display: flex;
+        flex-wrap: wrap;
+        
+        justify-content: space-between;
+        align-items: center;
+	}
+</style>

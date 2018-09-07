@@ -1,13 +1,14 @@
 import {loadImageAsync} from 'utils/utils.js'
 const imgCache = {}
 export default class {
-	constructor({el, loading, error, src, elRender}) {
+	constructor({el, loading, error, src, elRender, bindType}) {
 		this.el = el // 元素
 		this.loading = loading // loading图片地址
 		this.error = error // 加载出错地址
 		this.src = src // 需要加载的图片地址
 		this.naturalHeight = 0
         this.naturalWidth = 0
+        this.bindType = bindType
 		this.initState()
 		this.elRender = elRender
         this.render('loading')
@@ -24,6 +25,9 @@ export default class {
 			this.render('loading')
 			cb()
 		}, error => {
+			if (error) {
+				console.log(error)
+			}
 			this.state.error = true
 		})
     }
@@ -45,6 +49,9 @@ export default class {
 					this.render('loaded')
 				},
 				error => {
+					if (error) {
+						console.log(error)
+					}
 					this.state.error = true
 					this.state.loaded = false
 					this.state.loading = false

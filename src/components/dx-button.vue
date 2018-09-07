@@ -4,7 +4,7 @@
 		        type ? 'dx-button-' + type : '',
 		        size ? 'dx-button-' + size : '',
 		        {
-		        	'is-disabled':disabled
+		        	'is-disabled': disabled
 		        }
 	    ]"
 	    class="dx-button" 
@@ -19,7 +19,9 @@
 		 	aria-hidden="true" 
 		 >
 		 </i>
-		<span v-if="$slots.default"><slot></slot></span>
+		<span v-if="$slots.default">
+            <slot></slot>
+        </span>
 	</button>
 </template>
 <script>

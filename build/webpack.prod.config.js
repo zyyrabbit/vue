@@ -1,7 +1,7 @@
-const webpack = require("webpack")
-const path = require("path")
-const webpackConfig = require("./webpack.config.js")
-const webpackMerge = require("webpack-merge")
+const webpack = require('webpack')
+const path = require('path')
+const webpackConfig = require('./webpack.config.js')
+const webpackMerge = require('webpack-merge')
 
 module.exports = webpackMerge(webpackConfig, {
     devtool: 'cheap-source-map',
