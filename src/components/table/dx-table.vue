@@ -142,6 +142,7 @@
 			changePage: function(newPage) {
 				let start = (newPage.currentPage - 1) * newPage.pageSize
 				let	end = start + newPage.pageSize
+				// console.log(start, end, this.data, this.data.slice(start, end))
 				this.store.commit('setData', this.data.slice(start, end))
 			}
 		}

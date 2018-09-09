@@ -1,14 +1,14 @@
 <template>
 	<!-- 两列排列 -->
     <div class="dx-calendar">
-    	<div class="dx-calendar-select clearfix">
+    	<div class="dx-calendar-select">
     		<span 
-                class="block--float-left dx-calendar-select-left"
                 @click="preYear()"
             >
-                <i class="icon iconfont dx-prev"></i></span>
+                <i class="icon iconfont dx-arrow-left-double"></i>
+            </span>
             <span 
-                class="block--float-left dx-calendar-select-left"
+                class="dx-calendar-select-left"
                 @click="preMonth()"
             > <i class="icon iconfont dx-prev"></i> </span>
             <span class="dx-calendar-input">
@@ -23,13 +23,13 @@
             </span>
            
             <span 
-                class="block--float-right dx-calendar-select-right"
+                class="dx-calendar-select-right"
                  @click="nextMonth()"
             > <i class="icon iconfont dx-next"></i> </span>
            <span 
-                class="block--float-right dx-calendar-select-right"
+                class="dx-calendar-select-right"
                  @click="nextYear()"
-            > <i class="icon iconfont dx-next"></i> </span>
+            > <i class="icon iconfont dx-arrow-right-double"></i> </span>
     	</div>
     	<div class="dx-calendar-content">
     		<table class="dx-calendar-content__table" width="100%">

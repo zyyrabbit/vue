@@ -83,7 +83,7 @@
 	 	      	    		type="primary" 
 	 	      	    		icon="pencil" 
 	 	      	    		size="small"
-	 	      	    		@dx-button-click="handleEdit(index,row)"
+	 	      	    		@dx-button-click="handleEdit(index, row)"
 	 	      	    	>
 	 	      	    		编辑
 	 	      	    	</dx-button>
@@ -92,7 +92,7 @@
 	 	      	    		type="warning" 
 	 	      	    		icon="trash" 
 	 	      	    		size="small"
-	 	      	    		@dx-button-click="handleDelete(index,row)"
+	 	      	    		@dx-button-click="handleDelete(index, row)"
 	 	      	    	>
 	 	      	    		删除
 	 	      	    	</dx-button>

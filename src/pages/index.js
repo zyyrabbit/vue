@@ -11,20 +11,22 @@ import DxNotifyPage from './DxNotifyPage.vue'
 import DxProgessPage from './DxProgessPage.vue'
 import DxUploadPage from './DxUploadPage.vue'
 import DxCalenderPage from './DxCalenderPage.vue'
+import DxMessageBoxPage from './DxMessageBoxPage.vue'
 export const pcPages = [
-    { path: 'dxselectpage', title: 'select选择框', component: DxSelectPage },
-    { path: 'dxradiopage', title: 'radio选择框', component: DxRadioPage },
-    { path: 'dxformpage', title: 'form表单', component: DxFormPage },
-    { path: 'dxtablepage', title: 'table表格', component: DxTablePage },
-    { path: 'dxbuttonpage', title: 'button按钮', component: DxButtonPage },
-    { path: 'dxnavpage', title: 'nav导航栏', component: DxNavPage },
-    { path: 'dxInputpage', title: 'input输入框', component: DxInputPage },
-    { path: 'dxpaginationpage', title: 'pagination分页', component: DxPaginationPage },
-    { path: 'dxcarouselpage', title: 'carousel轮播', component: DxCarouselPage },
-    { path: 'dxnotifypage', title: 'notify消息通知', component: DxNotifyPage },
-    { path: 'dxprogesspage', title: 'progress进度条', component: DxProgessPage },
-    { path: 'DxCalenderPage', title: 'calender日历', component: DxCalenderPage },
-    { path: 'DxUploadPage', title: 'upload上传文件', component: DxUploadPage }
+    { path: 'dxselectpage', title: 'select 选择框', component: DxSelectPage },
+    { path: 'dxradiopage', title: 'radio 选择框', component: DxRadioPage },
+    { path: 'dxformpage', title: 'form 表单', component: DxFormPage },
+    { path: 'dxtablepage', title: 'table 表格', component: DxTablePage },
+    { path: 'dxbuttonpage', title: 'button 按钮', component: DxButtonPage },
+    { path: 'dxnavpage', title: 'nav 导航栏', component: DxNavPage },
+    { path: 'dxInputpage', title: 'input 输入框', component: DxInputPage },
+    { path: 'dxpaginationpage', title: 'pagination 分页', component: DxPaginationPage },
+    { path: 'dxcarouselpage', title: 'carousel 轮播', component: DxCarouselPage },
+    { path: 'dxnotifypage', title: 'notify 消息通知', component: DxNotifyPage },
+    { path: 'dxprogesspage', title: 'progress 进度条', component: DxProgessPage },
+    { path: 'DxCalenderPage', title: 'calender 日历', component: DxCalenderPage },
+    { path: 'DxUploadPage', title: 'upload 上传文件', component: DxUploadPage },
+    { path: 'DxMessageBoxPage', title: 'messageBoxPage 消息弹窗', component: DxMessageBoxPage }
 ]
 // 移动端组件
 import DxIndicatorPage from './DxIndicatorPage.vue'
@@ -32,7 +34,7 @@ import DxStarPage from './DxStarPage.vue'
 import DxTabsPage from './DxTabsPage.vue'
 //import DxStarPage from './DxStarPage.vue'
 export const mobilePages = [
-    { path: 'DxIndicatorPage', title: 'indicator加载指示器', component: DxIndicatorPage },
+    { path: 'DxIndicatorPage', title: 'indicator 加载指示器', component: DxIndicatorPage },
     { path: 'DxStarPage', title: 'star 打分', component: DxStarPage },
     { path: 'DxTabsPage', title: 'tabs 标签页', component: DxTabsPage }
 ]

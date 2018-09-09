@@ -12,7 +12,9 @@
           <dx-calendar></dx-calendar>
         </div>
 	    </dx-show-code>
-      <p>自定义日历</p>
+    </div>
+    <div class="item-content">
+      <dx-heading :level="1">自定义日历天数显示</dx-heading>
       <dx-show-code :htmlString="htmlString1">
         <div style="width: 50%;">
           <dx-calendar>

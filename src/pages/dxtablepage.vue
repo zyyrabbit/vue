@@ -176,16 +176,16 @@
                     {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
                     {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
                     {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'},
-                    {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
-                    {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
-                    {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
-                    {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
-                    {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'},
-                    {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
-                    {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
-                    {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
-                    {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
-                    {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'}   
+                    {name: 'zyy1', age: 26, sex: '男', height: '171cm', blood: 'O'},
+                    {name: 'lxf1', age: 26, sex: '女', height: '163cm', blood: 'B'},
+                    {name: 'zsj1', age: 22, sex: '女', height: '155cm', blood: 'O'},
+                    {name: 'sxy1', age: 25, sex: '男', height: '173cm', blood: 'A'},
+                    {name: 'jrf1', age: 24, sex: '男', height: '165cm', blood: 'C'},
+                    {name: 'zyy2', age: 26, sex: '男', height: '171cm', blood: 'O'},
+                    {name: 'lxf2', age: 26, sex: '女', height: '163cm', blood: 'B'},
+                    {name: 'zsj2', age: 22, sex: '女', height: '155cm', blood: 'O'},
+                    {name: 'sxy2', age: 25, sex: '男', height: '173cm', blood: 'A'},
+                    {name: 'jrf2', age: 24, sex: '男', height: '165cm', blood: 'C'}   
                   ],
                 attrDatas: [
                     {

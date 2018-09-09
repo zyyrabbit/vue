@@ -10,8 +10,8 @@ const defaultOptions = {
 	message: '',
 	modal: true,
 	// 按钮设置
-	cancelBtnText: '',
-	confirmBtnText: '',
+	cancelBtnText: '取消',
+	confirmBtnText: '确认',
 	showBtns: true,
 	showConfirm: true,
 	showCancel: true,
@@ -22,7 +22,8 @@ const defaultOptions = {
 	cancelButtonClass: '',
 	confirmButtonClass: '',
 	titleClass: '',
-	contentClass: ''
+	contentClass: '',
+	center: false
 }
 // 构建构造函数
 const MessageConstructor = Vue.extend(DxMessageBox)
@@ -76,7 +77,11 @@ const OpenMessageBox = (options) => {
 			oldCb(action, instance)
 		}
       // 设置挂载元素
-      document.getElementById(instance.parentEleId).appendChild(instance.$el)
+      if (instance.parentEleId) {
+      	document.getElementById(instance.parentEleId).appendChild(instance.$el)
+      } else {
+      	document.body.appendChild(instance.$el)
+      }
       Vue.nextTick(() => {
         instance.visible = true
       })

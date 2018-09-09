@@ -6,10 +6,11 @@
 		>
 			<div  :class="[customBoxClasses]">
 				<div  
-					v-if="showHeader" 
+					v-if="showHeader"
+					class="clearfix"
 					:class="[titleClasses]" 
 				>
-					<span class="dx-msgebox-title">{{title}}</span>
+					<span v-if="title" class="dx-msgebox-title">{{title}}</span>
 					<span 
 						v-if="showClose" 
 						class="dx-msgebox-close"  
@@ -25,23 +26,25 @@
 					<slot><p>{{ message }}</p></slot>
 				</div>
 				<div 
-					v-if="showBtns" 
-					:class="[buttonClasses]" 
+					v-if="showBtns"
+					:class="[buttonClasses, {'dx-msgbox-buttons-center': center}]" 
 				>			
 					<dx-button 
 						v-if="showConfirm" 
 						:class="[confirmButtonClasses]" 
-						type="warning" 
-						@click="handleAction('confirm')" 
+						type="primary"
+						size="small"
+						@dx-button-click="handleAction('confirm')" 
 					>
-						{{confirmBtnText}}
+						{{ confirmBtnText }}
 					</dx-button>
 					<dx-button 
-						v-if="showCancel" 
+						v-if="showCancel"
+						size="small"
 						:class="[cancelButtonClasses]"
-						click="handleAction('cancel')" 
+						@dx-button-click="handleAction('cancel')" 
 					>
-						{{cancelBtnText}}
+						{{ cancelBtnText }}
 					</dx-button>
 				</div>
 			</div>
@@ -72,7 +75,7 @@
 				showBtns: true,
 				showConfirm: true,
 				showCancel: true,
-				showClose: false,
+				showClose: true,
 				// 自定义样式
 				customBoxClass: '',
 				buttonClass: '',
@@ -80,7 +83,7 @@
 				confirmButtonClass: '',
 				titleClass: '',
 				contentClass: '',
-				contentVnode: null // 自定义传入vnode
+				center: false
 			}
 		},
 		computed: {
@@ -95,7 +98,7 @@
 				return `dx-msgebox-content ${this.contentClass}`
 			},
 			buttonClasses() {
-				return `dx-msgebox-button ${this.buttonClass}`
+				return `dx-msgebox-buttons ${this.buttonClass}`
 			},
 			cancelButtonClasses() {
 				return `btn-primary cancel-primary ${this.cancelButtonClass}`
@@ -131,21 +134,28 @@
 	top: 50%;
 	transform: translate(-50%,-50%);
 	border: 1px solid rgba(0,0,0,.1);
-	border-radius: 1px;
-	text-align: center;
+	border-radius: 0.5rem;
 	background-color: $--dx-msgbox-background-color;
 	z-index: 1;
-	padding-bottom: 5rem;
+	min-width: 20%;
+	max-width: 80%;
+	padding: 1.5rem;
 }
 .dx-msgebox-header {
-	margin: 1rem 1rem;
-	text-align: left;
+	vertival-align: middle;
+	.dx-msgebox-title {
+		font-size: 1.6rem;
+	}
 }
 .dx-msgebox-content {
-	margin-top: 3rem;
+	margin-top: 1rem;
 }
-.dx-msgebox-button {
-	margin-top: 5rem;
+.dx-msgebox-buttons {
+	text-align: right;
+	margin-top: 2rem;
+}
+.dx-msgbox-buttons-center  {
+	text-align: center;
 }
 .dx-msgebox-close {
 	float: right;
