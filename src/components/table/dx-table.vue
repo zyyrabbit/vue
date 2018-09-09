@@ -8,10 +8,11 @@
 	    	class="dx-tabel-query-wrap" 
 	    >
 	    	<span 
-	    		v-for="(column,index) in filterColumns" 
+	    		v-for="(column, index) in filterColumns" 
 	    		:key="index" 
 	    	>
-	    		<dx-input 
+	    		<dx-input
+	    			class="dx-tabel-query-wrap-input"
 	    			v-model="column.filterValue"
 	    		>
 	    			{{column.label}}:
@@ -49,7 +50,7 @@
 			class="dx-tabel-pagination-wrap"
 		>
 			<dx-pagination  
-				:total = "data.length" 
+				:total="data.length" 
 				:current-page="1" 
 				:show-page-info="true" 
 				:show-jump-page="true" 
@@ -150,7 +151,13 @@
 <style lang="scss">
 	
 	.dx-tabel-query-wrap {
-		margin-bottom:2rem;
+		margin-bottom: 2rem;
+		.dx-tabel-query-wrap-input {
+			line-height: $--dx-table-query-input-line-height;
+			height: $--dx-table-query-input-height;
+			max-width: 40%;
+			margin-right: 2rem;
+		}
 	}
 
 	.dx-tabel-query-btn {
@@ -158,16 +165,16 @@
 	}
 
 	/*没有找到数据时的样式*/
-	.dx-tabel-not-find{
-		border:0.1rem solid #ddd;
-		border-top:0;
-		line-height:4rem;
-		font-size:1.6rem;
-		text-align:center;
+	.dx-tabel-not-find {
+		border: 0.1rem solid #ddd;
+		border-top: 0;
+		line-height: $--dx-table-line-height-not-find;
+		font-size: $--dx-table-font-size-not-find;
+		text-align: center;
 	}
-	.dx-tabel-pagination-wrap{
-		margin-top:1rem;
-		text-align:right;
+	.dx-tabel-pagination-wrap {
+		margin-top: 1rem;
+		text-align: right;
 	} 
 
 </style>

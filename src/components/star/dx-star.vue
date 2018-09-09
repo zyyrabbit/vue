@@ -32,10 +32,10 @@ export default {
 </script>
 <style lang="scss">
 	.star-rate-icon {
-		background: red;
+		color: $--dx-star-icon-color;
 	}
 	.star-rate-icon-select {
-		background: black;
+		color: $--dx-star-icon-color-select;
 	}
 	.dx-rate-item-small {
 		width: 2.8rem;;

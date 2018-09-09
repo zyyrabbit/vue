@@ -93,24 +93,24 @@
     overflow-x: scroll;
     // 父元素会根据字体撑开 需要设为0
     font-size: 0;
-    white-space:nowrap;
+    white-space: nowrap;
     .tabs__active-bar { 
       position: absolute;
       bottom: 0;
       left: 0;
       height: 0.7rem;
-      background-color: #666;
+      background-color: $--dx-tabs-active-backgroun-color;
       border-radius: 0.4rem;
       z-index: 1;
       transition: transform .3s cubic-bezier(.645,.045,.355,1);
       list-style: none;
     }
-    .tab__active{
-      color: #666;
+    .tab__active {
+      color: $--dx-tabs-active-color;
     }
   }
   &--tab-item {
-    color: #aaa;
+    color: $--dx-tabs-item-active-color;
     font-size: 2.8rem;
     display: inline-block;
     padding-right: 6.5rem;

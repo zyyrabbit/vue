@@ -3,10 +3,12 @@
 	    :class="[
 		        type ? 'dx-button-' + type : '',
 		        size ? 'dx-button-' + size : '',
+                customClass,
 		        {
 		        	'is-disabled': disabled
 		        }
 	    ]"
+        :style=""
 	    class="dx-button" 
 	    :disabled="disabled"  
 	    :type="nativeType"
@@ -19,9 +21,7 @@
 		 	aria-hidden="true" 
 		 >
 		 </i>
-		<span v-if="$slots.default">
-            <slot></slot>
-        </span>
+		<span v-if="$slots.default"><slot></slot></span>
 	</button>
 </template>
 <script>
@@ -41,7 +41,8 @@ export default {
         disabled: {
             type: Boolean,
             default: false
-        }
+        },
+        customClass: String
     },
     methods: {
         handleClick: function(evt) {
@@ -50,7 +51,7 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
 /*按钮基本样式*/
 
 .dx-button {
@@ -59,8 +60,8 @@ export default {
     white-space: nowrap;
     cursor: pointer;
     border: 0.1rem solid #bfcbd9;
-    border-color: #c4c4c4;
-    color: #1f2d3d;
+    border-color: $--dx-button-default-border-color;
+    color: $--dx-button-default-color;
     -webkit-appearance: none;
     text-align: center;
     outline: none;
@@ -69,91 +70,121 @@ export default {
     -webkit-user-select: none;
     -ms-user-select: none;
     padding: 1rem 1.5rem;
-    font-size: 1.4rem;
+    font-size: $--dx-button-default-font-size;
     background-color: transparent;
     border-radius: 0.4rem;
+    span {
+        line-height: 1;
+        vertical-align: middle;       
+    }
 }
 
 .dx-button:focus,
 .dx-button:hover {
-    background-color: #eee;
-    color: #20a0ff;
-    border-color: #20a0ff;
+    color: $--dx-button-default-color-hover;
+    border-color: $--dx-button-default-border-color-hover;
 }
-/*文字按钮*/
+
+/*按钮默认样式*/
 
 .dx-button-text {
-    border: 0;
-    color: #ccc;
+    color: $--dx-button-text-color;
+    border: none;
 }
 
 .dx-button-text:focus,
 .dx-button-text:hover {
-    color: #aaa; 
-    background-color: #fff;
+     border: none;
+     color: $--dx-button-text-color-hover;
 }
 
 /*按钮默认样式*/
 
 .dx-button-primary {
-    color: #fff;
-    background-color: #20a0ff;
-    border-color: #20a0ff;
+    color: $--dx-button-primary-color;
+    background-color: $--dx-button-primary-background-color;
+    border-color: $--dx-button-primary-border-color;
 }
 
 .dx-button-primary:focus,
-.dx-button-primary:hover { 
-    color: #fff;
-    background: #4db3ff;
-    border-color: #4db3ff;
+.dx-button-primary:hover {
+    border-color: $--dx-button-primary-border-color-hover;
+    color: $--dx-button-primary-color-hover;
 }
 
 
 /*红色警告样式*/
 
 .dx-button-warning {
-    background: #ff4949;
-    border-color: #ff4949;
-    color: #fff;
+    background-color: $--dx-button-warning-background-color;
+    border-color: $--dx-button-warning-border-color;
+    color: $--dx-button-warning-color;
 }
 
 .dx-button-warning:focus,
 .dx-button-warning:hover {
-    color: #fff;
-    background: #f56c6c;
-    border-color: #f56c6c;
+    color: $--dx-button-warning-color-hover;
+    border-color: $--dx-button-warning-border-color-hover;
+}
+/*灰色样式*/
+
+.dx-button-gray {
+    background-color: $--dx-button-warning-background-color;
+    border-color: $--dx-button-warning-border-color;
+    color: $--dx-button-warning-color;
+}
+.dx-button-gray:focus,
+.dx-button-gray:hover {
+    color: $--dx-button-warning-color-hover;
+    opacity: 0.8;
+    border-color: $--dx-button-warning-border-color-hover;
+}
+/*粉色样式*/
+
+.dx-button-pinking {
+    background-color: $--dx-button-pinking-background-color;
+    border-color: $--dx-button-pinking-border-color;
+    color: $--dx-button-pinking-color;
+}
+.dx-button-pinking:focus,
+.dx-button-pinking:hover {
+    color: $--dx-button-pinking-color-hover;
+    opacity: 0.8;
+    border-color: $--dx-button-pinking-border-color-hover;
 }
 
 /*设置按钮大小*/
 
 .dx-button-large {
-    font-size: 1.6rem;
-    padding: 1.1rem 1.9rem;
+    font-size: $--dx-button-large-font-size;
+    padding: 1.4rem 3rem;
+    line-height: 1;
 }
 
 .dx-button-small {
-    padding: 0.7rem 0.9rem;
-    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    font-size: $--dx-button-small-font-size;
+    line-height: 1;
 }
 
-/* 与父元素同宽 */
-
-.dx-button-max {
-    padding: 1rem 0.9rem;
-    font-size: 1.5rem;
+.dx-button-full {
+    height: 100%;
     width: 100%;
+    border-radius: 5rem;
+    font-size: $--dx-button-full-font-size;
+    line-height: 1;
 }
-
 
 /*按钮禁用时的样式*/
 
 .dx-button.is-disabled,
 .dx-button.is-disabled:focus,
 .dx-button.is-disabled:hover {
-    color: #bfcbd9;
+    color: $--dx-button-disable-color !important;
     cursor: not-allowed;
     background-image: none;
-    background-color: #eef1f6;
-    border-color: #d1dbe5;
+    background-color: $--dx-button-disable-background-color;
+    border-color: $--dx-button-disable-border-color;
 }
+
 </style>

@@ -94,39 +94,40 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
 /* 导航栏默认整体样式 */
 .dx-nav {
-    background-color: #2d3e4d;
+    background-color: $--dx-nav-background-color;
 }
 .dx-nav-list{
     padding: 0 1.5rem;
 }
 .dx-nav-list.is-open {
-    background-color: #1d2933;
+    background-color: $--dx-nav-list-background-color-open;
 } 
+.dx-nav-list:hover {
+    background-color: $--dx-nav-list-background-color-hover;
+}
 /* 链接样式 */
 .dx-title-link {
-    font-size: 1.4rem;
-    color: #ccc;
+    font-size: $--dx-nav-link-font-size;
+    color: $--dx-nav-link-color;
     cursor: pointer;
     display: block;
     padding: 1rem;
 }
-.dx-nav-list:hover {
-    background-color: #1d2933;
-}
 .dx-nav-list:hover .dx-title-link{
-    color: #8AEBEA;
+    color: $--dx-nav-link-color-hover;
 }
+
 .dx-title-wrap.is-active .dx-title-link{
-    color: #8AEBEA;
+    color: $--dx-nav-link-color-hover;
 }
 
 /*点击标题时候的文字颜色*/
 
 .dx-title-link.is-active {
-    color: #8AEBEA;
+    color: $--dx-nav-link-color-hover;
 }
 /*一级标题打开，关闭接口指示器*/
 
@@ -142,15 +143,15 @@ export default {
 /*链接文字的样式*/
 
 .dx-router-active .dx-title-link{
-    color: #8AEBEA;
+    color: $--dx-nav-link-color-hover;
 }
 
 .dx-sub-nav .dx-title-link{
     padding-left: 2rem;
-    color: #fff !important;
+    color: $--dx-nav-link-color-hover !important;
 }
 .dx-sub-nav .dx-title-link:hover{
-    color: #8AEBEA !important; 
+    color: $--dx-nav-sub-link-color-hover !important; 
 }
 /* nav动画效果 */
 .dx-collapse-transition {

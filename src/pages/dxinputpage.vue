@@ -6,15 +6,29 @@
   	</div>
   	<div class="item-content">
 	    <dx-heading :level="1">基本用法</dx-heading>
+        <p>input默认设置为元素的80%,如果需要设置自定义宽度，请自行覆盖dx-input</p>
 	    <dx-show-code :htmlString="htmlString" :scriptString="scriptString">
-        	<dx-input v-model="val" >基本用法</dx-input>
+          <div class="margin-bottom-10">
+            <dx-input v-model="val"></dx-input>
+          </div>
+          <div class="margin-bottom-10" style="font-size: 1.4rem">
+            标签：<dx-input v-model="val1"></dx-input>
+          </div>
 	    </dx-show-code>
  	</div>
  	<div class="item-content">
-	    <dx-heading :level="1">控制input输入框的大小</dx-heading>
-	    <p>与父元素同框</p>
+	    <dx-heading :level="1">input输入框添加前后缀</dx-heading>
 	    <dx-show-code :htmlString="htmlString1" :scriptString="scriptString">
-        	<dx-input v-model="val" :max="true">label</dx-input>
+            <div class="margin-bottom-10">
+            	<dx-input v-model="val2" >
+                <span>label:</span>
+              </dx-input>
+            </div>
+            <div class="margin-bottom-10">
+              <dx-input v-model="val3">
+                <span slot="left">label</span>
+              </dx-input>
+            </div>
 	    </dx-show-code>
  	</div>
     <div class="item-content">
@@ -37,19 +51,49 @@
 </template>
 <script>
   export default {
-    data(){
+    data() {
       return {
-      	val:'',
-        attrDatas:[
-                    { param:'size',illustrate:'输入框的style样式',type:'Object',defaultVal:null},
-                    { param:'max',illustrate:'输入框的长度widt=100%',type:'Boolean',defaultVal:false}
+        val1: '',
+        val2: '',
+        val3: '',
+        val4: '',
+        attrDatas: [
+                    {
+                        param: 'inputStyle',
+                        illustrate: 'input的style样式',
+                        type: 'Object',
+                        defaultVal: '---'
+                    },
+                    {
+                        param: 'inputClass',
+                        illustrate: 'input的class样式',
+                        type: 'Object',
+                        defaultVal: '---'
+                    },
+                    {
+                        param: 'originType',
+                        illustrate: 'input类型',
+                        type: 'String',
+                        defaultVal: '---'
+                    },
+                    {
+                        param: 'disabled',
+                        illustrate: '禁止输入框',
+                        type: 'Boolean',
+                        defaultVal: false
+                    }
                   ]
       }
     },
-    created(){
-    	// 基本用法
+    created() {
+        // 基本用法
         this.htmlString = `<template> 
-                           	 	<dx-input v-model="val">基本用法</dx-input>
+                           	 	<div class="margin-bottom-10">
+                                    <dx-input v-model="val"></dx-input>
+                                </div>
+                                <div class="margin-bottom-10" style="font-size: 1.4rem">
+                                    标签：<dx-input v-model="val1"></dx-input>
+                                </div>
                          </template>`
         this.htmlString1 = `<template> 
 	                            <dx-input v-model="val" max="true"></dx-input>
@@ -57,7 +101,10 @@
         this.scriptString = `export default {
                                 data(){
                                   return {
-                                    val:''
+                                        val1: '',
+                                        val2: '',
+                                        val3: '',
+                                        val4: ''
                                   }
                                 }
                               }`
@@ -65,5 +112,8 @@
   }
 </script>
 <style>
+  .margin-bottom-10 {
+    margin-bottom: 1rem;
+  }
 </style>
 

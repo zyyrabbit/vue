@@ -10,5 +10,17 @@ module.exports = {
     OUTPUT_PATH: path.join(BASE_PATH, 'dist'),
     SRC_PATH: path.join(BASE_PATH, 'src/app.js'),
     PUBLIC_PATH: '/',
-    PORT: 3000
+    PORT: 3000,
+    build: {
+        env: {
+        	NODE_ENV: '"development"',
+        },
+        productionSourceMap: false
+    },
+    dev: {
+        env: {
+        	NODE_ENV: '"production"',
+        },
+        cssSourceMap: false
+    }
 }

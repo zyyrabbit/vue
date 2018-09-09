@@ -1,21 +1,28 @@
 <template>
-	<label :class="{'dx-input-max': max}" class="dx-input">
+	<label class="dx-input">
 		<span 
-			:class="[labelTextClass]" 
-			class="dx-input-label-text"
+			class="dx-input-label-text dx-input-label-text-left"
 			v-if="$slots.default"
 		>
 			<slot></slot>
 		</span>
 		<input 
 			v-model="model" 
+			:style="inputStyle"
+			:class="[inputClass]"
 			class="dx-input-origin-input" 
-			:style="size"  
-			:disabled="disabled"  
+			:disabled="disabled"   
+			:type="originType" 
 			:placeholder="inputPlaceholder"   
 			@focus="handleFoucs" 
 			@blur="handleBlur"
 		/>
+		<span 
+			class="dx-input-label-text dx-input-label-text-right"
+			v-if="$slots.left"
+		>
+			<slot name="left"></slot>
+		</span>
 	</label>
 </template>
 <script>
@@ -31,13 +38,13 @@
 				type: String,
 				default: ''
 			},
-			max: Boolean,
+			originType: String,
 			disabled: {
 				type: Boolean,
 				default: false
 			},
-			labelTextClass: String,
-			size: Object
+			inputStyle: Object,
+			inputClass: String
 		},
 		data() {
 			return {
@@ -69,38 +76,39 @@
 		}
 	}
 </script>
-<style>
+<style lang="scss">
 	/*整体样式*/
-	.dx-input{
-		color:#1f2d3d;
-		font-size:1.4rem;
-
-	}
-	/*input框基本样式*/
-	.dx-input-label-text{
-		margin-right:0.5rem;
-		line-height:2.5rem;
-	}
-	.dx-input-origin-input{
-		border:0.1rem solid #b3b3b3;
-		background:#fff;
-		width:18rem;
-		line-height:2.5rem;
-		border-radius:0.2rem;
+	.dx-input {
+		display: inline-flex;
+		width: 80%;
+		font-size: $--dx-input-font-size;
+		height: $--dx-input-height;
+		line-height: $--dx-input-line-height;
+		color: $--dx-input-color;
+		border: 1px solid #ccc;
+		border-radius: 4px;
 	}
 	/* 以下设置为输入框最大长度即与父元素宽度一样 */
-	.dx-input-max .dx-input-origin-input{
-		width:100%;
-		height:4rem;
-		padding-left:12rem;
-	}	
-	.dx-input-max .dx-input-label-text{
-		position:absolute;
-		padding:0 1rem;
-		width: 10rem;
-	    line-height:4rem;
-	    text-align:center;
-	    z-index:1;
-	    border-right:1px solid #b3b3b3;
+	.dx-input-origin-input {
+		flex-grow: 1;
+		font-size: $--dx-input-font-size;
+		padding-left: 1rem;
+		// 修复ios中input自动圆角的问题
+		border: none;
+		outline: none;
+		-webkit-appearance: none;
+		border-radius: 0.5rem;
+		placeholder-color: #D3D3D3;
+	}
+	.dx-input-label-text {
+		padding: 0 1rem;
+		background-color: $--dx-input-label-text-background-color;
+		color: $--dx-input--label-text-color;
+	}
+	.dx-input-label-text-left{
+		border-right: 1px solid #ccc;
+	}
+	.dx-input-label-text-right{
+		border-left: 1px solid #ccc;
 	}
 </style>

@@ -165,22 +165,22 @@
 		}
 	}
 </script>
-<style>
-	.dx-form-item{
-		position:relative;
+<style lang="scss">
+	.dx-form-item {
+		position: relative;
 	}
-	.dx-form-item-text-bottom{
-		display:block;
+	.dx-form-item-text-bottom {
+		display: block;
 	}
-	.dx-form-item-text{
-		padding-left:1rem;
-		height:4rem;
-		line-height:4rem;
+	.dx-form-item-text {
+		padding-left: 1rem;
+		height: $--dx-form-item-text-height;
+		line-height: $--dx-form-item-text-line-height;
 	}
-	.dx-form-item-text.error{
-		color:red;
+	.dx-form-item-text.error {
+		color: $--dx-form-item-text-color-error;
 	}
-	.dx-form-item-instruction{
-		color:#aaa;
+	.dx-form-item-instruction {
+		color: $--dx-form-item-instruction-color;
 	}
 </style>

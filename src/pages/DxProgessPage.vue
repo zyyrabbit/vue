@@ -8,30 +8,30 @@
 	    <dx-heading :level="1">基本用法</dx-heading>
 	    <p>默认不显示百分比</p>
 	    <dx-show-code :htmlString="htmlString1">
-        <dx-progress :percentage="0" :showText="false"></dx-progress>
-        <dx-progress :percentage="40" :showText="false" color="rgb(103, 194, 58)"></dx-progress>
-        <dx-progress :percentage="80"  :showText="false" color="#f56c6c"></dx-progress>
-        <dx-progress :percentage="100"  :showText="false"  status="success"></dx-progress>
+        <dx-progress :percentage="0" :showText="false" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="40" :showText="false" color="rgb(103, 194, 58)" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="80"  :showText="false" color="#f56c6c" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="100"  :showText="false"  status="success" class="margin-bottom-1rem"></dx-progress>
 	    </dx-show-code>
   </div>
   <div class="item-content">
       <dx-heading :level="1">基本用法</dx-heading>
       <p>百分比内显示</p>
       <dx-show-code :htmlString="htmlString2">
-        <dx-progress :percentage="0" :stroke-width="18" textInside></dx-progress>
-        <dx-progress :percentage="40" :stroke-width="18" textInside color="rgb(103, 194, 58)"></dx-progress>
-        <dx-progress :percentage="80" :stroke-width="18" textInside color="#f56c6c"></dx-progress>
-        <dx-progress :percentage="100" :stroke-width="18" textInside status="success"></dx-progress>
+        <dx-progress :percentage="0" :stroke-width="18" textInside class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="40" :stroke-width="18" textInside color="rgb(103, 194, 58)" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="80" :stroke-width="18" textInside color="#f56c6c" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="100" :stroke-width="18" textInside status="success" class="margin-bottom-1rem"></dx-progress>
       </dx-show-code>
   </div>
   <div class="item-content">
       <dx-heading :level="1">基本用法</dx-heading>
       <p>百分比外显示</p>
       <dx-show-code :htmlString="htmlString3">
-        <dx-progress :percentage="0" ></dx-progress>
-        <dx-progress :percentage="40" color="rgb(103, 194, 58)"></dx-progress>
-        <dx-progress :percentage="80" color="#f56c6c"></dx-progress>
-        <dx-progress :percentage="100" status="success"></dx-progress>
+        <dx-progress :percentage="0" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="40" color="rgb(103, 194, 58)" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="80" color="#f56c6c" class="margin-bottom-1rem"></dx-progress>
+        <dx-progress :percentage="100" status="success" class="margin-bottom-1rem"></dx-progress>
       </dx-show-code>
   </div>
   <div class="item-content">
@@ -135,4 +135,9 @@
     }
   }
 </script>
+<style>
+ .margin-bottom-1rem {
+    margin-bottom: 1rem;
+ }
+</style>
 

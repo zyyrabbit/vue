@@ -50,10 +50,7 @@
 			class="dx-carousel-left-btn  dx-carousel-btn" 
 			@click="nextClick()"
 		> 
-			<i 
-				class="fa fa-angle-left" 
-				aria-hidden="true"
-			>
+			<i class="icon iconfont dx-prev"></i>
 			</i> 
 		</button>
 		<button 
@@ -61,11 +58,7 @@
 			class="dx-carousel-right-btn  dx-carousel-btn" 
 			@click="preClick()"
 			> 
-				<i 
-					class="fa fa-angle-right" 
-					aria-hidden="true"
-				>
-			</i> 
+				<i class="icon iconfont dx-next"></i>
 		</button>
 		<!-- 轮播图片指示器 -->
 		<div>
@@ -237,11 +230,11 @@
 		}
 	}
 </script>
-<style>
+<style lang="scss">
 	.dx-carousel{
-		background:#aaa;
-		position:relative;
-	    overflow:hidden;
+		background-color: $--dx-carousel-background-color;
+		position: relative;
+	    overflow: hidden;
 	}
 	.dx-carousel-content{
 		position:absolute;
@@ -269,10 +262,10 @@
 	}
 
 	.dx-carousel-btn{
-		width:5%;
-		height:15%;
+		width: 5%;
+		height: 15%;
 		position: absolute;
-	    top:50%;
+	    top: 50%;
 		transform: translateY(-50%);
 		border: none;
 	    outline: none;
@@ -281,8 +274,8 @@
 	    cursor: pointer;
 	    transition: .1s;
 	    border-radius: 50%;
-	    background-color: rgba(31,45,61,.3);
-	    color: #fff;
+	    background-color: $--dx-carousel-btn-background-color;
+	    color: $--dx-carousel-btn-color;
 	    z-index: 0;
 	    text-align: center;
 	    font-size: 1.2rem;
@@ -294,24 +287,24 @@
 	    right: 10%;
 	}
 	.dx-carousel-labels{
-		position:absolute;
-		bottom:10%;
-		left:50%;
+		position: absolute;
+		bottom: 10%;
+		left: 50%;
 		transform: translateX(-50%);
-		background:#aaa;
-		opacity: .48;
-		border-radius:0.8rem;
+		background-color: $--dx-carousel-labels-background-color;
+		opacity: $--dx-carousel-labels-opacity;
+		border-radius: 0.8rem;
 	}
 	.dx-carousel-item{
-		float:left;
-		margin:0 1rem;
+		float: left;
+		margin: 0 1rem;
 	}
 	.dx-carousel-item-btn{
-		width:1.5rem;
-		height:1.5rem;
+		width: $--dx-carousel-item-btn-width;
+		height: $--dx-carousel-item-btn-height;
 		display: block;
-	    border-radius:50%;
-	    background-color: #fff;
+	    border-radius: 50%;
+	    background-color: $--dx-carousel-item-btn-background-color;
 	    border: none;
 	    outline: none;
 	    padding: 0;
@@ -320,7 +313,7 @@
 	    transition: .1s;
 	}
 	.dx-carousel-item-btn.is-active{
-		background:red;
+		background-color: $--dx-carousel-item-btn-background-color-active;
 	}
 </style>
 

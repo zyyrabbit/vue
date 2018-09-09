@@ -41,7 +41,7 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
 .dx-indicator {
 	width: 100%;
 	height: 100%;
@@ -55,8 +55,8 @@ export default {
 }
 
 .dx-indicator__content {
-	width: 18rem;
-	height: 18rem;
+	width: $--dx-indicator-content-width;
+	height: $--dx-indicator-content-height;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -67,18 +67,18 @@ export default {
 	justify-content: center;
 	flex-direction: column;
 	border-radius: 2rem;
-	background-color: #000;
-	opacity: 0.6;
+	background-color: $--dx-indicator-content-background-color;
+	opacity: $--dx-indicator-content-opacity;
 }
 .dx-indicator--circular {
-	height: 8rem;
-	width: 8rem;
+	height: $--dx-indicator-content-circular-height;
+	width: $--dx-indicator-content-circular-width;
 	animation: loading-rotate 2s linear infinite;
 }
 
 .dx-indicator__content--text {
 	margin-top: 0.1rem;
-	color: #ccc;
+	color: $--dx-indicator-content-text-color;
 }
 
 .dx-indicator--path {
@@ -86,11 +86,11 @@ export default {
 	stroke-dasharray: 90, 150;
 	stroke-dashoffset: 0;
 	stroke-width: 5;
-	stroke: #ccc;
+	stroke: $--dx-indicator-content-stroke-color;
 	stroke-linecap: round;
 }
 .dx-indicator--i {
-    color: #ccc;
+    color: $--dx-indicator-content-text-color;
  }
 @keyframes loading-rotate {
   100% {

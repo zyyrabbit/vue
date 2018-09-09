@@ -113,53 +113,53 @@
 		}
 	}
 </script>
-<style>
-.dx-msgbox-wrapper{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	font-size:2rem;
-	min-width:100%;
-	z-index:99999;
+<style lang="scss">
+.dx-msgbox-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-size: $--dx-msgbox-font-size;
+	min-width: 100%;
+	z-index: 99999;
 }
-.dx-msgebox{
-	position:absolute;
+.dx-msgebox {
+	position: absolute;
 	/* width:25%; */
-	left:50%;
-	top:50%;
+	left: 50%;
+	top: 50%;
 	transform: translate(-50%,-50%);
-	border:1px solid rgba(0,0,0,.1);
-	border-radius:1px;
-	text-align:center;
-	background:#fff;
-	z-index:1;
-	padding-bottom:5rem;
+	border: 1px solid rgba(0,0,0,.1);
+	border-radius: 1px;
+	text-align: center;
+	background-color: $--dx-msgbox-background-color;
+	z-index: 1;
+	padding-bottom: 5rem;
 }
-.dx-msgebox-header{
-	margin:1rem 1rem;
-	text-align:left;
+.dx-msgebox-header {
+	margin: 1rem 1rem;
+	text-align: left;
 }
-.dx-msgebox-content{
-	margin-top:3rem;
+.dx-msgebox-content {
+	margin-top: 3rem;
 }
-.dx-msgebox-button{
-	margin-top:5rem;
+.dx-msgebox-button {
+	margin-top: 5rem;
 }
-.dx-msgebox-close{
-	float:right;
+.dx-msgebox-close {
+	float: right;
 	cursor: pointer;
 }
-.dx-msgebox-wrapper-mask{
-	width:100%;
-	height:120%;
-    background:#333;
-	position:fixed;
-	top:0;
-	left:0;
-	z-index:0;
-	opacity:0.4;
+.dx-msgebox-wrapper-mask {
+	width: 100%;
+	height: 120%;
+    background-color: $--dx-msgbox-mask-background-color;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: $--dx-msgbox-mask-z-index;
+	opacity: 0.4;
 }
 /* 动画样式 1*/
 

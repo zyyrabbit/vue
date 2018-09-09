@@ -161,7 +161,7 @@
 </template>
 <script>
 	export default{
-		data(){
+		data() {
 			return {
 				tableData: [
                     {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
@@ -185,7 +185,7 @@
                     {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
                     {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
                     {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
-                    {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'}    
+                    {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'}   
                   ],
                 attrDatas: [
                     {
@@ -247,7 +247,7 @@
                   ],
 				eventDatas: [
                     {
-						eventName: 'sort-change',
+						eventName: 'onBefore',
 						illustrate: '表格排序排序后出发的事件',
 						cbArgs: '回调参数为排序的列row,排序属性键值,排序的方向'
                     },

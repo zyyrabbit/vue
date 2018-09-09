@@ -181,32 +181,31 @@
 		}
 	}
 </script>
-<style>
-	.dx-pager{
-		display:inline-block;
+<style lang="scss">
+	.dx-pager {
+		display: inline-block;
 	}
-	.dx-pager>li{
-		float:left;
+	.dx-pager>li {
+		float: left;
 		padding: 0 0.8rem;
 	    border: 0.1rem solid #d1dbe5;
 	    border-right: 0;
-	    background: #fff;
-	    font-size: 1.3rem;
+	    background-color: $--dx-pager-li-background-color;
+	    font-size: $--dx-pager-li-font-size;
 	    min-width: 2.8rem,;
-	    line-height: 2.8rem;
+	    line-height: $--dx-pager-li-line-height;
 	    cursor: pointer;
 	    text-align: center;
 	}
-	.dx-pager>li:last-child{
-		border-right:0.1rem solid #d1dbe5;
+	.dx-pager>li:last-child {
+		border-right: 0.1rem solid #d1dbe5;
 	}
-	 .dx-pager>li.active{
-		 
-		 background-color: #20a0ff;
-		 color: #fff;
+	 .dx-pager>li.active {
+		 background-color: $--dx-pager-li-background-color-active;
+		 color: $--dx-pager-li-color;
 	} 
 	/*pre,next按钮禁止样式*/
-	.dx-pager>li.disbaled{
-		cursor:not-allowed;
+	.dx-pager>li.disbaled {
+		cursor: not-allowed;
 	}
 </style>

@@ -1,7 +1,8 @@
 const path = require('path')
-const config = require('../config/config.js')
+const config = require('../config')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const vueLoaderConfig = require('./vue-loader.conf')
 // 解决path.join解决路劲替换问题
 const pathConvert = (_path, _name) => {
     return path.join(_path, _name).replace('\\', '/')
@@ -39,18 +40,6 @@ module.exports = {
                 })
             },
             {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    use: [{
-                        loader: 'css-loader'
-                    }, {
-                        loader: 'sass-loader'
-                    }],
-                    // use style-loader in development
-                    fallback: 'style-loader'
-                })
-            },
-            {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 use: [{
                     loader: 'url-loader',
@@ -72,7 +61,10 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                use: ['vue-loader']
+                use: [{
+                    loader: 'vue-loader',
+                    options: vueLoaderConfig
+                }]
             }
         ]
     },

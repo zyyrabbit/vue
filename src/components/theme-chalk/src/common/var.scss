@@ -1,0 +1,212 @@
+// dx-button
+$--dx-button-default-border-color: #c4c4c4;
+$--dx-button-default-color: #1f2d3d;
+$--dx-button-default-border-color-hover: #20a0ff;
+$--dx-button-default-color-hover: #20a0ff;
+
+$--dx-button-text-color: #1f2d3d;
+$--dx-button-text-color-hover: #20a0ff;
+
+$--dx-button-primary-border-color: #8DD0EC;
+$--dx-button-primary-background-color: #8DD0EC;
+$--dx-button-primary-color: #fff;
+$--dx-button-primary-border-color-hover: #8DD0EC;
+$--dx-button-primary-color-hover: #fff;
+
+$--dx-button-warning-border-color: #ff4949;
+$--dx-button-warning-background-color: #ff4949;
+$--dx-button-warning-color: #fff;
+$--dx-button-warning-border-color-hover: #ff4949;
+$--dx-button-warning-color-hover: #fff;
+
+$--dx-button-gray-border-color: #C3C3C3;
+$--dx-button-gray-background-color: #C3C3C3;
+$--dx-button-gray-color: #fff;
+$--dx-button-gray-border-color-hover: #C3C3C3;
+$--dx-button-gray-color-hover: #fff;
+
+$--dx-button-pinking-border-color: #FF9CC8;
+$--dx-button-pinking-background-color: #FF9CC8;
+$--dx-button-pinking-color: #fff;
+$--dx-button-pinking-border-color-hover: #FF9CC8;
+$--dx-button-pinking-color-hover: #fff;
+
+// diable
+$--dx-button-disable-border-color: #c4c4c4;
+$--dx-button-disable-color: #d1dbe5;
+$--dx-button-disable-background-color: #eef1f6;
+
+// size
+$--dx-button-default-font-size: 1.4rem;
+$--dx-button-large-font-size: 1.6rem;
+$--dx-button-small-font-size: 1.3rem;
+$--dx-button-full-font-size: 1.8rem;
+
+// dx-carousel
+$--dx-carousel-border-color: #c4c4c4;
+$--dx-carousel-background-color: #aaa;
+// prev\next
+$--dx-carousel-btn-color: #fff;
+$--dx-carousel-btn-background-color: rgba(31,45,61,.3);
+
+$--dx-carousel-labels-background-color: #aaa;
+$--dx-carousel-labels-opacity: .48;
+// 指示器
+$--dx-carousel-item-btn-background-color: #fff;
+$--dx-carousel-item-btn-background-color-active: red; // 指示器选中的样式
+$--dx-carousel-item-btn-width: 1.5rem;
+$--dx-carousel-item-btn-height: 1.5rem;
+
+// dx-form-item
+$--dx-form-item-text-color-error: red;
+$--dx-form-item-instruction-color: #aaa; // 指示器选中的样式
+$--dx-form-item-text-height: 4rem;
+$--dx-form-item-text-line-height: 4rem;
+
+// dx-input
+$--dx-input-font-size: 1.4rem;
+$--dx-input-color: #484848;
+$--dx-input-height: 4rem;
+$--dx-input-line-height: 4rem;
+
+$--dx-input-label-text-background-color: #f5f7fa;
+$--dx-input--label-text-color: #909399;
+
+// dx-nav
+$--dx-nav-background-color: #2d3e4d;
+$--dx-nav-list-background-color-open: #1d2933;
+$--dx-nav-list-background-color-hover: #1d2933;
+
+$--dx-nav-link-font-size: 1.4rem;
+$--dx-nav-link-color: #ccc;
+$--dx-nav-link-color-hover: #8AEBEA;
+$--dx-nav-sub-link-color-hover: #fff;
+
+// dx-progress
+$--dx-progress-bar-innerTex-color: #000;
+$--dx-progress-bar-innerTex-font-size: 1.2rem;
+$--dx-progress-bar-inner-success-background-color: #409eff;
+
+$--dx-progress-bar-font-size: 1.4rem;
+$--dx-progress-bar-color: #606266;
+$--dx-progress-icon-color: #409eff;
+
+// dx-radio
+$--dx-radio-color: #000;
+$--dx-radio-input-icon-width: 1.8rem;
+$--dx-radio-input-icon-height: 1.8rem;
+$--dx-radio-input-icon-height-hover: #409eff;
+$--dx-radio-input-icon-width-after: 0.6rem;
+$--dx-radio-input-icon-height-after: 0.6rem;
+
+$--dx-radio-input-icon-disabled: #d1dbe5;
+$--dx-radio-input-label-color: #bbb;
+
+// dx-select
+$--dx-select-font-size: 1.6rem;
+$--dx-select-label-font-size: 1.875rem;
+
+$--dx-select-input-ind-color: #aaa;
+$--dx-select-input-origin-background-color:  #fff;
+
+$--dx-select-ul-color: #a3a3a3;
+$--dx-select-ul-font-color: 1.5rem;
+$--dx-select-ul-background-color: #fff;
+$--dx-select-ul-color-hover: #666;
+$--dx-select-ul-background-color-hover:  #eee;
+
+// dx-tabs
+$--dx-tabs-active-color: #666;
+$--dx-tabs-item-active-color: #aaa;
+$--dx-tabs-active-backgroun-color: #666;
+
+
+// dx-calendar
+$--dx-calendar-font-size: 1.3rem;
+
+$--dx-calendar-input-font-size: 1.3rem;
+$--dx-calendar-icon-color: #8DD0EC;
+$--dx-calendar-icon-width: 2rem;
+$--dx-calendar-icon-height: 2rem;
+
+$--dx-calendar-th-font-size: 1.6rem;
+$--dx-calendar-td-color: #ccc;
+$--dx-calendar-td-font-size: 1.3rem;
+
+$--dx-calendar-td-bacckground-color-today: #ccc;
+$--dx-calendar-td-color-month: #7E7E7E;
+
+// dx-indicator
+$--dx-indicator-font-size: 1.3rem;
+
+$--dx-indicator-content-width: 18rem;
+$--dx-indicator-content-height: 18rem;
+$--dx-indicator-content-text-color: #ccc;
+$--dx-indicator-content-stroke-color: #ccc; // 填充
+$--dx-indicator-content-background-color: #000;
+$--dx-indicator-content-opacity: 0.6;
+
+$--dx-indicator-content-circular-width: 8rem;
+$--dx-indicator-content-circular-height: 8rem;
+
+
+// dx-message
+$--dx-msgbox-font-size: 2rem;
+$--dx-msgbox-background-color: #fff;
+
+$--dx-msgbox-mask-background-color: #333;
+$--dx-msgbox-mask-z-index: 0;
+
+
+// dx-notify
+$--dx-notify-font-size: 1.5rem;
+$--dx-notify-color: #666;
+$--dx-notify-background-color: #fff;
+$--dx-notify-z-index: 99999;
+
+$--dx-notify-msg-list-width: 30rem;
+$--dx-notify-msg-list-height: 8rem;
+$--dx-notify-msg-list-title-color: #aaa;
+$--dx-notify-msg-list-title-font-size: 1.8rem;
+
+// dx-pager
+$--dx-pager-li-font-size: 1.3rem;
+$--dx-pager-li-line-height: 2.8rem;
+$--dx-pager-li-background-color: #fff;
+
+$--dx-pager-li-color: #fff;
+$--dx-pager-li-background-color-active: #20a0ff;
+
+// dx-pagination
+$--dx-pagination-font-size: 1.4rem;
+$--dx-pagination-line-height: 2.8rem;
+$--dx-pagination-jump-page-font-size: 1.6rem;
+
+// dx-rate
+$--dx-rate-item-width: 4rem;
+$--dx-rate-item-height: 4rem;
+
+// dx-star
+$--dx-star-icon-color: red;
+$--dx-star-icon-color-select: black;
+
+// dx-table-body
+$--dx-table-body-font-size: 1.6rem;
+$--dx-table-body-color: #5e6d82;
+
+$--dx-table-body-tr-backgrounde-color-hover: #eef1f6;
+$--dx-table-body-color-sort-active: #000;
+
+$--dx-table-body-checkbox-height: 1.4rem;
+$--dx-table-body-checkbox-height: 1.4rem;
+$--dx-table-body-checkbox-background-color: #fff;
+$--dx-table-body-checkbox-color: #fff;
+
+// dx-table
+$--dx-table-query-input-line-height: 3rem;
+$--dx-table-query-input-height: 3rem;
+
+$--dx-table-font-size-not-find: 1.6rem;
+$--dx-table-line-height-not-find: 4rem;
+
+

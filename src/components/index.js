@@ -21,6 +21,8 @@ import DxUpload from './uploader/dx-upload.vue'
 import DxIndicator from './indicator'
 import DxStar from './star/dx-star.vue'
 import DxTabs from './dx-tabs.vue'
+
+import './theme-chalk/src/style/font/iconfont.css'
 const components = [
 	DxNav,
 	DxRadio,

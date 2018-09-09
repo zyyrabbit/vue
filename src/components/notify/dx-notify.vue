@@ -50,20 +50,20 @@
 		}
 	}
 </script>
-<style>
+<style lang="scss">
 /* 整体样式 */
 .dx-notify {
 	position: fixed;
 	bottom: 1rem;
 	right: 0;
-	z-index: 99999;
-	font-size: 1.5rem;
-	color: #666;
+	z-index: $--dx-notify-z-index;
+	font-size: $--dx-notify-font-size;
+	color: $--dx-notify-color;
 }
 /* 消息列表样式 */
 .dx-msg-list {
-	width: 30rem;
-	height: 8rem;
+	width: $--dx-notify-msg-list-width;
+	height: $--dx-notify-msg-list-height;
 	border-radius: 0.6rem;
 	box-shadow: 1px 1px 1rem #ccc;
   	margin-right: 1rem;
@@ -80,8 +80,8 @@
 .dx-msg-list-close {
 	font-weight: normal;
 	float: right;
-	color: #aaa;
-	font-size: 1.8rem;
+	color: $--dx-notify-msg-list-title-color;
+	font-size: $--dx-notify-msg-list-title-font-size;
 	cursor: pointer;
 	
 }

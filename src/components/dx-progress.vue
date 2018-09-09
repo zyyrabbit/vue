@@ -72,7 +72,7 @@ export default {
 		},
 		iconClass: {
 			type: String,
-			default: 'fa fa-check-circle'
+			default: 'icon iconfont dx-compelete'
 		}
 	},
 	computed: {
@@ -88,13 +88,14 @@ export default {
 	}
 }
 </script>
-<style>
+<style lang="scss">
+.dx-progress {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .dx-progress-bar {
-	width: 100%;
-	margin-bottom: 2rem;
-	margin-right: -6rem;
-	padding-right: 5rem;
-	display: inline-block;
+	flex-grow: 1;
 }
 .dx-progress-bar.textInside {
 	margin-right: 0;
@@ -122,8 +123,8 @@ export default {
 .dx-progress-bar-innerText {
 	display: inline-block;
 	vertical-align: middle;
-	color: #000;
-	font-size: 1.2rem;
+	color: $--dx-progress-bar-innerTex-color;
+	font-size: $--dx-progress-bar-innerTex-font-size;
 	padding: 0 0.5rem;
 }
 /* 位置元素的垂直居中 */
@@ -135,8 +136,8 @@ export default {
 }
 /* 进度条百分比外显 */
 .dx-progress-text {
-	font-size: 1.4rem;
-    color: #606266;
+	font-size: $--dx-progress-bar-font-size;
+    color: $--dx-progress-bar-color;
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px;
@@ -144,7 +145,7 @@ export default {
 }
 /* 进度条成功加载 */
 .dx-progress.is-success .dx-progress-bar-inner {
-	background-color: #409eff;
+	background-color: $--dx-progress-bar-inner-success-background-color;
 }
 /* h弧度 */
 .dx-progress-bar-outer, .dx-progress-bar-inner {
@@ -152,6 +153,6 @@ export default {
 }
 /* 默认样式 */
 .dx-progress-icon-class {
-	color: #409eff;
+	color: $--dx-progress-icon-color;
 }
 </style>

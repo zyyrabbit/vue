@@ -9,7 +9,11 @@
 	    <p>按钮的基础用法</p>
 	    <dx-show-code :htmlString="htmlString1">
         <dx-button>默认按钮</dx-button>
+        <dx-button type="text">文字按钮</dx-button>
 	    	<dx-button type="primary">基本按钮</dx-button>
+        <dx-button type="pinking">基本按钮</dx-button>
+        <dx-button type="gray">基本按钮</dx-button>
+        <dx-button type="warning">基本按钮</dx-button>
 	    </dx-show-code>
   </div>
   <div class="item-content">
@@ -30,13 +34,20 @@
         <dx-button  icon="trash"></dx-button>
 	    </dx-show-code>
   </div>
-   <div class="item-content">
+  <div class="item-content">
       <dx-heading :level="1">按钮大小</dx-heading>
       <p>设置有三种按钮大小</p>
       <dx-show-code :htmlString="htmlString4">
         <dx-button type="primary" size="large">大按钮</dx-button>
         <dx-button type="primary" >默认大小按钮</dx-button>
         <dx-button type="primary"  size="small">小按钮</dx-button>
+      </dx-show-code>
+  </div>
+  <div class="item-content">
+      <dx-heading :level="1">父元素等宽按钮</dx-heading>
+      <p>设置有三种按钮大小</p>
+      <dx-show-code :htmlString="htmlString5">
+        <dx-button type="primary" size="full">超大按钮</dx-button>
       </dx-show-code>
   </div>
   <div class="item-content">
@@ -71,6 +82,7 @@
         htmlString2: '',
         htmlString3: '',
         htmlString4: '',
+        htmlString5: '',
         attrDatas: [
                     {
                       param: 'type',
@@ -111,26 +123,34 @@
       }
     },
     created() {
-    // 基本用法
+        // 基本用法
         this.htmlString1 = `<template> 
-                            <dx-button>默认按钮</dx-button>
-                            <dx-button type="primary">基本按钮</dx-button>
+                              <dx-button>默认按钮</dx-button>
+                              <dx-button type="text">默认按钮</dx-button>
+                              <dx-button type="primary">基本按钮</dx-button>
+                              <dx-button type="pinking">基本按钮</dx-button>
+                              <dx-button type="gray">基本按钮</dx-button>
+                              <dx-button type="warning">基本按钮</dx-button>
                          </template>`
         this.htmlString2 = `<template> 
                             <dx-button  :disabled="true">默认按钮</dx-button>
                             <dx-button  icon="pencil" :disabled="true"></dx-button>
                             <dx-button  icon="trash"  :disabled="true"></dx-button>
                            </template>`
-         // 扩展用法
-         this.htmlString3 = `<template> 
+        // 扩展用法
+        this.htmlString3 = `<template> 
                               <dx-button  icon="search">搜索</dx-button>
                               <dx-button  icon="pencil"></dx-button>
                               <dx-button  icon="trash"></dx-button>
                           </template>`
-         this.htmlString4 = `<template> 
-                              <dx-button  type="primary" size="large">大按钮</dx-button>
-                              <dx-button  type="primary" >默认大小按钮</dx-button>
-                              <dx-button  type="primary" size="small">小按钮</dx-button>
+        this.htmlString4 = `<template> 
+                              <dx-button type="primary" size="full">大按钮</dx-button>
+                              <dx-button type="primary" size="large">大按钮</dx-button>
+                              <dx-button type="primary" >默认大小按钮</dx-button>
+                              <dx-button type="primary"  size="small">小按钮</dx-button>
+                          </template>`
+        this.htmlString5 = `<template> 
+                              <dx-button type="primary" size="full">超大按钮</dx-button>
                           </template>`
     }
   }

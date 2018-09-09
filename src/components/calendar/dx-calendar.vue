@@ -5,11 +5,12 @@
     		<span 
                 class="block--float-left dx-calendar-select-left"
                 @click="preYear()"
-            > << </span>
+            >
+                <i class="icon iconfont dx-prev"></i></span>
             <span 
                 class="block--float-left dx-calendar-select-left"
                 @click="preMonth()"
-            > < </span>
+            > <i class="icon iconfont dx-prev"></i> </span>
             <span class="dx-calendar-input">
                 <input 
                     v-model="year"
@@ -24,11 +25,11 @@
             <span 
                 class="block--float-right dx-calendar-select-right"
                  @click="nextMonth()"
-            > > </span>
+            > <i class="icon iconfont dx-next"></i> </span>
            <span 
                 class="block--float-right dx-calendar-select-right"
                  @click="nextYear()"
-            > >> </span>
+            > <i class="icon iconfont dx-next"></i> </span>
     	</div>
     	<div class="dx-calendar-content">
     		<table class="dx-calendar-content__table" width="100%">
@@ -162,7 +163,7 @@
         }
 
         >span {
-            color: #8DD0EC;
+            color: $--dx-calendar-icon-color;
         }
         >span:first-child {
             margin-right: 2rem;
@@ -172,13 +173,13 @@
         }
         &-left{
             background-size: 100% 100%;
-            width: 2rem;
-            height: 2rem;
+            width: $--dx-calendar-icon-width;
+            height: $--dx-calendar-icon-height;
         }
         &-right{
             background-size: 100% 100%;
-            width: 2rem;
-            height: 2rem;
+            width: $--dx-calendar-icon-width;
+            height: $--dx-calendar-icon-height;
         }
     }
     // 空格
@@ -189,28 +190,27 @@
         width: 100%;
         border-collapse: collapse;
         >thead {
-            
             border-radius: 50%;
             border-bottom: 1px solid #ccc;
             margin-bottom: 0.63rem;
             >th {
                 font-weight: normal;
-                font-size: 1.6rem;
+                font-size: $--dx-calendar-th-font-size;
                 padding: 1rem 0;
             }
         }
         // 表格样式
         .dx-calendar-content__table--td {
             text-align: center;
-            color: #ccc;
-            font-size: 1.3rem;
+            color: $--dx-calendar-td-color;
+            font-size: $--dx-calendar-td-font-size;
             margin: 1rem auto;
             padding: 1rem; 
             &.is-curent-month {
-               color: #7E7E7E;
+               color: $--dx-calendar-td-color-month;
             }
             &.is-today {
-                background-color: #ccc;
+                background-color: $--dx-calendar-td-bacckground-color-today;
                 border-radius: 50%;
             }
         }

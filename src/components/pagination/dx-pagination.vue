@@ -119,32 +119,32 @@ export default{
 	}
 }
 </script>
-<style>
-	.dx-pagination{
-		font-size:1.4rem;
-		line-height:2.8rem;
+<style lang="scss">
+	.dx-pagination {
+		font-size: $--dx-pagination-font-size;
+		line-height: $--dx-pagination-line-height;
 	}
 	/*div 使用inline-block 会出现对不齐的问题 给div添加 vertical-align:top;*/
-	.dx-pagination>div{
-		display:inline-block;
+	.dx-pagination>div {
+		display: inline-block;
 		/*float:left;*/
-		vertical-align:top;
+		vertical-align: top;
 	}
-	.dx-pagination-page-size{
-		width:6rem;
-	    margin-left:1rem;
+	.dx-pagination-page-size {
+		width: 6rem;
+	    margin-left: 1rem;
 	}
-	.dx-pagination-pager{
-		margin:0 1rem;
+	.dx-pagination-pager {
+		margin: 0 1rem;
 
 	}
-    .dx-pagination-jump-page>input{
-		width:4rem;
-		margin:0 0.8rem;
-		border:0.1rem solid #aaa;
-	    border-radius:0.5rem;
-		line-height:3rem;
-		text-align:center;
-		font-size:1.6rem;
+    .dx-pagination-jump-page>input {
+		width: 4rem;
+		margin: 0 0.8rem;
+		border: 0.1rem solid #aaa;
+	    border-radius: 0.5rem;
+		line-height: 3rem;
+		text-align: center;
+		font-size: $--dx-pagination-jump-page-font-size;
     }
 </style>

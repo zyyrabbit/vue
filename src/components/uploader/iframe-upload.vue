@@ -32,7 +32,10 @@
 						ref="input" 
 						@change="handleChange"
 					/>
-					<input  type="hidden" name="documentDomain" :value="this.$isServer ? '' : domain"/>
+					<input  
+						type="hidden" 
+						name="documentDomain" 
+						:value="this.$isServer ? '' : domain"/>
 					<span ref="data"></span>
 				</form>
 			</div>
@@ -54,7 +57,9 @@
 	</div>
 </template>
 <script>
-	import ajax from './ajax.js'
+	import {
+	  uploadHelper
+	} from './upload-helper'
 	export default {
 		props: {
 			name: {
@@ -66,7 +71,7 @@
 			accept: String,
 			httpRequest: {
 				type: Function,
-				default: ajax
+				default: uploadHelper
 			},
 			tip: String,
 			autoUpload: {

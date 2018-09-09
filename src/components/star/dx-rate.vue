@@ -3,12 +3,15 @@
 		<li 
 			v-for="index in 5"
 			:key="index"
-			:class="[
-			rateClass, 
-			level > index ? selectRateClass : '', 
-			type ? 'dx-rate-item-' + type : '']"
 			@click="select(index)"
 			class="dx-rate-item">
+			<i 
+				class="icon iconfont dx-star" 
+				:class="[
+				rateClass, 
+				level > index ? selectRateClass : '', 
+				type ? 'dx-rate-item-' + type : '']"
+			></i>
 		</li>
    </ul>
 </template>
@@ -39,14 +42,14 @@ export default {
 	}
 }
 </script>
-<style>
+<style lang="scss">
 .clearfix {
 	clear: both;
 	_display: inline;
 }
 .dx-rate-item {
 	float: left;
-	width: 4rem;
-	height: 4rem;
+	width: $--dx-rate-item-width;
+	height: $--dx-rate-item-height;
 }
 </style>

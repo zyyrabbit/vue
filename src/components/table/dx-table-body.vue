@@ -191,73 +191,73 @@ export default {
 	}
 }
 </script>
-<style>
-	.dx-table-body{
+<style lang="scss">
+	.dx-table-body {
 		/*border-spacing: 30px;*/
 		/*合并表格边框*/
 		border-collapse: collapse;
-		font-size:1.6rem;
-		width:100%;
-		color:#5e6d82;
+		font-size:$--dx-table-body-font-size;
+		width: 100%;
+		color: $--dx-table-body-color;
 		cursor: default;
 		/*border:0.1rem solid #aaa;*/
 		/*table-layout: fixed;*/
 	}
 	/*表格默认表格单元样式*/
-	.dx-table-body th,td{
-		text-align:left;
-		padding:1rem;
-		padding-left:2rem;
+	.dx-table-body th,td {
+		text-align: left;
+		padding: 1rem;
+		padding-left: 2rem;
 	}
 	/*是否显示竖直边框*/
-	.dx-table-body.vertical{
-		border:0;
-		border-left:0.1rem solid #ddd;
+	.dx-table-body.vertical {
+		border: 0;
+		border-left: 0.1rem solid #ddd;
 	}
-	.dx-table-body.vertical th,.dx-table-body.vertical td{
-		border-right:0.1rem solid #ddd;
+	.dx-table-body.vertical th,.dx-table-body.vertical td {
+		border-right: 0.1rem solid #ddd;
 	}
 	/*表格是否显示行边框*/
-	.dx-table-body.horizontal{
-		border:0;
-		border-top:0.1rem solid #ddd;
+	.dx-table-body.horizontal {
+		border: 0;
+		border-top: 0.1rem solid #ddd;
 	}
-	.dx-table-body.horizontal th,.dx-table-body.horizontal td{		
-		border-bottom:0.1rem solid #ddd;
+	.dx-table-body.horizontal th,.dx-table-body.horizontal td {		
+		border-bottom: 0.1rem solid #ddd;
 	}
-	.dx-table-body.vertical.horizontal{
-		border-top:0.1rem solid #ddd;
-		border-left:0.1rem solid #ddd;
+	.dx-table-body.vertical.horizontal {
+		border-top: 0.1rem solid #ddd;
+		border-left: 0.1rem solid #ddd;
 	}
 	/*表格行，鼠标滑过样式*/
-	.dx-table-body tbody tr:hover{
-		background:#eef1f6;
+	.dx-table-body tbody tr:hover {
+		background-color: $--dx-table-body-tr-backgrounde-color-hover;
 	}
 
 	/*表格排序指示器*/
-	.dx-table-body-sort-index{
-		position:relative;
-		margin-left:0.3rem;
+	.dx-table-body-sort-index {
+		position: relative;
+		margin-left: 0.3rem;
 	}
-	.dx-table-body-icon-up,.dx-table-body-icon-down{
-		position:absolute;
-		color:#aaa;
+	.dx-table-body-icon-up,.dx-table-body-icon-down {
+		position: absolute;
+		color: #aaa;
 	}
-	.dx-table-body-icon-up{
-		top:-0.1rem;
+	.dx-table-body-icon-up {
+		top: -0.1rem;
 	}
-	.dx-table-body-icon-down{
-		bottom:-0.1rem;
+	.dx-table-body-icon-down {
+		bottom: -0.1rem;
 	}
-	.dx-table-body.sort-active{
-		color:#000;
+	.dx-table-body.sort-active {
+		color: $--dx-table-body-color-sort-active;
 	}
 	/*如果设置可以选择，checkbox按钮样式*/
-	.dx-table-body-checkbox{
-		display:inline-block;
-		width:1.8rem;
-		height:1.8rem;
-		background:#fff;
-		color:#fff;
+	.dx-table-body-checkbox {
+		display: inline-block;
+		width: $--dx-table-body-checkbox-height;
+		height: $--dx-table-body-checkbox-height;
+		background: $--dx-table-body-checkbox-background-color;
+		color: $--dx-table-body-checkbox-color;
 	}
 </style>

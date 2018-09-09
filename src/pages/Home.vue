@@ -9,7 +9,7 @@
 	  	 	<ul>
 	  	 		<li v-for="pcPage in pcPages">
 	  	 		   <!-- <a :href="page.path" >{{page.title}}</a> -->
-	  	 		   <router-link :to="pcPage.path">{{pcPage.title}}</router-link>
+	  	 		   <router-link :to="pcPage.path" exact>{{pcPage.title}}</router-link>
 	  	 		</li>
 	  	 	</ul>
 			<dx-heading :level="2">移动端组件</dx-heading>
@@ -98,5 +98,9 @@
   .table-head{
     background:#eef1f6;
     border:none;
+  }
+  /* 路由匹配样式 */
+  #nav a.router-link-exact-active {
+  	color: rgb(64, 158, 255);
   }
 </style>

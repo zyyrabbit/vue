@@ -16,8 +16,8 @@ export default {
 }
 </script>
 <style>
-	.dx-heading-font{
-		color:#122f3d;
-		font-weight:400;
+	.dx-heading-font {
+		color: #122f3d;
+		font-weight: 400;
 	}
 </style>
