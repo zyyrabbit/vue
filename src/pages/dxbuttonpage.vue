@@ -126,11 +126,11 @@
         // 基本用法
         this.htmlString1 = `<template> 
                               <dx-button>默认按钮</dx-button>
-                              <dx-button type="text">默认按钮</dx-button>
+                              <dx-button type="text">文字按钮</dx-button>
                               <dx-button type="primary">基本按钮</dx-button>
-                              <dx-button type="pinking">基本按钮</dx-button>
-                              <dx-button type="gray">基本按钮</dx-button>
-                              <dx-button type="warning">基本按钮</dx-button>
+                              <dx-button type="pinking">粉红按钮</dx-button>
+                              <dx-button type="gray">灰色按钮</dx-button>
+                              <dx-button type="warning">警告按钮</dx-button>
                          </template>`
         this.htmlString2 = `<template> 
                             <dx-button  :disabled="true">默认按钮</dx-button>

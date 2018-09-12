@@ -9,9 +9,16 @@
 	    <p>默认消息通知</p>
 	    <dx-show-code :htmlString="htmlString1"  :scriptString="scriptString1">
         <dx-button @dx-button-click="open()">自动关闭</dx-button>
-        <dx-button @dx-button-click="open1()">消息内容为Vnode</dx-button>
-        <dx-button @dx-button-click="open2()" type="primary">不会自动关闭</dx-button>
+        <dx-button @dx-button-click="open1()" class="margin-left-1rem">消息内容为Vnode</dx-button>
+        <dx-button @dx-button-click="open2()" class="margin-left-1rem" type="primary">不会自动关闭</dx-button>
 	    </dx-show-code>
+  </div>
+   <div class="item-content">
+      <dx-heading :level="1">作为Vue全局静态方法调用</dx-heading>
+      <p>通过Vue全局静态方法调用</p>
+      <dx-show-code :htmlString="htmlString2"  :scriptString="scriptString2">
+        <dx-button @dx-button-click="open3()">全局静态方法</dx-button>
+      </dx-show-code>
   </div>
   <div class="item-content">
       <div style="margin-bottom:2rem">
@@ -32,11 +39,14 @@
  </div>
 </template>
 <script>
+  import Vue from 'vue'
   export default {
     data() {
       return {
         htmlString1: '',
         scriptString1: '',
+        htmlString2: '',
+        scriptString2: '',
         ind: 1,
         attrDatas: [
                     {
@@ -66,33 +76,46 @@
     created() {
     // 基本用法
         this.htmlString1 = `<template> 
+                                <dx-button @dx-button-click="open3()">全局静态方法</dx-button>
+                         </template>`
+        this.scriptString1 = `export default {
+                                methods: {
+                                  open() {
+                                      this.$notify({
+                                        title: '提示' + this.ind++,
+                                        content: '自动关闭'
+                                      })
+                                  },
+                                  open1() {
+                                    let h = this.$createElement
+                                    this.$notify({
+                                      title: '提示' + this.ind++,
+                                      content: h('div', {}, ['自定义vnode'])
+                                    })  
+                                  },
+                                  open2() {
+                                      this.$notify({
+                                        duration: 0,
+                                        title: '提示' + this.ind++,
+                                        content: '不会自动关闭'
+                                      })
+                                  }
+                                    }
+                              }`
+         this.htmlString1 = `<template> 
                                 <dx-button @dx-button-click="open()">自动关闭</dx-button>
                                 <dx-button @dx-button-click="open2()" type="primary">不会自动关闭</dx-button>
                          </template>`
         this.scriptString1 = `export default {
-          methods: {
-            open() {
-                this.$notify({
-                  title: '提示' + this.ind++,
-                  content: '自动关闭'
-                })
-            },
-            open1() {
-              let h = this.$createElement
-              this.$notify({
-                title: '提示' + this.ind++,
-                content: h('div', {}, ['自定义vnode'])
-              })  
-            },
-            open2() {
-                this.$notify({
-                  duration: 0,
-                  title: '提示' + this.ind++,
-                  content: '不会自动关闭'
-                })
-            }
-              }
-        }`
+                                methods: {
+                                    open3() {
+                                        Vue.DxNotify({
+                                          title: '提示' + this.ind++,
+                                          content: '全局方法调用，自动关闭'
+                                        })
+                                    }
+                                  }
+                              }`
     },
     methods: {
         open() {
@@ -113,6 +136,12 @@
               duration: 0,
               title: '提示' + this.ind++,
               content: '不会自动关闭'
+            })
+        },
+        open3() {
+            Vue.DxNotify({
+              title: '提示' + this.ind++,
+              content: '全局方法调用，自动关闭'
             })
         }
     }

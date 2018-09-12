@@ -72,7 +72,7 @@ export default {
 		},
 		iconClass: {
 			type: String,
-			default: 'icon iconfont dx-compelete'
+			default: 'icon iconfont dx-success dx-progress-icon'
 		}
 	},
 	computed: {
@@ -154,5 +154,8 @@ export default {
 /* 默认样式 */
 .dx-progress-icon-class {
 	color: $--dx-progress-icon-color;
+}
+.dx-progress-icon {
+	font-size: $--dx-progress-icon-font-size;
 }
 </style>

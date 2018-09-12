@@ -6,7 +6,7 @@
 			@click.stop="handleClick"
 		>
 			<dx-button type="primary">
-				上传文件
+				点击上传
 			</dx-button>
 			<!-- 采用ajax+new formData方式 -->
 			<input 
@@ -200,7 +200,7 @@
 			onUploadError(data, fileId) {
 				this.removeFileFromFileList(fileId)
 				this.onError && this.onError(data)
-				alert(`上传文件失败，请重新上传: ${data}`)
+				this.$message.error(`上传文件失败，请重新上传: ${data}`)
 			},
 			// 移除文件
 			async removeFile(fileId) {
@@ -235,16 +235,16 @@
 				let fileType = getFileType(name)
 				// 检查文件格式
 				if (!this.allowFileExtension.includes(fileType)) {
-					alert('不支持的文件上传格式！')
+					this.$message.warning('不支持的文件上传格式！')
 					return false
 				}
 				// 检查文件大小，目前默认限制为10MB
 				if (size === 0) {
-					alert('文件大小不能为0！')
+					this.$message.warning('文件大小不能为0！')
 					return false
 				}
 				if (isExceedSizeLimit(size, this.limit, this.unit)) {
-					alert(`文件大小超过限制, 限制大小为${this.limit + this.unit}`)
+					this.$message.warning(`文件大小超过限制, 限制大小为${this.limit + this.unit}`)
 					return false
 				}
 				return true

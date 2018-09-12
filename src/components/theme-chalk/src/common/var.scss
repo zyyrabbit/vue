@@ -90,6 +90,7 @@ $--dx-progress-bar-inner-success-background-color: #409eff;
 $--dx-progress-bar-font-size: 1.4rem;
 $--dx-progress-bar-color: #606266;
 $--dx-progress-icon-color: #409eff;
+$--dx-progress-icon-font-size: 2rem;
 
 // dx-radio
 $--dx-radio-color: #000;
@@ -116,9 +117,13 @@ $--dx-select-ul-color-hover: #666;
 $--dx-select-ul-background-color-hover:  #eee;
 
 // dx-tabs
-$--dx-tabs-active-color: #666;
-$--dx-tabs-item-active-color: #aaa;
-$--dx-tabs-active-backgroun-color: #666;
+$--dx-tabs-item-color: #ccc;
+$--dx-tabs-item-font-size: 1.4rem;
+$--dx-tabs-item-padding-right: 6rem;
+
+$--dx-tabs-active-color: #999;
+$--dx-tabs-active-bar-height: 0.5rem;
+$--dx-tabs-active-background-color: #999;
 
 
 // dx-calendar
@@ -150,13 +155,33 @@ $--dx-indicator-content-circular-width: 8rem;
 $--dx-indicator-content-circular-height: 8rem;
 
 
-// dx-message
+// dx-message-box
 $--dx-msgbox-font-size: 1.4rem;
 $--dx-msgbox-background-color: #fff;
 
 $--dx-msgbox-mask-background-color: #333;
 $--dx-msgbox-mask-z-index: 0;
 
+
+// dx-message
+$--dx-message-font-size: 1.4rem;
+$--dx-message-icon-font-size: 2rem;
+
+$--dx-message-info-background-color: #ebeef5;
+$--dx-message-info-border-color: #ebeef5;
+$--dx-message-info-color: #909399;
+
+$--dx-message-error-background-color: #fef0f0;
+$--dx-message-error-border-color: #fde2e2;
+$--dx-message-error-color: #f56c6c;
+
+$--dx-message-warning-background-color: #fdf6ec;
+$--dx-message-warning-border-color: #faecd8;
+$--dx-message-warning-color: #e6a23c;
+
+$--dx-message-success-background-color: #f0f9eb;
+$--dx-message-success-border-color: #e1f3d8;
+$--dx-message-success-color: #67c23a;
 
 // dx-notify
 $--dx-notify-font-size: 1.5rem;
@@ -183,12 +208,15 @@ $--dx-pagination-line-height: 2.8rem;
 $--dx-pagination-jump-page-font-size: 1.6rem;
 
 // dx-rate
-$--dx-rate-item-width: 4rem;
-$--dx-rate-item-height: 4rem;
+$--dx-rate-item-width: auto;
+$--dx-rate-item-height: auto;
 
-// dx-star
-$--dx-star-icon-color: red;
-$--dx-star-icon-color-select: black;
+// dx-rate
+$--dx-rate-icon-font-size-default: 1.6rem;
+$--dx-rate-icon-font-size-small: 1.4rem;
+$--dx-rate-icon-font-size-large: 1.8rem;
+$--dx-rate-icon-color: rgb(198, 209, 222);
+$--dx-rate-icon-color-select: rgb(247, 186, 42);
 
 // dx-table-body
 $--dx-table-body-font-size: 1.6rem;
@@ -209,4 +237,19 @@ $--dx-table-query-input-height: 3rem;
 $--dx-table-font-size-not-find: 1.6rem;
 $--dx-table-line-height-not-find: 4rem;
 
+// dx-checkbox
+$--dx-checkbox-font-size: 1.2rem;
+$--dx-checkbox-color: #333;
+$--dx-checkbox-color-check: #409eff;
 
+$--dx-checkbox-color-disabled: #aaa;
+$--dx-checkbox-background-color-disabeld: #ddd;
+
+// 自定义的勾选框
+$--dx-checkbox-inner-width: 1.4rem;
+$--dx-checkbox-inner-height: 1.4rem;
+// btn勾选时的样式
+$--dx-checkbox-color-btn: #333;
+$--dx-checkbox-background-color-btn: #ccc;
+$--dx-checkbox-color-check-btn: #fff;
+$--dx-checkbox-background-color-check-btn: #409eff;

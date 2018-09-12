@@ -9,10 +9,10 @@
         <p>input默认设置为元素的80%,如果需要设置自定义宽度，请自行覆盖dx-input</p>
 	    <dx-show-code :htmlString="htmlString" :scriptString="scriptString">
           <div class="margin-bottom-10">
-            <dx-input v-model="val"></dx-input>
+            <dx-input v-model="val1"></dx-input>
           </div>
           <div class="margin-bottom-10" style="font-size: 1.4rem">
-            标签：<dx-input v-model="val1"></dx-input>
+            标签：<dx-input v-model="val2"></dx-input>
           </div>
 	    </dx-show-code>
  	</div>
@@ -20,12 +20,12 @@
 	    <dx-heading :level="1">input输入框添加前后缀</dx-heading>
 	    <dx-show-code :htmlString="htmlString1" :scriptString="scriptString">
             <div class="margin-bottom-10">
-            	<dx-input v-model="val2" >
+            	<dx-input v-model="val3" >
                 <span>label:</span>
               </dx-input>
             </div>
             <div class="margin-bottom-10">
-              <dx-input v-model="val3">
+              <dx-input v-model="val4">
                 <span slot="left">label</span>
               </dx-input>
             </div>

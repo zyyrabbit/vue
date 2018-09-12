@@ -34,6 +34,7 @@ const Notify = message => {
 	if (isVNode(_message.content)) {
 		instance.$slots[_message.key] = [_message.content]
 		_message.content = null
+		instance.content = null
 	}
 	instance.msgQueue.push(_message)
     // 设置挂载元素

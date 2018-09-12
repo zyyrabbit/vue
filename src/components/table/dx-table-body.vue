@@ -39,12 +39,12 @@
 		 	   			>
 			 	   			<i 
 			 	   				:class="{'sort-active':column.reverse !== 'descending'}" 
-			 	   				class="fa fa-caret-up dx-table-body-icon-up" 
+			 	   				class="icon iconfont dx-up dx-table-body-icon-up" 
 			 	   				aria-hidden="true"
 			 	   			>
 			 	   			</i>
 			 	   			<i :class="{'sort-active':column.reverse === 'descending'}" 
-			 	   				class="fa fa-caret-down dx-table-body-icon-down" 
+			 	   				class="icon iconfont dx-down dx-table-body-icon-down" 
 			 	   				aria-hidden="true"
 			 	   			>
 			 	   			</i>
@@ -244,10 +244,10 @@ export default {
 		color: #aaa;
 	}
 	.dx-table-body-icon-up {
-		top: -0.1rem;
+		top: -0.2rem;
 	}
 	.dx-table-body-icon-down {
-		bottom: -0.1rem;
+		bottom: -0.2rem;
 	}
 	.dx-table-body.sort-active {
 		color: $--dx-table-body-color-sort-active;

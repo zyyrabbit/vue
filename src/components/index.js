@@ -19,8 +19,11 @@ import DxProgress from './dx-progress.vue'
 import DxCalender from './calendar/dx-calendar.vue'
 import DxUpload from './uploader/dx-upload.vue'
 import DxIndicator from './indicator'
-import DxStar from './star/dx-star.vue'
+import DxRate from './dx-rate.vue'
 import DxTabs from './dx-tabs.vue'
+import DxCheckboxGroup from './checkbox/dx-checkbox-group.vue'
+import DxCheckbox from './checkbox/dx-checkbox.vue'
+import DxMessage from './message'
 
 import './theme-chalk/src/style/font/iconfont.css'
 const components = [
@@ -42,8 +45,11 @@ const components = [
 	DxUpload,
 	DxCalender,
 	DxIndicator,
-	DxStar,
-	DxTabs
+	DxRate,
+	DxTabs,
+	DxCheckboxGroup,
+	DxCheckbox,
+	DxMessage
 ]
 
 const install = function(Vue) {
@@ -60,6 +66,7 @@ if (typeof window !== 'undefined' && Vue) {
 };
 Vue.DxMessageBox = DxMessageBox
 Vue.DxNotify = DxNotify
+Vue.DxMessage = DxMessage
 module.exports = {
 	DxNav,
 	DxRadio,
@@ -78,6 +85,9 @@ module.exports = {
 	DxUpload,
 	DxCalender,
 	DxIndicator,
-	DxStar,
-	DxTabs
+	DxRate,
+	DxTabs,
+	DxCheckboxGroup,
+	DxCheckbox,
+	DxMessage
 }

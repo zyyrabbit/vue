@@ -78,9 +78,9 @@ const OpenMessageBox = (options) => {
 		}
       // 设置挂载元素
       if (instance.parentEleId) {
-      	document.getElementById(instance.parentEleId).appendChild(instance.$el)
+			document.getElementById(instance.parentEleId).appendChild(instance.$el)
       } else {
-      	document.body.appendChild(instance.$el)
+			document.body.appendChild(instance.$el)
       }
       Vue.nextTick(() => {
         instance.visible = true

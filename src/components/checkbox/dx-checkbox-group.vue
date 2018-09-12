@@ -5,7 +5,7 @@
 </template>
 <script>
 // 用于与组件dx-form-item通信
-import Bus from '../utils/bus.js'
+import Bus from '../../utils/bus.js'
 export default {
     name: 'DxCheckboxGroup',
     componentName: 'DxCheckboxGroup',
@@ -33,12 +33,12 @@ export default {
         }
     },
     created() {
-        Bus.$on('dx-checkbox-add', (checkbox) => {
+        Bus.$on('dx-checkbox-add', checkbox => {
             if (checkbox) {
                 this.checkboxs.push(checkbox)
             }
         }, this)
-        Bus.$on('dx-checkbox-remove', (checkbox) => {
+        Bus.$on('dx-checkbox-remove', checkbox => {
             if (checkbox) {
                 this.checkboxs.splice(this.checkboxs.indexOf(checkbox), 1)
             }

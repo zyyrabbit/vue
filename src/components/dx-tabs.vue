@@ -98,11 +98,11 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      height: 0.7rem;
-      background-color: $--dx-tabs-active-backgroun-color;
+      height: $--dx-tabs-active-bar-height;
+      background-color: $--dx-tabs-active-background-color;
       border-radius: 0.4rem;
       z-index: 1;
-      transition: transform .3s cubic-bezier(.645,.045,.355,1);
+      transition: transform .3s cubic-bezier(.645, .045, .355, 1);
       list-style: none;
     }
     .tab__active {
@@ -110,10 +110,10 @@
     }
   }
   &--tab-item {
-    color: $--dx-tabs-item-active-color;
-    font-size: 2.8rem;
+    color: $--dx-tabs-item-color;
+    font-size: $--dx-tabs-item-font-size;
     display: inline-block;
-    padding-right: 6.5rem;
+    padding-right: $--dx-tabs-item-padding-right;
   }
 }
 </style>

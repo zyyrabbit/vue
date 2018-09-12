@@ -12,6 +12,13 @@ import DxProgessPage from './DxProgessPage.vue'
 import DxUploadPage from './DxUploadPage.vue'
 import DxCalenderPage from './DxCalenderPage.vue'
 import DxMessageBoxPage from './DxMessageBoxPage.vue'
+import DxCheckboxPage from './DxCheckboxPage.vue'
+import DxMessagePage from './DxMessagePage.vue'
+// 移动端组件
+import DxIndicatorPage from './DxIndicatorPage.vue'
+import DxRatePage from './DxRatePage.vue'
+import DxTabsPage from './DxTabsPage.vue'
+
 export const pcPages = [
     { path: 'dxselectpage', title: 'select 选择框', component: DxSelectPage },
     { path: 'dxradiopage', title: 'radio 选择框', component: DxRadioPage },
@@ -26,15 +33,14 @@ export const pcPages = [
     { path: 'dxprogesspage', title: 'progress 进度条', component: DxProgessPage },
     { path: 'DxCalenderPage', title: 'calender 日历', component: DxCalenderPage },
     { path: 'DxUploadPage', title: 'upload 上传文件', component: DxUploadPage },
-    { path: 'DxMessageBoxPage', title: 'messageBoxPage 消息弹窗', component: DxMessageBoxPage }
+    { path: 'DxMessageBoxPage', title: 'messageBox 消息弹窗', component: DxMessageBoxPage },
+    { path: 'DxCheckboxPage', title: 'checkbox 多选框', component: DxCheckboxPage },
+    { path: 'DxMessagePage', title: 'message 消息', component: DxMessagePage }
 ]
+
 // 移动端组件
-import DxIndicatorPage from './DxIndicatorPage.vue'
-import DxStarPage from './DxStarPage.vue'
-import DxTabsPage from './DxTabsPage.vue'
-//import DxStarPage from './DxStarPage.vue'
 export const mobilePages = [
     { path: 'DxIndicatorPage', title: 'indicator 加载指示器', component: DxIndicatorPage },
-    { path: 'DxStarPage', title: 'star 打分', component: DxStarPage },
+    { path: 'DxRatePage', title: 'rate 打分', component: DxRatePage },
     { path: 'DxTabsPage', title: 'tabs 标签页', component: DxTabsPage }
 ]

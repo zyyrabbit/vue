@@ -129,15 +129,15 @@ export default {
 /*灰色样式*/
 
 .dx-button-gray {
-    background-color: $--dx-button-warning-background-color;
-    border-color: $--dx-button-warning-border-color;
-    color: $--dx-button-warning-color;
+    background-color: $--dx-button-gray-background-color;
+    border-color: $--dx-button-gray-border-color;
+    color: $--dx-button-gray-color;
 }
 .dx-button-gray:focus,
 .dx-button-gray:hover {
-    color: $--dx-button-warning-color-hover;
+    color: $--dx-button-gray-color-hover;
     opacity: 0.8;
-    border-color: $--dx-button-warning-border-color-hover;
+    border-color: $--dx-button-gray-border-color-hover;
 }
 /*粉色样式*/
 

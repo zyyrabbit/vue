@@ -41,29 +41,47 @@
 </template>
 <script>
   export default {
-    data(){
+    data() {
       return {
-      	radio:'1',
-      	radio1:'1',
-        htmlString1:'',
-        htmlString2:'',
-        attrDatas:[
-                    { param:'label',illustrate:'单选按钮的实际选择值',type:'String,Number,Boolean',optionVal:'---',defaultVal:'---'},
-                    { param:'disabled',illustrate:'禁用单选按钮',type:'Boolean',optionVal:'---',defaultVal:'false'},
-                    { param:'name',illustrate:'原生name属性',type:'String',optionVal:'---',defaultVal:'---'}
+        radio: '1',
+        radio1: '1',
+        htmlString1: '',
+        htmlString2: '',
+        attrDatas: [
+                    {
+                      param: 'label',
+                      illustrate: '单选按钮的实际选择值',
+                      type: 'String,Number,Boolean',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'disabled',
+                      illustrate: '禁用单选按钮',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'false'
+                    },
+                    {
+                      param: 'name',
+                      illustrate: '原生name属性',
+                      type: 'String',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    }
                   ]
       }
     },
-    created(){
-    	// 基本用法
-        this.htmlString1 =`<template> 
+    created() {
+        // 基本用法
+        this.htmlString1 = `<template> 
                             <dx-radio v-model="radio" label="1">选项1</dx-radio>
 	    					<dx-radio v-model="radio" >选项2</dx-radio>
-                         </template>`;
-        this.htmlString2 =`<template> 
+                         </template>`
+        this.htmlString2 = `<template> 
                              <dx-radio v-model="radio1" disabled label="1">选项1</dx-radio>
 	    					<dx-radio v-model="radio1" disabled>选项2</dx-radio>
-                           </template>`;
+                           </template>`
     }
   }
 </script>
