@@ -15,7 +15,6 @@
   "author": "zhangyiyong",
   "license": "MIT",
   "devDependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.1",
