@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const config = require('../config/config')
+const config = require('../config')
 const gulp = require('gulp')
 const gutil = require('gulp-util')
 const webpackProdConfig = require('./webpack.prod.config')
