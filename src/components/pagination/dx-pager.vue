@@ -9,14 +9,14 @@
 			class="pre"
 		>
 			<i 
-				class="fa fa-angle-left" 
+				class="icon iconfont dx-prev dx-pager-icon"
 				aria-hidden="true"
 			>
 			</i>
 		</li>
 		<li 
 			v-if="pageCount > 0"  
-			:class="{active:1 === currentPage}"
+			:class="{active: 1 === currentPage}"
 			:style="[1 === currentPage && activeStyle]"
 		>
 			1
@@ -27,7 +27,7 @@
 			class="dx-more quickpre"
 		>
 			<i 
-				class="fa fa-ellipsis-h" 
+				class="icon iconfont dx-ellipsis" 
 				aria-hidden="true"
 			>
 			</i>
@@ -35,10 +35,10 @@
 		<li 
 			v-for="(page,index) in pager" 
 			:key="index"   
-			:class="{active:page === currentPage}"
+			:class="{active: page === currentPage}"
 			:style="[page === currentPage && activeStyle]"
 		>
-			{{page}}
+			{{ page }}
 		</li>
 		<li 
 			v-if="showNextMore"
@@ -46,25 +46,25 @@
 			class="dx-more quicknext" 
 		>
 			<i 
-				class="fa fa-ellipsis-h" 
+				class="icon iconfont dx-ellipsis" 
 				aria-hidden="true"
 			>
 			</i>
 		</li>
-		<li 
+		<li
 			v-if="pageCount > 1"  
-			:class="{active:pageCount === currentPage}"
+			:class="{active: pageCount === currentPage}"
 			:style="[pageCount === currentPage && activeStyle]"
 		>
-			{{pageCount}}
+			{{ pageCount }}
 		</li>
 		<li 
 			v-if="pageCount > 0" 
-			:class="{ disbaled:pageCount === currentPage}" 
+			:class="{ disbaled: pageCount === currentPage}" 
 			class="next"
 		>	
 			<i 
-				class="fa fa-angle-right" 
+				class="icon iconfont dx-next dx-pager-icon" 
 				aria-hidden="true"
 			>
 			</i>
@@ -192,7 +192,7 @@
 	    border-right: 0;
 	    background-color: $--dx-pager-li-background-color;
 	    font-size: $--dx-pager-li-font-size;
-	    min-width: 2.8rem,;
+	    min-width: 2.8rem;
 	    line-height: $--dx-pager-li-line-height;
 	    cursor: pointer;
 	    text-align: center;
@@ -208,4 +208,10 @@
 	.dx-pager>li.disbaled {
 		cursor: not-allowed;
 	}
+
+	.dx-pager-icon {
+		line-height: $--dx-pager-li-line-height;
+		font-size: $--dx-pager-li-font-size;
+	}
+
 </style>

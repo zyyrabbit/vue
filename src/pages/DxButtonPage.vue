@@ -21,8 +21,8 @@
       <p>按钮不可用</p>
       <dx-show-code :htmlString="htmlString2" >
         <dx-button  :disabled="true">默认按钮</dx-button>
-        <dx-button  icon="pencil" :disabled="true"></dx-button>
-        <dx-button  icon="trash"  :disabled="true"></dx-button>
+        <dx-button  icon="edit" :disabled="true" class="margin-left-1rem">编辑</dx-button>
+        <dx-button  icon="delete"  :disabled="true" class="margin-left-1rem">删除</dx-button>
       </dx-show-code>
   </div>
   <div class="item-content">
@@ -30,8 +30,8 @@
 	    <p>带图标的按钮提高辨识度或节省空间</p>
 	    <dx-show-code :htmlString="htmlString3">
 	    	<dx-button  icon="search">搜索</dx-button>
-        <dx-button  icon="pencil"></dx-button>
-        <dx-button  icon="trash"></dx-button>
+        <dx-button  icon="edit" class="margin-left-1rem">编辑</dx-button>
+        <dx-button  icon="delete" class="margin-left-1rem">删除</dx-button>
 	    </dx-show-code>
   </div>
   <div class="item-content">
@@ -39,8 +39,8 @@
       <p>设置有三种按钮大小</p>
       <dx-show-code :htmlString="htmlString4">
         <dx-button type="primary" size="large">大按钮</dx-button>
-        <dx-button type="primary" >默认大小按钮</dx-button>
-        <dx-button type="primary"  size="small">小按钮</dx-button>
+        <dx-button type="primary" class="margin-left-1rem">默认大小按钮</dx-button>
+        <dx-button type="primary"  size="small" class="margin-left-1rem">小按钮</dx-button>
       </dx-show-code>
   </div>
   <div class="item-content">
@@ -134,14 +134,14 @@
                          </template>`
         this.htmlString2 = `<template> 
                             <dx-button  :disabled="true">默认按钮</dx-button>
-                            <dx-button  icon="pencil" :disabled="true"></dx-button>
-                            <dx-button  icon="trash"  :disabled="true"></dx-button>
+                            <dx-button  icon="edit" :disabled="true">编辑</dx-button>
+                            <dx-button  icon="delete"  :disabled="true">删除</dx-button>
                            </template>`
         // 扩展用法
         this.htmlString3 = `<template> 
                               <dx-button  icon="search">搜索</dx-button>
-                              <dx-button  icon="pencil"></dx-button>
-                              <dx-button  icon="trash"></dx-button>
+                              <dx-button  icon="edit">编辑</dx-button>
+                              <dx-button  icon="delete">删除</dx-button>
                           </template>`
         this.htmlString4 = `<template> 
                               <dx-button type="primary" size="full">大按钮</dx-button>

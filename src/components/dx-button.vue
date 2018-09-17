@@ -16,8 +16,8 @@
 	 >
 		 <i 
 		 	v-if="icon" 
-		 	:class="'fa-' + icon" 
-		 	class="fa"  
+		 	:class="'dx-' + icon"
+            class="icon iconfont"
 		 	aria-hidden="true" 
 		 >
 		 </i>
