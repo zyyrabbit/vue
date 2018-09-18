@@ -62,24 +62,35 @@
                         param: 'inputStyle',
                         illustrate: 'input的style样式',
                         type: 'Object',
+                        optionVal: '---',
                         defaultVal: '---'
                     },
                     {
                         param: 'inputClass',
                         illustrate: 'input的class样式',
                         type: 'Object',
+                        optionVal: '---',
+                        defaultVal: '---'
+                    },
+                    {
+                        param: 'placeholder',
+                        illustrate: '自定义输入框提示信息',
+                        type: 'String',
+                        optionVal: '---',
                         defaultVal: '---'
                     },
                     {
                         param: 'originType',
                         illustrate: 'input类型',
                         type: 'String',
+                        optionVal: '---',
                         defaultVal: '---'
                     },
                     {
                         param: 'disabled',
                         illustrate: '禁止输入框',
                         type: 'Boolean',
+                        optionVal: '---',
                         defaultVal: false
                     }
                   ]

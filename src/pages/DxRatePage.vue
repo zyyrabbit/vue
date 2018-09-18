@@ -74,13 +74,22 @@
                       param: 'rating',
                       illustrate: '设置评分的级别',
                       type: 'Number',
+                      optionVal:'---',
                       defaultVal: '0'
                     },
                     {
                       param: 'size',
                       illustrate: '设置评分的尺寸',
                       type: 'String',
+                      optionVal:'---',
                       defaultVal: '---'
+                    },
+                     {
+                      param: 'only-display',
+                      illustrate: '设置为只读',
+                      type: 'Boolean',
+                      optionVal:'---',
+                      defaultVal: 'false'
                     }
                   ],
         eventDatas: [

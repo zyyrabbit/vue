@@ -11,9 +11,9 @@
         <dx-button>默认按钮</dx-button>
         <dx-button type="text">文字按钮</dx-button>
 	    	<dx-button type="primary">基本按钮</dx-button>
-        <dx-button type="pinking">基本按钮</dx-button>
-        <dx-button type="gray">基本按钮</dx-button>
-        <dx-button type="warning">基本按钮</dx-button>
+        <dx-button type="pinking">粉色按钮</dx-button>
+        <dx-button type="gray">灰色按钮</dx-button>
+        <dx-button type="warning">警告按钮</dx-button>
 	    </dx-show-code>
   </div>
   <div class="item-content">
@@ -69,7 +69,7 @@
    <div class="item-content">
       <div style="margin-bottom:2rem">
         <dx-heading :level="1">Button Event</dx-heading>
-       <p>点击button会，会触发一个click事件，用于执行回调——this.$emit('dx-button-click')</p>
+       <p>点击button会，会触发一个dx-button-click事件，用于执行回调参数为event</p>
       </div>
   </div>
  </div>
@@ -106,13 +106,6 @@
                       defaultVal: 'false'
                     },
                     {
-                      param: 'icon',
-                      illustrate: '设置按钮图标',
-                      type: 'String',
-                      optionVal: 'font-awesome图标库',
-                      defaultVal: '---'
-                    },
-                    {
                       param: 'nativeType',
                       illustrate: 'button原生样式',
                       type: 'String',
@@ -128,7 +121,7 @@
                               <dx-button>默认按钮</dx-button>
                               <dx-button type="text">文字按钮</dx-button>
                               <dx-button type="primary">基本按钮</dx-button>
-                              <dx-button type="pinking">粉红按钮</dx-button>
+                              <dx-button type="pinking">粉色按钮</dx-button>
                               <dx-button type="gray">灰色按钮</dx-button>
                               <dx-button type="warning">警告按钮</dx-button>
                          </template>`

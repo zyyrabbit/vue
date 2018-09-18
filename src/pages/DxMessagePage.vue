@@ -55,7 +55,7 @@
                     {
                       param: 'content',
                       illustrate: '消息内容',
-                      type: 'string',
+                      type: 'string,Vnode',
                       optionVal: '---',
                       defaultVal: '---'
                      },

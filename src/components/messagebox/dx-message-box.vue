@@ -10,7 +10,7 @@
 					class="clearfix"
 					:class="[titleClasses]" 
 				>
-					<span v-if="title" class="dx-msgebox-title">{{title}}</span>
+					<span v-if="title" class="dx-msgebox-title">{{ title }}</span>
 					<span 
 						v-if="showClose" 
 						class="dx-msgebox-close"  
@@ -118,7 +118,7 @@
 </script>
 <style lang="scss">
 .dx-msgbox-wrapper {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;

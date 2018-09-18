@@ -68,12 +68,12 @@
       	
         attrDatas:[
                     { param:'total',illustrate:'显示的数据个数',type:'Number',optionVal:'---',defaultVal:'0'},
-                    { param:'showPageInfo',illustrate:'是否添加当前分页和共多少分页信息',type:'Boolean',optionVal:'---',defaultVal:'false'},
-                    { param:'showPageSize',illustrate:'是否添加改变当前页面的调试选择框',type:'Boolean',optionVal:'---',defaultVal:'false'},
-                    { param:'showJumpPage',illustrate:'是否添加跳转页面功能',type:'Boolean',optionVal:'---',defaultVal:'false'},
+                    { param:'showPageInfo',illustrate:'是否展示当前分页信息',type:'Boolean',optionVal:'---',defaultVal:'false'},
+                    { param:'showPageSize',illustrate:'是否展示页面的pageSize',type:'Boolean',optionVal:'---',defaultVal:'false'},
+                    { param:'showJumpPage',illustrate:'是否展示跳转页面功能',type:'Boolean',optionVal:'---',defaultVal:'false'},
                     { param:'currentPage',illustrate:'设置当前页',type:'Number',optionVal:'---',defaultVal:'---'},
                     { param:'pageSize',illustrate:'设置每页显示的条数',type:'Number',optionVal:'---',defaultVal:'5'},
-                    { param:'pageSizes',illustrate:'如果添加改变每页显示条数选择框,则可以传入一个分页数组',type:'Array',optionVal:'---',defaultVal:'[5,10,20,40,70]'}
+                    { param:'pageSizes',illustrate:'如果展示改变每页显示条数选择框,则可以传入一个分页数组',type:'Array',optionVal:'---',defaultVal:'[5,10,20,40,70]'}
                   ],
         eventDatas:[
                     { eventName:'change-page',illustrate:'点击页面页码时触发的事件',cbArgs:'回调参数为相应页码'}
@@ -94,17 +94,6 @@
         this.htmlString4 =`<template> 
                             <dx-pagination  :total = "50" :current-page="1" :showPageSize="true"></dx-pagination>
                          </template>`;
-        // this.scriptString = `export default {
-        //                         data(){
-        //                           return {
-        //                             navs:[
-        //                                   {title:'一级标题',path:''},
-        //                                   {title:'一级标题',path:'',subNavs:[{title:'二级标题',path:''}]},
-        //                                   {title:'一级标题',path:''}
-        //                                 ],
-        //                           }
-        //                         }
-        //                       }`;
     }
   }
 </script>

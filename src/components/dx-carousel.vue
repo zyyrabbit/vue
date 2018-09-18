@@ -262,8 +262,8 @@
 	}
 
 	.dx-carousel-btn{
-		width: 5%;
-		height: 15%;
+		width: 4rem;
+		height: 4rem;
 		position: absolute;
 	    top: 50%;
 		transform: translateY(-50%);
@@ -291,7 +291,7 @@
 		bottom: 10%;
 		left: 50%;
 		transform: translateX(-50%);
-		background-color: $--dx-carousel-labels-background-color;
+		/* background-color: $--dx-carousel-labels-background-color; */
 		opacity: $--dx-carousel-labels-opacity;
 		border-radius: 0.8rem;
 	}

@@ -101,14 +101,14 @@
                       type: 'Boolean',
                       optionVal: '---',
                       defaultVal: 'true'
-                    },
-                    {
+                    }
+                    /*{
                       param: 'iconClass',
                       illustrate: '进度条最终状态',
                       type: 'String',
                       optionVal: '---',
                       defaultVal: 'fa fa-check-circle'
-                    }
+                    }*/
                   ]
       }
     },

@@ -69,7 +69,7 @@ export default {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1rem;
     font-size: $--dx-button-default-font-size;
     background-color: transparent;
     border-radius: 0.4rem;
@@ -157,12 +157,12 @@ export default {
 
 .dx-button-large {
     font-size: $--dx-button-large-font-size;
-    padding: 1.4rem 3rem;
+    padding: 1.2rem 3rem;
     line-height: 1;
 }
 
 .dx-button-small {
-    padding: 0.8rem 1.2rem;
+    padding: 0.5rem 1.2rem;
     font-size: $--dx-button-small-font-size;
     line-height: 1;
 }

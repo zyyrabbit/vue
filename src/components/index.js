@@ -26,6 +26,7 @@ import DxCheckbox from './checkbox/dx-checkbox.vue'
 import DxMessage from './message'
 
 import './theme-chalk/src/style/font/iconfont.css'
+import './theme-chalk/src/style/index.css'
 const components = [
 	DxNav,
 	DxRadio,

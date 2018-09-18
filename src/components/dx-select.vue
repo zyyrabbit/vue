@@ -20,7 +20,8 @@
 				<!-- 下拉框指示器 -->	
 				<!-- <span class="dx-select-input-ind" :class="{open:isShow}"></span> -->
 				<i 
-					class="icon iconfont dx-left dx-select-input-ind" 
+					class="icon iconfont dx-select-input-ind" 
+					:class="[isShow ? 'dx-down' : 'dx-left']"
 					aria-hidden="true"
 				>
 				</i>	

@@ -187,13 +187,17 @@
 	.dx-form-item {
 		position: relative;
 	}
-	.dx-form-item-text-bottom {
-		display: block;
-	}
 	.dx-form-item-text {
-		padding-left: 1rem;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		word-wrap: normal;
+		left: 82%;
 		height: $--dx-form-item-text-height;
 		line-height: $--dx-form-item-text-line-height;
+	}
+	.dx-form-item-text-bottom {
+	    position: static;
 	}
 	.dx-form-item-text.error {
 		color: $--dx-form-item-text-color-error;

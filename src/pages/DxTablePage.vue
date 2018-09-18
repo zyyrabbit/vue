@@ -248,12 +248,12 @@
 				eventDatas: [
                     {
 						eventName: 'onBefore',
-						illustrate: '表格排序排序后出发的事件',
+						illustrate: '表格排序前触发的事件',
 						cbArgs: '回调参数为排序的列row,排序属性键值,排序的方向'
                     },
                     {
 						eventName: 'select-change',
-						illustrate: '设置表格支持选择数据功能事件',
+						illustrate: '支持选择数据功能事件',
 						cbArgs: '回调参数为包含所有选择的row一个array类型变量'
                     },
                     {
@@ -305,7 +305,7 @@
                     },
                     {
 						param: 'selectable',
-						illustrate: ' 设置表格是否支持单选功能',
+						illustrate: '设置表格是否支持单选功能',
 						type: 'Boolean',
 						optionVal: '---',
 						defaultVal: 'false'
