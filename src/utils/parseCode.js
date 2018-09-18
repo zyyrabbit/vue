@@ -2,8 +2,8 @@
 const repeatN = (str, n = 0) => {
     let res = ''
     while (n) {
-        if (n % 2 === 1) { res += str };
-        if (n > 1) { str += str };
+        if (n % 2 === 1) { res += str }
+        if (n > 1) { str += str }
         n >>= 1
     }
     return res
@@ -14,16 +14,16 @@ const genWrapTag = (str, tag, endFlage, text, n) => {
     return text ? `<${tag} class="hljs-tag">${blankNum}${str}</${tag}>` :
         `<${tag} class="hljs-tag">${blankNum}&lt${endFlage}${str}&gt</${tag}>`
 }
-// 用于字符串匹配栈
-const matchTags = []
-matchTags.push('-1')
 
 // 正则表达式,用于匹配格式化<template>代码
 // 字符串空格
-let regTagContent = /<.+?>|(\S[^<>]+)/g // 非贪婪模式
-let regGetTag = /(\w[\w-_]+)\s*/
+let regTagContent = /<[^>]+>|(\S[^<>]+)/g // 非贪婪模式
+let regGetTag = /(\w[\w-]+)\s*/
 
 const formatHtmlCode = str => {
+    // 用于字符串匹配栈
+    let matchTags = []
+    matchTags.push('-1')
     // str = blankSpace(str);
     let parseRes = ''
     let startTag
@@ -53,7 +53,7 @@ const formatHtmlCode = str => {
         }
     })
     if (matchTags.length > 1) {
-        console.error('输入模板不匹配！')
+        console.error('输入模板不匹配！', matchTags)
         return ''
     }
     return parseRes
@@ -66,6 +66,9 @@ const genWrapSptAndStyTag = (str, tag, n) => {
     return `<${tag} class="hljs-tag">${blankNum}${str}</${tag}>`
 }
 const formatSptAndStyCode = (str) => {
+    // 用于字符串匹配栈
+    let matchTags = []
+    matchTags.push('-1')
     let parseRes = ''
     let startTag
     let tag
@@ -75,8 +78,8 @@ const formatSptAndStyCode = (str) => {
     let blankNum
     parseRes += genWrapSptAndStyTag('&ltscript&gt', 'div', 0)
 
-    str.replace(regContent, (s) => {
-        // 过滤掉<>
+    str.replace(regContent, s => {
+        // 过滤掉空格
         s = s.trim()
         // 全局匹配
         tag = s.match(/[{}]/g)

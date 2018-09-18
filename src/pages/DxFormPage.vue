@@ -20,7 +20,6 @@
             >
               <dx-input 
                 v-model="model.userName" 
-                max 
                 placeholder="请输入用户名"
               >
                 用户名
@@ -30,9 +29,19 @@
           <div class="login-form__item">
             <dx-form-item prop="password">
               <dx-input 
-                v-model="model.password" 
-                max  
-                placeholder="请输入密码" 
+                v-model="model.password"
+                placeholder="请输入密码"
+                originType="password"
+              >
+                密码
+              </dx-input>
+            </dx-form-item>
+          </div>
+          <div class="login-form__item">
+            <dx-form-item prop="password1" showPwdLevel>
+              <dx-input 
+                v-model="model.password1"
+                placeholder="请输入密码（具有密码强度）"
                 originType="password"
               >
                 密码
@@ -63,6 +72,7 @@
       model: {
         userName: '',
         password: '',
+        password1: '',
         isRememberMe: false
       },
       rules: {
@@ -71,7 +81,10 @@
           {name: 'required', message: '* 请输入账户名和密码！'}
         ],
         userName: [],
-        password: []
+        password: [],
+        password1: [
+          { name: 'pwdLevelVerification', min: 6, message: '* 密码长度至少为6位' }
+        ]
       }
     }
   },
@@ -93,26 +106,48 @@
     // 基本用法
         this.htmlString1 = `<template> 
                               <dx-form ref="loginForm" :model="model" :rules="rules">
-                                <div class="login-form__item--error-msg login-form__item">
-                                    {{errorMsg}}
-                                </div>
+                                <div class="login-form__item--error-msg login-form__item">{{errorMsg}}</div>
                                 <div class="login-form__item">
-                                  <dx-form-item prop="userName">
-                                    <dx-input v-model="model.userName" max  placeholder="请输入用户名">
+                                  <dx-form-item  
+                                    prop="userName"
+                                  >
+                                    <dx-input 
+                                      v-model="model.userName" 
+                                      placeholder="请输入用户名"
+                                    >
                                       用户名
                                     </dx-input>
                                   </dx-form-item>
                                 </div>
                                 <div class="login-form__item">
                                   <dx-form-item prop="password">
-                                    <dx-input v-model="model.password" max    placeholder="请输入密码" originType="password">
+                                    <dx-input 
+                                      v-model="model.password"
+                                      placeholder="请输入密码"
+                                      originType="password"
+                                    >
+                                      密码
+                                    </dx-input>
+                                  </dx-form-item>
+                                </div>
+                                <div class="login-form__item">
+                                  <dx-form-item prop="password1" showPwdLevel>
+                                    <dx-input 
+                                      v-model="model.password1"
+                                      placeholder="请输入密码（具有密码强度）"
+                                      originType="password"
+                                    >
                                       密码
                                     </dx-input>
                                   </dx-form-item>
                                 </div>
                                 <div class="login-form__item">
                                   <dx-form-item>
-                                    <dx-button  class="login-form__submit-btn"  type="primary" @dx-button-click="submit('loginForm')">
+                                    <dx-button 
+                                      class="login-form__submit-btn"
+                                      type="primary" 
+                                      @dx-button-click="submit('loginForm')"
+                                    >
                                       登录
                                     </dx-button>
                                   </dx-form-item>
@@ -126,15 +161,18 @@
                                     model: {
                                       userName: '',
                                       password: '',
+                                      password1: '',
                                       isRememberMe: false
                                     },
                                     rules: {
                                       // 公共验证规则
-                                      baseRule:[
+                                      baseRule: [
                                         {name: 'required', message: '* 请输入账户名和密码！'}
                                       ],
                                       userName: [],
-                                      password: []
+                                      password: [
+                                        { name: 'pwdLevelVerification', min: 6, message: '* 密码长度至少为6位' }
+                                      ]
                                     }
                                   }
                                 }

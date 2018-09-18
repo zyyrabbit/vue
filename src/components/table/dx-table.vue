@@ -161,9 +161,9 @@
 		}
 	}
 
-	.dx-tabel-query-btn {
+	/* .dx-tabel-query-btn {
 		margin-left:2rem;
-	}
+	} */
 
 	/*没有找到数据时的样式*/
 	.dx-tabel-not-find {

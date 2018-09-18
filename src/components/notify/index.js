@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import DxNotify from './dx-notify.vue'
-import { isVNode } from '../../utils/utils.js'
+import { isVNode } from '@/utils/utils.js'
 // 构建构造函数
 const NotifyConstructor = Vue.extend(DxNotify)
 let instance

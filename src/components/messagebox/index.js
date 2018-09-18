@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import DxMessageBox from './dx-message-box.vue'
-import { merge, isVNode } from '../../utils/utils.js'
+import { merge, isVNode } from '@/utils/utils.js'
 const defaultOptions = {
 	visible: false, // 控制弹窗是否可见
 	parentEleId: '', // 挂载的父元素的id

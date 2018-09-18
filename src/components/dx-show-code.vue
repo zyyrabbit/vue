@@ -14,7 +14,7 @@
     </div>
 </template>
 <script>
-import formatCode from '../utils/parseCode.js'
+import formatCode from '@/utils/parseCode.js'
 export default {
     name: 'DxShowCode',
     data() {

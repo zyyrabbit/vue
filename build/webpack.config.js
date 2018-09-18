@@ -19,7 +19,10 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.vue'],
-        alias: { 'vue': 'vue/dist/vue.js' }
+        alias: {
+                'vue': 'vue/dist/vue.js',
+                '@': pathConvert(config.BASE_PATH, 'src')
+            }
     },
     module: {
         rules: [{

@@ -1,5 +1,5 @@
 // 导入注册函数
-import {_} from '../utils/utils.js'
+import {_} from '@/utils/utils.js'
 // 存储所有的添加该指令的元素数组
 const nodeList = []
 const ctx = '@@@clickoutsideContext' // ctx应该是内容扩展的缩写

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import DxIndicator from './dx-indicator.vue'
-import { merge } from '../../utils/utils.js'
+import { merge } from '@/utils/utils.js'
 const DxIndicatorConstructor = Vue.extend(DxIndicator)
 let instance
 const defaultOptions = {

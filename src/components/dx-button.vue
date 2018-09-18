@@ -73,7 +73,7 @@ export default {
     font-size: $--dx-button-default-font-size;
     background-color: transparent;
     border-radius: 0.4rem;
-    span {
+    span, i {
         line-height: 1;
         vertical-align: middle;       
     }

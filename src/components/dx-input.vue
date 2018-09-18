@@ -44,7 +44,8 @@
 				default: false
 			},
 			inputStyle: Object,
-			inputClass: String
+			inputClass: String,
+			pwdLevel: Boolean // 是否展示密码等级
 		},
 		data() {
 			return {

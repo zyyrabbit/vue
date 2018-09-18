@@ -4,18 +4,28 @@
 		:style="{ width: width + 'px'}"
 	>
 		<slot></slot>
-		<span 
-			v-if="showMsg" 
-			:class="[textClasses,{'dx-form-item-text-bottom': bottom}]"
+		<ul v-if="showPwdLevel" class="password-level-wrap">
+			<li 
+				v-for="(level, index) of pwdLevels" 
+				:key="level"
+				:class="[inputPwdLevel > index ? 'password-level-input-' + index : '']"
+				class="password-level"
+			>
+				{{ level }}
+			</li>
+		</ul>
+		<div 
+			v-if="showMsg && text" 
+			:class="[textClasses, {'dx-form-item-text-bottom': bottom}]"
 		>
-			{{text}}
-		</span>
+			{{ text }}
+		</div>
 	</div>
 </template>
 <script>
-   import Validate from '../utils/stragetegies.js'
+   import Validate from '@/utils/stragetegies.js'
    // 用于与组件dx-form-item通信
-   import Bus from '../utils/bus.js'
+   import Bus from '@/utils/bus.js'
    const noop = () => {}
 
 	export default{
@@ -30,6 +40,7 @@
 			prop: String,
 			samePorp: String,
 			showMsg: Boolean,
+			showPwdLevel: Boolean,
 			rules: Array,
 			instruction: String,
 			width: String,
@@ -42,7 +53,9 @@
 		data() {
 			return {
 				text: '',
-				textClass: ''
+				textClass: '',
+				pwdLevels: ['弱', '中', '强'],
+				inputPwdLevel: 0
 			}
 		},
 		computed: {
@@ -117,7 +130,12 @@
 					if (rule.name === 'confirmSame') {
 						rule.sameFieldValue = this.sameFieldValue
 					}
-					if (Validate[rule.name](rule, this.fieldValue)) {
+					let rst = Validate[rule.name](rule, this.fieldValue)
+					// 处理密码强度验证逻辑
+					if (rule.name === 'pwdLevelVerification') {
+						this.inputPwdLevel = rst
+					}
+					if (!rst) {
 						this.text = rule.message || ''
 						this.textClass = 'error'
 						errorMsg = true
@@ -182,5 +200,38 @@
 	}
 	.dx-form-item-instruction {
 		color: $--dx-form-item-instruction-color;
+	}
+	// 密码等级
+	.password-level-wrap {
+		display: flex;
+		width: 80%;
+	}
+
+	.password-level {
+		flex-grow: 1;
+		line-height: 3rem;
+		font-size: 1.4rem;
+		margin-top: 1rem;
+		border: 1px solid #555;
+		border-left: none;
+		text-align: center;
+		background-color: #ddd;
+		opacity: 0.8;
+		&:first-child {
+			border-left: 1px solid #555;
+			border-radius: 1.5rem 0 0 1.5rem;
+		}
+		&:last-child {
+			border-radius: 0 1.5rem 1.5rem 0;
+		}
+	}
+	.password-level-input-0 {
+		background-color: red;
+	}
+	.password-level-input-1 {
+		background-color: yellow;
+	}
+	.password-level-input-2 {
+		background-color: green;
 	}
 </style>

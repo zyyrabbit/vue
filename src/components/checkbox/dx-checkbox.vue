@@ -23,7 +23,7 @@
 </template>
 <script>
 // 用于与组件dx-form-item通信
-import Bus from '../../utils/bus.js'
+import Bus from '@/utils/bus.js'
 export default {
     name: 'DxCheckbox',
     componentName: 'DxCheckbox',

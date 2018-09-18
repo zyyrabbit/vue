@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import DxMessage from './dx-message.vue'
-import { isVNode, merge } from '../../utils/utils.js'
+import { isVNode, merge } from '@/utils/utils.js'
 const defaultOptions = {
 	content: '',
 	visible: false,

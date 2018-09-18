@@ -1,6 +1,6 @@
 
 import Store from 'store'
-import Bus from 'utils/bus.js'
+import Bus from '@/utils/bus.js'
 const getters = Store.getters
 export default {
 	// 只执行一次，指令第一次绑定到元素时，执行初始化操作,el挂载元素

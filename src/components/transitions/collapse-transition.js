@@ -1,4 +1,4 @@
-import { addClass, removeClass } from '../../utils/utils.js'
+import { addClass, removeClass } from '@/utils/utils.js'
 // 目前需要添加一个dx-collapse-transitionclass动画
 const Transition = {
 
