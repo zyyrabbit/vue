@@ -6,7 +6,8 @@ import {
   } from '../pages/index.js'
 // 导入所有的页面
 const routes = [
-    { path: '/', component: Home, children: [...pcPages, ...mobilePages] }
+	{ path: '', component: Home, redirect: '/dxselectpage'},
+    { path: '/', component: Home, redirect: '/dxselectpage' , children: [...pcPages, ...mobilePages] }
 ]
 export default new VueRouter({
 	routes

@@ -5,7 +5,7 @@ import './styles/common.css'
 import './components/index.js'
 // 使用vue-router
 Vue.use(VueRouter)
-window.Vue = Vue
 new Vue({
+	el: '#app',
     router: Router
-}).$mount('#app')
+})
