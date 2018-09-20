@@ -130,10 +130,10 @@ export default {
             }
             /*一级标题打开，关闭接口指示器*/
             @include M(title-narrow-default) {
-                background: url('../images/narrow-left.png') no-repeat right center;
+                background: url('../../images/narrow-left.png') no-repeat right center;
             }
             @include M(title-narrow-active) {
-                background: url('../images/narrow-down.png') no-repeat right center;
+                background: url('../../images/narrow-down.png') no-repeat right center;
             }
         }
 

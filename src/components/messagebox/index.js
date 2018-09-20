@@ -92,5 +92,4 @@ OpenMessageBox.close = () => {
 	instance.callback && instance.callback('cancel', instance)
 	// currentOptions = null
 }
-Vue.prototype.$messageBox = OpenMessageBox
 export default OpenMessageBox

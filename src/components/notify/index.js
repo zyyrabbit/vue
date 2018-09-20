@@ -40,5 +40,4 @@ const Notify = message => {
     // 设置挂载元素
     document.body.appendChild(instance.$el)
 }
-Vue.prototype.$notify = Notify
 export default Notify

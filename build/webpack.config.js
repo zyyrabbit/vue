@@ -82,5 +82,9 @@ module.exports = {
         new ExtractTextPlugin(pathConvert(config.STYLE_PATH, '[name].css'), {
             allChunks: true
         })
-    ]
+    ],
+    stats: {
+        // Nice colored output
+        colors: true
+    }
 }

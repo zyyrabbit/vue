@@ -175,4 +175,4 @@ export function removeClass(el, cls) {
     if (!el.classList) {
         el.className = trim(curClass)
     }
-};
+}

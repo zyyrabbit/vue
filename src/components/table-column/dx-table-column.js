@@ -11,7 +11,6 @@ const renderMethods = {
 // 列表编号
 let tableColumnId = 0
 export default{
-
 	name: 'DxTableColumn',
 	props: {
 		rowKey: String, // 行的id---暂时没用到

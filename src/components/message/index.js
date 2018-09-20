@@ -44,5 +44,4 @@ const Message = messageOptions => {
 		Message(merge({ type }, messageOptions))
 	}
 })
-Vue.prototype.$message = Message
 export default Message

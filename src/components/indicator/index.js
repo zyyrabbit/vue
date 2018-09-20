@@ -31,5 +31,4 @@ class Indicator {
 		instance.visible = false
 	}
 }
-Vue.prototype.$indicator = Indicator
 export default Indicator

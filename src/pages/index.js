@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import DxSelectPage from './DxSelectPage.vue'
 import DxRadioPage from './DxRadioPage.vue'
 import DxTablePage from './DxTablePage.vue'
@@ -19,6 +20,10 @@ import DxIndicatorPage from './DxIndicatorPage.vue'
 import DxRatePage from './DxRatePage.vue'
 import DxTabsPage from './DxTabsPage.vue'
 
+import DxHeading from './components/dx-heading.vue'
+import DxShowCode from './components/dx-show-code.vue'
+Vue.component(DxHeading.name, DxHeading)
+Vue.component(DxShowCode.name, DxShowCode)
 export const pcPages = [
     { path: 'dxselectpage', title: 'select 选择框', component: DxSelectPage },
     { path: 'dxradiopage', title: 'radio 选择框', component: DxRadioPage },

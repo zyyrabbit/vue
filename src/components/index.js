@@ -1,31 +1,28 @@
 import Vue from 'vue'
-import DxNav from './dx-nav.vue'
-import DxRadio from './dx-radio.vue'
-import DxSelect from './dx-select.vue'
+import DxCalender from './calendar/index.js'
+import DxCheckbox from './checkbox/index.js'
+import DxCheckboxGroup from './checkbox-group/index.js'
+import DxIndicator from './indicator/index.js'
+import DxMessage from './message/index.js'
 import DxMessageBox from './messagebox/index.js'
+import DxTable from './table/index.js'
+import DxTableColumn from './table-column/index.js'
+import DxButton from './button/index.js'
+import DxCarousel from './carousel/index.js'
+import DxForm from './form/index.js'
+import DxFormItem from './form-item/index.js'
+import DxInput from './input/index.js'
+import DxNav from './nav/index.js'
 import DxNotify from './notify/index.js'
-import DxFormItem from './dx-form-item.vue'
-import DxForm from './dx-form.vue'
-import DxHeading from './dx-heading.vue'
-import DxShowCode from './dx-show-code.vue'
-import DxTable from './table/dx-table.vue'
-import DxTableColumn from './table/dx-table-column.js'
-import DXInput from './dx-input.vue'
-import DxButton from './dx-button.vue'
-import DxPagination from './pagination/dx-pagination.vue'
-import DxCarousel from './dx-carousel.vue'
-import DxCollapseTransition from './transitions/collapse-transition'
-import DxProgress from './dx-progress.vue'
-import DxCalender from './calendar/dx-calendar.vue'
-import DxUpload from './uploader/dx-upload.vue'
-import DxIndicator from './indicator'
-import DxRate from './dx-rate.vue'
-import DxTabs from './dx-tabs.vue'
-import DxCheckboxGroup from './checkbox/dx-checkbox-group.vue'
-import DxCheckbox from './checkbox/dx-checkbox.vue'
-import DxMessage from './message'
+import DxPagination from './pagination/index.js'
+import DxProgress from './progress/index.js'
+import DxRadio from './radio/index.js'
+import DxRate from './rate/index.js'
+import DxSelect from './select/index.js'
+import DxTabs from './tabs/index.js'
+import DxCollapseTransition from './transitions/index.js'
+import DxUpload from './uploader/index.js'
 
-import './theme-chalk/src/style/font/iconfont.css'
 import './theme-chalk/src/style/index.css'
 const components = [
 	DxNav,
@@ -33,11 +30,9 @@ const components = [
 	DxSelect,
 	DxFormItem,
 	DxForm,
-	DxHeading,
-	DxShowCode,
 	DxTable,
 	DxTableColumn,
-	DXInput,
+	DxInput,
 	DxButton,
 	DxPagination,
 	DxCarousel,
@@ -59,26 +54,28 @@ const install = function(Vue) {
 	components.map(component => {
 		Vue.component(component.name, component)
 	})
+
+	Vue.prototype.$indicator = DxIndicator
+	Vue.prototype.$message = DxMessage
+	Vue.prototype.$messageBox = DxMessageBox
+	Vue.prototype.$notify = DxNotify
+
 	install.installed = true
 }
 // 注册vue组件
 if (typeof window !== 'undefined' && Vue) {
    install(Vue)
-};
-Vue.DxMessageBox = DxMessageBox
-Vue.DxNotify = DxNotify
-Vue.DxMessage = DxMessage
+}
 module.exports = {
+	version: '1.0.0',
 	DxNav,
 	DxRadio,
 	DxSelect,
 	DxFormItem,
 	DxForm,
-	DxHeading,
-	DxShowCode,
 	DxTable,
 	DxTableColumn,
-	DXInput,
+	DxInput,
 	DxButton,
 	DxPagination,
 	DxCarousel,
@@ -92,3 +89,4 @@ module.exports = {
 	DxCheckbox,
 	DxMessage
 }
+module.exports.default = module.exports

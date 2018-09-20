@@ -27,7 +27,7 @@
 </template>
 <script>
 	// 用于简单的非父子组件之间的通信
-    import emitter from './mixins/emitter.js'
+    import emitter from '@/components/mixins/emitter.js'
 	export default{
 		componentName: 'DxInput',
 		name: 'DxInput',

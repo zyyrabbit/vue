@@ -46,7 +46,7 @@
 	</div>
 </template>
 <script>
-	import clickoutside from '../directives/clickoutside.js'
+	import clickoutside from '@/directives/clickoutside.js'
 	export default{
 		name: 'DxSelect',
 		directives: { clickoutside },

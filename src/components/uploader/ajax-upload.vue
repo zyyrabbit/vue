@@ -54,10 +54,9 @@
 	  getFileType,
 	  fileSizeToUnit,
 	  isExceedSizeLimit,
-	  SIZE_UNIT,
-	  fileExtensionIconClass
+	  SIZE_UNIT
 	} from './upload-helper'
-	import DxProgress from '../dx-progress.vue'
+	import DxProgress from '@/components/progress/dx-progress.vue'
 	export default {
 		props: {
 			name: {
