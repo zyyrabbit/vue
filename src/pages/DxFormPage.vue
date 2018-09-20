@@ -38,7 +38,7 @@
             </dx-form-item>
           </div>
           <div class="login-form__item">
-            <dx-form-item prop="password1" showPwdLevel>
+            <dx-form-item prop="password1" showPwdLevel showMsg>
               <dx-input 
                 v-model="model.password1"
                 placeholder="请输入密码（具有密码强度）"

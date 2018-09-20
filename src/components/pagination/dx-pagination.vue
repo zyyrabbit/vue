@@ -2,13 +2,13 @@
 	<div class="dx-pagination clearfix">
 		<div 
 			v-if="showPageInfo" 
-			class="dx-pagination-page-info"
+			class="dx-pagination--page-info"
 		>
 			当前第{{internalCurPage}}页/共{{pageCount}}页
 		</div>
 		<div  
 			v-if="showPageSize"
-			class="dx-pagination-page-size"
+			class="dx-pagination--page-size"
 		>
 			<dx-select 
 				v-model="internalPageSize"
@@ -16,7 +16,7 @@
 			/>
 			<!-- <span>条/每天</span> -->
 		</div>
-		<div class="dx-pagination-pager">
+		<div class="dx-pagination--pager">
 			<!-- <span class="narrow">&lt;</span> -->
 		    <dx-pager 
 		    	:activeStyle="activeStyle"  
@@ -28,7 +28,7 @@
 		</div>
 		<div 
 			v-if="showJumpPage" 
-			class="dx-pagination-jump-page" 
+			class="dx-pagination--jump-page" 
 		>
 			跳至
 			<input 
@@ -120,31 +120,39 @@ export default{
 }
 </script>
 <style lang="scss">
-	.dx-pagination {
+	@include B(pagination) {
 		font-size: $--dx-pagination-font-size;
 		line-height: $--dx-pagination-line-height;
-	}
-	/*div 使用inline-block 会出现对不齐的问题 给div添加 vertical-align:top;*/
-	.dx-pagination>div {
-		display: inline-block;
-		/*float:left;*/
-		vertical-align: top;
-	}
-	.dx-pagination-page-size {
-		width: 6rem;
-	    margin-left: 1rem;
-	}
-	.dx-pagination-pager {
-		margin: 0 1rem;
+		/*div 使用inline-block 会出现对不齐的问题 给div添加 vertical-align:top;*/
+		>div {
+			display: inline-block;
+			/*float:left;*/
+			vertical-align: top;
+		}
+		@include M(page-size) {
+			width: 6rem;
+	    	margin-left: 1rem;
+		}
 
+		@include M(pager) {
+			margin: 0 1rem;
+		}
+
+		@include M(jump-page) {
+			>input {
+				width: 4rem;
+				margin: 0 0.8rem;
+				border: 0.1rem solid #aaa;
+			    border-radius: 0.5rem;
+				line-height: 3rem;
+				text-align: center;
+				font-size: $--dx-pagination-jump-page-font-size;
+			}
+		}
+
+		@include M(page-size) {
+			width: 6rem;
+	    	margin-left: 1rem;
+		}
 	}
-    .dx-pagination-jump-page>input {
-		width: 4rem;
-		margin: 0 0.8rem;
-		border: 0.1rem solid #aaa;
-	    border-radius: 0.5rem;
-		line-height: 3rem;
-		text-align: center;
-		font-size: $--dx-pagination-jump-page-font-size;
-    }
 </style>

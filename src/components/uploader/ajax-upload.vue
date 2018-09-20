@@ -1,8 +1,8 @@
 <template>
-	<div class="dx-upload">
+	<div class="dx-upload-ajax">
 		<div 
 			tabindex="0"
-			class="dx-upload-btn"
+			class="dx-upload-ajax--btn"
 			@click.stop="handleClick"
 		>
 			<dx-button type="primary">
@@ -12,7 +12,7 @@
 			<input 
 				:name="name"
 				:multiple="multiple"
-				class="dx-upload-input" 
+				class="dx-upload-ajax--input" 
 				type="file" 
 				ref="input" 
 				@change.self.stop="handleChange"
@@ -20,24 +20,24 @@
 		</div>
 		<div 
 			v-if="tip" 
-			class="dx-upload-tip"
+			class="dx-upload-ajax--tip"
 		>
 			{{tip}}
 		</div>
-		<ul class="dx-upload-file-list" v-if="showFileList">
+		<ul class="dx-upload-ajax__file-list" v-if="showFileList">
 			<li v-for="file in fileList">
 				<dx-progress
 					v-show="file.state !== 1"
 					:percentage="file.percentage"
 				></dx-progress>
-				<div class="dx-upload-file-desc">
-					<span class="dx-upload-file-desc-detail">
+				<div class="dx-upload-ajax__file-list-desc">
+					<span class="dx-upload-ajax__file-list-desc--detail">
 						<span>{{file.name}}</span>
 						<span>{{file.size | fileSizeToUnit}}</span>
 					</span>
 					<span 
 						@click="removeFile(file.fileId)"
-						class="dx-upload-file-desc-close"> 
+						class="dx-upload-ajax__file-list-desc--close"> 
 						删除 
 					</span>
 				</div>
@@ -252,46 +252,52 @@
 		}
 	}
 </script>
-<style>
-.dx-upload-btn {
-	display: inline-block;
-}
-.dx-upload-input {
-	display: none;
-}
-.dx-upload-tip {
-	font-size: 1.2rem;
-	color: #666;
-	padding-top: 1rem;
-}
-.dx-upload-file-list {
-	margin-top: 1rem;
-}
-.dx-upload-file-desc {
-	display: flex;
-	align-items: center;
-	color: #666;
-	font-size: 1.3rem;
-	padding: 0.5rem 0;
-	cursor: pointer;
+<style lang="scss">
+	@include B(upload-ajax) {
+		@include M(btn) {
+			display: inline-block;
+		}
+		@include M(input) {
+			display: none;
+		}
+		@include M(tip) {
+			font-size: 1.2rem;
+			color: #666;
+			padding-top: 1rem;
+		}
+		
+		@include E(file-list) {
+			margin-top: 1rem;
+		}
 
-}
-.dx-upload-file-desc-detail>span {
-	margin-right: 0.5rem;
-	font-size: 1.2rem;
-}
-.dx-upload-file-desc-close {
-	flex-grow: 1;
-	text-align: right;
-}
-.dx-upload-file-desc-close:hover {
-	color: #8DD0EC;
-}
-/* 动画效果 */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
+		@include E(file-list-desc) {
+			display: flex;
+			align-items: center;
+			color: #666;
+			font-size: 1.3rem;
+			padding: 0.5rem 0;
+			cursor: pointer;
+			@include M(detail) {
+				>span {
+					margin-right: 0.5rem;
+					font-size: 1.2rem;
+				}
+			}
+
+			@include M(close) {
+				flex-grow: 1;
+				text-align: right;
+				&:hover {
+					color: #8DD0EC;
+				}
+			}	
+		}
+	}
+	/* 动画效果 */
+	.fade-enter-active, .fade-leave-active {
+	  transition: opacity .5s;
+	}
+	.fade-enter, .fade-leave-to {
+	  opacity: 0;
+	}
 </style>

@@ -15,10 +15,10 @@
 			:checked="checked"
 			:disabled="disabled"
 			type="checkbox"
-			class="dx-checkbox-origin" 
+			class="dx-checkbox--origin" 
 		/>
-		<span v-if="!btnType" class="dx-checkbox-inner"></span>
-		<slot><span  class="dx-checkbox-label"> {{ label }} </span></slot>
+		<span v-if="!btnType" class="dx-checkbox--inner"></span>
+		<slot><span  class="dx-checkbox--label"> {{ label }} </span></slot>
 	</label>
 </template>
 <script>
@@ -84,79 +84,77 @@ export default {
 }
 </script>
 <style lang="scss">
-.dx-checkbox {
-	margin-right: 1rem;
-	color: $--dx-checkbox-color;
-	font-size: $--dx-checkbox-font-size;
-	.dx-checkbox-inner {
-		display: inline-block;
-	    position: relative;
-	    border: 1px solid #dcdfe6;
-	    border-radius: 2px;
-	    box-sizing: border-box;
-	    width: $--dx-checkbox-inner-width;
-	    height: $--dx-checkbox-inner-height;
-	    background-color: #fff;
-	    z-index: 1;
-	    vertical-align: middle;
-	    transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
-	    &:after {
-		    box-sizing: content-box;
-		    content: "";
-		    border: 1px solid #fff;
-		    border-left: 0;
-		    border-top: 0;
-		    height: 7px;
-		    left: 4px;
-		    position: absolute;
-		    top: 1px;
-		    transform: rotate(45deg) scaleY(0);
-		    width: 3px;
-		    transition: transform .15s ease-in .05s;
-		    transform-origin: center;
-	    }
-	}
+	@include B(checkbox) {
+		margin-right: 1rem;
+		color: $--dx-checkbox-color;
+		font-size: $--dx-checkbox-font-size;
+		@include M(inner) {
+			display: inline-block;
+		    position: relative;
+		    border: 1px solid #dcdfe6;
+		    border-radius: 2px;
+		    box-sizing: border-box;
+		    width: $--dx-checkbox-inner-width;
+		    height: $--dx-checkbox-inner-height;
+		    background-color: #fff;
+		    z-index: 1;
+		    vertical-align: middle;
+		    transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+		    &:after {
+			    box-sizing: content-box;
+			    content: "";
+			    border: 1px solid #fff;
+			    border-left: 0;
+			    border-top: 0;
+			    height: 7px;
+			    left: 4px;
+			    position: absolute;
+			    top: 1px;
+			    transform: rotate(45deg) scaleY(0);
+			    width: 3px;
+			    transition: transform .15s ease-in .05s;
+			    transform-origin: center;
+		    }
+		}
+		@include M(label) {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		// 隐藏原生输入框
+		@include M(origin) {
+			display: none;
+		}
+		@include when(checked) {
+			color: $--dx-checkbox-color-check;
+			.dx-checkbox--inner {
+				background-color: $--dx-checkbox-color-check;
+	    		border-color: $--dx-checkbox-color-check;
+	    		&:after {
+	    			transform: rotate(45deg) scaleY(1);
+	    		}
+			}
+		}
 
-	.dx-checkbox-label {
-		display: inline-block;
-		vertical-align: middle;
-	}
+		@include when(disabled) {
+			color: $--dx-checkbox-color-disabled;
+		}
+		// 设置标签页时的样式
+		@include when(button) {
+			padding: 1rem 2rem;
+			border-radius: 0.5rem;
+			background-color: $--dx-checkbox-background-color-btn;
+			color: $--dx-checkbox-color-btn;
+		    line-height: 1;
+			@include when(checked) {
+		    	color: $--dx-checkbox-color-check-btn;
+		    	background-color: $--dx-checkbox-background-color-check-btn;
+		    }
 
-	&.is-checked {
-		color: $--dx-checkbox-color-check;
-		.dx-checkbox-inner {
-			background-color: $--dx-checkbox-color-check;
-    		border-color: $--dx-checkbox-color-check;
-    		&:after {
-    			transform: rotate(45deg) scaleY(1);
-    		}
+		   @include when(disabled) {
+		    	color: $--dx-checkbox-color-disabled;
+		    	background-color: $--dx-checkbox-background-color-disabeld;
+		    }
 		}
 	}
 
-	&.is-disabled {
-		color: $--dx-checkbox-color-disabled;
-	}
-
-}
-/* btn类型 */
-.dx-checkbox.is-button {
-	padding: 1rem 2rem;
-	border-radius: 0.5rem;
-	background-color: $--dx-checkbox-background-color-btn;
-	color: $--dx-checkbox-color-btn;
-    line-height: 1;
-
-    &.is-checked {
-    	color: $--dx-checkbox-color-check-btn;
-    	background-color: $--dx-checkbox-background-color-check-btn;
-    }
-
-    &.is-disabled {
-    	color: $--dx-checkbox-color-disabled;
-    	background-color: $--dx-checkbox-background-color-disabeld;
-    }
-}
-.dx-checkbox-origin {
-	display: none;
-}
 </style>

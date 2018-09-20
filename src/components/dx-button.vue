@@ -53,38 +53,51 @@ export default {
 </script>
 <style lang="scss">
 /*按钮基本样式*/
-
-.dx-button {
-    display: inline-block;
-    line-height: 1;
-    white-space: nowrap;
-    cursor: pointer;
-    border: 0.1rem solid #bfcbd9;
-    border-color: $--dx-button-default-border-color;
-    color: $--dx-button-default-color;
-    -webkit-appearance: none;
-    text-align: center;
-    outline: none;
-    margin: 0;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    padding: 0.8rem 1rem;
-    font-size: $--dx-button-default-font-size;
-    background-color: transparent;
-    border-radius: 0.4rem;
-    span, i {
+    @include B(button) {
+        display: inline-block;
         line-height: 1;
-        vertical-align: middle;       
+        white-space: nowrap;
+        cursor: pointer;
+        border: 0.1rem solid #bfcbd9;
+        border-color: $--dx-button-default-border-color;
+        color: $--dx-button-default-color;
+        -webkit-appearance: none;
+        text-align: center;
+        outline: none;
+        margin: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        padding: 0.8rem 1rem;
+        font-size: $--dx-button-default-font-size;
+        background-color: transparent;
+        border-radius: 0.4rem;
+        span, i {
+            line-height: 1;
+            vertical-align: middle;       
+        }
+
+        &:focus, &:hover {
+            color: $--dx-button-default-color-hover;
+            border-color: $--dx-button-default-border-color-hover;
+        }
+        /* 按钮禁用时的样式 */
+        @include when(disabled) {
+            color: $--dx-button-disable-color !important;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: $--dx-button-disable-background-color;
+            border-color: $--dx-button-disable-border-color;
+
+            &:focus, &:hover {
+                color: $--dx-button-disable-color !important;
+                cursor: not-allowed;
+                background-image: none;
+                background-color: $--dx-button-disable-background-color;
+                border-color: $--dx-button-disable-border-color;
+            }
+        }
     }
-}
-
-.dx-button:focus,
-.dx-button:hover {
-    color: $--dx-button-default-color-hover;
-    border-color: $--dx-button-default-border-color-hover;
-}
-
 /*按钮默认样式*/
 
 .dx-button-text {
@@ -173,18 +186,6 @@ export default {
     border-radius: 5rem;
     font-size: $--dx-button-full-font-size;
     line-height: 1;
-}
-
-/*按钮禁用时的样式*/
-
-.dx-button.is-disabled,
-.dx-button.is-disabled:focus,
-.dx-button.is-disabled:hover {
-    color: $--dx-button-disable-color !important;
-    cursor: not-allowed;
-    background-image: none;
-    background-color: $--dx-button-disable-background-color;
-    border-color: $--dx-button-disable-border-color;
 }
 
 </style>

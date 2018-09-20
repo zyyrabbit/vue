@@ -2,7 +2,7 @@
 	<div class="dx-upload">
 		<div 
 			tabindex="0"
-			class="dx-upload-btn"
+			class="dx-upload--btn"
 			@click="handleClick"
 		>
 			<dx-button type="primary">
@@ -27,7 +27,7 @@
 						:name="name"
 						:multiple="multiple"
 						:accept="accept"
-						class="dx-upload-input" 
+						class="dx-upload--input" 
 						type="file" 
 						ref="input" 
 						@change="handleChange"
@@ -42,15 +42,15 @@
 		</div>
 		<div 
 			v-if="tip" 
-			class="dx-upload-tip"
+			class="dx-upload--tip"
 		>
 			{{tip}}
 		</div>
 		<ul>
 			<li v-for="file in fileLists">
-				<a class="dx-upload-file-name">
+				<a class="dx-upload__file-list--name">
 					{{file.name}}
-					<span class="dx-upload-file-name-close"> x </span>
+					<span class="dx-upload__file-list--close"> x </span>
 				</a>
 			</li>
 		</ul>
@@ -162,33 +162,38 @@
 		}
 	}
 </script>
-<style>
-.dx-upload-btn {
-	display: inline-block;
-}
-.dx-upload-input {
-	display: none;
-}
-.dx-upload-tip {
-	font-size: 1.2rem;
-	color: #666;
-	padding-top: 1rem;
-}
-.dx-upload-file-name {
-	display: block;
-	color: #666;
-	font-size: 1.3rem;
-	padding: 0.5rem;
-	cursor: pointer;
-}
-.dx-upload-file-name:hover {
-	background-color: #eee;
-	color: #879;
-	border-radius: 0.4rem;
-}
-.dx-upload-file-name-close {
-	float: right;
-	font-size: 1.4rem;
-}
+<style lang="scss">
+	@include B(dx-upload) {
+		@include M(btn) {
+			display: inline-block;
+		}
+		@include M(input) {
+			display: none;
+		}
+		@include M(tip) {
+			font-size: 1.2rem;
+			color: #666;
+			padding-top: 1rem;
+		}
 
+		@include E(file-list) {
+			@include M(name) {
+				display: block;
+				color: #666;
+				font-size: 1.3rem;
+				padding: 0.5rem;
+				cursor: pointer;
+				&:hover {
+					background-color: #eee;
+					color: #879;
+					border-radius: 0.4rem;
+				}
+			}
+
+			@include M(name) {
+				float: right;
+				font-size: 1.4rem;
+			}	
+		}
+	}
 </style>

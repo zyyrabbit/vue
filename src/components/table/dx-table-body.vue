@@ -1,7 +1,7 @@
 <template>
  	<table 
  		ref="table" 
- 		:class="{'vertical':borderColumn,'horizontal':borderRow}" 
+ 		:class="{'is-vertical': borderColumn,'is-horizontal': borderRow}" 
  		class="dx-table-body"
  	>
 	 	<colgroup>
@@ -14,7 +14,7 @@
 	 	</colgroup>
 	 	<thead 
 	 		:class="[tableHeadClass]"
-	 		class="dx-table-body-table-head" 
+	 		class="dx-table-body__table-head" 
 	 	> 
 	 	     <!-- 表格标题 -->
 	 	   	<tr>
@@ -26,7 +26,7 @@
 	 	   			<span v-if="!column.isExpand && column.selectable">
 	 	      	    	<input 
 	 	      	    		ref="selectedAll"
-	 	      	    		class="dx-table-body-checkbox" 
+	 	      	    		class="dx-table-body--checkbox" 
 	 	      	    		type="checkbox" 
 	 	      	    		@click="toggleSelectAllRows($event.target.checked)"
 	 	      	    	>
@@ -35,16 +35,16 @@
 	 	      	    	{{column.renderHeader(column.label)}}
 		 	   			<span 
 		 	   				v-if="column.sortable" 
-		 	   				class="dx-table-body-sort-index"
+		 	   				class="dx-table-body__table-head--sort-index"
 		 	   			>
 			 	   			<i 
-			 	   				:class="{'sort-active':column.reverse !== 'descending'}" 
-			 	   				class="icon iconfont dx-up dx-table-body-icon-up" 
+			 	   				:class="{'is-sort-active':column.reverse !== 'descending'}" 
+			 	   				class="icon iconfont dx-up dx-table-body__table-head--icon-up" 
 			 	   				aria-hidden="true"
 			 	   			>
 			 	   			</i>
-			 	   			<i :class="{'sort-active':column.reverse === 'descending'}" 
-			 	   				class="icon iconfont dx-down dx-table-body-icon-down" 
+			 	   			<i :class="{'is-sort-active':column.reverse === 'descending'}" 
+			 	   				class="icon iconfont dx-down dx-table-body__table-head--icon-down" 
 			 	   				aria-hidden="true"
 			 	   			>
 			 	   			</i>
@@ -55,7 +55,7 @@
 	 	</thead>
 	 	<tbody 
 	 		:class="[tableBodyClass]" 
-	 		class="dx-table-body-table-body"
+	 		class="dx-table-body__table-body"
 	 	>
 	 	  	<!-- 表格内容 -->
 	 	    <tr v-for="(row,index) in data" 
@@ -69,7 +69,7 @@
 	 	      	    	key="select"
 	 	      	    >
 	 	      	    	<input  
-	 	      	    		class="dx-table-body-checkbox" 
+	 	      	    		class="dx-table-body--checkbox" 
 	 	      	    		type="checkbox" 
 	 	      	    		@click="toggleSelectRow(index)"
 	 	      	    	>
@@ -192,72 +192,86 @@ export default {
 }
 </script>
 <style lang="scss">
-	.dx-table-body {
+	@include B(table-body) {
 		/*border-spacing: 30px;*/
 		/*合并表格边框*/
+		width: 100%;
 		border-collapse: collapse;
 		font-size:$--dx-table-body-font-size;
-		width: 100%;
 		color: $--dx-table-body-color;
 		cursor: default;
 		/*border:0.1rem solid #aaa;*/
 		/*table-layout: fixed;*/
-	}
-	/*表格默认表格单元样式*/
-	.dx-table-body th,td {
-		text-align: left;
-		padding: 1rem;
-		padding-left: 2rem;
-	}
-	/*是否显示竖直边框*/
-	.dx-table-body.vertical {
-		border: 0;
-		border-left: 0.1rem solid #ddd;
-	}
-	.dx-table-body.vertical th,.dx-table-body.vertical td {
-		border-right: 0.1rem solid #ddd;
-	}
-	/*表格是否显示行边框*/
-	.dx-table-body.horizontal {
-		border: 0;
-		border-top: 0.1rem solid #ddd;
-	}
-	.dx-table-body.horizontal th,.dx-table-body.horizontal td {		
-		border-bottom: 0.1rem solid #ddd;
-	}
-	.dx-table-body.vertical.horizontal {
-		border-top: 0.1rem solid #ddd;
-		border-left: 0.1rem solid #ddd;
-	}
-	/*表格行，鼠标滑过样式*/
-	.dx-table-body tbody tr:hover {
-		background-color: $--dx-table-body-tr-backgrounde-color-hover;
-	}
+		/*表格默认表格单元样式*/
+		th, td {
+			text-align: left;
+			padding: 1rem;
+			padding-left: 2rem;
+		}
 
-	/*表格排序指示器*/
-	.dx-table-body-sort-index {
-		position: relative;
-		margin-left: 0.3rem;
-	}
-	.dx-table-body-icon-up,.dx-table-body-icon-down {
-		position: absolute;
-		color: #aaa;
-	}
-	.dx-table-body-icon-up {
-		top: -0.2rem;
-	}
-	.dx-table-body-icon-down {
-		bottom: -0.2rem;
-	}
-	.dx-table-body.sort-active {
-		color: $--dx-table-body-color-sort-active;
-	}
-	/*如果设置可以选择，checkbox按钮样式*/
-	.dx-table-body-checkbox {
-		display: inline-block;
-		width: $--dx-table-body-checkbox-height;
-		height: $--dx-table-body-checkbox-height;
-		background: $--dx-table-body-checkbox-background-color;
-		color: $--dx-table-body-checkbox-color;
+		/*表格行，鼠标滑过样式*/
+		tbody tr:hover {
+			background-color: $--dx-table-body-tr-backgrounde-color-hover;
+		}
+		/*是否显示竖直边框*/
+		@inlcude when(vertical) {
+			border: 0;
+			border-left: 0.1rem solid #ddd;
+			th, td {
+				border-right: 0.1rem solid #ddd;
+			}
+		}
+
+		/*表格是否显示行边框*/
+		@inlcude when(horizontal) {
+			border: 0;
+			border-top: 0.1rem solid #ddd;
+			th, td {
+				border-bottom: 0.1rem solid #ddd;
+			}
+		}
+		/* 显示行、列边框 */
+		@include when(vertical) {
+			@include when(horizontal) {
+				border-top: 0.1rem solid #ddd;
+				border-left: 0.1rem solid #ddd;
+				th, td {
+					border: 0.1rem solid #ddd;
+				}
+			}
+		}
+
+		@include E(table-head) {
+			/*表格排序指示器*/
+			@include M(sort-index) {
+				position: relative;
+				margin-left: 0.3rem;
+		    }
+
+		    @include M(icon-up icon-down) {
+				position: absolute;
+				color: #aaa;
+				 @include when(sort-active) {
+					color: $--dx-table-body-color-sort-active;
+				}
+		    }
+
+		    @include M(icon-up) {
+				top: -0.2rem;
+		    }
+
+		    @include M(icon-down) {
+				bottom: -0.2rem;
+		    }
+		}
+		
+		/*如果设置可以选择，checkbox按钮样式*/
+		@include M(checkbox) {
+			display: inline-block;
+			width: $--dx-table-body-checkbox-height;
+			height: $--dx-table-body-checkbox-height;
+			background: $--dx-table-body-checkbox-background-color;
+			color: $--dx-table-body-checkbox-color;
+		}
 	}
 </style>

@@ -4,14 +4,14 @@
 			v-for="index in 5"
 			:key="index"
 			@click="select(index)"
-			class="dx-rate-item">
+			class="dx-rate__item">
 			<i 
 				class="icon iconfont dx-star"
 				:style="{'font-size': size + 'rem'}"
 				:class="[
 					rateClass, 
 					level > index ? selectRateClass : '',
-					type ? 'dx-rate-item-' + type : '']"
+					type ? 'dx-rate__item--' + type : '']"
 			></i>
 		</li>
    </ul>
@@ -28,11 +28,11 @@ export default {
 		size: String,
 		rateClass: {
 			type: String,
-			default: 'star-rate-icon'
+			default: 'dx-rate__item--star-icon'
 		},
 		selectRateClass: {
 			type: String,
-			default: 'star-rate-icon-select'
+			default: 'is-select'
 		}
     },
     data() {
@@ -54,21 +54,18 @@ export default {
 }
 </script>
 <style lang="scss">
-.clearfix {
-	clear: both;
-	_display: inline;
-}
-.dx-rate-item {
-	float: left;
-	cursor: pointer;
-	font-size: 1.6rem;
-}
+	@include B(rate) {
+		@include E(item) {
+			float: left;
+			cursor: pointer;
+			font-size: 1.6rem;
 
-/* 选择背景框 */
-.star-rate-icon {
-	color: $--dx-rate-icon-color;
-}
-.star-rate-icon-select {
-	color: $--dx-rate-icon-color-select;
-}
+			@include M(star-icon) {
+				color: $--dx-rate-icon-color;
+				@include when(select) {
+					color: $--dx-rate-icon-color-select;
+				}
+			}
+		}
+	}
 </style>

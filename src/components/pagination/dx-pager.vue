@@ -5,18 +5,18 @@
 	>
 		<li  
 			v-if="pageCount > 0" 
-			:class="{disbaled:1 === currentPage}" 
+			:class="{'is-disbaled':1 === currentPage}" 
 			class="pre"
 		>
 			<i 
-				class="icon iconfont dx-prev dx-pager-icon"
+				class="icon iconfont dx-prev dx-pager--icon"
 				aria-hidden="true"
 			>
 			</i>
 		</li>
 		<li 
 			v-if="pageCount > 0"  
-			:class="{active: 1 === currentPage}"
+			:class="{'is-active': 1 === currentPage}"
 			:style="[1 === currentPage && activeStyle]"
 		>
 			1
@@ -33,9 +33,9 @@
 			</i>
 		</li>
 		<li 
-			v-for="(page,index) in pager" 
+			v-for="(page, index) in pager" 
 			:key="index"   
-			:class="{active: page === currentPage}"
+			:class="{'is-active': page === currentPage}"
 			:style="[page === currentPage && activeStyle]"
 		>
 			{{ page }}
@@ -53,18 +53,18 @@
 		</li>
 		<li
 			v-if="pageCount > 1"  
-			:class="{active: pageCount === currentPage}"
+			:class="{'is-active': pageCount === currentPage}"
 			:style="[pageCount === currentPage && activeStyle]"
 		>
 			{{ pageCount }}
 		</li>
 		<li 
 			v-if="pageCount > 0" 
-			:class="{ disbaled: pageCount === currentPage}" 
+			:class="{ 'is-disbaled': pageCount === currentPage}" 
 			class="next"
 		>	
 			<i 
-				class="icon iconfont dx-next dx-pager-icon" 
+				class="icon iconfont dx-next dx-pager--icon" 
 				aria-hidden="true"
 			>
 			</i>
@@ -182,36 +182,34 @@
 	}
 </script>
 <style lang="scss">
-	.dx-pager {
+	@include B(pager) {
 		display: inline-block;
+		>li {
+			float: left;
+			padding: 0 0.8rem;
+		    border: 0.1rem solid #d1dbe5;
+		    border-right: 0;
+		    background-color: $--dx-pager-li-background-color;
+		    font-size: $--dx-pager-li-font-size;
+		    min-width: 2.8rem;
+		    line-height: $--dx-pager-li-line-height;
+		    cursor: pointer;
+		    text-align: center;
+		    &:last-child {
+		    	border-right: 0.1rem solid #d1dbe5;
+		    }
+		    @include when(active) {
+				background-color: $--dx-pager-li-background-color-active;
+		 		color: $--dx-pager-li-color;
+			}
+			@include when(disbaled) {
+				cursor: not-allowed;
+			}
+		}
+		// 图标
+		@include M(icon) {
+			line-height: $--dx-pager-li-line-height;
+			font-size: $--dx-pager-li-font-size;
+		}
 	}
-	.dx-pager>li {
-		float: left;
-		padding: 0 0.8rem;
-	    border: 0.1rem solid #d1dbe5;
-	    border-right: 0;
-	    background-color: $--dx-pager-li-background-color;
-	    font-size: $--dx-pager-li-font-size;
-	    min-width: 2.8rem;
-	    line-height: $--dx-pager-li-line-height;
-	    cursor: pointer;
-	    text-align: center;
-	}
-	.dx-pager>li:last-child {
-		border-right: 0.1rem solid #d1dbe5;
-	}
-	 .dx-pager>li.active {
-		 background-color: $--dx-pager-li-background-color-active;
-		 color: $--dx-pager-li-color;
-	} 
-	/*pre,next按钮禁止样式*/
-	.dx-pager>li.disbaled {
-		cursor: not-allowed;
-	}
-
-	.dx-pager-icon {
-		line-height: $--dx-pager-li-line-height;
-		font-size: $--dx-pager-li-font-size;
-	}
-
 </style>

@@ -1,14 +1,14 @@
 <template>
-  <ul class="dx--tab">
-    <div class="tabs__active-bar" :style="barStyle"></div>
+  <ul class="dx-tab">
+    <div class="dx-tab--active-bar" :style="barStyle"></div>
     <li 
-      :class="{'tab__active': select === index}" 
-      class="dx--tab-item" 
+      :class="{'is-active': select === index}" 
+      class="dx-tab--item" 
       v-for="(item, index) in tabs" 
       :key="index" 
       :value="item.value" 
       @click="onTabClick(item, index)"
-      ref="tab">{{item.label}}</li>
+      ref="tab">{{ item.label }}</li>
   </ul>
 </template>
 <script>
@@ -84,9 +84,10 @@
   }
 </script>
 <style scoped lang="scss">
-.dx--tab::-webkit-scrollbar { display: none }
-.dx{
-    &--tab {
+  @include B(tab) {
+    &::-webkit-scrollbar { 
+        display: none 
+    }
     position: relative;
     padding-bottom: 1.4rem;
     width: 100%;
@@ -94,26 +95,26 @@
     // 父元素会根据字体撑开 需要设为0
     font-size: 0;
     white-space: nowrap;
-    .tabs__active-bar { 
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: $--dx-tabs-active-bar-height;
-      background-color: $--dx-tabs-active-background-color;
-      border-radius: 0.4rem;
-      z-index: 1;
-      transition: transform .3s cubic-bezier(.645, .045, .355, 1);
-      list-style: none;
+    @include M(active-bar) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: $--dx-tabs-active-bar-height;
+        background-color: $--dx-tabs-active-background-color;
+        border-radius: 0.4rem;
+        z-index: 1;
+        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+        list-style: none;
     }
-    .tab__active {
-      color: $--dx-tabs-active-color;
+
+    @include M(item) {
+        color: $--dx-tabs-item-color;
+        font-size: $--dx-tabs-item-font-size;
+        display: inline-block;
+        padding-right: $--dx-tabs-item-padding-right;
+        @include when(active) {
+            color: $--dx-tabs-active-color;
+        }
     }
   }
-  &--tab-item {
-    color: $--dx-tabs-item-color;
-    font-size: $--dx-tabs-item-font-size;
-    display: inline-block;
-    padding-right: $--dx-tabs-item-padding-right;
-  }
-}
 </style>

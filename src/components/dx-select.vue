@@ -3,16 +3,16 @@
 		<!-- 下拉框主体内容 -->
 		<div 
 			v-clickoutside="closeItems" 
-			class="dx-select-content" 
+			class="dx-select__content" 
 		>
 			<!-- 下拉选择框部分 -->
 			<div 
-				class="dx-select-input" 
+				class="dx-select__input" 
 				@click.stop="openItems"
 			>
 				<input 
 					v-model="selectLabel" 
-					class="dx-select-input-origin"
+					class="dx-select__input--origin"
 					:readonly="readonly" 
 					type="text"  
 					:placeholder="placeholder"
@@ -20,7 +20,7 @@
 				<!-- 下拉框指示器 -->	
 				<!-- <span class="dx-select-input-ind" :class="{open:isShow}"></span> -->
 				<i 
-					class="icon iconfont dx-select-input-ind" 
+					class="icon iconfont dx-select__input--ind" 
 					:class="[isShow ? 'dx-down' : 'dx-left']"
 					aria-hidden="true"
 				>
@@ -29,15 +29,15 @@
 			<!-- 下拉列表 -->
 			<ul 
 				v-show="isShow"
-				class="dx-select-ul"  
+				class="dx-select__ul"  
 				@click="selectItem($event)"
 			>
 				<li 
 					v-for="(item,index) in items" 
 					:key="index"
 					:data-index="index"
-					:class="{ selected: index === selecteIndex }"  
-					class="dx-select-li" 
+					:class="{ 'is-selected': index === selecteIndex }"  
+					class="dx-select__ul--li" 
 				>
 					{{isObject ? item[labelKey] : item}}
 				</li>
@@ -115,70 +115,64 @@
 	}
 </script>
 <style lang="scss">
-	/*整体样式*/
-	.dx-select {
+	@include B(select) {
 		position: relative;
 		font-size: $--dx-select-font-size;
 		z-index: 1;
 		display: inline-block;
 		min-width: 6rem;
 		max-width: 20rem;
-	}
-	/*选择框标签样式*/
-	.dx-select .dx-select-label {
-		position: absolute;
-		left: 0;
-		font-size: $--dx-select-label-font-size;
-	}
-	/*自定义选择框标签样式*/
-	.dx-select .dx-select-content {
-		position: relative;
-	}
-	/*下拉列表箭头指示器样式*/
-	.dx-select-input-ind {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 1rem;
-		color: $--dx-select-input-ind-color;
-	}
-	/*自定义input框标签样式*/
-	.dx-select .dx-select-input-origin {
-		padding-left: 1rem;
-		width: 100%;
-		border: 0.1rem solid #b3b3b3;
-		font-size: 1.6rem;
-		background-color: $--dx-select-input-origin-background-color;
-		line-height: 3rem;
-		border-radius: 0.5rem;
-		cursor: pointer;
-	}
-	/*下拉列表ul样式*/
-	.dx-select .dx-select-ul {
-		position: absolute;
-		margin-top: 0.3rem;
-		width: 100%;
-		cursor: pointer;
-		background-color: $--dx-select-ul-background-color;
-		z-index: 999;
-		font-size: $--dx-select-ul-font-color;
-		color: $--dx-select-ul-color;
-		border-radius: 0.2rem;
-		box-shadow: 0 0 0.3rem #aaa;
-		padding: 0;
-		text-align: left;
-	}
-	/*下拉列表li样式*/
-	.dx-select-ul li {
-		padding: 0.5rem 0rem 0.5rem 1rem;
-		list-style: none;
-	}
-	.dx-select-ul li:hover {
-		color: $--dx-select-ul-color-hover;
-		background-color: $--dx-select-ul-background-color-hover;
-	}
-	.dx-select-ul li.selected {
-		/*color:#FFC125;*/
-		color: $--dx-select-ul-color-hover;
+		@include E(content) {
+			position: relative;
+		}
+
+		@include E(input) {
+			/*自定义input框标签样式*/
+			@include M(origin) {
+				padding-left: 1rem;
+				width: 100%;
+				border: 0.1rem solid #b3b3b3;
+				font-size: 1.6rem;
+				background-color: $--dx-select-input-origin-background-color;
+				line-height: 3rem;
+				border-radius: 0.5rem;
+				cursor: pointer;
+			}
+			/*下拉列表箭头指示器样式*/
+			@include M(ind) {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 1rem;
+				color: $--dx-select-input-ind-color;
+			}
+		}
+		/*下拉列表ul样式*/
+		@include E(ul) {
+			position: absolute;
+			margin-top: 0.3rem;
+			width: 100%;
+			cursor: pointer;
+			background-color: $--dx-select-ul-background-color;
+			z-index: 999;
+			font-size: $--dx-select-ul-font-color;
+			color: $--dx-select-ul-color;
+			border-radius: 0.2rem;
+			box-shadow: 0 0 0.3rem #aaa;
+			padding: 0;
+			text-align: left;
+			/*下拉列表li样式*/
+			@include M(li) {
+				padding: 0.5rem 0rem 0.5rem 1rem;
+				list-style: none;
+				&:hover {
+					color: $--dx-select-ul-color-hover;
+					background-color: $--dx-select-ul-background-color-hover;
+				}
+				@include when(selected) {
+					color: $--dx-select-ul-color-hover;
+				}
+			}
+		}
 	}
 </style>

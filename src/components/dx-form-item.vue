@@ -4,19 +4,19 @@
 		:style="{ width: width + 'px'}"
 	>
 		<slot></slot>
-		<ul v-if="showPwdLevel" class="password-level-wrap">
-			<li 
+		<ul v-if="showPwdLevel" class="dx-form-item__password-level-wrap">
+			<li
 				v-for="(level, index) of pwdLevels" 
 				:key="level"
-				:class="[inputPwdLevel > index ? 'password-level-input-' + index : '']"
-				class="password-level"
+				:class="[inputPwdLevel > index ? 'dx-form-item__password-level--number-' + index : '']"
+				class="dx-form-item__password-level"
 			>
 				{{ level }}
 			</li>
 		</ul>
 		<div 
 			v-if="showMsg && text" 
-			:class="[textClasses, {'dx-form-item-text-bottom': bottom}]"
+			:class="[textClasses, {'is-bottom': bottom}]"
 		>
 			{{ text }}
 		</div>
@@ -60,7 +60,7 @@
 		},
 		computed: {
 			textClasses() {
-				return `dx-form-item-text ${this.textClass} ${this.msgTextClass}`
+				return `dx-form-item--text ${this.textClass} ${this.msgTextClass}`
 			},
 			// 找到父元素dx-form组件
 			form() {
@@ -137,7 +137,7 @@
 					}
 					if (!rst) {
 						this.text = rule.message || ''
-						this.textClass = 'error'
+						this.textClass = 'is-error'
 						errorMsg = true
 						/* 当确定输入为空的时候，立即返回 */
 						if (rule.name === 'required') {
@@ -177,65 +177,67 @@
 			onFieldFocus() {
 				if (this.isValidate) {
 					this.text = this.instruction || ''
-					this.textClass = 'dx-form-item-instruction'
+					this.textClass = 'dx-form-item--instruction'
 				}
 			}
 		}
 	}
 </script>
 <style lang="scss">
-	.dx-form-item {
+	@include B(form-item) {
 		position: relative;
-	}
-	.dx-form-item-text {
-		position: absolute;
-		width: 100%;
-		top: 0;
-		word-wrap: normal;
-		left: 82%;
-		height: $--dx-form-item-text-height;
-		line-height: $--dx-form-item-text-line-height;
-	}
-	.dx-form-item-text-bottom {
-	    position: static;
-	}
-	.dx-form-item-text.error {
-		color: $--dx-form-item-text-color-error;
-	}
-	.dx-form-item-instruction {
-		color: $--dx-form-item-instruction-color;
-	}
-	// 密码等级
-	.password-level-wrap {
-		display: flex;
-		width: 80%;
-	}
+		// 密码等级
+		@include E(password-level-wrap) {
+			display: flex;
+			width: 80%;
+		}
+		// 密码等级
+		@include E(password-level) {
+			flex-grow: 1;
+			line-height: 3rem;
+			font-size: 1.4rem;
+			margin-top: 1rem;
+			border: 1px solid #555;
+			border-left: none;
+			text-align: center;
+			background-color: #ddd;
+			opacity: 0.8;
+			&:first-child {
+				border-left: 1px solid #555;
+				border-radius: 1.5rem 0 0 1.5rem;
+			}
+			&:last-child {
+				border-radius: 0 1.5rem 1.5rem 0;
+			}
 
-	.password-level {
-		flex-grow: 1;
-		line-height: 3rem;
-		font-size: 1.4rem;
-		margin-top: 1rem;
-		border: 1px solid #555;
-		border-left: none;
-		text-align: center;
-		background-color: #ddd;
-		opacity: 0.8;
-		&:first-child {
-			border-left: 1px solid #555;
-			border-radius: 1.5rem 0 0 1.5rem;
+			@include M(number-0) {
+				background-color: red;
+			}
+			@include M(number-1) {
+				background-color: yellow;
+			}
+			@include M(number-2) {
+				background-color: green;
+			}
 		}
-		&:last-child {
-			border-radius: 0 1.5rem 1.5rem 0;
+		@include M(text) {
+			position: absolute;
+			width: 100%;
+			top: 0;
+			word-wrap: normal;
+			left: 82%;
+			height: $--dx-form-item-text-height;
+			line-height: $--dx-form-item-text-line-height;
+			@include when(bottom) {
+				position: static;
+			}
+
+			@include when(error) {
+				color: $--dx-form-item-text-color-error;
+			}
 		}
-	}
-	.password-level-input-0 {
-		background-color: red;
-	}
-	.password-level-input-1 {
-		background-color: yellow;
-	}
-	.password-level-input-2 {
-		background-color: green;
+		@include M(instruction) {
+			color: $--dx-form-item-instruction-color;
+		}
 	}
 </style>

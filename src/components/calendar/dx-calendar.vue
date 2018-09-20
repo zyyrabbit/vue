@@ -1,17 +1,17 @@
 <template>
 	<!-- 两列排列 -->
     <div class="dx-calendar">
-    	<div class="dx-calendar-select">
+    	<div class="dx-calendar__select">
     		<span 
                 @click="preYear()"
             >
                 <i class="icon iconfont dx-arrow-left-double"></i>
             </span>
             <span 
-                class="dx-calendar-select-left"
+                class="dx-calendar__select--left"
                 @click="preMonth()"
             > <i class="icon iconfont dx-prev"></i> </span>
-            <span class="dx-calendar-input">
+            <span class="dx-calendar__select--input">
                 <input 
                     v-model="year"
                     readonly="readonly" 
@@ -23,21 +23,21 @@
             </span>
            
             <span 
-                class="dx-calendar-select-right"
+                class="dx-calendar__select--right"
                  @click="nextMonth()"
             > <i class="icon iconfont dx-next"></i> </span>
            <span 
-                class="dx-calendar-select-right"
+                class="dx-calendar__select--right"
                  @click="nextYear()"
             > <i class="icon iconfont dx-arrow-right-double"></i> </span>
     	</div>
-    	<div class="dx-calendar-content">
-    		<table class="dx-calendar-content__table" width="100%">
+    	<div>
+    		<table class="dx-calendar__content-table" width="100%">
                 <thead>
                     <th v-for="weekDay in weekDays">{{weekDay}}</th>
                 </thead>
                 <tbody>
-                    <tr class="dx-calendar-content__blanking"></tr>
+                    <tr class="dx-calendar__content-table--blanking"></tr>
                     <tr 
                         v-for="row in rows"
                         :key="row"
@@ -48,7 +48,7 @@
                             :class="{
                                     'is-today': today(row, column), 
                                      'is-curent-month': isCurrentMonth(row, column)}"
-                            class="dx-calendar-content__table--td"
+                            class="dx-calendar__content-table--td"
                         >
                             <slot
                                 :date="store[(row - 1) * 7 + column - 1]" 
@@ -141,79 +141,79 @@
 	}
 </script>
 <style lang="scss">
-	.dx-calendar {
+    @include B(calendar) {
         width: 100%;
         margin-top: 0.3rem;
         font-size: 1.3rem;
-    }
-    // 月份选择器
-    .dx-calendar-select {
-        padding: 0 0.4rem;
-        margin-bottom: 0.51rem;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        .dx-calendar-input>input {
-            display: inline-block;
-            max-width: 5rem;
+        /* 日期输入框 */
+        @include E(select) {
+            padding: 0 0.4rem;
+            margin-bottom: 0.51rem;
             text-align: center;
-            border: none;
-            font-size: 1.3rem; 
-        }
-
-        >span {
-            color: $--dx-calendar-icon-color;
-        }
-        >span:first-child {
-            margin-right: 2rem;
-        }
-         >span:last-child {
-            margin-left: 2rem;
-        }
-        &-left{
-            background-size: 100% 100%;
-            width: $--dx-calendar-icon-width;
-            height: $--dx-calendar-icon-height;
-        }
-        &-right{
-            background-size: 100% 100%;
-            width: $--dx-calendar-icon-width;
-            height: $--dx-calendar-icon-height;
-        }
-    }
-    // 空格
-    .dx-calendar-content__blanking {
-        height: 0.63rem;
-    }
-    .dx-calendar-content__table {
-        width: 100%;
-        border-collapse: collapse;
-        >thead {
-            border-radius: 50%;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 0.63rem;
-            >th {
-                font-weight: normal;
-                font-size: $--dx-calendar-th-font-size;
-                padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            @include M(left) {
+                background-size: 100% 100%;
+                width: $--dx-calendar-icon-width;
+                height: $--dx-calendar-icon-height;
+            }
+            @include M(right) {
+                background-size: 100% 100%;
+                width: $--dx-calendar-icon-width;
+                height: $--dx-calendar-icon-height;
+            }
+            @include M(input) {
+                &>input {
+                    display: inline-block;
+                    max-width: 5rem;
+                    text-align: center;
+                    border: none;
+                    font-size: 1.3rem; 
+                }
+            }
+            &>span {
+                color: $--dx-calendar-icon-color;
+                &:first-child {
+                    margin-right: 2rem;
+                }
+                &:last-child {
+                    margin-left: 2rem;
+                }
             }
         }
-        // 表格样式
-        .dx-calendar-content__table--td {
-            text-align: center;
-            color: $--dx-calendar-td-color;
-            font-size: $--dx-calendar-td-font-size;
-            margin: 1rem auto;
-            padding: 1rem; 
-            &.is-curent-month {
-               color: $--dx-calendar-td-color-month;
-            }
-            &.is-today {
-                background-color: $--dx-calendar-td-bacckground-color-today;
+        /* 日历显示表格 */
+        @include E(content-table) {
+            width: 100%;
+            border-collapse: collapse;
+            >thead {
                 border-radius: 50%;
+                border-bottom: 1px solid #ccc;
+                margin-bottom: 0.63rem;
+                >th {
+                    font-weight: normal;
+                    font-size: $--dx-calendar-th-font-size;
+                    padding: 1rem 0;
+                    }
+            }
+            @include M(blanking) {
+                height: 0.63rem;
+            }
+            @include M(td) {
+                height: 0.63rem;
+                text-align: center;
+                color: $--dx-calendar-td-color;
+                font-size: $--dx-calendar-td-font-size;
+                margin: 1rem auto;
+                padding: 1rem; 
+                @include when(curent-month) {
+                   color: $--dx-calendar-td-color-month;
+                }
+                @include when(is-today) {
+                    background-color: $--dx-calendar-td-bacckground-color-today;
+                    border-radius: 50%;
+                }
             }
         }
     }
-    
 </style>

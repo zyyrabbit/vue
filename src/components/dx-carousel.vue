@@ -7,39 +7,39 @@
 	>
 	    <!-- pre轮播容器 -->
 		<div  
-		 	:class="{'dx-carousel-animate': enableTransition}" 
-		 	class="dx-carousel-content"
+		 	:class="{'dx-carousel--animate': enableTransition}" 
+		 	class="dx-carousel__content"
 		 	:style="[{transform: `translateX(${ pre.translateX })`}, itemsSize]" 
 		>
 			<div 
 				v-if="background"
-				class="dx-carousel-content__inner dx-carousel-content__inner--pre"
+				class="dx-carousel__content--inner dx-carousel__content--inner--pre"
 				:style="{ background: `url(${pre.imgSrc})`}"
 			></div>
 			<img v-else :src="pre.imgSrc"/>
 		</div>
 		  <!-- mid轮播容器 -->
 		<div   
-			:class="{'dx-carousel-animate': enableTransition}" 
-			class="dx-carousel-content" 
+			:class="{'dx-carousel--animate': enableTransition}" 
+			class="dx-carousel__content" 
 			:style="[{transform: `translateX(${ mid.translateX })`}, itemsSize]"
 		>
 			<div 
 				v-if="background"
-				class="dx-carousel-content__inner dx-carousel-content__inner--mid"
+				class="dx-carousel__content--inner dx-carousel__content--inner--mid"
 				:style="{ background: `url(${mid.imgSrc})`}">
 			</div>
 		  	<img v-else :src="mid.imgSrc"/>
 		</div>
 		<!-- next轮播容器 -->
 		<div  
-			:class="{'dx-carousel-animate': enableTransition}" 
-			class="dx-carousel-content dx-carousel-content__inner--next"
+			:class="{'dx-carousel--animate': enableTransition}" 
+			class="dx-carousel__content"
 			:style="[{transform: `translateX(${ next.translateX })`}, itemsSize]"
 		>
 			<div 
 				v-if="background"
-				class="dx-carousel-content__inner"
+				class="dx-carousel__content--inner dx-carousel__content--inner--next"
 				:style="{ background: `url(${next.imgSrc})`}">
 			</div>
 		  	<img v-else :src="next.imgSrc"/>
@@ -47,7 +47,7 @@
 		<!-- 向前向后按钮 -->
 		<button 
 			v-show="hover" 
-			class="dx-carousel-left-btn  dx-carousel-btn" 
+			class="dx-carousel-left--btn  dx-carousel--btn" 
 			@click="nextClick()"
 		> 
 			<i class="icon iconfont dx-prev"></i>
@@ -55,23 +55,23 @@
 		</button>
 		<button 
 			v-show="hover" 
-			class="dx-carousel-right-btn  dx-carousel-btn" 
+			class="dx-carousel--right-btn  dx-carousel--btn" 
 			@click="preClick()"
 			> 
 				<i class="icon iconfont dx-next"></i>
 		</button>
 		<!-- 轮播图片指示器 -->
 		<div>
-		  	<ul class="dx-carousel-labels clearfix">
+		  	<ul class="dx-carousel__labels clearfix">
 		  		<li 
 		  			v-for="(item,index) in imageNum" 
 		  			:key="index" 
-		  			class="dx-carousel-item" 
+		  			class="dx-carousel__labels--item" 
 		  			@click="btnClick(index)" 
 		  		>
 		  			<button 
 		  				:class="{'is-active':index === activeInd}" 
-		  				class="dx-carousel-item-btn"
+		  				class="dx-carousel__labels--item-btn"
 		  			>
 					</button>
 		  		</li>
@@ -231,89 +231,94 @@
 	}
 </script>
 <style lang="scss">
-	.dx-carousel{
+	@include B(carousel) {
 		background-color: $--dx-carousel-background-color;
 		position: relative;
 	    overflow: hidden;
-	}
-	.dx-carousel-content{
-		position:absolute;
-	}
+	    @include M(animate) {
+			transition:0.5s;
+		}
 
-	.dx-carousel-content__inner{
-		width: 100%;
-		height: 100%;
-	}
+		@include E(content) {
+			position:absolute;
+			@include M(inner) {
+				width: 100%;
+				height: 100%;
+			}
 
-	.dx-carousel-content__inner--pre{
-		background-color: #99a9bf;
-	}
+			@include M(pre) {
+				background-color: #99a9bf;
+			}
 
-	.dx-carousel-content__inner--mid{
-		background-color: #d3dce6;
-	}
+			@include M(mid) {
+				background-color: #d3dce6;
+			}
 
-	.dx-carousel-content__inner--next{
-		background-color: #666666;
-	}
+			@include M(next) {
+				background-color: #666666;
+			}
+		}
 
-	.dx-carousel-animate{
-		transition:0.5s;
-	}
+		@include M(btn) {
+			width: 4rem;
+			height: 4rem;
+			position: absolute;
+		    top: 50%;
+			transform: translateY(-50%);
+			border: none;
+		    outline: none;
+		    padding: 0;
+		    margin: 0;
+		    cursor: pointer;
+		    transition: .1s;
+		    border-radius: 50%;
+		    background-color: $--dx-carousel-btn-background-color;
+		    color: $--dx-carousel-btn-color;
+		    z-index: 0;
+		    text-align: center;
+		    font-size: 1.2rem;
+		}
 
-	.dx-carousel-btn{
-		width: 4rem;
-		height: 4rem;
-		position: absolute;
-	    top: 50%;
-		transform: translateY(-50%);
-		border: none;
-	    outline: none;
-	    padding: 0;
-	    margin: 0;
-	    cursor: pointer;
-	    transition: .1s;
-	    border-radius: 50%;
-	    background-color: $--dx-carousel-btn-background-color;
-	    color: $--dx-carousel-btn-color;
-	    z-index: 0;
-	    text-align: center;
-	    font-size: 1.2rem;
-	}
-	.dx-carousel-left-btn{
-		left: 10%;
-	}
-	.dx-carousel-right-btn{
-	    right: 10%;
-	}
-	.dx-carousel-labels{
-		position: absolute;
-		bottom: 10%;
-		left: 50%;
-		transform: translateX(-50%);
-		/* background-color: $--dx-carousel-labels-background-color; */
-		opacity: $--dx-carousel-labels-opacity;
-		border-radius: 0.8rem;
-	}
-	.dx-carousel-item{
-		float: left;
-		margin: 0 1rem;
-	}
-	.dx-carousel-item-btn{
-		width: $--dx-carousel-item-btn-width;
-		height: $--dx-carousel-item-btn-height;
-		display: block;
-	    border-radius: 50%;
-	    background-color: $--dx-carousel-item-btn-background-color;
-	    border: none;
-	    outline: none;
-	    padding: 0;
-	    margin: 0;
-	    cursor: pointer;
-	    transition: .1s;
-	}
-	.dx-carousel-item-btn.is-active{
-		background-color: $--dx-carousel-item-btn-background-color-active;
+		@include M(left-btn) {
+			left: 10%;
+		}
+
+		@include M(right-btn) {
+			 right: 10%;
+		}
+
+		@include E(labels) {
+			position: absolute;
+			bottom: 10%;
+			left: 50%;
+			transform: translateX(-50%);
+			/* background-color: $--dx-carousel-labels-background-color; */
+			opacity: $--dx-carousel-labels-opacity;
+			border-radius: 0.8rem;
+
+			@include M(item) {
+				float: left;
+				margin: 0 1rem;
+			}
+
+			@include M(item-btn) {
+				width: $--dx-carousel-item-btn-width;
+				height: $--dx-carousel-item-btn-height;
+				display: block;
+			    border-radius: 50%;
+			    background-color: $--dx-carousel-item-btn-background-color;
+			    border: none;
+			    outline: none;
+			    padding: 0;
+			    margin: 0;
+			    cursor: pointer;
+			    transition: .1s;
+
+			    @include when(active) {
+					background-color: $--dx-carousel-item-btn-background-color-active;
+				}
+			}
+		}
 	}
 </style>
 

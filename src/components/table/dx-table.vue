@@ -1,24 +1,24 @@
 <template>
-	<div class="dx-tabel--wrap">
+	<div class="dx-table">
 	    <div style="display:none">
 	    	<slot></slot>
 	    </div>
 	    <div 
 	    	v-if="states.hasFilter"
-	    	class="dx-tabel-query-wrap" 
+	    	class="dx-table__query" 
 	    >
 	    	<span 
 	    		v-for="(column, index) in filterColumns" 
 	    		:key="index" 
 	    	>
 	    		<dx-input
-	    			class="dx-tabel-query-wrap-input"
+	    			class="dx-table__query--input"
 	    			v-model="column.filterValue"
 	    		>
 	    			{{column.label}}:
 	    		</dx-input>
 	    	</span>
-	    	<span class="dx-tabel-query-btn">
+	    	<span class="dx-table__query--btn">
 	    		<dx-button   
 	    			icon="search" 
 	    			type="primary" 
@@ -41,13 +41,13 @@
 		</div>
 		<div 
 			v-if="states.hasFilter && states.data.length === 0" 
-			class="dx-tabel-not-find"
+			class="dx-table--not-find"
 		>
 			没有找到符合条件的数据
 		</div>
 		<div 
 			v-if="pagination"
-			class="dx-tabel-pagination-wrap"
+			class="dx-table--pagination-wrap"
 		>
 			<dx-pagination  
 				:total="data.length" 
@@ -150,32 +150,29 @@
 </script>
 
 <style lang="scss">
-	
-	.dx-tabel-query-wrap {
-		margin-bottom: 2rem;
-		.dx-tabel-query-wrap-input {
-			line-height: $--dx-table-query-input-line-height;
-			height: $--dx-table-query-input-height;
-			max-width: 40%;
-			margin-right: 2rem;
+	@include B(table) {
+		@include E(query) {
+			margin-bottom: 2rem;
+			@include M(input) {
+				line-height: $--dx-table-query-input-line-height;
+				height: $--dx-table-query-input-height;
+				max-width: 40%;
+				margin-right: 2rem;
+			}
+		}
+
+		@include M(not-find) {
+			border: 0.1rem solid #ddd;
+			border-top: 0;
+			line-height: $--dx-table-line-height-not-find;
+			font-size: $--dx-table-font-size-not-find;
+			text-align: center;
+		}
+
+		@include M(pagination-wrap) {
+			margin-top: 1rem;
+			text-align: right;
 		}
 	}
-
-	/* .dx-tabel-query-btn {
-		margin-left:2rem;
-	} */
-
-	/*没有找到数据时的样式*/
-	.dx-tabel-not-find {
-		border: 0.1rem solid #ddd;
-		border-top: 0;
-		line-height: $--dx-table-line-height-not-find;
-		font-size: $--dx-table-font-size-not-find;
-		text-align: center;
-	}
-	.dx-tabel-pagination-wrap {
-		margin-top: 1rem;
-		text-align: right;
-	} 
 
 </style>
