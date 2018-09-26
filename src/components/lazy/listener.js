@@ -1,4 +1,4 @@
-import {loadImageAsync} from 'utils/utils.js'
+import {loadImageAsync} from '@/utils/utils.js'
 const imgCache = {}
 export default class {
 	constructor({el, loading, error, src, elRender, bindType}) {

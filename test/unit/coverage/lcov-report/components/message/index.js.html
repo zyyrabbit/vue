@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components\message\index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/message/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>14/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>13/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+&nbsp;
+var _vue = require('vue');
+&nbsp;
+var _vue2 = _interopRequireDefault(_vue);
+&nbsp;
+var _dxMessage = require('./dx-message.vue');
+&nbsp;
+var _dxMessage2 = _interopRequireDefault(_dxMessage);
+&nbsp;
+var _utils = require('@/utils/utils.js');
+&nbsp;
+function _interopRequireDefault(obj) { return o</span>bj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj : { default: obj }; }
+&nbsp;
+var defaultOptions = {
+	content: '',
+	visible: false,
+	durationTime: 3000,
+	type: 'info'
+	// 构建构造函数
+};var MessageConstructor = _vue2.default.extend(_dxMessage2.default);
+// 打开弹窗
+var Message = <span class="fstat-no" title="function not covered" >function Message(messageOptions) {</span>
+<span class="cstat-no" title="statement not covered" >	if (typeof messageOptions === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >		m</span>essageOptions = {
+			content: messageOptions
+		};
+	}
+<span class="cstat-no" title="statement not covered" >	v</span>ar instance = new MessageConstructor();
+<span class="cstat-no" title="statement not covered" >	v</span>ar currentOptions = (0, _utils.merge)({}, defaultOptions, messageOptions);
+<span class="cstat-no" title="statement not covered" >	(</span>0, _utils.merge)(instance, currentOptions);
+<span class="cstat-no" title="statement not covered" >	if ((0, _utils.isVNode)(currentOptions.content)) {</span>
+<span class="cstat-no" title="statement not covered" >		i</span>nstance.$slots.default = [currentOptions.content];
+<span class="cstat-no" title="statement not covered" >		c</span>urrentOptions.content = null;
+		// 必须重新复制为null,否者渲染时候为重新渲染
+<span class="cstat-no" title="statement not covered" >		i</span>nstance.content = null;
+	}
+	// 手动挂载
+<span class="cstat-no" title="statement not covered" >	i</span>nstance.$mount();
+	// 设置挂载元素
+<span class="cstat-no" title="statement not covered" >	d</span>ocument.body.appendChild(instance.$el);
+<span class="cstat-no" title="statement not covered" >	_</span>vue2.default.nextTick(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >		i</span>nstance.visible = true;
+	});
+};
+// 其他快捷方法
+['info', 'warning', 'error', 'success'].forEach(function (type) {
+	Message[type] = <span class="fstat-no" title="function not covered" >function (messageOptions) {</span>
+<span class="cstat-no" title="statement not covered" >		if (typeof messageOptions === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >			m</span>essageOptions = {
+				content: messageOptions
+			};
+		}
+<span class="cstat-no" title="statement not covered" >		M</span>essage((0, _utils.merge)({ type: type }, messageOptions));
+	};
+});
+exports.default = Message;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

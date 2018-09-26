@@ -10,6 +10,8 @@ module.exports = {
     },
     env: {
         es6: true,
+        commonjs: true,
+        mocha: true,
         browser: true
     },
     //导入共享配置
@@ -19,6 +21,10 @@ module.exports = {
     plugins: [
         'html'
     ],
+    globals: {
+        expect: true,
+        sinon: true
+    },
     // add your custom rules here
     rules: {
         'no-tabs': 0,

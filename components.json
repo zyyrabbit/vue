@@ -1,0 +1,23 @@
+{
+  "pagination": "./src/components/pagination/index.js",
+  "input": "./src/components/input/index.js",
+  "radio": "./src/components/radio/index.js",
+  "checkbox": "./src/components/checkbox/index.js",
+  "checkbox-group": "./src/components/checkbox-group/index.js",
+  "select": "./src/components/select/index.js",
+  "button": "./src/components/button/index.js",
+  "table": "./src/components/table/index.js",
+  "table-column": "./src/components/table-column/index.js",
+  "message-box": "./src/components/message-box/index.js",
+  "form": "./src/components/form/index.js",
+  "form-item": "./src/components/form-item/index.js",
+  "tabs": "./src/components/tabs/index.js",
+  "notify": "./src/components/notify/index.js",
+  "upload": "./src/components/uploader/index.js",
+  "progress": "./src/components/progress/index.js",
+  "message": "./src/components/message/index.js",
+  "rate": "./src/components/rate/index.js",
+  "carousel": "./src/components/carousel/index.js",
+  "indicator": "./src/components/indicator/index.js",
+  "nav": "./src/components/nav/index.js"
+}

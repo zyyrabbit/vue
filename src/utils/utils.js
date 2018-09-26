@@ -1,9 +1,11 @@
-const trim = function(string) {
+export function trim(string) {
     return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '')
 }
+
 export function hasOwn(obj, key) {
     return hasOwnProperty.call(obj, key)
 }
+
 // 判断是否为节点
 export function isVNode(node) {
     return typeof node === 'object' && hasOwn(node, 'componentOptions')
@@ -32,6 +34,7 @@ export function throttle(action, delay) {
         }
     }
 }
+
 // 异步加载图片
 
 export function loadImageAsync(src, resolve, reject) {

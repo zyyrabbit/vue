@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import DxNotify from './dx-notify.vue'
-import { isVNode } from '@/utils/utils.js'
+import { isVNode, merge } from '@/utils/utils.js'
 // 构建构造函数
 const NotifyConstructor = Vue.extend(DxNotify)
 let instance
@@ -27,7 +27,7 @@ const Notify = message => {
 	if (!instance) {
 		initInstance()
 	}
-	let _message = { ...message }
+	let _message = merge({}, message)
 	_message.key = key + msgId++
 	_message.index = instance.msgQueue.length
 	_message.timer = autoClose(_message)

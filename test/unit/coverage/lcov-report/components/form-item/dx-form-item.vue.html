@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components\form-item\dx-form-item.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/form-item/</a> dx-form-item.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.68% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/71</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.56% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">6.35% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>4/63</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+&nbsp;
+   import Validate from '@/utils/stragetegies.js'
+   // 用于与组件dx-form-item通信
+   import Bus from '@/utils/bus.js'
+   const noop = <span class="fstat-no" title="function not covered" >() =&gt; {</span>}
+&nbsp;
+	export default<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+		componentName: 'DxFormItem',
+		name: 'DxFormItem',
+		props: {
+			// 是否启用输入框blur/onfoucs事件时触发验证
+			isValidate: {
+				type: Boolean,
+				default: false
+			},
+			prop: String,
+			samePorp: String,
+			showMsg: Boolean,
+			showPwdLevel: Boolean,
+			rules: Array,
+			instruction: String,
+			width: String,
+			isEffect: { // 是否应用开启验证，默认是开启，应用于根据条件是否开启验证
+				type: Boolean,
+				default: true
+			},
+			bottom: Boolean // 设置验证错误是信息在输入框下方显示
+		},
+		data() {
+<span class="cstat-no" title="statement not covered" >			r</span>eturn {
+				text: '',
+				textClass: '',
+				pwdLevels: ['弱', '中', '强'],
+				inputPwdLevel: 0
+			}
+		},
+		computed: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span>
+			textClasses() {
+<span class="cstat-no" title="statement not covered" >				r</span>eturn `dx-form-item--text ${this.textClass} ${this.msgTextClass}`
+			},
+			// 找到父元素dx-form组件
+			form() {
+<span class="cstat-no" title="statement not covered" >				l</span>et parent = this.$parent
+<span class="cstat-no" title="statement not covered" >				l</span>et	parentName = parent.$options.componentName
+<span class="cstat-no" title="statement not covered" >				while (parentName !== 'DxForm') {</span>
+<span class="cstat-no" title="statement not covered" >					p</span>arent = parent.$parent
+<span class="cstat-no" title="statement not covered" >					p</span>arentName = parent.$option.componentName
+				}
+<span class="cstat-no" title="statement not covered" >				r</span>eturn parent
+			},
+			msgTextClass() {
+<span class="cstat-no" title="statement not covered" >				r</span>eturn this.form.msgTextClass
+			},
+			// 得到该该表单元素的输入值
+			fieldValue: <span class="fstat-no" title="function not covered" >{</span>
+				cache: false,
+				get() {
+<span class="cstat-no" title="statement not covered" >					l</span>et model = this.form.model
+<span class="cstat-no" title="statement not covered" >					if (!model || !this.prop) { <span class="cstat-no" title="statement not covered" >r</span>eturn }</span>
+<span class="cstat-no" title="statement not covered" >					r</span>eturn model[this.prop]
+				}
+			},
+			sameFieldValue: <span class="fstat-no" title="function not covered" >{</span>
+				cache: false,
+				get() {
+<span class="cstat-no" title="statement not covered" >					l</span>et model = this.form.model
+<span class="cstat-no" title="statement not covered" >					if (!model || !this.samePorp) { <span class="cstat-no" title="statement not covered" >r</span>eturn }</span>
+<span class="cstat-no" title="statement not covered" >					r</span>eturn model[this.samePorp]
+				}
+			}
+		},
+		mounted() {
+<span class="cstat-no" title="statement not covered" >			if (this.prop) {</span>
+				/*
+				    $on.$emit父子间通信，父组件只能通过绑定到模板中才可以即v-on:xxxx=""。
+				    总之on和emit的事件必须是在一个公共的实例上，才能触发。
+				    这里为了通信，采用新建一个vue实例通信。
+				*/
+<span class="cstat-no" title="statement not covered" >				B</span>us.$emit('dx-form-addField', this)
+			}
+<span class="cstat-no" title="statement not covered" >			l</span>et rules = this.getRules()
+<span class="cstat-no" title="statement not covered" >			if (rules.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >				t</span>his.$on('dx-form-blur', this.onFieldBlur)
+<span class="cstat-no" title="statement not covered" >				t</span>his.$on('dx-form-focus', this.onFieldFocus)
+			}
+		},
+		methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span></span></span></span>
+			// 验证规则
+			validate(trigger = '', callback = noop) <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >{</span></span>
+				// 判断是否开启验证
+<span class="cstat-no" title="statement not covered" >				if (!this.isEffect) {</span>
+<span class="cstat-no" title="statement not covered" >					r</span>eturn true
+				}
+<span class="cstat-no" title="statement not covered" >				l</span>et rules = this.getFilterRules(trigger)
+<span class="cstat-no" title="statement not covered" >				if (!rules || rules.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >					c</span>allback()
+<span class="cstat-no" title="statement not covered" >					r</span>eturn true
+				}
+<span class="cstat-no" title="statement not covered" >				l</span>et errorMsg = false
+<span class="cstat-no" title="statement not covered" >				l</span>et	rule = null
+				// required优先级最高
+<span class="cstat-no" title="statement not covered" >				for (let i = 0, len = rules.length; i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered" >					r</span>ule = rules[i]
+					// rule.value = this.fieldValue;
+					// 如果是和其他输入域输入要一致
+<span class="cstat-no" title="statement not covered" >					if (rule.name === 'confirmSame') {</span>
+<span class="cstat-no" title="statement not covered" >						r</span>ule.sameFieldValue = this.sameFieldValue
+					}
+<span class="cstat-no" title="statement not covered" >					l</span>et rst = Validate[rule.name](rule, this.fieldValue)
+					// 处理密码强度验证逻辑
+<span class="cstat-no" title="statement not covered" >					if (rule.name === 'pwdLevelVerification') {</span>
+<span class="cstat-no" title="statement not covered" >						t</span>his.inputPwdLevel = rst
+					}
+<span class="cstat-no" title="statement not covered" >					if (!rst) {</span>
+<span class="cstat-no" title="statement not covered" >						t</span>his.text = rule.message || ''
+<span class="cstat-no" title="statement not covered" >						t</span>his.textClass = 'is-error'
+<span class="cstat-no" title="statement not covered" >						e</span>rrorMsg = true
+						/* 当确定输入为空的时候，立即返回 */
+<span class="cstat-no" title="statement not covered" >						if (rule.name === 'required') {</span>
+<span class="cstat-no" title="statement not covered" >							b</span>reak
+						}
+					}
+				}
+				// 如果验证正确，清除错误信息
+<span class="cstat-no" title="statement not covered" >				if (!errorMsg) {</span>
+<span class="cstat-no" title="statement not covered" >					t</span>his.text = ''
+				}
+<span class="cstat-no" title="statement not covered" >				c</span>allback(errorMsg)
+			},
+			// 得到该field的所有验证要求---后续优化，需要写一个合并函数，合并对象相同属性的值
+			getRules() {
+<span class="cstat-no" title="statement not covered" >				l</span>et formRules = this.form.rules
+<span class="cstat-no" title="statement not covered" >				l</span>et	selfRules = this.rules
+<span class="cstat-no" title="statement not covered" >				l</span>et	baseRules = formRules &amp;&amp; formRules.baseRule ? formRules.baseRule : []
+<span class="cstat-no" title="statement not covered" >				f</span>ormRules = formRules &amp;&amp; formRules[this.prop] ? formRules[this.prop].concat(baseRules) : baseRules
+				// 可以在form表单上设置了公共校验规则
+<span class="cstat-no" title="statement not covered" >				r</span>eturn [].concat(selfRules || formRules || [])
+			},
+			// 根据触发添加得到验证规则
+			getFilterRules(trigger) {
+<span class="cstat-no" title="statement not covered" >				l</span>et allRules = this.getRules()
+<span class="cstat-no" title="statement not covered" >				r</span>eturn allRules.filter(<span class="fstat-no" title="function not covered" >(rule) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >					r</span>eturn !rule.trigger || rule.trigger.indexOf(trigger) !== -1
+				})
+			},
+			// 注销组件的时候，自动移除组件函数
+			beforeDestory() {
+<span class="cstat-no" title="statement not covered" >				B</span>us.$emit('dx.form.removeField', this)
+			},
+			onFieldBlur() {
+<span class="cstat-no" title="statement not covered" >				t</span>his.isValidate &amp;&amp; this.validate('blur')
+			},
+			onFieldFocus() {
+<span class="cstat-no" title="statement not covered" >				if (this.isValidate) {</span>
+<span class="cstat-no" title="statement not covered" >					t</span>his.text = this.instruction || ''
+<span class="cstat-no" title="statement not covered" >					t</span>his.textClass = 'dx-form-item--instruction'
+				}
+			}
+		}
+	}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

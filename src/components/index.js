@@ -4,7 +4,7 @@ import DxCheckbox from './checkbox/index.js'
 import DxCheckboxGroup from './checkbox-group/index.js'
 import DxIndicator from './indicator/index.js'
 import DxMessage from './message/index.js'
-import DxMessageBox from './messagebox/index.js'
+import DxMessageBox from './message-box/index.js'
 import DxTable from './table/index.js'
 import DxTableColumn from './table-column/index.js'
 import DxButton from './button/index.js'
@@ -63,11 +63,12 @@ const install = function(Vue) {
 	install.installed = true
 }
 // 注册vue组件
-if (typeof window !== 'undefined' && Vue) {
-   install(Vue)
+if (typeof window !== 'undefined' && window.Vue) {
+   install(window.Vue)
 }
 module.exports = {
 	version: '1.0.0',
+	install,
 	DxNav,
 	DxRadio,
 	DxSelect,

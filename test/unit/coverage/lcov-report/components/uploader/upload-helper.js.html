@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components\uploader\upload-helper.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/uploader/</a> upload-helper.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/144</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.13% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.76% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.76% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>38/142</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SIZE_UNIT = exports.fileExtensionIconClass = exports.docFileExtension = exports.imageFileExtension = exports.loadImageAsync = undefined;
+&nbsp;
+var _keys = require('babel-runtime/core-js/object/keys');
+&nbsp;
+var _keys2 = _interopRequireDefault(_keys);
+&nbsp;
+var _typeof2 = require('babel-runtime/helpers/typeof');
+&nbsp;
+var _typeof3 = _interopRequireDefault(_typeof2);
+&nbsp;
+exports.getType = getType;
+exports.uploadHelper = uploadHelper;
+exports.getFileType = getFileType;
+exports.fileSizeToUnit = fileSizeToUnit;
+exports.isExceedSizeLimit = isExceedSizeLimit;
+exports.IGuid = IGuid;
+exports.IQuery = IQuery;
+exports.objectToUrlParamsString = objectToUrlParamsString;
+&nbsp;
+function _interopRequireDefault(obj) { r</span>eturn obj &amp;&amp; obj.__esModule ? obj : <span class="branch-1 cbranch-no" title="branch not covered" >{ default: obj }; }
+&nbsp;
+// 判断变量类型
+var ObjToString = Object.prototype.toString;
+<span class="fstat-no" title="function not covered" >function getType(obj) {</span>
+<span class="cstat-no" title="statement not covered" >  if ((typeof obj === 'undefined' ? 'undefined' : (0, _typeof3.default)(obj)) !== 'object') {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn typeof obj === 'undefined' ? 'undefined' : (0, _typeof3.default)(obj);
+  }
+<span class="cstat-no" title="statement not covered" >  v</span>ar objType = ObjToString.call(obj);
+<span class="cstat-no" title="statement not covered" >  r</span>eturn objType.slice(8, -1).toLowerCase();
+}
+var isObject = <span class="fstat-no" title="function not covered" >function isObject(obj) {</span>
+<span class="cstat-no" title="statement not covered" >  r</span>eturn obj &amp;&amp; (typeof obj === 'undefined' ? 'undefined' : (0, _typeof3.default)(obj)) === 'object';
+};
+var assertTypeEqual = <span class="fstat-no" title="function not covered" >function assertTypeEqual(obj, typeStr) {</span>
+<span class="cstat-no" title="statement not covered" >  r</span>eturn getType(obj) === typeStr;
+};
+// 处理ajax上传文件
+var getError = <span class="fstat-no" title="function not covered" >function getError(action, xhr) {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar msg = void 0;
+<span class="cstat-no" title="statement not covered" >  if (xhr.response) {</span>
+<span class="cstat-no" title="statement not covered" >    m</span>sg = '' + (xhr.response.error || xhr.response);
+  } else <span class="cstat-no" title="statement not covered" >if (xhr.responseText) {</span>
+<span class="cstat-no" title="statement not covered" >    m</span>sg = '' + xhr.responseText;
+  } else {
+<span class="cstat-no" title="statement not covered" >    m</span>sg = 'fail to post ' + action + ' ' + xhr.status;
+  }
+<span class="cstat-no" title="statement not covered" >  v</span>ar err = new Error(msg);
+<span class="cstat-no" title="statement not covered" >  e</span>rr.status = xhr.status;
+<span class="cstat-no" title="statement not covered" >  e</span>rr.method = 'post';
+<span class="cstat-no" title="statement not covered" >  e</span>rr.url = action;
+<span class="cstat-no" title="statement not covered" >  r</span>eturn err;
+};
+var getBody = <span class="fstat-no" title="function not covered" >function getBody(xhr) {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar text = xhr.responseText || xhr.response;
+<span class="cstat-no" title="statement not covered" >  if (!text) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn text;
+  }
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn JSON.parse(text);
+  } catch (e) {
+<span class="cstat-no" title="statement not covered" >    r</span>eturn text;
+  }
+};
+&nbsp;
+<span class="fstat-no" title="function not covered" >function uploadHelper(options) {</span>
+<span class="cstat-no" title="statement not covered" >  if (assertTypeEqual(XMLHttpRequest, 'undefined')) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn;
+  }
+  // options为对象类型
+<span class="cstat-no" title="statement not covered" >  if (!isObject(options)) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn;
+  }
+<span class="cstat-no" title="statement not covered" >  v</span>ar xhr = new XMLHttpRequest();
+<span class="cstat-no" title="statement not covered" >  v</span>ar action = options.action;
+<span class="cstat-no" title="statement not covered" >  v</span>ar formData = new FormData();
+<span class="cstat-no" title="statement not covered" >  f</span>ormData.append(options.filename, options.file);
+<span class="cstat-no" title="statement not covered" >  if (xhr.upload) {</span>
+<span class="cstat-no" title="statement not covered" >    x</span>hr.upload.onprogress = <span class="fstat-no" title="function not covered" >function progress(e) {</span>
+<span class="cstat-no" title="statement not covered" >      if (e.total &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        e</span>.percentage = Math.floor(e.loaded / e.total * 100);
+      }
+<span class="cstat-no" title="statement not covered" >      o</span>ptions.onProgress(e);
+    };
+  }
+<span class="cstat-no" title="statement not covered" >  x</span>hr.onerror = <span class="fstat-no" title="function not covered" >function error(e) {</span>
+<span class="cstat-no" title="statement not covered" >    o</span>ptions.error(e);
+  };
+<span class="cstat-no" title="statement not covered" >  x</span>hr.onload = <span class="fstat-no" title="function not covered" >function onload() {</span>
+<span class="cstat-no" title="statement not covered" >    if (xhr.status &lt; 200 || xhr.status &gt;= 300) {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn options.error(getError(action, xhr));
+    }
+<span class="cstat-no" title="statement not covered" >    o</span>ptions.onSuccess(getBody(xhr));
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  x</span>hr.open('post', action, true);
+  // 判断是否发送cookie估算
+<span class="cstat-no" title="statement not covered" >  if (options.withCredentials &amp;&amp; 'withCredentials' in xhr) {</span>
+<span class="cstat-no" title="statement not covered" >    o</span>ptions.withCredentials = true;
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  v</span>ar headers = options.headers || {};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  for (var key in headers) {</span>
+<span class="cstat-no" title="statement not covered" >    if (headers.hasOwnProperty(key) &amp;&amp; headers[key] !== null) {</span>
+<span class="cstat-no" title="statement not covered" >      x</span>hr.setRequestHeader(key, headers[key]);
+    }
+  }
+<span class="cstat-no" title="statement not covered" >  x</span>hr.send(formData);
+<span class="cstat-no" title="statement not covered" >  r</span>eturn xhr;
+}
+&nbsp;
+// 异步加载图片
+var loadImageAsync = exports.loadImageAsync = <span class="fstat-no" title="function not covered" >function loadImageAsync(src, resolve, reject) {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar image = new Image();
+<span class="cstat-no" title="statement not covered" >  i</span>mage.src = src;
+<span class="cstat-no" title="statement not covered" >  i</span>mage.onload = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>esolve({
+      naturalHeight: image.naturalHeight, // 图片的原始大小与图片设置的大小无关
+      naturalWidth: image.naturalWidth,
+      src: image.src
+    });
+  };
+<span class="cstat-no" title="statement not covered" >  i</span>mage.onerror = <span class="fstat-no" title="function not covered" >function (e) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eject(e);
+  };
+};
+// 文件类型以及大小等相关工具函数
+var imageFileExtension = exports.imageFileExtension = ['jpeg', 'jpg', 'png', 'gif', 'bmp'];
+var docFileExtension = exports.docFileExtension = ['doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'pdf', 'txt'];
+var fileExtensionIconClass = exports.fileExtensionIconClass = {
+  doc: 'word-file',
+  docx: 'word-file',
+  ppt: 'ppt-file',
+  pptx: 'ppt-file',
+  xls: 'xls-file',
+  xlsx: 'xls-file',
+  pdf: 'pdf-file',
+  txt: 'txt-file',
+  image: 'image-file',
+  file: 'wenjian-file'
+  // 得到文件类型
+};<span class="fstat-no" title="function not covered" >function getFileType() {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar fileName = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : '';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!assertTypeEqual(fileName, 'string')) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn '';
+  }
+<span class="cstat-no" title="statement not covered" >  v</span>ar pos = fileName.lastIndexOf('.');
+<span class="cstat-no" title="statement not covered" >  if (pos &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn fileName.slice(pos + 1).toLowerCase();
+  }
+<span class="cstat-no" title="statement not covered" >  r</span>eturn '';
+}
+// 尺寸定义
+var KB = 1024;
+var MB = 1024 * KB;
+var GB = 1024 * MB;
+var SIZE = {
+  KB: KB,
+  MB: MB,
+  GB: GB
+};
+var SIZE_UNIT = exports.SIZE_UNIT = ['KB', 'MB', 'GB'];
+var decimal = 2;
+// 返回文件大小字符串表示
+<span class="fstat-no" title="function not covered" >function fileSizeToUnit() {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar fileSize = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : 0;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!assertTypeEqual(fileSize, 'number')) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn 0;
+  }
+<span class="cstat-no" title="statement not covered" >  if (fileSize &lt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    f</span>ileSize = 0;
+  }
+<span class="cstat-no" title="statement not covered" >  if (fileSize &gt; GB) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn (fileSize / GB).toFixed(decimal) + 'GB';
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (fileSize &gt; MB) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn (fileSize / MB).toFixed(decimal) + 'MB';
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (fileSize &gt; KB) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn (fileSize / KB).toFixed(decimal) + 'KB';
+  }
+<span class="cstat-no" title="statement not covered" >  r</span>eturn fileSize.toFixed(decimal) + 'BT';
+}
+&nbsp;
+// 判断文件大小是否超过限制
+<span class="fstat-no" title="function not covered" >function isExceedSizeLimit(fileSize) {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar limit = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 10;
+<span class="cstat-no" title="statement not covered" >  v</span>ar unit = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : 'MB';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!assertTypeEqual(fileSize, 'number')) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn true;
+  }
+<span class="cstat-no" title="statement not covered" >  if (!assertTypeEqual(limit, 'number')) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn true;
+  }
+<span class="cstat-no" title="statement not covered" >  if (!SIZE_UNIT.includes(unit)) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn true;
+  }
+<span class="cstat-no" title="statement not covered" >  r</span>eturn fileSize &gt; limit * SIZE[unit];
+}
+&nbsp;
+<span class="fstat-no" title="function not covered" >function IGuid() {</span>
+<span class="cstat-no" title="statement not covered" >  r</span>eturn 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, <span class="fstat-no" title="function not covered" >function (c) {</span>
+<span class="cstat-no" title="statement not covered" >    v</span>ar r = Math.random() * 16 | 0;
+<span class="cstat-no" title="statement not covered" >    v</span>ar v = c === 'x' ? r : r &amp; 0x3 | 0x8;
+<span class="cstat-no" title="statement not covered" >    r</span>eturn v.toString(16);
+  });
+}
+&nbsp;
+// 读取url的参数值
+<span class="fstat-no" title="function not covered" >function IQuery(name) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!assertTypeEqual(name, 'string')) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn true;
+  }
+<span class="cstat-no" title="statement not covered" >  v</span>ar reg = new RegExp('(^|&amp;)' + name + '=([^&amp;]*)(&amp;|$)', 'i');
+<span class="cstat-no" title="statement not covered" >  v</span>ar r = decodeURI(window.location.search.substr(1)).match(reg);
+<span class="cstat-no" title="statement not covered" >  if (r != null) <span class="cstat-no" title="statement not covered" >r</span></span>eturn decodeURI(r[2]);
+<span class="cstat-no" title="statement not covered" >  r</span>eturn '';
+}
+&nbsp;
+// url参数转化
+<span class="fstat-no" title="function not covered" >function objectToUrlParamsString() {</span>
+<span class="cstat-no" title="statement not covered" >  v</span>ar obj = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : {};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!isObject(obj)) {</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn {};
+  }
+<span class="cstat-no" title="statement not covered" >  v</span>ar temp = [];
+<span class="cstat-no" title="statement not covered" >  (</span>0, _keys2.default)(obj).map(<span class="fstat-no" title="function not covered" >function (key) {</span>
+<span class="cstat-no" title="statement not covered" >    if (obj[key]) {</span>
+<span class="cstat-no" title="statement not covered" >      t</span>emp.push(key + '=' + obj[key]);
+    } else {
+<span class="cstat-no" title="statement not covered" >      t</span>emp.push(key);
+    }
+  });
+<span class="cstat-no" title="statement not covered" >  r</span>eturn temp.join('&amp;');
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

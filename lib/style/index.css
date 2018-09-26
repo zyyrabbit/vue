@@ -1,0 +1,11 @@
+@import './font/iconfont.css'
+@import 'animation.scss'
+html {
+    font-size: 10px;
+    height: 100%;
+    font-family: "Microsoft Yahei";
+}
+.clearfix {
+	clear: both;
+	_display: inline;
+}

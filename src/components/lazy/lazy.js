@@ -1,4 +1,4 @@
-import { throttle, _ } from 'utils/utils.js'
+import { throttle, _ } from '@/utils/utils.js'
 import Listener from './listener.js'
 const DEFAULT_EVENTS = ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend', 'touchmove']
 const LOADING_IMAGE = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'

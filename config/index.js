@@ -7,11 +7,14 @@ module.exports = {
     STYLE_PATH: 'styles/',
     SCRIPT_PATH: 'scripts/',
     IMAGE_PATH: 'images/',
-    OUTPUT_PATH: path.join(BASE_PATH, 'dist'),
+    OUTPUT_PATH: path.join(BASE_PATH, 'lib'),
     SRC_PATH: path.join(BASE_PATH, 'src/app.js'),
+    COMPONENTS_PATH: path.join(BASE_PATH, 'src/components/'),
     PUBLIC_PATH: '/',
     BASE_PATH: BASE_PATH,
     PORT: 3000,
+    SRC: path.join(BASE_PATH, 'src'),
+    GEN_CSS_PATH_FROM: path.join(BASE_PATH, 'src/components/theme-chalk/src/style/'),
     build: {
         env: {
             NODE_ENV: '"development"'
@@ -23,5 +26,11 @@ module.exports = {
             NODE_ENV: '"production"'
         },
         cssSourceMap: false
+    },
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
     }
 }

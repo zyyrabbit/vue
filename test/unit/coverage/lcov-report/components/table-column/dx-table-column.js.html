@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components\table-column\dx-table-column.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">components/table-column/</a> dx-table-column.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.62% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>8/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">9.09% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/36</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+&nbsp;
+var _keys = require('babel-runtime/core-js/object/keys');
+&nbsp;
+var _keys2 = _interopRequireDefault(_keys);
+&nbsp;
+function _interopRequireDefault(obj) { r</span>eturn obj &amp;&amp; obj.__esModule ? obj : <span class="branch-1 cbranch-no" title="branch not covered" >{ default: obj }; }
+&nbsp;
+// 渲染table-cell方法
+var renderMethods = {
+	renderHeader: <span class="fstat-no" title="function not covered" >function renderHeader(value) {</span>
+<span class="cstat-no" title="statement not covered" >		r</span>eturn '' + value;
+	},
+	renderCell: <span class="fstat-no" title="function not covered" >function renderCell(_ref) {</span>
+<span class="cstat-no" title="statement not covered" >		v</span>ar row = _ref.row,
+		    column = _ref.column;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		r</span>eturn '' + row[column.prop];
+	}
+	// 列表编号
+};var tableColumnId = 0;
+exports.default = {
+	name: 'DxTableColumn',
+	props: {
+		rowKey: String, // 行的id---暂时没用到
+		prop: String, // 行的性质
+		renderHeader: Function, // 目前没用到
+		width: {},
+		label: String,
+		reverse: {
+			type: String,
+			default: 'descending'
+		},
+		sortable: {
+			tyep: Boolean,
+			default: false
+		},
+		sortMethod: Function,
+		selectable: Boolean,
+		filterable: Boolean,
+		filterValue: null
+	},
+	data: <span class="fstat-no" title="function not covered" >function data() {</span>
+<span class="cstat-no" title="statement not covered" >		r</span>eturn {};
+	},
+&nbsp;
+	computed: {
+		// 找到table父元素
+		parent: <span class="fstat-no" title="function not covered" >function parent() {</span>
+<span class="cstat-no" title="statement not covered" >			v</span>ar parent = this.$parent;
+<span class="cstat-no" title="statement not covered" >			while (parent &amp;&amp; !parent.tableId) {</span>
+<span class="cstat-no" title="statement not covered" >				p</span>arent = parent.$parent;
+			}
+<span class="cstat-no" title="statement not covered" >			r</span>eturn parent;
+		},
+		columnId: <span class="fstat-no" title="function not covered" >function columnId() {</span>
+<span class="cstat-no" title="statement not covered" >			r</span>eturn 'tableColumnId-' + tableColumnId++;
+		}
+	},
+	created: <span class="fstat-no" title="function not covered" >function created() {</span>
+<span class="cstat-no" title="statement not covered" >		v</span>ar _this = this;
+&nbsp;
+		// 如果设置width,则转化为数值
+<span class="cstat-no" title="statement not covered" >		v</span>ar width = this.width;
+<span class="cstat-no" title="statement not covered" >		if (width) {</span>
+<span class="cstat-no" title="statement not covered" >			w</span>idth = parseInt(width, 10);
+<span class="cstat-no" title="statement not covered" >			if (isNaN(width)) {</span>
+<span class="cstat-no" title="statement not covered" >				w</span>idth = null;
+			}
+		}
+		// 在这里可以重置render函数
+		// this.customRender = this.$options.render
+<span class="cstat-no" title="statement not covered" >		t</span>his.$options.render = <span class="fstat-no" title="function not covered" >function (h) {</span>
+<span class="cstat-no" title="statement not covered" >			r</span>eturn h('div', _this.$slots.default);
+		};
+<span class="cstat-no" title="statement not covered" >		this.columnConfig = {</span>
+			id: this.columnId,
+			renderCell: null,
+			renderHeader: null,
+			prop: this.prop,
+			rowKey: this.rowKey,
+			width: width,
+			label: this.label,
+			sortable: this.sortable,
+			reverse: this.reverse,
+			sortMethod: this.sortMethod,
+			selectable: this.selectable,
+			filterable: this.filterable,
+			filterValue: this.filterValue
+			// 初始化列的渲染函数---注意forEach中的this
+		};<span class="cstat-no" title="statement not covered" >(</span>0, _keys2.default)(renderMethods).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span>
+<span class="cstat-no" title="statement not covered" >			if (renderMethods.hasOwnProperty(key) &amp;&amp; this.columnConfig.hasOwnProperty(key)) {</span>
+<span class="cstat-no" title="statement not covered" >				t</span>his.columnConfig[key] = renderMethods[key];
+			}
+		}, this);
+		// 渲染
+<span class="cstat-no" title="statement not covered" >		v</span>ar defaultRenderCell = this.columnConfig.renderCell;
+<span class="cstat-no" title="statement not covered" >		t</span>his.columnConfig.renderCell = <span class="fstat-no" title="function not covered" >function (data) {</span>
+<span class="cstat-no" title="statement not covered" >			if (_this.$scopedSlots.default) {</span>
+<span class="cstat-no" title="statement not covered" >				r</span>eturn _this.$scopedSlots.default(data);
+			} else {
+<span class="cstat-no" title="statement not covered" >				r</span>eturn defaultRenderCell(data);
+			}
+		};
+	},
+	mounted: <span class="fstat-no" title="function not covered" >function mounted() {</span>
+		// 向父组件发送一个commit
+<span class="cstat-no" title="statement not covered" >		if (this.parent) {</span>
+<span class="cstat-no" title="statement not covered" >			t</span>his.parent.store.commit('addColumn', this.columnConfig);
+		} else {
+<span class="cstat-no" title="statement not covered" >			t</span>hrow new Error('The parent must be dx-table component!');
+		}
+	}
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
