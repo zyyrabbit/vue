@@ -35,7 +35,7 @@ export default class DateStore {
         if (this.currentMonth) {
 			preMaxDays = undefined
         }
-        
+
 		while (start-- > 0) {
 			this.store.unshift(preMaxDays && preMaxDays--)
 		}

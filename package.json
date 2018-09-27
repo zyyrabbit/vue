@@ -1,5 +1,5 @@
 {
-  "name": "chat",
+  "name": "dx-vue-ui",
   "version": "1.0.0",
   "description": "An simple vue component library",
   "main": "index.js",
@@ -7,7 +7,13 @@
     "dev": "set NODE_ENV=dev && webpack-dev-server --config ./build/webpack.dev.config.js",
     "test": "karma start test/unit/karma.conf.js --single-run",
     "lint": "eslint src/components/**/* --quiet",
-    "dist": "set NODE_ENV=production && npm run lint && gulp build"
+    "build:common": "set NODE_ENV=production && webpack --config ./build/webpack.prod.component.config",
+    "build": "set NODE_ENV=production && npm run lint && gulp build",
+    "dist": "npm run build && npm run build:common"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyyrabbit/vue.git"
   },
   "keywords": [
     "vue",
@@ -16,6 +22,10 @@
   ],
   "author": "zhangyiyong",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zyyrabbit/vue/issues"
+  },
+  "homepage": "https://github.com/zyyrabbit/vue#readme",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-eslint": "^8.2.1",

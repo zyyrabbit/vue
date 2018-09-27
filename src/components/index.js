@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import DxCalender from './calendar/index.js'
 import DxCheckbox from './checkbox/index.js'
 import DxCheckboxGroup from './checkbox-group/index.js'

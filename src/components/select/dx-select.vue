@@ -79,7 +79,7 @@
 				// 如果输入items是对象数组，则进行一些检查
 				if (isObject) {
 					if (this.labelKey && this.valueKey) {
-						if (typeof this.items[0][this.labelKey] === 'undefined' || 
+						if (typeof this.items[0][this.labelKey] === 'undefined' ||
 							typeof this.items[0][this.valueKey] === 'undefined') {
 							throw new Error('The label-key and label-vlaue attrs not find in items[0] object!')
 						}
@@ -99,13 +99,13 @@
 			},
 			// 选择列表时的处理函数,采用代理函数
 			selectItem: function($event) {
-				let item, selectValue
+				let item
 				// 取选择的item上index
                 this.selecteIndex = parseInt($event.target.getAttribute('data-index'))
                 // 根据index取得相应的item
 				item = this.items[this.selecteIndex]
 				// 根据items中的数据类型取相应的值
-				selectValue = this.isObject ? item[this.valueKey] : item
+				// selectValue = this.isObject ? item[this.valueKey] : item
 				this.selectLabel = this.isObject ? item[this.labelKey] : item
 				this.$emit('input', item)
 				this.onSelect && this.onSelect(item)

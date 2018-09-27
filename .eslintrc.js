@@ -21,16 +21,18 @@ module.exports = {
     plugins: [
         'html'
     ],
-    globals: {
-        expect: true,
-        sinon: true
-    },
     // add your custom rules here
     rules: {
         'no-tabs': 0,
         'indent': 0,
         // allow paren-less arrow functions
         'arrow-parens': 0,
+        'block-spacing': 0,
+        'keyword-spacing': 0,
+        'comma-spacing': 0,
+        "space-infix-ops": 0,//中缀操作符周围要不要有空格
+        "semi-spacing": [0, {"before": false, "after": true}],//分号前后空格
+        "space-before-blocks": [0, "always"],//不以新行开始的块{前面要不要有空格
         // allow async-await
         'generator-star-spacing': 0,
         // allow debugger during development

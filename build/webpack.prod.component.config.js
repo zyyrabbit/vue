@@ -29,7 +29,6 @@ const webpackConfig = {
   externals: {
     vue: config.vue
   },
-  // externals: config.externals,
   module: {
     rules: [
       {

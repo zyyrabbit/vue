@@ -129,8 +129,8 @@
             today(row, column) {
                 let index = (row - 1) * 7 + column - 1
                 let dayNum = this.store[index]
-                return index >= this.dateStore.startInd && 
-                        index <= this.dateStore.endInd && 
+                return index >= this.dateStore.startInd &&
+                        index <= this.dateStore.endInd &&
                         dayNum === this.dateStore.day
             },
             isCurrentMonth(row, column) {

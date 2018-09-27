@@ -8,16 +8,16 @@
 	    <dx-heading :level="1">基本用法</dx-heading>
 	    <p>轮播的基础用法</p>
 	    <dx-show-code :htmlString="htmlString1" :scriptString="scriptString">
-	    	<dx-carousel :imageUrls="imgUrls" width="100%" height="300px"></dx-carousel>
+	    	<dx-carousel :imageUrls="imgUrls" width="100%" height="300px" background></dx-carousel>
 	    </dx-show-code>
   </div>
   <div class="item-content">
       <div style="margin-bottom:2rem">
         <dx-heading :level="1">Carousel Attributes</dx-heading>
       </div>
-      <dx-table 
-      :data="attrDatas" 
-      :borderRow="true" 
+      <dx-table
+      :data="attrDatas"
+      :borderRow="true"
       tableHeadClass="table-head"
       >
         <dx-table-column prop="param" label="参数" ></dx-table-column>

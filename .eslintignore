@@ -1,8 +1,10 @@
 node_modules
 lib
+src/components/theme-chalk/**/*
 *.md
 *.scss
 *.css
 *.woff
 *.ttf
+*.eot
 *.svg
