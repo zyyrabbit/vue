@@ -11,7 +11,7 @@
 ### Install
 
 ```bash
-npm install vue-ui --save
+npm install dx-vue-ui --save
 ```
 
 ### Usage
