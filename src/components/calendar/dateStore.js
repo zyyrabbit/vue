@@ -2,7 +2,6 @@ const warn = console.warn
 // 日期组件
 export default class DateStore {
 	constructor(options) {
-		console.log(options)
 		this.numbers = options.size || 42
 		this.currentMonth = options.currentMonth || false
 		let _date = new Date()

@@ -1,6 +1,6 @@
 <template>
  <div class="wrap-content">
- 	<div class="item-content">
+ 	  <div class="item-content">
 	    <dx-heading :level="1">Calender 日历</dx-heading>
 	    <p>用于表示日历组件</p>
   	</div>
@@ -14,8 +14,17 @@
 	    </dx-show-code>
     </div>
     <div class="item-content">
-      <dx-heading :level="1">自定义日历天数显示</dx-heading>
+      <dx-heading :level="1">只显示当前月份</dx-heading>
+      <p>当前月份</p>
       <dx-show-code :htmlString="htmlString1">
+        <div style="width: 50%;">
+          <dx-calendar currentMonth></dx-calendar>
+        </div>
+      </dx-show-code>
+    </div>
+    <div class="item-content">
+      <dx-heading :level="1">自定义日历天数显示</dx-heading>
+      <dx-show-code :htmlString="htmlString2">
         <div style="width: 50%;">
           <dx-calendar>
               <div 
@@ -26,7 +35,36 @@
           </dx-calendar>
         </div>
       </dx-show-code>
- 	</div>
+ 	  </div>
+    <div class="item-content">
+      <div style="margin-bottom:2rem">
+        <dx-heading :level="1">Calender Attributes</dx-heading>
+      </div>
+      <dx-table
+      :data="attrDatas"
+      :borderRow="true"
+      tableHeadClass="table-head"
+      >
+        <dx-table-column prop="param" label="参数" ></dx-table-column>
+        <dx-table-column prop="illustrate"  label="说明"></dx-table-column>
+        <dx-table-column prop="type"  label="类型"></dx-table-column>
+        <dx-table-column prop="defaultVal" label="默认值" width="80"></dx-table-column>
+      </dx-table>
+    </div>
+    <div class="item-content">
+         <div style="margin-bottom:2rem">
+           <dx-heading :level="1">Calender Event</dx-heading>
+         </div>
+         <dx-table 
+         :data="eventDatas" 
+         :borderRow="true" 
+         tableHeadClass="table-head"
+         >
+          <dx-table-column prop="eventName"  label="事件名称" ></dx-table-column>
+          <dx-table-column prop="illustrate"  label="说明"></dx-table-column>
+          <dx-table-column prop="cbArgs"  label="回调参数"></dx-table-column>
+         </dx-table>
+     </div>
  </div>
 </template>
 <script>
@@ -37,12 +75,31 @@
         scriptString: '',
         attrDatas: [
                     {
-                      param: 'navs',
-                      illustrate: '导航标题栏，支持二级标题导航',
-                      type: 'Array',
+                      param: 'size',
+                      illustrate: '日历组件，显示天数',
+                      type: 'Number',
+                      optionVal: '35, 42',
+                      defaultVal: '42'
+                     },
+                     {
+                      param: 'currentMonth',
+                      illustrate: '只显示当前月份',
+                      type: 'Boolan',
                       optionVal: '---',
-                       defaultVal: '---'
+                      defaultVal: 'false'
                      }
+                  ],
+        eventDatas: [
+                    {
+                      eventName: 'month-change',
+                      illustrate: '当改变月份时，触发',
+                      cbArgs: '改变后当前月份(0-11)'
+                    },
+                     {
+                      eventName: 'year-change',
+                      illustrate: '当改变年份时，触发',
+                      cbArgs: '改变后当前年份'
+                    }
                   ]
       }
     },
@@ -52,6 +109,9 @@
                             <dx-calendar></dx-calendar>
                          </template>`
         this.htmlString1 = `<template> 
+                            <dx-calendar currentMonth></dx-calendar>
+                         </template>`
+        this.htmlString2 = `<template> 
                               <dx-calendar>
                                  <div 
                                     slot-scope="slotProps"
