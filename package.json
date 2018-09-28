@@ -4,12 +4,11 @@
   "description": "An simple vue component library",
   "main": "index.js",
   "scripts": {
-    "dev": "set NODE_ENV=dev && webpack-dev-server --config ./build/webpack.dev.config.js",
     "test": "karma start test/unit/karma.conf.js --single-run",
     "lint": "eslint src/components/**/* --quiet",
-    "build:common": "set NODE_ENV=production && webpack --config ./build/webpack.prod.component.config",
-    "build": "set NODE_ENV=production && npm run lint && gulp build",
-    "dist": "npm run build && npm run build:common"
+    "dev": "set NODE_ENV=dev && webpack-dev-server --config ./build/webpack.dev.config.js",
+    "gp-page": "set NODE_ENV=production && webpack --config ./build/webpack.page.config.js",
+    "dist": "set NODE_ENV=production && gulp build"
   },
   "repository": {
     "type": "git",
@@ -68,6 +67,7 @@
     "node-sass": "^4.5.3",
     "postcss-loader": "^3.0.0",
     "postcss-salad": "^2.0.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "sass-loader": "^6.0.6",
     "sass-resources-loader": "^1.3.1",
     "sinon": "^6.3.4",

@@ -3,11 +3,12 @@ const path = require('path')
 const BASE_PATH = path.join(path.resolve(__dirname, '../'))
 
 module.exports = {
-    HTML_PATH: path.join(BASE_PATH, 'src/index.html'),
+    HTML_PATH: path.join(BASE_PATH, 'src/index.html'), // Html页面模板路径
     STYLE_PATH: 'styles/',
     SCRIPT_PATH: 'scripts/',
     IMAGE_PATH: 'images/',
-    OUTPUT_PATH: path.join(BASE_PATH, 'lib'),
+    OUTPUT_PATH: path.join(BASE_PATH, 'lib'), // 组件库打包路径
+    PAEG_OUTPUT_PATH: path.join(BASE_PATH, 'dist'),// gp-page打包路径
     SRC_PATH: path.join(BASE_PATH, 'src/app.js'),
     COMPONENTS_PATH: path.join(BASE_PATH, 'src/components/'),
     PUBLIC_PATH: '/',

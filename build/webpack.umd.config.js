@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 // 解决path.join解决路劲替换问题
 /* const pathConvert = (_path, _name) => {
     return path.join(_path, _name).replace('\\', '/')
@@ -91,7 +92,7 @@ const webpackConfig = {
     ]
   },
   plugins: [
-   // new ProgressBarPlugin(),
+    new ProgressBarPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),

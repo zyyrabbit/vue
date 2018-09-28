@@ -14,6 +14,6 @@ module.exports = webpackMerge(webpackConfig, {
 			colors: true // 显示不同的颜色区分打包的文件
 		},
 		hot: true,
-		contentBase: config.OUTPUT_PATH
+		contentBase: config.PAEG_OUTPUT_PATH
 	}
 })

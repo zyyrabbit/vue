@@ -5,6 +5,7 @@ const config = require('../config')
 const components = require('../components.json')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const vueLoaderConfig = require('./vue-loader.conf')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 // 解决path.join解决路劲替换问题
 /* const pathConvert = (_path, _name) => {
     return path.join(_path, _name).replace('\\', '/')
@@ -81,6 +82,7 @@ const webpackConfig = {
     ]
   },
   plugins: [
+    new ProgressBarPlugin(),
     new CopyWebpackPlugin([{
       from: config.GEN_CSS_PATH_FROM,
       to: './style'
