@@ -79,7 +79,7 @@
 	 	      	    	key="handle"
 	 	      	    >
 	 	      	    	<dx-button 
-	 	      	    		v-if="handleEdit"  
+	 	      	    		v-if="handleEdit"
 	 	      	    		type="primary" 
 	 	      	    		icon="pencil" 
 	 	      	    		size="small"

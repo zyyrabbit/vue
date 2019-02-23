@@ -65,7 +65,7 @@ const install = function(Vue) {
 if (typeof window !== 'undefined' && window.Vue) {
    install(window.Vue)
 }
-module.exports = {
+export default {
 	version: '1.0.0',
 	install,
 	DxNav,
@@ -89,4 +89,3 @@ module.exports = {
 	DxCheckbox,
 	DxMessage
 }
-module.exports.default = module.exports

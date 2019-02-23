@@ -63,7 +63,7 @@
                       param: 'type',
                       illustrate: '消息类型',
                       type: 'string',
-                      optionVal: '["info","success","warning","error"]',
+                      optionVal: 'info,success,warning,error',
                       defaultVal: 'info'
                      }
                   ]

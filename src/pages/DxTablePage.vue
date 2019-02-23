@@ -164,14 +164,14 @@
 		data() {
 			return {
 				tableData: [
-                    {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
+                    {name: 'abc', age: 26, sex: '男', height: '171cm', blood: 'O'},
                     {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
                     {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
                     {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
                     {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'}
                     ],
 				tableData1: [
-                    {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
+                    {name: 'abc', age: 26, sex: '男', height: '171cm', blood: 'O'},
                     {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
                     {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
                     {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
@@ -232,14 +232,14 @@
                     },
                     {
 						param: 'handleEdit',
-						illustrate: '当设置表格支持编辑row行数据时回调,函数回调参数为row的index以及row数据',
+						illustrate: '当设置表格支持编辑row行数据时回调,函数回调参数为row的index以及row',
 						type: 'Function',
 						optionVal: '---',
 						defaultVal: '---'
                     },
                     {
 						param: 'handleDelete',
-						illustrate: '当设置表格支持删除row行数据时回调函数,回调参数为row的index以及row数据',
+						illustrate: '当设置表格支持删除row行数据时回调函数,回调参数为row的index以及row',
 						type: 'Function',
 						optionVal: '---',
 						defaultVal: '---'
@@ -249,7 +249,7 @@
                     {
 						eventName: 'onBefore',
 						illustrate: '表格排序前触发的事件',
-						cbArgs: '回调参数为排序的列row,排序属性键值,排序的方向'
+						cbArgs: '回调参数为排序的列column,排序属性键值,排序的方向'
                     },
                     {
 						eventName: 'select-change',
@@ -263,8 +263,8 @@
                     },
                     {
 						eventName: 'filter-change',
-						illustrate: '过滤表格数据后出发的事件',
-						cbArgs: '回调参数为过滤后的包含所有row数据的array变量'
+						illustrate: '过滤表格数据后触发的事件',
+						cbArgs: '回调参数为过滤后的包含所有row数据的array类型变量'
                     }
                     ],
                 attrDatas1: [
@@ -338,7 +338,7 @@
 				 <dx-table-column prop="blood" label="血型"></dx-table-column>
 		    </dx-table>
           </template>`
-    	    this.scriptString1 = `export default {
+		    this.scriptString1 = `export default {
 				data(){
 					return {
 			        tableData:[
@@ -351,7 +351,7 @@
 				}
 			  }
    	       }`
-   	        this.htmlString2 =`<template> 
+	        this.htmlString2 =`<template> 
     		<dx-table :data="tableData" :borderRow="true" :borderColumn="true">
 				 <dx-table-column prop="name"  label="姓名" :sortable="true"></dx-table-column>
 				 <dx-table-column prop="age"  label="年龄" :sortable="true"></dx-table-column>
@@ -360,7 +360,7 @@
 				 <dx-table-column prop="blood" label="血型"></dx-table-column>
 		    </dx-table>
           </template>`
-   	       this.htmlString3 = `<template> 
+	       this.htmlString3 = `<template> 
     		<dx-table :data="tableData" :borderRow="true" :borderColumn="true" >
 			<dx-table-column :width="10" :selectable="true"></dx-table-column>
 				 <dx-table-column prop="name"  label="姓名" ></dx-table-column>

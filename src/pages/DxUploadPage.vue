@@ -118,7 +118,7 @@
             },
             {
               param: 'showFileList',
-              illustrate: '是否展示上午文件详细信息',
+              illustrate: '是否展示上传文件详细信息',
               type: 'Boolean',
               optionVal: '---',
               defaultVal: 'false'
@@ -153,7 +153,7 @@
             },
             {
               param: 'onRemove',
-              illustrate: '移除上传文件（可以上传时，也可终止文件上传）',
+              illustrate: '移除上传文件（上传时也可终止文件上传）',
               type: 'Function',
               optionVal: '---',
               defaultVal: '---'

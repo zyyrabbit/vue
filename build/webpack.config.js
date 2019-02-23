@@ -10,18 +10,17 @@ const pathConvert = (_path, _name) => {
 }
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, config.SRC_PATH),
-        vue: 'vue'
+        app: config.SRC_PATH,
+        vendor: ['vue']
     },
     output: {
         publicPath: '',
-        path: path.resolve(__dirname, config.PAEG_OUTPUT_PATH),
+        path: config.PAEG_OUTPUT_PATH,
         filename: process.env.NODE_ENV === 'production' ? pathConvert(config.SCRIPT_PATH, '[name].[hash].bunld.js') : pathConvert(config.SCRIPT_PATH, '[name].bunld.js')
     },
     resolve: {
         extensions: ['.js', '.vue'],
         alias: {
-                'vue': 'vue/dist/vue.js',
                 '@': pathConvert(config.BASE_PATH, 'src')
             }
     },
@@ -29,7 +28,6 @@ module.exports = {
         rules: [{
                 test: /\.html$/,
                 use: ['html-loader']
-
             },
             {
                 test: /\.js$/,

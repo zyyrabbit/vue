@@ -4,7 +4,7 @@ const webpackConfig = require('./webpack.config.js')
 const webpackMerge = require('webpack-merge')
 const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 // 导入模块分析工具
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = webpackMerge(webpackConfig, {
     // 在生产环境下把 devtool 设置成 hidden-source-map，
@@ -24,12 +24,6 @@ module.exports = webpackMerge(webpackConfig, {
               ) === 0
             )
           }
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'app',
-            children: true // 抽离出子chunk中的组件
-            // async: true,
-            // minChunks: 3
         }),
         new webpack.optimize.CommonsChunkPlugin({
           name: 'manifest',
@@ -61,7 +55,7 @@ module.exports = webpackMerge(webpackConfig, {
             'process.env': {
                 NODE_ENV: '"production"'
             }
-        })
-       // new BundleAnalyzerPlugin()
+        }),
+        new BundleAnalyzerPlugin()
     ]
 })

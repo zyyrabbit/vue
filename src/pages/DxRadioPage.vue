@@ -7,17 +7,17 @@
   	<div class="item-content">
 	    <dx-heading :level="1">基本用法</dx-heading>
 	    <p>单选框的基本用法</p>
-	    <dx-show-code :htmlString="htmlString1">
-        	<dx-radio v-model="radio" name="radio" label="1">选项1</dx-radio>
+	    <dx-show-code :htmlString="htmlString1" :scriptString="scriptString1">
+        <dx-radio v-model="radio" name="radio" label="1">选项1</dx-radio>
 	    	<dx-radio v-model="radio" name="radio" label="2">选项2</dx-radio>
 	    </dx-show-code>
  	</div>
   	<div class="item-content">
       <dx-heading :level="1">禁用单选按钮</dx-heading>
       <p>单选按钮不可用</p>
-      <dx-show-code :htmlString="htmlString2" >
+      <dx-show-code :htmlString="htmlString2" :scriptString="scriptString2">
         <dx-radio v-model="radio1" disabled label="1">选项1</dx-radio>
-	    <dx-radio v-model="radio1" disabled label="2">选项2</dx-radio>
+	      <dx-radio v-model="radio1" disabled :label="2">选项2</dx-radio>
       </dx-show-code>
     </div>
   
@@ -44,9 +44,11 @@
     data() {
       return {
         radio: '1',
-        radio1: '1',
+        radio1: 2,
         htmlString1: '',
         htmlString2: '',
+        scriptString1: '',
+        scriptString2: '',
         attrDatas: [
                     {
                       param: 'label',
@@ -82,6 +84,20 @@
                              <dx-radio v-model="radio1" disabled label="1">选项1</dx-radio>
 	    					<dx-radio v-model="radio1" disabled>选项2</dx-radio>
                            </template>`
+        this.scriptString1 = `export default {
+                                data(){
+                                  return {
+                                    radio: '1'
+                                  }
+                                }
+                            }`
+        this.scriptString2 = `export default {
+                                data(){
+                                  return {
+                                    radio: 2
+                                  }
+                                }
+                            }`
     }
   }
 </script>

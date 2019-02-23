@@ -45,7 +45,7 @@
   </div>
   <div class="item-content">
       <dx-heading :level="1">父元素等宽按钮</dx-heading>
-      <p>设置有三种按钮大小</p>
+      <p>父元素等宽按钮</p>
       <dx-show-code :htmlString="htmlString5">
         <dx-button type="primary" size="full">超大按钮</dx-button>
       </dx-show-code>
@@ -86,17 +86,17 @@
         attrDatas: [
                     {
                       param: 'type',
-                      illustrate: '按钮不同样式',
+                      illustrate: '按钮样式',
                       type: 'String',
-                      optionVal: 'warning,primary',
+                      optionVal: 'text,warning,pinking,primary,gray',
                       defaultVal: '---'
                     },
                     {
                       param: 'size',
                       illustrate: '设置按钮的大小',
                       type: 'String',
-                      optionVal: 'large,middle,small',
-                      defaultVal: '---'
+                      optionVal: 'large,middle,small,full',
+                      defaultVal: 'middle'
                     },
                     {
                       param: 'disabled',
@@ -148,5 +148,3 @@
     }
   }
 </script>
-<style>
-</style>

@@ -21,12 +21,12 @@
 	    <dx-show-code :htmlString="htmlString1" :scriptString="scriptString">
             <div class="margin-bottom-10">
             	<dx-input v-model="val3" >
-                <span>label:</span>
+                <span>before-label:</span>
               </dx-input>
             </div>
             <div class="margin-bottom-10">
               <dx-input v-model="val4">
-                <span slot="left">label</span>
+                <span slot="left">after-label</span>
               </dx-input>
             </div>
 	    </dx-show-code>
@@ -99,16 +99,17 @@
     created() {
         // 基本用法
         this.htmlString = `<template> 
-                           	 	<div class="margin-bottom-10">
-                                    <dx-input v-model="val"></dx-input>
-                                </div>
-                                <div class="margin-bottom-10" style="font-size: 1.4rem">
-                                    标签：<dx-input v-model="val1"></dx-input>
-                                </div>
+                              <dx-input v-model="val"></dx-input>
+                              标签：<dx-input v-model="val1"></dx-input>
                          </template>`
-        this.htmlString1 = `<template> 
-	                            <dx-input v-model="val" max="true"></dx-input>
-                           </template>`
+        this.htmlString1 = `<template>
+                                <dx-input v-model="val3" >
+                                    <span>before-label:</span>
+                                </dx-input>
+                                <dx-input v-model="val4">
+                                  <span slot="left">after-label</span>
+                                </dx-input>
+                         </template>`
         this.scriptString = `export default {
                                 data(){
                                   return {

@@ -1,15 +1,23 @@
 {	
-	"plugins": ["transform-runtime"],
+	"plugins": [
+		[
+		  "@babel/plugin-transform-runtime",
+		  {
+			"corejs": false,
+			"helpers": true,
+			"regenerator": true,
+			"useESModules": false
+		  }
+		]
+	],
 	"presets":[
 		[
-			"env", 
+			"@babel/preset-env", 
 			{
 				"targets": {
 					"browsers": ["last 2 versions", "safari >= 7"]
-				}
+        }
 			}
-		],"stage-2"],
-	"ignore": [
-	    "lib/*.js"
-  	]
+		]
+	]
 }
