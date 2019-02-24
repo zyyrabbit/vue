@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">28.57% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/7</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/6</span>
+        <span class='fraction'>0/5</span>
       </div>
     </div>
   </div>
@@ -192,7 +192,9 @@
 147
 148
 149
-150</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+150
+151
+152</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -341,162 +343,166 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+  &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;Checkbox 多选框&lt;/dx-heading&gt;
+      &lt;p&gt;单选框用于从一组数据中选择多个数据&lt;/p&gt;
+    &lt;/div&gt;
+     &lt;div class="item-content"&gt;
+        &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+        &lt;p&gt;多选框的基本类型&lt;/p&gt;
+        &lt;dx-show-code :htmlString="htmlString1" :scriptString="scriptString"&gt;
+            &lt;dx-checkbox-group v-model="checkList"&gt;
+                &lt;dx-checkbox label="标签1"&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签2"&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签3"&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签4"&gt;&lt;/dx-checkbox&gt;
+            &lt;/dx-checkbox-group&gt;
+        &lt;/dx-show-code&gt;
+    &lt;/div&gt;
 &nbsp;
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      checkList: ['标签1'],
-      checkList1: ['标签1'],
-      checkList2: ['标签1'],
-      htmlString1: '',
-      htmlString2: '',
-      htmlString3: '',
-      scriptString: '',
-      attrDatas: [
-                  {
-                    param: 'label',
-                    illustrate: '多选框标签，必须',
-                    type: 'String',
-                    optionVal: '---',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'disabled',
-                    illustrate: '禁用多选框',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'false'
-                  },
-                  {
-                    param: 'name',
-                    illustrate: '原生name属性',
-                    type: 'String',
-                    optionVal: '---',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'btnType',
-                    illustrate: '设置为标签格式',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'false'
-                  },
-                  {
-                    param: 'value',
-                    illustrate: '多选框绑定的值，如果为空，label值',
-                    type: 'any',
-                    optionVal: '---',
-                    defaultVal: '---'
-                  }
-                ]
-    }
-  },
-  created() {
-      // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString1 = `&lt;template&gt; 
-                              &lt;dx-checkbox-group v-model="checkList"&gt;
-                                  &lt;dx-checkbox label="标签1"&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签2"&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签3"&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签4"&gt;&lt;/dx-checkbox&gt;
-                              &lt;/dx-checkbox-group&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString2 = `&lt;template&gt; 
-                              &lt;dx-checkbox-group v-model="checkList"&gt;
-                                  &lt;dx-checkbox label="标签1" btnType&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签2" btnType&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签3" btnType&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签4" btnType&gt;&lt;/dx-checkbox&gt;
-                              &lt;/dx-checkbox-group&gt;
+    &lt;div class="item-content"&gt;
+        &lt;dx-heading :level="1"&gt;标签类型用法&lt;/dx-heading&gt;
+        &lt;p&gt;多选框的标签类型&lt;/p&gt;
+        &lt;dx-show-code :htmlString="htmlString2" :scriptString="scriptString"&gt;
+            &lt;dx-checkbox-group v-model="checkList"&gt;
+                &lt;dx-checkbox label="标签1" btnType&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签2" btnType&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签3" btnType&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签4" btnType&gt;&lt;/dx-checkbox&gt;
+            &lt;/dx-checkbox-group&gt;
+        &lt;/dx-show-code&gt;
+    &lt;/div&gt;
+&nbsp;
+    &lt;div class="item-content"&gt;
+        &lt;dx-heading :level="1"&gt;禁止选中&lt;/dx-heading&gt;
+        &lt;p&gt;禁止选中某个多选框&lt;/p&gt;
+        &lt;dx-show-code :htmlString="htmlString3" :scriptString="scriptString"&gt;
+            &lt;dx-checkbox-group v-model="checkList"&gt;
+                &lt;dx-checkbox label="标签1" &gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签2" &gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签3" disabled&gt;&lt;/dx-checkbox&gt;
+                &lt;dx-checkbox label="标签4" &gt;&lt;/dx-checkbox&gt;
+            &lt;/dx-checkbox-group&gt;
+        &lt;/dx-show-code&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;checkbox Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        checkList: ['标签1'],
+        checkList1: ['标签1'],
+        checkList2: ['标签1'],
+        htmlString1: '',
+        htmlString2: '',
+        htmlString3: '',
+        scriptString: '',
+        attrDatas: [
+                    {
+                      param: 'label',
+                      illustrate: '多选框标签，必须',
+                      type: 'String',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'disabled',
+                      illustrate: '禁用多选框',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'false'
+                    },
+                    {
+                      param: 'name',
+                      illustrate: '原生name属性',
+                      type: 'String',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'btnType',
+                      illustrate: '设置为标签格式',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'false'
+                    },
+                    {
+                      param: 'value',
+                      illustrate: '多选框绑定的值，如果为空，label值',
+                      type: 'any',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    }
+                  ]
+      }
+    },
+    created() {
+        // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt; </span>
+                                &lt;dx-checkbox-group v-model="checkList"&gt;
+                                    &lt;dx-checkbox label="标签1"&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签2"&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签3"&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签4"&gt;&lt;/dx-checkbox&gt;
+                                &lt;/dx-checkbox-group&gt;
                          &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString = `export default {
-                                        data() {
-                                return {
-                                  checkList: ['标签1']
+<span class="cstat-no" title="statement not covered" >        this.htmlString2 = `&lt;template&gt; </span>
+                                &lt;dx-checkbox-group v-model="checkList"&gt;
+                                    &lt;dx-checkbox label="标签1" btnType&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签2" btnType&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签3" btnType&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签4" btnType&gt;&lt;/dx-checkbox&gt;
+                                &lt;/dx-checkbox-group&gt;
+                           &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString = `export default {</span>
+                                          data() {
+                                  return {
+                                    checkList: ['标签1']
+                                  }
                                 }
-                              }
-                            }`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString3 = `&lt;template&gt; 
-                               &lt;dx-checkbox-group v-model="checkList"&gt;
-                                  &lt;dx-checkbox label="标签1" &gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签2" &gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签3" disabled&gt;&lt;/dx-checkbox&gt;
-                                  &lt;dx-checkbox label="标签4" &gt;&lt;/dx-checkbox&gt;
-                              &lt;/dx-checkbox-group&gt;
-                         &lt;/template&gt;`
+                              }`
+<span class="cstat-no" title="statement not covered" >        this.htmlString3 = `&lt;template&gt; </span>
+                                 &lt;dx-checkbox-group v-model="checkList"&gt;
+                                    &lt;dx-checkbox label="标签1" &gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签2" &gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签3" disabled&gt;&lt;/dx-checkbox&gt;
+                                    &lt;dx-checkbox label="标签4" &gt;&lt;/dx-checkbox&gt;
+                                &lt;/dx-checkbox-group&gt;
+                           &lt;/template&gt;`
+    }
   }
-}
-&nbsp;
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

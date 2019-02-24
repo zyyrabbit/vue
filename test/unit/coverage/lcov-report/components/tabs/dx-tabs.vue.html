@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.06% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/33</span>
+        <span class='fraction'>0/29</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">3.23% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/31</span>
+        <span class='fraction'>0/28</span>
       </div>
     </div>
   </div>
@@ -128,7 +128,41 @@
 83
 84
 85
-86</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,7 +196,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -176,7 +210,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -213,21 +247,55 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-  export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;ul class="dx-tab"&gt;
+    &lt;div class="dx-tab--active-bar" :style="barStyle"&gt;&lt;/div&gt;
+    &lt;li 
+      :class="{'is-active': select === index}" 
+      class="dx-tab--item" 
+      v-for="(item, index) in tabs" 
+      :key="index" 
+      :value="item.value" 
+      @click="onTabClick(item, index)"
+      ref="tab"&gt;{{ item.label }}&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
 		componentName: 'DxTabs',
 		name: 'DxTabs',
     props: {
@@ -235,76 +303,110 @@
       tabs: Array
     },
     data() {
-<span class="cstat-no" title="statement not covered" >      r</span>eturn {
+<span class="cstat-no" title="statement not covered" >      return {</span>
         // select: this.active
       }
     },
-    methods: <span class="fstat-no" title="function not covered" >{</span>
+    methods: {
       onTabClick(tab, index) {
-<span class="cstat-no" title="statement not covered" >        t</span>his.select = index
-<span class="cstat-no" title="statement not covered" >        t</span>his.$emit('input', tab.value)
+<span class="cstat-no" title="statement not covered" >        this.select = index</span>
+<span class="cstat-no" title="statement not covered" >        this.$emit('input', tab.value)</span>
       }
     },
     computed: {
-      select: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-        get() <span class="cstat-no" title="statement not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          l</span>et active = 0
-<span class="cstat-no" title="statement not covered" >          t</span>his.tabs.forEach(<span class="fstat-no" title="function not covered" >(i, index) =&gt; {</span>
+      select: {
+        get() {
+          let active = <span class="cstat-no" title="statement not covered" >0</span>
+<span class="cstat-no" title="statement not covered" >          this.tabs.forEach((i, index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >            if (i.value === this.value) {</span>
-<span class="cstat-no" title="statement not covered" >              a</span>ctive = index
+<span class="cstat-no" title="statement not covered" >              active = index</span>
             }
           })
-<span class="cstat-no" title="statement not covered" >          r</span>eturn active || 0
+<span class="cstat-no" title="statement not covered" >          return active || 0</span>
         },
         set(val) {
         }
       },
-      barStyle: <span class="fstat-no" title="function not covered" >{</span>
+      barStyle: {
         cache: false,
-        get() <span class="cstat-no" title="statement not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >          if (!this.$refs.tab) <span class="cstat-no" title="statement not covered" >r</span></span>eturn
-<span class="cstat-no" title="statement not covered" >          l</span>et style = {}
-<span class="cstat-no" title="statement not covered" >          l</span>et offset = 0
-<span class="cstat-no" title="statement not covered" >          l</span>et tabSize = 0
-<span class="cstat-no" title="statement not covered" >          t</span>his.tabs.every(<span class="fstat-no" title="function not covered" >(tab, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            l</span>et $el = this.$refs.tab[index]
+        get() {
+<span class="cstat-no" title="statement not covered" >          if (!this.$refs.tab) <span class="cstat-no" title="statement not covered" >return</span></span>
+          let style = <span class="cstat-no" title="statement not covered" >{}</span>
+          let offset = <span class="cstat-no" title="statement not covered" >0</span>
+          let tabSize = <span class="cstat-no" title="statement not covered" >0</span>
+<span class="cstat-no" title="statement not covered" >          this.tabs.every((tab, index) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+            let $el = <span class="cstat-no" title="statement not covered" >this.$refs.tab[index]</span>
 <span class="cstat-no" title="statement not covered" >            if (index !== this.select) {</span>
-<span class="cstat-no" title="statement not covered" >              o</span>ffset += $el[`clientWidth`]
-<span class="cstat-no" title="statement not covered" >              r</span>eturn true
+<span class="cstat-no" title="statement not covered" >              offset += $el[`clientWidth`]</span>
+<span class="cstat-no" title="statement not covered" >              return true</span>
             } else {
-<span class="cstat-no" title="statement not covered" >              t</span>abSize = $el[`clientWidth`]
+<span class="cstat-no" title="statement not covered" >              tabSize = $el[`clientWidth`]</span>
               // 减去padding
 <span class="cstat-no" title="statement not covered" >              if (this.tabs.length &gt; 1) {</span>
                 // tabSize -= (index === 0 || index === this.tabs.length - 1) ? 28 : 28
                 // FIMXE 这里是写了一半的像素值
-<span class="cstat-no" title="statement not covered" >                t</span>abSize -= 32
+<span class="cstat-no" title="statement not covered" >                tabSize -= 32</span>
               }
-<span class="cstat-no" title="statement not covered" >              r</span>eturn false
+<span class="cstat-no" title="statement not covered" >              return false</span>
             }
           })
           // 移动位置可以使用像素值 因为已经是根据元素的实际值计算的
-<span class="cstat-no" title="statement not covered" >          c</span>onst transform = `translateX(${offset}px)`
+          const transform = <span class="cstat-no" title="statement not covered" >`translateX(${offset}px)`</span>
           // FIMXE 这里是写了像素值
-<span class="cstat-no" title="statement not covered" >          s</span>tyle.width = tabSize + 'px'
-<span class="cstat-no" title="statement not covered" >          s</span>tyle.transform = transform
-<span class="cstat-no" title="statement not covered" >          s</span>tyle.msTransform = transform
-<span class="cstat-no" title="statement not covered" >          s</span>tyle.webkitTransform = transform
-<span class="cstat-no" title="statement not covered" >          r</span>eturn style
+<span class="cstat-no" title="statement not covered" >          style.width = tabSize + 'px'</span>
+<span class="cstat-no" title="statement not covered" >          style.transform = transform</span>
+<span class="cstat-no" title="statement not covered" >          style.msTransform = transform</span>
+<span class="cstat-no" title="statement not covered" >          style.webkitTransform = transform</span>
+<span class="cstat-no" title="statement not covered" >          return style</span>
         }
       }
     },
     mounted() {
-<span class="cstat-no" title="statement not covered" >      t</span>his.$forceUpdate()
+<span class="cstat-no" title="statement not covered" >      this.$forceUpdate()</span>
     }
   }
+&lt;/script&gt;
+&lt;style scoped lang="scss"&gt;
+  @include B(tab) {
+    &amp;::-webkit-scrollbar { 
+        display: none 
+    }
+    position: relative;
+    padding-bottom: 1.4rem;
+    width: 100%;
+    overflow-x: scroll;
+    // 父元素会根据字体撑开 需要设为0
+    font-size: 0;
+    white-space: nowrap;
+    @include M(active-bar) {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: $--dx-tabs-active-bar-height;
+        background-color: $--dx-tabs-active-background-color;
+        border-radius: 0.4rem;
+        z-index: 1;
+        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+        list-style: none;
+    }
 &nbsp;
-&nbsp;</pre></td></tr>
+    @include M(item) {
+        color: $--dx-tabs-item-color;
+        font-size: $--dx-tabs-item-font-size;
+        display: inline-block;
+        padding-right: $--dx-tabs-item-padding-right;
+        @include when(active) {
+            color: $--dx-tabs-active-color;
+        }
+    }
+  }
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

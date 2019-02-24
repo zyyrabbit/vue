@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">30.77% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/30</span>
+        <span class='fraction'>8/26</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">15.38% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/16</span>
+        <span class='fraction'>2/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">33.33% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>3/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">30.77% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/30</span>
+        <span class='fraction'>8/26</span>
       </div>
     </div>
   </div>
@@ -88,23 +88,7 @@
 43
 44
 45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -139,12 +123,6 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -155,69 +133,58 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-// 注册及删除监听事件
-var on = exports.on = function () {
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// 注册及删除监听事件
+export const on = (function() {
     <span class="missing-if-branch" title="else path not taken" >E</span>if (document.addEventListener) {
-        return function (el, event, handler) {
-            el.addEventListener(event, handler, false);
-        };
+        return function(el, event, handler) {
+            el.addEventListener(event, handler, false)
+        }
     } else <span class="cstat-no" title="statement not covered" >if (document.attachEvent) {</span>
-<span class="cstat-no" title="statement not covered" >        r</span>eturn <span class="fstat-no" title="function not covered" >function (el, event, handler) {</span>
-<span class="cstat-no" title="statement not covered" >            e</span>l.attachEvent('on' + event, handler);
-        };
+<span class="cstat-no" title="statement not covered" >        return function(el, event, handler) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            el.attachEvent('on' + event, handler)</span>
+        }
     } else {
-<span class="cstat-no" title="statement not covered" >        r</span>eturn <span class="fstat-no" title="function not covered" >function (el, event, handler) {</span>
-<span class="cstat-no" title="statement not covered" >            e</span>l[on + 'event'] = handler;
-        };
+<span class="cstat-no" title="statement not covered" >        return function(el, event, handler) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            el[on + 'event'] = handler</span>
+        }
     }
-}();
-var off = exports.off = function () {
+})()
+export const off = (function() {
     <span class="missing-if-branch" title="else path not taken" >E</span>if (document.removeEventListener) {
-        return <span class="fstat-no" title="function not covered" >function (el, event, handler) {</span>
-<span class="cstat-no" title="statement not covered" >            e</span>l.removeEventListener(event, handler, false);
-        };
+        return function(el, event, handler) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            el.removeEventListener(event, handler, false)</span>
+        }
     } else <span class="cstat-no" title="statement not covered" >if (document.detachEvent) {</span>
-<span class="cstat-no" title="statement not covered" >        r</span>eturn <span class="fstat-no" title="function not covered" >function (el, event, handler) {</span>
-<span class="cstat-no" title="statement not covered" >            e</span>l.detachEvent('on' + event, handler);
-        };
+<span class="cstat-no" title="statement not covered" >        return function(el, event, handler) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            el.detachEvent('on' + event, handler)</span>
+        }
     } else {
-<span class="cstat-no" title="statement not covered" >        r</span>eturn <span class="fstat-no" title="function not covered" >function (el, event, handler) {</span>
-<span class="cstat-no" title="statement not covered" >            e</span>l[on + 'event'] = null;
-        };
+<span class="cstat-no" title="statement not covered" >        return function(el, event, handler) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >            el[on + 'event'] = null</span>
+        }
     }
-}();
+})()
 // 合并对象,并没有考虑深层次的情况
-var merge = exports.merge = <span class="fstat-no" title="function not covered" >function merge() {</span>
-<span class="cstat-no" title="statement not covered" >    for (var _len = arguments.length, args = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {</span>
-<span class="cstat-no" title="statement not covered" >        a</span>rgs[_key - 1] = arguments[_key];
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    v</span>ar obj = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : {};
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    for (var i = 0, len = args.length; i &lt; len; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        v</span>ar tempObj = args[i];
+export const merge = (obj = {}, ...args) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    for (let i = 0, len = args.length; i &lt; len; i++) {</span>
+        let tempObj = <span class="cstat-no" title="statement not covered" >args[i]</span>
 <span class="cstat-no" title="statement not covered" >        if (tempObj) {</span>
-<span class="cstat-no" title="statement not covered" >            for (var prop in tempObj) {</span>
+<span class="cstat-no" title="statement not covered" >            for (let prop in tempObj) {</span>
 <span class="cstat-no" title="statement not covered" >                if (tempObj.hasOwnProperty(prop)) {</span>
-<span class="cstat-no" title="statement not covered" >                    o</span>bj[prop] = tempObj[prop];
+<span class="cstat-no" title="statement not covered" >                    obj[prop] = tempObj[prop]</span>
                 }
             }
         }
     }
-<span class="cstat-no" title="statement not covered" >    r</span>eturn obj;
-};
+<span class="cstat-no" title="statement not covered" >    return obj</span>
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

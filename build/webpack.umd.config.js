@@ -1,16 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
-// const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const config = require('../config')
-const vueLoaderConfig = require('./vue-loader.conf')
-const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
+// const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-// 解决path.join解决路劲替换问题
-/* const pathConvert = (_path, _name) => {
-    return path.join(_path, _name).replace('\\', '/')
-} */
-
+const cssLoaderConfig = require('./css-loader.conf') // v3->v4
+const VueLoaderPlugin = require('vue-loader/lib/plugin') // v3->v4
 const webpackConfig = {
+  mode: 'production', // v3->v4
   entry: {
     app: ['./src/components/index.js']
   },
@@ -33,7 +29,9 @@ const webpackConfig = {
     },
     modules: ['node_modules']
   },
-  // externals: config.externals,
+  optimization: {
+    minimize: true
+  },
   module: {
     rules: [
       {
@@ -44,10 +42,7 @@ const webpackConfig = {
       },
       {
         test: /\.vue$/,
-        use: [{
-            loader: 'vue-loader',
-            options: vueLoaderConfig
-        }]
+        loader: 'vue-loader'
       },
       {
         test: /\.json$/,
@@ -55,11 +50,11 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+        loaders: cssLoaderConfig.css
       },
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders:  cssLoaderConfig.scss
       },
       {
         test: /\.html$/,
@@ -74,15 +69,7 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.svg(\?\S*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /\.(gif|png|jpe?g)(\?\S*)?$/,
+        test: /\.(svg|gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
@@ -92,31 +79,8 @@ const webpackConfig = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),  // v3->v4
     new ProgressBarPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new ParallelUglifyPlugin({
-     // 传递给 UglifyJS 的参数
-      uglifyJS: {
-          output: {
-            // 最紧凑的输出
-                beautify: false,
-                // 删除所有的注释
-                comments: false
-          },
-          compress: {
-            // 在UglifyJs删除没有用到的代码时不输出警告
-                warnings: false,
-                // 删除所有的 `console` 语句，可以兼容ie浏览器
-                drop_console: true,
-                // 内嵌定义了但是只用到一次的变量
-                collapse_vars: true,
-                // 提取出出现多次但是没有定义成变量去引用的静态值
-                reduce_vars: true
-          }
-        }
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })

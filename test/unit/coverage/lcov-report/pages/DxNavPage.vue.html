@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>0/3</span>
       </div>
     </div>
   </div>
@@ -145,7 +145,9 @@
 100
 101
 102
-103</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+103
+104
+105</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -247,115 +249,119 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      navs: [
-            { title: '用户管理' },
-            { title: '商品管理',
-              subNavs: [
-                {title: '商品库存', path: ''},
-                {title: '商品销量', path: ''},
-                {title: '供应商', path: ''}
-              ]
-            },
-            { title: '系统管理' },
-            { title: '订单管理' },
-            { title: '权限管理',
-              subNavs: [
-              {title: '岗位权限', path: ''},
-              {title: '角色权限', path: ''},
-              {title: '用户权限', path: ''}
-              ]
-            },
-            { title: '广告管理' }
-          ],
-      htmlString: '',
-      scriptString: '',
-      attrDatas: [
-                  {
-                    param: 'navs',
-                    illustrate: '导航标题栏，支持二级标题导航',
-                    type: 'Array',
-                    optionVal: '---',
-                     defaultVal: '---'
-                   }
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Nav 导航栏&lt;/dx-heading&gt;
+	    &lt;p&gt;用于导航网页内容&lt;/p&gt;
+  	&lt;/div&gt;
+  	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;侧边栏导航&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString" :scriptString="scriptString"&gt;
+        	&lt;dx-nav :navs="navs"&gt;&lt;/dx-nav&gt;
+	    &lt;/dx-show-code&gt;
+ 	&lt;/div&gt;
+    &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Nav Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        navs: [
+              { title: '用户管理' },
+              { title: '商品管理',
+                subNavs: [
+                  {title: '商品库存', path: ''},
+                  {title: '商品销量', path: ''},
+                  {title: '供应商', path: ''}
                 ]
-    }
-  },
-  created() {
-  // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString = `&lt;template&gt; 
-                          &lt;dx-nav :navs="navs"&gt;&lt;/dx-nav&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString = `export default {
-                              data(){
-                                return {
-                                  navs:[
-                                        { title: '用户管理' },
-                                        { title: '商品管理',
-                                          subNavs: [
-                                            {title: '商品库存', path: ''},
-                                            {title: '商品销量', path: ''},
-                                            {title: '供应商', path: ''}
-                                          ]
-                                        },
-                                        { title: '系统管理' },
-                                        { title: '订单管理' },
-                                        { title: '权限管理',
-                                          subNavs: [
-                                          {title: '岗位权限', path: ''},
-                                          {title: '角色权限', path: ''},
-                                          {title: '用户权限', path: ''}
-                                          ]
-                                        },
-                                        { title: '广告管理' }
-                                    ],
+              },
+              { title: '系统管理' },
+              { title: '订单管理' },
+              { title: '权限管理',
+                subNavs: [
+                {title: '岗位权限', path: ''},
+                {title: '角色权限', path: ''},
+                {title: '用户权限', path: ''}
+                ]
+              },
+              { title: '广告管理' }
+            ],
+        htmlString: '',
+        scriptString: '',
+        attrDatas: [
+                    {
+                      param: 'navs',
+                      illustrate: '导航标题栏，支持二级标题导航',
+                      type: 'Array',
+                      optionVal: '---',
+                       defaultVal: '---'
+                     }
+                  ]
+      }
+    },
+    created() {
+    // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString = `&lt;template&gt; </span>
+                            &lt;dx-nav :navs="navs"&gt;&lt;/dx-nav&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString = `export default {</span>
+                                data(){
+                                  return {
+                                    navs:[
+                                          { title: '用户管理' },
+                                          { title: '商品管理',
+                                            subNavs: [
+                                              {title: '商品库存', path: ''},
+                                              {title: '商品销量', path: ''},
+                                              {title: '供应商', path: ''}
+                                            ]
+                                          },
+                                          { title: '系统管理' },
+                                          { title: '订单管理' },
+                                          { title: '权限管理',
+                                            subNavs: [
+                                            {title: '岗位权限', path: ''},
+                                            {title: '角色权限', path: ''},
+                                            {title: '用户权限', path: ''}
+                                            ]
+                                          },
+                                          { title: '广告管理' }
+                                      ],
+                                  }
                                 }
-                              }
-                            }`
+                              }`
+    }
   }
-}
-&nbsp;
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

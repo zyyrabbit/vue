@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/8</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">14.29% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/7</span>
+        <span class='fraction'>0/6</span>
       </div>
     </div>
   </div>
@@ -343,163 +343,163 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      htmlString1: '',
-      htmlString2: '',
-      htmlString3: '',
-      htmlString4: '',
-      htmlString5: '',
-      attrDatas: [
-                  {
-                    param: 'type',
-                    illustrate: '按钮不同样式',
-                    type: 'String',
-                    optionVal: 'warning,primary',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'size',
-                    illustrate: '设置按钮的大小',
-                    type: 'String',
-                    optionVal: 'large,middle,small',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'disabled',
-                    illustrate: '禁用按钮',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'false'
-                  },
-                  {
-                    param: 'nativeType',
-                    illustrate: 'button原生样式',
-                    type: 'String',
-                    optionVal: 'button,submit,reset',
-                    defaultVal: '---'
-                  }
-                ]
-    }
-  },
-  created() {
-      // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString1 = `&lt;template&gt; 
-                            &lt;dx-button&gt;默认按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="text"&gt;文字按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="primary"&gt;基本按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="pinking"&gt;粉色按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="gray"&gt;灰色按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="warning"&gt;警告按钮&lt;/dx-button&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString2 = `&lt;template&gt; 
-                          &lt;dx-button  :disabled="true"&gt;默认按钮&lt;/dx-button&gt;
-                          &lt;dx-button  icon="edit" :disabled="true"&gt;编辑&lt;/dx-button&gt;
-                          &lt;dx-button  icon="delete"  :disabled="true"&gt;删除&lt;/dx-button&gt;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Button 按钮&lt;/dx-heading&gt;
+	    &lt;p&gt;用于用户点击按钮&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;按钮的基础用法&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString1"&gt;
+        &lt;dx-button&gt;默认按钮&lt;/dx-button&gt;
+        &lt;dx-button type="text"&gt;文字按钮&lt;/dx-button&gt;
+	    	&lt;dx-button type="primary"&gt;基本按钮&lt;/dx-button&gt;
+        &lt;dx-button type="pinking"&gt;粉色按钮&lt;/dx-button&gt;
+        &lt;dx-button type="gray"&gt;灰色按钮&lt;/dx-button&gt;
+        &lt;dx-button type="warning"&gt;警告按钮&lt;/dx-button&gt;
+	    &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;禁用按钮&lt;/dx-heading&gt;
+      &lt;p&gt;按钮不可用&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString2" &gt;
+        &lt;dx-button  :disabled="true"&gt;默认按钮&lt;/dx-button&gt;
+        &lt;dx-button  icon="edit" :disabled="true" class="margin-left-1rem"&gt;编辑&lt;/dx-button&gt;
+        &lt;dx-button  icon="delete"  :disabled="true" class="margin-left-1rem"&gt;删除&lt;/dx-button&gt;
+      &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;图标按钮&lt;/dx-heading&gt;
+	    &lt;p&gt;带图标的按钮提高辨识度或节省空间&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString3"&gt;
+	    	&lt;dx-button  icon="search"&gt;搜索&lt;/dx-button&gt;
+        &lt;dx-button  icon="edit" class="margin-left-1rem"&gt;编辑&lt;/dx-button&gt;
+        &lt;dx-button  icon="delete" class="margin-left-1rem"&gt;删除&lt;/dx-button&gt;
+	    &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;按钮大小&lt;/dx-heading&gt;
+      &lt;p&gt;设置有三种按钮大小&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString4"&gt;
+        &lt;dx-button type="primary" size="large"&gt;大按钮&lt;/dx-button&gt;
+        &lt;dx-button type="primary" class="margin-left-1rem"&gt;默认大小按钮&lt;/dx-button&gt;
+        &lt;dx-button type="primary"  size="small" class="margin-left-1rem"&gt;小按钮&lt;/dx-button&gt;
+      &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;父元素等宽按钮&lt;/dx-heading&gt;
+      &lt;p&gt;父元素等宽按钮&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString5"&gt;
+        &lt;dx-button type="primary" size="full"&gt;超大按钮&lt;/dx-button&gt;
+      &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Button Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+   &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Button Event&lt;/dx-heading&gt;
+       &lt;p&gt;点击button会，会触发一个dx-button-click事件，用于执行回调参数为event&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        htmlString1: '',
+        htmlString2: '',
+        htmlString3: '',
+        htmlString4: '',
+        htmlString5: '',
+        attrDatas: [
+                    {
+                      param: 'type',
+                      illustrate: '按钮样式',
+                      type: 'String',
+                      optionVal: 'text,warning,pinking,primary,gray',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'size',
+                      illustrate: '设置按钮的大小',
+                      type: 'String',
+                      optionVal: 'large,middle,small,full',
+                      defaultVal: 'middle'
+                    },
+                    {
+                      param: 'disabled',
+                      illustrate: '禁用按钮',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'false'
+                    },
+                    {
+                      param: 'nativeType',
+                      illustrate: 'button原生样式',
+                      type: 'String',
+                      optionVal: 'button,submit,reset',
+                      defaultVal: '---'
+                    }
+                  ]
+      }
+    },
+    created() {
+        // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt; </span>
+                              &lt;dx-button&gt;默认按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="text"&gt;文字按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="primary"&gt;基本按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="pinking"&gt;粉色按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="gray"&gt;灰色按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="warning"&gt;警告按钮&lt;/dx-button&gt;
                          &lt;/template&gt;`
-      // 扩展用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString3 = `&lt;template&gt; 
-                            &lt;dx-button  icon="search"&gt;搜索&lt;/dx-button&gt;
-                            &lt;dx-button  icon="edit"&gt;编辑&lt;/dx-button&gt;
-                            &lt;dx-button  icon="delete"&gt;删除&lt;/dx-button&gt;
-                        &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString4 = `&lt;template&gt; 
-                            &lt;dx-button type="primary" size="full"&gt;大按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="primary" size="large"&gt;大按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="primary" &gt;默认大小按钮&lt;/dx-button&gt;
-                            &lt;dx-button type="primary"  size="small"&gt;小按钮&lt;/dx-button&gt;
-                        &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString5 = `&lt;template&gt; 
-                            &lt;dx-button type="primary" size="full"&gt;超大按钮&lt;/dx-button&gt;
-                        &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.htmlString2 = `&lt;template&gt; </span>
+                            &lt;dx-button  :disabled="true"&gt;默认按钮&lt;/dx-button&gt;
+                            &lt;dx-button  icon="edit" :disabled="true"&gt;编辑&lt;/dx-button&gt;
+                            &lt;dx-button  icon="delete"  :disabled="true"&gt;删除&lt;/dx-button&gt;
+                           &lt;/template&gt;`
+        // 扩展用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString3 = `&lt;template&gt; </span>
+                              &lt;dx-button  icon="search"&gt;搜索&lt;/dx-button&gt;
+                              &lt;dx-button  icon="edit"&gt;编辑&lt;/dx-button&gt;
+                              &lt;dx-button  icon="delete"&gt;删除&lt;/dx-button&gt;
+                          &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.htmlString4 = `&lt;template&gt; </span>
+                              &lt;dx-button type="primary" size="full"&gt;大按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="primary" size="large"&gt;大按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="primary" &gt;默认大小按钮&lt;/dx-button&gt;
+                              &lt;dx-button type="primary"  size="small"&gt;小按钮&lt;/dx-button&gt;
+                          &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.htmlString5 = `&lt;template&gt; </span>
+                              &lt;dx-button type="primary" size="full"&gt;超大按钮&lt;/dx-button&gt;
+                          &lt;/template&gt;`
+    }
   }
-}
-&nbsp;
+&lt;/script&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">6.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/16</span>
+        <span class='fraction'>1/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">6.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/16</span>
+        <span class='fraction'>1/15</span>
       </div>
     </div>
   </div>
@@ -69,17 +69,7 @@
 24
 25
 26
-27
-28
-29
-30
-31
-32</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+27</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -105,44 +95,39 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-var orderBy = exports.orderBy = <span class="fstat-no" title="function not covered" >function orderBy(array, sortProp, reverse, sortMethod) {</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const orderBy = function(array, sortProp, reverse, sortMethod) <span class="fstat-no" title="function not covered" >{</span>
 	// 判断array是否为数组，且数组是否为空
 <span class="cstat-no" title="statement not covered" >	if (!Array.isArray(array) || array.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn array;
+<span class="cstat-no" title="statement not covered" >		return array</span>
 	}
 <span class="cstat-no" title="statement not covered" >	if (typeof reverse === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>everse = reverse === 'descending' ? -1 : 1;
+<span class="cstat-no" title="statement not covered" >		reverse = reverse === 'descending' ? -1 : 1</span>
 	}
 <span class="cstat-no" title="statement not covered" >	if (!sortProp) {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn array;
+<span class="cstat-no" title="statement not covered" >		return array</span>
 	}
 	// 排序的顺序
-<span class="cstat-no" title="statement not covered" >	v</span>ar order = reverse &amp;&amp; reverse === -1 ? -1 : 1;
-<span class="cstat-no" title="statement not covered" >	v</span>ar _sort = <span class="fstat-no" title="function not covered" >function _sort(a, b, sortProp) {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn a[sortProp] === b[sortProp] ? 0 : a[sortProp] &gt; b[sortProp] ? order : -order;
-	};
-<span class="cstat-no" title="statement not covered" >	if (sortMethod &amp;&amp; typeof sortMethod === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >		_</span>sort = <span class="fstat-no" title="function not covered" >function _sort(a, b, sortProp) {</span>
-<span class="cstat-no" title="statement not covered" >			r</span>eturn sortMethod(a, b, sortProp) ? order : -order;
-		};
-	}
+    const order = <span class="cstat-no" title="statement not covered" >reverse &amp;&amp; reverse === -1 ? -1 : 1</span>
+    let _sort = <span class="cstat-no" title="statement not covered" >(a, b, sortProp) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >		return a[sortProp] === b[sortProp] ? 0 : a[sortProp] &gt; b[sortProp] ? order : -order</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (sortMethod &amp;&amp; typeof sortMethod === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >		_sort = (a, b, sortProp) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >			return sortMethod(a, b, sortProp) ? order : -order</span>
+		}
+    }
 	// 数组排序方法
-<span class="cstat-no" title="statement not covered" >	r</span>eturn array.slice().sort(<span class="fstat-no" title="function not covered" >function (a, b) {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn _sort(a, b, sortProp);
-	});
-};
+<span class="cstat-no" title="statement not covered" >	return array.slice().sort(function(a, b) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >		return _sort(a, b, sortProp)</span>
+	})
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

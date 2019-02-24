@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/6</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/5</span>
+        <span class='fraction'>0/4</span>
       </div>
     </div>
   </div>
@@ -167,7 +167,14 @@
 122
 123
 124
-125</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+125
+126
+127
+128
+129
+130
+131
+132</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,13 +278,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -286,66 +286,80 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-  export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Input 输入框&lt;/dx-heading&gt;
+	    &lt;p&gt;用于用户输入数据&lt;/p&gt;
+  	&lt;/div&gt;
+  	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+        &lt;p&gt;input默认设置为元素的80%,如果需要设置自定义宽度，请自行覆盖dx-input&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString" :scriptString="scriptString"&gt;
+          &lt;div class="margin-bottom-10"&gt;
+            &lt;dx-input v-model="val1"&gt;&lt;/dx-input&gt;
+          &lt;/div&gt;
+          &lt;div class="margin-bottom-10" style="font-size: 1.4rem"&gt;
+            标签：&lt;dx-input v-model="val2"&gt;&lt;/dx-input&gt;
+          &lt;/div&gt;
+	    &lt;/dx-show-code&gt;
+ 	&lt;/div&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;input输入框添加前后缀&lt;/dx-heading&gt;
+	    &lt;dx-show-code :htmlString="htmlString1" :scriptString="scriptString"&gt;
+            &lt;div class="margin-bottom-10"&gt;
+            	&lt;dx-input v-model="val3" &gt;
+                &lt;span&gt;before-label:&lt;/span&gt;
+              &lt;/dx-input&gt;
+            &lt;/div&gt;
+            &lt;div class="margin-bottom-10"&gt;
+              &lt;dx-input v-model="val4"&gt;
+                &lt;span slot="left"&gt;after-label&lt;/span&gt;
+              &lt;/dx-input&gt;
+            &lt;/div&gt;
+	    &lt;/dx-show-code&gt;
+ 	&lt;/div&gt;
+    &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Input Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" &gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
     data() {
-<span class="cstat-no" title="statement not covered" >      r</span>eturn {
+<span class="cstat-no" title="statement not covered" >      return {</span>
         val1: '',
         val2: '',
         val3: '',
@@ -391,18 +405,19 @@
     },
     created() {
         // 基本用法
-<span class="cstat-no" title="statement not covered" >        t</span>his.htmlString = `&lt;template&gt; 
-                           	 	&lt;div class="margin-bottom-10"&gt;
-                                    &lt;dx-input v-model="val"&gt;&lt;/dx-input&gt;
-                                &lt;/div&gt;
-                                &lt;div class="margin-bottom-10" style="font-size: 1.4rem"&gt;
-                                    标签：&lt;dx-input v-model="val1"&gt;&lt;/dx-input&gt;
-                                &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >        this.htmlString = `&lt;template&gt; </span>
+                              &lt;dx-input v-model="val"&gt;&lt;/dx-input&gt;
+                              标签：&lt;dx-input v-model="val1"&gt;&lt;/dx-input&gt;
                          &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >        t</span>his.htmlString1 = `&lt;template&gt; 
-	                            &lt;dx-input v-model="val" max="true"&gt;&lt;/dx-input&gt;
-                           &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >        t</span>his.scriptString = `export default {
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt;</span>
+                                &lt;dx-input v-model="val3" &gt;
+                                    &lt;span&gt;before-label:&lt;/span&gt;
+                                &lt;/dx-input&gt;
+                                &lt;dx-input v-model="val4"&gt;
+                                  &lt;span slot="left"&gt;after-label&lt;/span&gt;
+                                &lt;/dx-input&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString = `export default {</span>
                                 data(){
                                   return {
                                         val1: '',
@@ -414,6 +429,12 @@
                               }`
     }
   }
+&lt;/script&gt;
+&lt;style&gt;
+  .margin-bottom-10 {
+    margin-bottom: 1rem;
+  }
+&lt;/style&gt;
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -421,7 +442,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

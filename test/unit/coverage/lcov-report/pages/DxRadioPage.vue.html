@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/4</span>
+        <span class='fraction'>0/5</span>
       </div>
     </div>
   </div>
@@ -130,7 +130,25 @@
 85
 86
 87
-88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,6 +224,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -214,58 +234,76 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-  export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Radio 单选框&lt;/dx-heading&gt;
+	    &lt;p&gt;单选框用于从一组数据中选择一个，如果数据过多建议使用select下拉框&lt;/p&gt;
+  	&lt;/div&gt;
+  	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;单选框的基本用法&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString1" :scriptString="scriptString1"&gt;
+        &lt;dx-radio v-model="radio" name="radio" label="1"&gt;选项1&lt;/dx-radio&gt;
+	    	&lt;dx-radio v-model="radio" name="radio" label="2"&gt;选项2&lt;/dx-radio&gt;
+	    &lt;/dx-show-code&gt;
+ 	&lt;/div&gt;
+  	&lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;禁用单选按钮&lt;/dx-heading&gt;
+      &lt;p&gt;单选按钮不可用&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString2" :scriptString="scriptString2"&gt;
+        &lt;dx-radio v-model="radio1" disabled label="1"&gt;选项1&lt;/dx-radio&gt;
+	      &lt;dx-radio v-model="radio1" disabled :label="2"&gt;选项2&lt;/dx-radio&gt;
+      &lt;/dx-show-code&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Radio Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
     data() {
-<span class="cstat-no" title="statement not covered" >      r</span>eturn {
+<span class="cstat-no" title="statement not covered" >      return {</span>
         radio: '1',
-        radio1: '1',
+        radio1: 2,
         htmlString1: '',
         htmlString2: '',
+        scriptString1: '',
+        scriptString2: '',
         attrDatas: [
                     {
                       param: 'label',
@@ -293,24 +331,40 @@
     },
     created() {
         // 基本用法
-<span class="cstat-no" title="statement not covered" >        t</span>his.htmlString1 = `&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt; </span>
                             &lt;dx-radio v-model="radio" label="1"&gt;选项1&lt;/dx-radio&gt;
 	    					&lt;dx-radio v-model="radio" &gt;选项2&lt;/dx-radio&gt;
                          &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >        t</span>his.htmlString2 = `&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >        this.htmlString2 = `&lt;template&gt; </span>
                              &lt;dx-radio v-model="radio1" disabled label="1"&gt;选项1&lt;/dx-radio&gt;
 	    					&lt;dx-radio v-model="radio1" disabled&gt;选项2&lt;/dx-radio&gt;
                            &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString1 = `export default {</span>
+                                data(){
+                                  return {
+                                    radio: '1'
+                                  }
+                                }
+                            }`
+<span class="cstat-no" title="statement not covered" >        this.scriptString2 = `export default {</span>
+                                data(){
+                                  return {
+                                    radio: 2
+                                  }
+                                }
+                            }`
     }
   }
-&nbsp;
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

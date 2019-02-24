@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
+        <span class="strong">6.25% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>9/24</span>
+        <span class='fraction'>1/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/6</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">9.09% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/11</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">21.05% </span>
+        <span class="strong">6.25% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>4/19</span>
+        <span class='fraction'>1/16</span>
       </div>
     </div>
   </div>
@@ -193,7 +193,36 @@
 148
 149
 150
-151</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,8 +287,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -343,74 +370,101 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;div class="dx-table"&gt;
+	    &lt;div style="display:none"&gt;
+	    	&lt;slot&gt;&lt;/slot&gt;
+	    &lt;/div&gt;
+	    &lt;div 
+	    	v-if="states.hasFilter"
+	    	class="dx-table__query" 
+	    &gt;
+	    	&lt;span 
+	    		v-for="(column, index) in filterColumns" 
+	    		:key="index" 
+	    	&gt;
+	    		&lt;dx-input
+	    			class="dx-table__query--input"
+	    			v-model="column.filterValue"
+	    		&gt;
+	    			{{column.label}}:
+	    		&lt;/dx-input&gt;
+	    	&lt;/span&gt;
+	    	&lt;span class="dx-table__query--btn"&gt;
+	    		&lt;dx-button   
+	    			icon="search" 
+	    			type="primary" 
+	    			@dx-button-click="filterData()"
+	    		&gt;
+	    			查询
+	    		&lt;/dx-button&gt;
+	    	&lt;/span&gt;
+	    &lt;/div&gt;
+		&lt;div&gt;
+		     &lt;dx-table-body  
+		      :store="store" 
+		      :borderRow="borderRow" 
+		      :tableHeadClass="tableHeadClass" 
+		      :borderColumn="borderColumn" 
+		      :tableBodyClass="tableBodyClass"
+		      :handleEdit="handleEdit"
+		      :handleDelete="handleDelete"
+		      /&gt;
+		&lt;/div&gt;
+		&lt;div 
+			v-if="states.hasFilter &amp;&amp; states.data.length === 0" 
+			class="dx-table--not-find"
+		&gt;
+			没有找到符合条件的数据
+		&lt;/div&gt;
+		&lt;div 
+			v-if="pagination"
+			class="dx-table--pagination-wrap"
+		&gt;
+			&lt;dx-pagination  
+				:total="data.length" 
+				:current-page="1" 
+				:show-page-info="true" 
+				:show-jump-page="true" 
+				:show-page-size="true" 
+				:page-size="pageSize"
+				@dx-pagination-page-update="changePage"
+			/&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
     import Store from './table-store.js'
     import DxTableBody from './dx-table-body.vue'
     let tableId = 0
-	export default<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+	export default{
 		name: 'DxTable',
 		components: {
 			DxTableBody
@@ -418,8 +472,8 @@
 		props: {
 			data: {
 				type: Array,
-				default: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >					r</span>eturn []
+				default: function() <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >					return []</span>
 				}
 			},
 			// 是否显示表格行border
@@ -447,59 +501,86 @@
 		},
 		data() {
 			// 初始化table-store
-<span class="cstat-no" title="statement not covered" >			c</span>onst store = new Store(this)
-<span class="cstat-no" title="statement not covered" >			r</span>eturn {
+			const store = <span class="cstat-no" title="statement not covered" >new Store(this)</span>
+<span class="cstat-no" title="statement not covered" >			return {</span>
 				store
 			}
 		},
-		computed: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span>
+		computed: {
 			columns() {
-<span class="cstat-no" title="statement not covered" >				r</span>eturn this.store.states.columns
+<span class="cstat-no" title="statement not covered" >				return this.store.states.columns</span>
 			},
 			states() {
-<span class="cstat-no" title="statement not covered" >				r</span>eturn this.store.states
+<span class="cstat-no" title="statement not covered" >				return this.store.states</span>
 			},
 			filterColumns() {
-<span class="cstat-no" title="statement not covered" >				r</span>eturn this.store.states.columns.filter(<span class="fstat-no" title="function not covered" >(column) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >					r</span>eturn column.filterable
+<span class="cstat-no" title="statement not covered" >				return this.store.states.columns.filter((column) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >					return column.filterable</span>
 				})
 			}
 		},
 		watch: {
-			data: <span class="fstat-no" title="function not covered" >{</span>
+			data: {
 				immediate: true,
 				handler(val) {
 				// 如果设置分页则初始化时候，
 <span class="cstat-no" title="statement not covered" >				if (this.pagination) {</span>
-<span class="cstat-no" title="statement not covered" >				v</span>al = val.slice(0, this.pageSize)
+<span class="cstat-no" title="statement not covered" >				val = val.slice(0, this.pageSize)</span>
 				}
-<span class="cstat-no" title="statement not covered" >				t</span>his.store.commit('setData', val)
+<span class="cstat-no" title="statement not covered" >				this.store.commit('setData', val)</span>
 				}
 			}
         },
         created() {
-<span class="cstat-no" title="statement not covered" >			t</span>his.tableId = 'DxTable' + '-' + tableId++
+<span class="cstat-no" title="statement not covered" >			this.tableId = 'DxTable' + '-' + tableId++</span>
 		},
 		methods: {
-			filterData: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >				t</span>his.store.commit('filterData')
+			filterData: function() <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >				this.store.commit('filterData')</span>
 			},
-			changePage: <span class="fstat-no" title="function not covered" >function(newPage) {</span>
-<span class="cstat-no" title="statement not covered" >				l</span>et start = (newPage.currentPage - 1) * newPage.pageSize
-<span class="cstat-no" title="statement not covered" >				l</span>et	end = start + newPage.pageSize
+			changePage: function(newPage) <span class="fstat-no" title="function not covered" >{</span>
+				let start = <span class="cstat-no" title="statement not covered" >(newPage.currentPage - 1) * newPage.pageSize</span>
+				let	end = <span class="cstat-no" title="statement not covered" >start + newPage.pageSize</span>
 				// console.log(start, end, this.data, this.data.slice(start, end))
-<span class="cstat-no" title="statement not covered" >				t</span>his.store.commit('setData', this.data.slice(start, end))
+<span class="cstat-no" title="statement not covered" >				this.store.commit('setData', this.data.slice(start, end))</span>
 			}
 		}
 	}
+&lt;/script&gt;
 &nbsp;
-&nbsp;</pre></td></tr>
+&lt;style lang="scss"&gt;
+	@include B(table) {
+		@include E(query) {
+			margin-bottom: 2rem;
+			@include M(input) {
+				line-height: $--dx-table-query-input-line-height;
+				height: $--dx-table-query-input-height;
+				max-width: 40%;
+				margin-right: 2rem;
+			}
+		}
+&nbsp;
+		@include M(not-find) {
+			border: 0.1rem solid #ddd;
+			border-top: 0;
+			line-height: $--dx-table-line-height-not-find;
+			font-size: $--dx-table-font-size-not-find;
+			text-align: center;
+		}
+&nbsp;
+		@include M(pagination-wrap) {
+			margin-top: 1rem;
+			text-align: right;
+		}
+	}
+&nbsp;
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

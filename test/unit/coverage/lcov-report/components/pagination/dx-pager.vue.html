@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">3.64% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/55</span>
+        <span class='fraction'>0/53</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/38</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">1.85% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/54</span>
+        <span class='fraction'>0/53</span>
       </div>
     </div>
   </div>
@@ -226,7 +226,38 @@
 181
 182
 183
-184</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -409,196 +440,258 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-export default <span class="fstat-no" title="function not covered" >{</span>
-	name: 'DxPager',
-	componentName: 'DxPager',
-	props: {
-		pageCount: {
-			type: Number,
-			default: 0
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;ul 
+		class="dx-pager clearfix" 
+		@click.stop.prevent="clickPage($event)"
+	&gt;
+		&lt;li  
+			v-if="pageCount &gt; 0" 
+			:class="{'is-disbaled':1 === currentPage}" 
+			class="pre"
+		&gt;
+			&lt;i 
+				class="icon iconfont dx-prev dx-pager--icon"
+				aria-hidden="true"
+			&gt;
+			&lt;/i&gt;
+		&lt;/li&gt;
+		&lt;li 
+			v-if="pageCount &gt; 0"  
+			:class="{'is-active': 1 === currentPage}"
+			:style="[1 === currentPage &amp;&amp; activeStyle]"
+		&gt;
+			1
+		&lt;/li&gt;
+		&lt;li  
+			v-if="showPrevMore" 
+			:class="[quickprevIconClass]"
+			class="dx-more quickpre"
+		&gt;
+			&lt;i 
+				class="icon iconfont dx-ellipsis" 
+				aria-hidden="true"
+			&gt;
+			&lt;/i&gt;
+		&lt;/li&gt;
+		&lt;li 
+			v-for="(page, index) in pager" 
+			:key="index"   
+			:class="{'is-active': page === currentPage}"
+			:style="[page === currentPage &amp;&amp; activeStyle]"
+		&gt;
+			{{ page }}
+		&lt;/li&gt;
+		&lt;li 
+			v-if="showNextMore"
+			:class="[quicknextIconClass]"
+			class="dx-more quicknext" 
+		&gt;
+			&lt;i 
+				class="icon iconfont dx-ellipsis" 
+				aria-hidden="true"
+			&gt;
+			&lt;/i&gt;
+		&lt;/li&gt;
+		&lt;li
+			v-if="pageCount &gt; 1"  
+			:class="{'is-active': pageCount === currentPage}"
+			:style="[pageCount === currentPage &amp;&amp; activeStyle]"
+		&gt;
+			{{ pageCount }}
+		&lt;/li&gt;
+		&lt;li 
+			v-if="pageCount &gt; 0" 
+			:class="{ 'is-disbaled': pageCount === currentPage}" 
+			class="next"
+		&gt;	
+			&lt;i 
+				class="icon iconfont dx-next dx-pager--icon" 
+				aria-hidden="true"
+			&gt;
+			&lt;/i&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/template&gt;
+&lt;script&gt;
+	export default {
+		name: 'DxPager',
+		componentName: 'DxPager',
+		props: {
+			pageCount: {
+				type: Number,
+				default: 0
+			},
+			currentPage: {
+				type: Number,
+				default: 1
+			},
+			activeStyle: Object
 		},
-		currentPage: {
-			type: Number,
-			default: 1
+		data() {
+<span class="cstat-no" title="statement not covered" >			return {</span>
+				showPrevMore: false,
+				showNextMore: false,
+				quicknextIconClass: 'dx-icon-more',
+				quickprevIconClass: 'dx-icon-more'
+			}
 		},
-		activeStyle: Object
-	},
-	data() {
-<span class="cstat-no" title="statement not covered" >		r</span>eturn {
-			showPrevMore: false,
-			showNextMore: false,
-			quicknextIconClass: 'dx-icon-more',
-			quickprevIconClass: 'dx-icon-more'
-		}
-	},
-	computed: <span class="fstat-no" title="function not covered" >{</span>
-		pager() {
-<span class="cstat-no" title="statement not covered" >			c</span>onst pages = []
-<span class="cstat-no" title="statement not covered" >			c</span>onst pagerCount = 7
-<span class="cstat-no" title="statement not covered" >			c</span>onst middle = Math.floor(pagerCount / 2)
+		computed: {
+			pager() {
+				const pages =<span class="cstat-no" title="statement not covered" > []</span>
+				const pagerCount =<span class="cstat-no" title="statement not covered" > 7</span>
+				const middle =<span class="cstat-no" title="statement not covered" > Math.floor(pagerCount / 2)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			l</span>et pageCount = parseInt(this.pageCount)
-<span class="cstat-no" title="statement not covered" >			l</span>et currentPage = parseInt(this.currentPage)
-<span class="cstat-no" title="statement not covered" >			l</span>et showPrevMore = false
-<span class="cstat-no" title="statement not covered" >			l</span>et showNextMore = false
-			// 判断是否需要显示quickpre和quicknext按钮
-<span class="cstat-no" title="statement not covered" >			if (pageCount &gt; pagerCount) {</span>
-<span class="cstat-no" title="statement not covered" >				if (currentPage &gt; pagerCount - middle) {</span>
-<span class="cstat-no" title="statement not covered" >					s</span>howPrevMore = true
+				let pageCount =<span class="cstat-no" title="statement not covered" > parseInt(this.pageCount)</span>
+				let currentPage =<span class="cstat-no" title="statement not covered" > parseInt(this.currentPage)</span>
+				let showPrevMore =<span class="cstat-no" title="statement not covered" > false</span>
+				let showNextMore =<span class="cstat-no" title="statement not covered" > false</span>
+				// 判断是否需要显示quickpre和quicknext按钮
+<span class="cstat-no" title="statement not covered" >				if (pageCount &gt; pagerCount) {</span>
+<span class="cstat-no" title="statement not covered" >					if (currentPage &gt; pagerCount - middle) {</span>
+<span class="cstat-no" title="statement not covered" >						showPrevMore = true</span>
+					}
+<span class="cstat-no" title="statement not covered" >					if (currentPage &lt; pageCount - middle) {</span>
+<span class="cstat-no" title="statement not covered" >						showNextMore = true</span>
+					}
 				}
-<span class="cstat-no" title="statement not covered" >				if (currentPage &lt; pageCount - middle) {</span>
-<span class="cstat-no" title="statement not covered" >					s</span>howNextMore = true
+				// 根据是否显示quickpre和quicknext按钮分情况讨论
+<span class="cstat-no" title="statement not covered" >				if (showPrevMore &amp;&amp; !showNextMore) {</span>
+<span class="cstat-no" title="statement not covered" >					for (let start = pageCount - pagerCount + 2; start &lt; pageCount; start++) {</span>
+<span class="cstat-no" title="statement not covered" >						pages.push(start)</span>
+					}
+				} else<span class="cstat-no" title="statement not covered" > if (!showPrevMore &amp;&amp; showNextMore) {</span>
+<span class="cstat-no" title="statement not covered" >					for (let start = 2; start &lt; pagerCount; start++) {</span>
+<span class="cstat-no" title="statement not covered" >						pages.push(start)</span>
+					}
+				} else<span class="cstat-no" title="statement not covered" > if (showPrevMore &amp;&amp; showNextMore) {</span>
+					let offset =<span class="cstat-no" title="statement not covered" > middle - 1</span>
+<span class="cstat-no" title="statement not covered" >					for (let start = currentPage - offset, len = currentPage + offset; start &lt;= len; start++) {</span>
+<span class="cstat-no" title="statement not covered" >						pages.push(start)</span>
+					}
+				} else {
+<span class="cstat-no" title="statement not covered" >					for (let start = 2; start &lt; pageCount; start++) {</span>
+<span class="cstat-no" title="statement not covered" >						pages.push(start)</span>
+					}
 				}
-			}
-			// 根据是否显示quickpre和quicknext按钮分情况讨论
-<span class="cstat-no" title="statement not covered" >			if (showPrevMore &amp;&amp; !showNextMore) {</span>
-<span class="cstat-no" title="statement not covered" >				for (let start = pageCount - pagerCount + 2; start &lt; pageCount; start++) {</span>
-<span class="cstat-no" title="statement not covered" >					p</span>ages.push(start)
-				}
-			} else <span class="cstat-no" title="statement not covered" >if (!showPrevMore &amp;&amp; showNextMore) {</span>
-<span class="cstat-no" title="statement not covered" >				for (let start = 2; start &lt; pagerCount; start++) {</span>
-<span class="cstat-no" title="statement not covered" >					p</span>ages.push(start)
-				}
-			} else <span class="cstat-no" title="statement not covered" >if (showPrevMore &amp;&amp; showNextMore) {</span>
-<span class="cstat-no" title="statement not covered" >				l</span>et offset = middle - 1
-<span class="cstat-no" title="statement not covered" >				for (let start = currentPage - offset, len = currentPage + offset; start &lt;= len; start++) {</span>
-<span class="cstat-no" title="statement not covered" >					p</span>ages.push(start)
-				}
-			} else {
-<span class="cstat-no" title="statement not covered" >				for (let start = 2; start &lt; pageCount; start++) {</span>
-<span class="cstat-no" title="statement not covered" >					p</span>ages.push(start)
-				}
-			}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			t</span>his.showPrevMore = showPrevMore
-<span class="cstat-no" title="statement not covered" >			t</span>his.showNextMore = showNextMore
-<span class="cstat-no" title="statement not covered" >			r</span>eturn pages
-		}
-	},
-	methods: <span class="fstat-no" title="function not covered" >{</span>
-		clickPage($event) {
-<span class="cstat-no" title="statement not covered" >			l</span>et target = $event.target
-<span class="cstat-no" title="statement not covered" >			if (target.tagName === 'UL') {</span>
-<span class="cstat-no" title="statement not covered" >				r</span>eturn
+<span class="cstat-no" title="statement not covered" >				this.showPrevMore = showPrevMore</span>
+<span class="cstat-no" title="statement not covered" >				this.showNextMore = showNextMore</span>
+<span class="cstat-no" title="statement not covered" >				return pages</span>
 			}
-&nbsp;
-<span class="cstat-no" title="statement not covered" >			while (target.tagName !== 'LI') {</span>
-				// 这里代码有一点兼容性不好
-<span class="cstat-no" title="statement not covered" >				t</span>arget = target.parentElement
-			}
-&nbsp;
-<span class="cstat-no" title="statement not covered" >			l</span>et newPage = parseInt(target.textContent)
-<span class="cstat-no" title="statement not covered" >			l</span>et currentPage = this.currentPage
-<span class="cstat-no" title="statement not covered" >			l</span>et pageCount = this.pageCount
-<span class="cstat-no" title="statement not covered" >			l</span>et className = target.className
-&nbsp;
-<span class="cstat-no" title="statement not covered" >			if (className.indexOf('dx-more') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >				if (className.indexOf('quickpre') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >					n</span>ewPage = currentPage - 5
-				} else <span class="cstat-no" title="statement not covered" >if (className.indexOf('quicknext') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >					n</span>ewPage = currentPage + 5
+		},
+		methods: {
+			clickPage($event) {
+				let target =<span class="cstat-no" title="statement not covered" > $event.target</span>
+<span class="cstat-no" title="statement not covered" >				if (target.tagName === 'UL') {</span>
+<span class="cstat-no" title="statement not covered" >					return</span>
 				}
-			} else <span class="cstat-no" title="statement not covered" >if (className.indexOf('pre') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >				n</span>ewPage = currentPage - 1
-			} else <span class="cstat-no" title="statement not covered" >if (className.indexOf('next') !== -1) {</span>
-<span class="cstat-no" title="statement not covered" >				n</span>ewPage = currentPage + 1
-			}
-<span class="cstat-no" title="statement not covered" >			if (!isNaN(newPage)) {</span>
-<span class="cstat-no" title="statement not covered" >				if (newPage &lt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >					n</span>ewPage = 1
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				while (target.tagName !== 'LI') {</span>
+					// 这里代码有一点兼容性不好
+<span class="cstat-no" title="statement not covered" >					target = target.parentElement</span>
 				}
-<span class="cstat-no" title="statement not covered" >				if (newPage &gt; pageCount) {</span>
-<span class="cstat-no" title="statement not covered" >					n</span>ewPage = pageCount
+&nbsp;
+				let newPage =<span class="cstat-no" title="statement not covered" > parseInt(target.textContent)</span>
+				let currentPage =<span class="cstat-no" title="statement not covered" > this.currentPage</span>
+				let pageCount =<span class="cstat-no" title="statement not covered" > this.pageCount</span>
+				let className =<span class="cstat-no" title="statement not covered" > target.className</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				if (className.indexOf('dx-more') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >					if (className.indexOf('quickpre') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >						newPage = currentPage - 5</span>
+					} else<span class="cstat-no" title="statement not covered" > if (className.indexOf('quicknext') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >						newPage = currentPage + 5</span>
+					}
+				} else<span class="cstat-no" title="statement not covered" > if (className.indexOf('pre') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >					newPage = currentPage - 1</span>
+				} else<span class="cstat-no" title="statement not covered" > if (className.indexOf('next') !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >					newPage = currentPage + 1</span>
 				}
-			}
-<span class="cstat-no" title="statement not covered" >			if (newPage !== currentPage) {</span>
-<span class="cstat-no" title="statement not covered" >				t</span>his.$emit('dx-pager-change', newPage)
+<span class="cstat-no" title="statement not covered" >				if (!isNaN(newPage)) {</span>
+<span class="cstat-no" title="statement not covered" >					if (newPage &lt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >						newPage = 1</span>
+					}
+<span class="cstat-no" title="statement not covered" >					if (newPage &gt; pageCount) {</span>
+<span class="cstat-no" title="statement not covered" >						newPage = pageCount</span>
+					}
+				}
+<span class="cstat-no" title="statement not covered" >				if (newPage !== currentPage) {</span>
+<span class="cstat-no" title="statement not covered" >					this.$emit('dx-pager-change', newPage)</span>
+				}
 			}
 		}
 	}
-}
-&nbsp;
-&nbsp;</pre></td></tr>
+&lt;/script&gt;
+&lt;style lang="scss"&gt;
+	@include B(pager) {
+		display: inline-block;
+		&gt;li {
+			float: left;
+			padding: 0 0.8rem;
+		    border: 0.1rem solid #d1dbe5;
+		    border-right: 0;
+		    background-color: $--dx-pager-li-background-color;
+		    font-size: $--dx-pager-li-font-size;
+		    min-width: 2.8rem;
+		    line-height: $--dx-pager-li-line-height;
+		    cursor: pointer;
+		    text-align: center;
+		    &amp;:last-child {
+		    	border-right: 0.1rem solid #d1dbe5;
+		    }
+		    @include when(active) {
+				background-color: $--dx-pager-li-background-color-active;
+		 		color: $--dx-pager-li-color;
+			}
+			@include when(disbaled) {
+				cursor: not-allowed;
+			}
+		}
+		// 图标
+		@include M(icon) {
+			line-height: $--dx-pager-li-line-height;
+			font-size: $--dx-pager-li-font-size;
+		}
+	}
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

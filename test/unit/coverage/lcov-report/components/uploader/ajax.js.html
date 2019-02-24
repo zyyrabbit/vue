@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10.42% </span>
+        <span class="strong">4.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>5/48</span>
+        <span class='fraction'>2/44</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10.42% </span>
+        <span class="strong">4.55% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/48</span>
+        <span class='fraction'>2/44</span>
       </div>
     </div>
   </div>
@@ -112,20 +112,8 @@
 67
 68
 69
-70
-71
-72
-73
-74
-75
-76</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+70</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -151,25 +139,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -178,6 +156,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -193,80 +181,74 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = upload;
-var getError = <span class="fstat-no" title="function not covered" >function getError(action, xhr) {</span>
-<span class="cstat-no" title="statement not covered" >	v</span>ar msg = void 0;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const getError = (action, xhr) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+	let msg
 <span class="cstat-no" title="statement not covered" >	if (xhr.response) {</span>
-<span class="cstat-no" title="statement not covered" >		m</span>sg = '' + (xhr.response.error || xhr.response);
+<span class="cstat-no" title="statement not covered" >		msg = `${xhr.response.error || xhr.response}`</span>
 	} else <span class="cstat-no" title="statement not covered" >if (xhr.responseText) {</span>
-<span class="cstat-no" title="statement not covered" >		m</span>sg = '' + xhr.responseText;
+<span class="cstat-no" title="statement not covered" >		msg = `${xhr.responseText}`</span>
 	} else {
-<span class="cstat-no" title="statement not covered" >		m</span>sg = 'fail to post ' + action + ' ' + xhr.status;
+<span class="cstat-no" title="statement not covered" >		msg = `fail to post ${action} ${xhr.status}`</span>
 	}
-<span class="cstat-no" title="statement not covered" >	v</span>ar err = new Error(msg);
-<span class="cstat-no" title="statement not covered" >	e</span>rr.status = xhr.status;
-<span class="cstat-no" title="statement not covered" >	e</span>rr.method = 'post';
-<span class="cstat-no" title="statement not covered" >	e</span>rr.url = action;
-<span class="cstat-no" title="statement not covered" >	r</span>eturn err;
-};
-var getBody = <span class="fstat-no" title="function not covered" >function getBody(xhr) {</span>
-<span class="cstat-no" title="statement not covered" >	v</span>ar text = xhr.responseText || xhr.response;
+	const err = <span class="cstat-no" title="statement not covered" >new Error(msg)</span>
+<span class="cstat-no" title="statement not covered" >	err.status = xhr.status</span>
+<span class="cstat-no" title="statement not covered" >	err.method = 'post'</span>
+<span class="cstat-no" title="statement not covered" >	err.url = action</span>
+<span class="cstat-no" title="statement not covered" >	return err</span>
+}
+const getBody = (xhr) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+	const text = <span class="cstat-no" title="statement not covered" >xhr.responseText || xhr.response</span>
 <span class="cstat-no" title="statement not covered" >	if (!text) {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn text;
+<span class="cstat-no" title="statement not covered" >		return text</span>
 	}
 <span class="cstat-no" title="statement not covered" >	try {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn JSON.parse(text);
+<span class="cstat-no" title="statement not covered" >		return JSON.parse(text)</span>
 	} catch (e) {
-<span class="cstat-no" title="statement not covered" >		r</span>eturn text;
+<span class="cstat-no" title="statement not covered" >		return text</span>
 	}
-};
+}
 &nbsp;
-<span class="fstat-no" title="function not covered" >function upload(options) {</span>
+export default function upload(options) <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >	if (typeof XMLHttpRequest === 'undefined') {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn;
+<span class="cstat-no" title="statement not covered" >		return</span>
 	}
-<span class="cstat-no" title="statement not covered" >	v</span>ar xhr = new XMLHttpRequest();
-<span class="cstat-no" title="statement not covered" >	v</span>ar action = options.action;
-<span class="cstat-no" title="statement not covered" >	v</span>ar formData = new FormData();
-<span class="cstat-no" title="statement not covered" >	f</span>ormData.append(options.filename, options.file);
+	const xhr = <span class="cstat-no" title="statement not covered" >new XMLHttpRequest()</span>
+	const action = <span class="cstat-no" title="statement not covered" >options.action</span>
+	const formData = <span class="cstat-no" title="statement not covered" >new FormData()</span>
+<span class="cstat-no" title="statement not covered" >	formData.append(options.filename, options.file)</span>
 <span class="cstat-no" title="statement not covered" >	if (xhr.upload) {</span>
-<span class="cstat-no" title="statement not covered" >		x</span>hr.upload.onprogress = <span class="fstat-no" title="function not covered" >function progress(e) {</span>
-<span class="cstat-no" title="statement not covered" >			if (e.total &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >				e</span>.percentage = Math.floor(e.loaded / e.total * 100);
-			}
-<span class="cstat-no" title="statement not covered" >			o</span>ptions.onProgress(e);
-		};
-	}
-<span class="cstat-no" title="statement not covered" >	x</span>hr.onerror = <span class="fstat-no" title="function not covered" >function error(e) {</span>
-<span class="cstat-no" title="statement not covered" >		o</span>ptions.error(e);
-	};
-<span class="cstat-no" title="statement not covered" >	x</span>hr.onload = <span class="fstat-no" title="function not covered" >function onload() {</span>
-<span class="cstat-no" title="statement not covered" >		if (xhr.status &lt; 200 || xhr.status &gt;= 300) {</span>
-<span class="cstat-no" title="statement not covered" >			r</span>eturn options.error(getError(action, xhr));
+<span class="cstat-no" title="statement not covered" >		xhr.upload.onprogress = function progress(e) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >		if (e.total &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >			e.percentage = Math.floor(e.loaded / e.total * 100)</span>
 		}
-<span class="cstat-no" title="statement not covered" >		o</span>ptions.onSuccess(getBody(xhr));
-	};
+<span class="cstat-no" title="statement not covered" >			options.onProgress(e)</span>
+		}
+	}
+<span class="cstat-no" title="statement not covered" >	xhr.onerror = function error(e) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >		options.error(e)</span>
+	}
+<span class="cstat-no" title="statement not covered" >	xhr.onload = function onload() <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >		if (xhr.status &lt; 200 || xhr.status &gt;= 300) {</span>
+<span class="cstat-no" title="statement not covered" >			return options.error(getError(action, xhr))</span>
+		}
+<span class="cstat-no" title="statement not covered" >		options.onSuccess(getBody(xhr))</span>
+	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	x</span>hr.open('post', action, true);
+<span class="cstat-no" title="statement not covered" >	xhr.open('post', action, true)</span>
 	// 判断是否发送cookie估算
 <span class="cstat-no" title="statement not covered" >	if (options.withCredentials &amp;&amp; 'withCredentials' in xhr) {</span>
-<span class="cstat-no" title="statement not covered" >		o</span>ptions.withCredentials = true;
+<span class="cstat-no" title="statement not covered" >		options.withCredentials = true</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	v</span>ar headers = options.headers || {};
+	const headers = <span class="cstat-no" title="statement not covered" >options.headers || {}</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	for (var key in headers) {</span>
+<span class="cstat-no" title="statement not covered" >	for (let key in headers) {</span>
 <span class="cstat-no" title="statement not covered" >		if (headers.hasOwnProperty(key) &amp;&amp; headers[key] !== null) {</span>
-<span class="cstat-no" title="statement not covered" >			x</span>hr.setRequestHeader(key, headers[key]);
+<span class="cstat-no" title="statement not covered" >			xhr.setRequestHeader(key, headers[key])</span>
 		}
 	}
-<span class="cstat-no" title="statement not covered" >	x</span>hr.send(formData);
-<span class="cstat-no" title="statement not covered" >	r</span>eturn xhr;
+<span class="cstat-no" title="statement not covered" >	xhr.send(formData)</span>
+<span class="cstat-no" title="statement not covered" >	return xhr</span>
 }
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -274,7 +256,7 @@ var getBody = <span class="fstat-no" title="function not covered" >function getB
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -20,28 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">37.5% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/16</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">14.29% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/7</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">16.67% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/12</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 branch</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>0/10</span>
       </div>
     </div>
   </div>
@@ -196,7 +192,8 @@
 147
 148
 149
-150</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+150
+151</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,7 +234,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -345,154 +342,156 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-import Vue from 'vue'
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      htmlString1: '',
-      scriptString1: '',
-      htmlString2: '',
-      scriptString2: '',
-      ind: 1,
-      attrDatas: [
-                  {
-                    param: 'title',
-                    illustrate: '消息标题',
-                    type: 'String',
-                    optionVal: '---',
-                    defaultVal: '---'
-                  },
-                   {
-                    param: 'content',
-                    illustrate: '消息内容',
-                    type: 'String,vnode',
-                    optionVal: '---',
-                    defaultVal: '---'
-                  },
-                   {
-                    param: 'duration',
-                    illustrate: '消息提示持续时间，单位必须为毫秒！如果为0，表示不会自动关闭',
-                    type: 'Numer',
-                    optionVal: '---',
-                    defaultVal: '8000ms'
-                  }
-                ]
-    }
-  },
-  created() {
-  // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString1 = `&lt;template&gt; 
-                              &lt;dx-button @dx-button-click="open3()"&gt;全局静态方法&lt;/dx-button&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString1 = `export default {
-                              methods: {
-                                open() {
-                                    this.$notify({
-                                      title: '提示' + this.ind++,
-                                      content: '自动关闭'
-                                    })
-                                },
-                                open1() {
-                                  let h = this.$createElement
-                                  this.$notify({
-                                    title: '提示' + this.ind++,
-                                    content: h('div', {}, ['自定义vnode'])
-                                  })  
-                                },
-                                open2() {
-                                    this.$notify({
-                                      duration: 0,
-                                      title: '提示' + this.ind++,
-                                      content: '不会自动关闭'
-                                    })
-                                }
-                                  }
-                            }`
-<span class="cstat-no" title="statement not covered" >       t</span>his.htmlString1 = `&lt;template&gt; 
-                              &lt;dx-button @dx-button-click="open()"&gt;自动关闭&lt;/dx-button&gt;
-                              &lt;dx-button @dx-button-click="open2()" type="primary"&gt;不会自动关闭&lt;/dx-button&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString1 = `export default {
-                              methods: {
-                                  open3() {
-                                      Vue.DxNotify({
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Notify 消息通知&lt;/dx-heading&gt;
+	    &lt;p&gt;用于全局的消息通过通知&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;默认消息通知&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString1"  :scriptString="scriptString1"&gt;
+        &lt;dx-button @dx-button-click="open()"&gt;自动关闭&lt;/dx-button&gt;
+        &lt;dx-button @dx-button-click="open1()" class="margin-left-1rem"&gt;消息内容为Vnode&lt;/dx-button&gt;
+        &lt;dx-button @dx-button-click="open2()" class="margin-left-1rem" type="primary"&gt;不会自动关闭&lt;/dx-button&gt;
+	    &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+   &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;作为Vue全局静态方法调用&lt;/dx-heading&gt;
+      &lt;p&gt;通过Vue全局静态方法调用&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString2"  :scriptString="scriptString2"&gt;
+        &lt;dx-button @dx-button-click="open3()"&gt;全局静态方法&lt;/dx-button&gt;
+      &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Notify Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  import Vue from 'vue'
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        htmlString1: '',
+        scriptString1: '',
+        htmlString2: '',
+        scriptString2: '',
+        ind: 1,
+        attrDatas: [
+                    {
+                      param: 'title',
+                      illustrate: '消息标题',
+                      type: 'String',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    },
+                     {
+                      param: 'content',
+                      illustrate: '消息内容',
+                      type: 'String,vnode',
+                      optionVal: '---',
+                      defaultVal: '---'
+                    },
+                     {
+                      param: 'duration',
+                      illustrate: '消息提示持续时间，单位必须为毫秒！如果为0，表示不会自动关闭',
+                      type: 'Numer',
+                      optionVal: '---',
+                      defaultVal: '8000ms'
+                    }
+                  ]
+      }
+    },
+    created() {
+    // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt; </span>
+                                &lt;dx-button @dx-button-click="open3()"&gt;全局静态方法&lt;/dx-button&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString1 = `export default {</span>
+                                methods: {
+                                  open() {
+                                      this.$notify({
                                         title: '提示' + this.ind++,
-                                        content: '全局方法调用，自动关闭'
+                                        content: '自动关闭'
+                                      })
+                                  },
+                                  open1() {
+                                    let h = this.$createElement
+                                    this.$notify({
+                                      title: '提示' + this.ind++,
+                                      content: h('div', {}, ['自定义vnode'])
+                                    })  
+                                  },
+                                  open2() {
+                                      this.$notify({
+                                        duration: 0,
+                                        title: '提示' + this.ind++,
+                                        content: '不会自动关闭'
                                       })
                                   }
-                                }
-                            }`
-  },
-  methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span></span>
-      open() {
-<span class="cstat-no" title="statement not covered" >          t</span>his.$notify({
-            title: '提示' + this.ind++,
-            content: '自动关闭'
-          })
-      },
-      open1() {
-<span class="cstat-no" title="statement not covered" >          l</span>et h = this.$createElement
-<span class="cstat-no" title="statement not covered" >          t</span>his.$notify({
-            title: '提示' + this.ind++,
-            content: h('div', {}, ['自定义vnode'])
-          })  
-      },
-      open2() {
-<span class="cstat-no" title="statement not covered" >          t</span>his.$notify({
-            duration: 0,
-            title: '提示' + this.ind++,
-            content: '不会自动关闭'
-          })
-      },
-      open3() {
-<span class="cstat-no" title="statement not covered" >          V</span>ue.DxNotify({
-            title: '提示' + this.ind++,
-            content: '全局方法调用，自动关闭'
-          })
-      }
+                                    }
+                              }`
+<span class="cstat-no" title="statement not covered" >         this.htmlString1 = `&lt;template&gt; </span>
+                                &lt;dx-button @dx-button-click="open()"&gt;自动关闭&lt;/dx-button&gt;
+                                &lt;dx-button @dx-button-click="open2()" type="primary"&gt;不会自动关闭&lt;/dx-button&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString1 = `export default {</span>
+                                methods: {
+                                    open3() {
+                                        Vue.DxNotify({
+                                          title: '提示' + this.ind++,
+                                          content: '全局方法调用，自动关闭'
+                                        })
+                                    }
+                                  }
+                              }`
+    },
+    methods: {
+        open() {
+<span class="cstat-no" title="statement not covered" >            this.$notify({</span>
+              title: '提示' + this.ind++,
+              content: '自动关闭'
+            })
+        },
+        open1() {
+            let h <span class="cstat-no" title="statement not covered" >= this.$createElemen</span>t
+<span class="cstat-no" title="statement not covered" >            this.$notify({</span>
+              title: '提示' + this.ind++,
+              content: h('div', {}, ['自定义vnode'])
+            })  
+        },
+        open2() {
+<span class="cstat-no" title="statement not covered" >            this.$notify({</span>
+              duration: 0,
+              title: '提示' + this.ind++,
+              content: '不会自动关闭'
+            })
+        },
+        open3() {
+<span class="cstat-no" title="statement not covered" >            Vue.DxNotify({</span>
+              title: '提示' + this.ind++,
+              content: '全局方法调用，自动关闭'
+            })
+        }
+    }
   }
-}
+&lt;/script&gt;
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -500,7 +499,7 @@ export default <span class="fstat-no" title="function not covered" ><span class=
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

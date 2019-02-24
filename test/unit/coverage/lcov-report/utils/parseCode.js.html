@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">14.63% </span>
+        <span class="strong">14.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/82</span>
+        <span class='fraction'>10/70</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/36</span>
+        <span class='fraction'>0/33</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">14.63% </span>
+        <span class="strong">14.93% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>12/82</span>
+        <span class='fraction'>10/67</span>
       </div>
     </div>
   </div>
@@ -161,35 +161,12 @@
 116
 117
 118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+119</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -204,6 +181,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,9 +189,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -255,12 +233,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -283,8 +261,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -302,144 +278,132 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-// 根据输入重复次数，输出相应字符串
-var repeatN = <span class="fstat-no" title="function not covered" >function repeatN(str) {</span>
-<span class="cstat-no" title="statement not covered" >    v</span>ar n = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 0;
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    v</span>ar res = '';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// 根据输入重复次数，输出相应字符串
+const repeatN = (str, n = 0) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    let res = <span class="cstat-no" title="statement not covered" >''</span>
 <span class="cstat-no" title="statement not covered" >    while (n) {</span>
-<span class="cstat-no" title="statement not covered" >        if (n % 2 === 1) {</span>
-<span class="cstat-no" title="statement not covered" >            r</span>es += str;
-        }
-<span class="cstat-no" title="statement not covered" >        if (n &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >            s</span>tr += str;
-        }
-<span class="cstat-no" title="statement not covered" >        n</span> &gt;&gt;= 1;
+<span class="cstat-no" title="statement not covered" >        if (n % 2 === 1) { <span class="cstat-no" title="statement not covered" >res += str </span>}</span>
+<span class="cstat-no" title="statement not covered" >        if (n &gt; 1) { <span class="cstat-no" title="statement not covered" >str += str </span>}</span>
+<span class="cstat-no" title="statement not covered" >        n &gt;&gt;= 1</span>
     }
-<span class="cstat-no" title="statement not covered" >    r</span>eturn res;
-};
-var genWrapTag = <span class="fstat-no" title="function not covered" >function genWrapTag(str, tag, endFlage, text, n) {</span>
-<span class="cstat-no" title="statement not covered" >    v</span>ar blankNum = repeatN('&amp;nbsp&amp;nbsp&amp;nbsp', n);
+<span class="cstat-no" title="statement not covered" >    return res</span>
+}
+const genWrapTag = (str, tag, endFlage, text, n) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    let blankNum = <span class="cstat-no" title="statement not covered" >repeatN('&amp;nbsp&amp;nbsp&amp;nbsp', n)</span>
     // 需要判断是否为
-<span class="cstat-no" title="statement not covered" >    r</span>eturn text ? '&lt;' + tag + ' class="hljs-tag"&gt;' + blankNum + str + '&lt;/' + tag + '&gt;' : '&lt;' + tag + ' class="hljs-tag"&gt;' + blankNum + '&amp;lt' + endFlage + str + '&amp;gt&lt;/' + tag + '&gt;';
-};
+<span class="cstat-no" title="statement not covered" >    return text ? `&lt;${tag} class="hljs-tag"&gt;${blankNum}${str}&lt;/${tag}&gt;` :</span>
+        `&lt;${tag} class="hljs-tag"&gt;${blankNum}&amp;lt${endFlage}${str}&amp;gt&lt;/${tag}&gt;`
+}
 &nbsp;
 // 正则表达式,用于匹配格式化&lt;template&gt;代码
 // 字符串空格
-var regTagContent = /&lt;[^&gt;]+&gt;|(\S[^&lt;&gt;]+)/g; // 非贪婪模式
-var regGetTag = /(\w[\w-]+)\s*/;
+let regTagContent = /&lt;[^&gt;]+&gt;|(\S[^&lt;&gt;]+)/g // 非贪婪模式
+let regGetTag = /(\w[\w-]+)\s*/
 &nbsp;
-var formatHtmlCode = <span class="fstat-no" title="function not covered" >function formatHtmlCode(str) {</span>
+const formatHtmlCode = str =&gt; <span class="fstat-no" title="function not covered" >{</span>
     // 用于字符串匹配栈
-<span class="cstat-no" title="statement not covered" >    v</span>ar matchTags = [];
-<span class="cstat-no" title="statement not covered" >    m</span>atchTags.push('-1');
+    let matchTags = <span class="cstat-no" title="statement not covered" >[]</span>
+<span class="cstat-no" title="statement not covered" >    matchTags.push('-1')</span>
     // str = blankSpace(str);
-<span class="cstat-no" title="statement not covered" >    v</span>ar parseRes = '';
-<span class="cstat-no" title="statement not covered" >    v</span>ar startTag = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar tag = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar endTagflag = void 0;
-<span class="cstat-no" title="statement not covered" >    s</span>tr.replace(regTagContent, <span class="fstat-no" title="function not covered" >function (s, m) {</span>
-<span class="cstat-no" title="statement not covered" >        s</span> = s &amp;&amp; s.trim();
-<span class="cstat-no" title="statement not covered" >        m</span> = m &amp;&amp; m.trim();
+    let parseRes = <span class="cstat-no" title="statement not covered" >''</span>
+    let startTag
+    let tag
+    let endTagflag
+<span class="cstat-no" title="statement not covered" >    str.replace(regTagContent, (s, m) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        s = s &amp;&amp; s.trim()</span>
+<span class="cstat-no" title="statement not covered" >        m = m &amp;&amp; m.trim()</span>
 &nbsp;
         // 如果v存在，说明为标签之间的文本匹配
 <span class="cstat-no" title="statement not covered" >        if (m) {</span>
-<span class="cstat-no" title="statement not covered" >            p</span>arseRes += genWrapTag(m, 'div', '', true, Math.max(matchTags.length - 1, 0));
+<span class="cstat-no" title="statement not covered" >            parseRes += genWrapTag(m, 'div', '', true, Math.max(matchTags.length - 1, 0))</span>
         } else <span class="cstat-no" title="statement not covered" >if (s) {</span>
             // 去掉&lt;&gt;
-<span class="cstat-no" title="statement not covered" >            s</span> = s.slice(1, -1);
+<span class="cstat-no" title="statement not covered" >            s = s.slice(1, -1)</span>
             // 判断是否为tag闭合，即判断是否含有/
-<span class="cstat-no" title="statement not covered" >            e</span>ndTagflag = /\//.test(s);
-<span class="cstat-no" title="statement not covered" >            s</span>tartTag = matchTags.pop();
-<span class="cstat-no" title="statement not covered" >            t</span>ag = s.match(regGetTag)[1];
+<span class="cstat-no" title="statement not covered" >            endTagflag = /\//.test(s)</span>
+<span class="cstat-no" title="statement not covered" >            startTag = matchTags.pop()</span>
+<span class="cstat-no" title="statement not covered" >            tag = s.match(regGetTag)[1]</span>
 <span class="cstat-no" title="statement not covered" >            if (endTagflag &amp;&amp; startTag === tag) {</span>
-<span class="cstat-no" title="statement not covered" >                p</span>arseRes += genWrapTag(tag, 'div', '/', false, Math.max(matchTags.length - 1, 0));
+<span class="cstat-no" title="statement not covered" >                parseRes += genWrapTag(tag, 'div', '/', false, Math.max(matchTags.length - 1, 0))</span>
             } else {
-<span class="cstat-no" title="statement not covered" >                m</span>atchTags.push(startTag);
-<span class="cstat-no" title="statement not covered" >                m</span>atchTags.push(tag);
-<span class="cstat-no" title="statement not covered" >                p</span>arseRes += genWrapTag(s, 'div', '', false, Math.max(matchTags.length - 2, 0));
+<span class="cstat-no" title="statement not covered" >                matchTags.push(startTag)</span>
+<span class="cstat-no" title="statement not covered" >                matchTags.push(tag)</span>
+<span class="cstat-no" title="statement not covered" >                parseRes += genWrapTag(s, 'div', '', false, Math.max(matchTags.length - 2, 0))</span>
             }
         }
-    });
+    })
 <span class="cstat-no" title="statement not covered" >    if (matchTags.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >        c</span>onsole.error('输入模板不匹配！', matchTags);
-<span class="cstat-no" title="statement not covered" >        r</span>eturn '';
+<span class="cstat-no" title="statement not covered" >        console.error('输入模板不匹配！', matchTags)</span>
+<span class="cstat-no" title="statement not covered" >        return ''</span>
     }
-<span class="cstat-no" title="statement not covered" >    r</span>eturn parseRes;
-};
+<span class="cstat-no" title="statement not covered" >    return parseRes</span>
+}
 // 正则表达式,用于匹配格式化&lt;script&gt;&lt;style&gt;代码
-var regContent = /.+/g;
-var genWrapSptAndStyTag = <span class="fstat-no" title="function not covered" >function genWrapSptAndStyTag(str, tag, n) {</span>
-<span class="cstat-no" title="statement not covered" >    v</span>ar blankNum = repeatN('&amp;nbsp&amp;nbsp&amp;nbsp', n);
+let regContent = /.+/g
+const genWrapSptAndStyTag = (str, tag, n) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+    let blankNum = <span class="cstat-no" title="statement not covered" >repeatN('&amp;nbsp&amp;nbsp&amp;nbsp', n)</span>
     // 需要判断是否为
-<span class="cstat-no" title="statement not covered" >    r</span>eturn '&lt;' + tag + ' class="hljs-tag"&gt;' + blankNum + str + '&lt;/' + tag + '&gt;';
-};
-var formatSptAndStyCode = <span class="fstat-no" title="function not covered" >function formatSptAndStyCode(str) {</span>
+<span class="cstat-no" title="statement not covered" >    return `&lt;${tag} class="hljs-tag"&gt;${blankNum}${str}&lt;/${tag}&gt;`</span>
+}
+const formatSptAndStyCode = (str) =&gt; <span class="fstat-no" title="function not covered" >{</span>
     // 用于字符串匹配栈
-<span class="cstat-no" title="statement not covered" >    v</span>ar matchTags = [];
-<span class="cstat-no" title="statement not covered" >    m</span>atchTags.push('-1');
-<span class="cstat-no" title="statement not covered" >    v</span>ar parseRes = '';
-<span class="cstat-no" title="statement not covered" >    v</span>ar startTag = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar tag = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar nextTag = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar preLen = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar len = void 0;
-<span class="cstat-no" title="statement not covered" >    v</span>ar blankNum = void 0;
-<span class="cstat-no" title="statement not covered" >    p</span>arseRes += genWrapSptAndStyTag('&amp;ltscript&amp;gt', 'div', 0);
+    let matchTags = <span class="cstat-no" title="statement not covered" >[]</span>
+<span class="cstat-no" title="statement not covered" >    matchTags.push('-1')</span>
+    let parseRes = <span class="cstat-no" title="statement not covered" >''</span>
+    let startTag
+    let tag
+    let nextTag
+    let preLen
+    let len
+    let blankNum
+<span class="cstat-no" title="statement not covered" >    parseRes += genWrapSptAndStyTag('&amp;ltscript&amp;gt', 'div', 0)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    s</span>tr.replace(regContent, <span class="fstat-no" title="function not covered" >function (s) {</span>
+<span class="cstat-no" title="statement not covered" >    str.replace(regContent, s =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
         // 过滤掉空格
-<span class="cstat-no" title="statement not covered" >        s</span> = s.trim();
+<span class="cstat-no" title="statement not covered" >        s = s.trim()</span>
         // 全局匹配
-<span class="cstat-no" title="statement not covered" >        t</span>ag = s.match(/[{}]/g);
-<span class="cstat-no" title="statement not covered" >        b</span>lankNum = matchTags.length;
+<span class="cstat-no" title="statement not covered" >        tag = s.match(/[{}]/g)</span>
+<span class="cstat-no" title="statement not covered" >        blankNum = matchTags.length</span>
 <span class="cstat-no" title="statement not covered" >        if (tag) {</span>
-<span class="cstat-no" title="statement not covered" >            p</span>reLen = len = tag.length;
+<span class="cstat-no" title="statement not covered" >            preLen = len = tag.length</span>
 <span class="cstat-no" title="statement not covered" >            while (len &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >                n</span>extTag = tag.shift();
-<span class="cstat-no" title="statement not covered" >                s</span>tartTag = matchTags.pop();
+<span class="cstat-no" title="statement not covered" >                nextTag = tag.shift()</span>
+<span class="cstat-no" title="statement not covered" >                startTag = matchTags.pop()</span>
 <span class="cstat-no" title="statement not covered" >                if (startTag !== '{' || nextTag !== '}') {</span>
-<span class="cstat-no" title="statement not covered" >                    m</span>atchTags.push(startTag);
-<span class="cstat-no" title="statement not covered" >                    m</span>atchTags.push(nextTag);
+<span class="cstat-no" title="statement not covered" >                    matchTags.push(startTag)</span>
+<span class="cstat-no" title="statement not covered" >                    matchTags.push(nextTag)</span>
                 }
-<span class="cstat-no" title="statement not covered" >                l</span>en--;
+<span class="cstat-no" title="statement not covered" >                len--</span>
             }
         }
         // 暂时解决{}空格不匹配的问题
-<span class="cstat-no" title="statement not covered" >        if (preLen === 1 &amp;&amp; nextTag === '}') {</span>
-<span class="cstat-no" title="statement not covered" >            b</span>lankNum -= 1;
-        }
-<span class="cstat-no" title="statement not covered" >        p</span>arseRes += genWrapSptAndStyTag(s, 'div', blankNum);
-    });
+<span class="cstat-no" title="statement not covered" >        if (preLen === 1 &amp;&amp; nextTag === '}') { <span class="cstat-no" title="statement not covered" >blankNum -= 1 </span>}</span>
+<span class="cstat-no" title="statement not covered" >        parseRes += genWrapSptAndStyTag(s, 'div', blankNum)</span>
+    })
 <span class="cstat-no" title="statement not covered" >    if (matchTags.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >        c</span>onsole.error('输入模板不匹配！', matchTags);
-<span class="cstat-no" title="statement not covered" >        r</span>eturn '';
+<span class="cstat-no" title="statement not covered" >        console.error('输入模板不匹配！', matchTags)</span>
+<span class="cstat-no" title="statement not covered" >        return ''</span>
     }
-<span class="cstat-no" title="statement not covered" >    p</span>arseRes += genWrapSptAndStyTag('&amp;lt/script&amp;gt', 'div', 0);
-<span class="cstat-no" title="statement not covered" >    r</span>eturn parseRes;
-};
+<span class="cstat-no" title="statement not covered" >    parseRes += genWrapSptAndStyTag('&amp;lt/script&amp;gt', 'div', 0)</span>
+<span class="cstat-no" title="statement not covered" >    return parseRes</span>
+}
 // 包装输出
-var matchMethods = {
+const matchMethods = {
     formatHtmlCode: formatHtmlCode,
     formatSptAndStyCode: formatSptAndStyCode
-};
-var formatCode = <span class="fstat-no" title="function not covered" >function formatCode(matchType, str) {</span>
-<span class="cstat-no" title="statement not covered" >    r</span>eturn matchMethods[matchType](str);
-};
-exports.default = formatCode;
+}
+const formatCode = (matchType, str) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    return matchMethods[matchType](str)</span>
+}
+export default formatCode
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">22.22% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/9</span>
+        <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/8</span>
+        <span class='fraction'>0/7</span>
       </div>
     </div>
   </div>
@@ -95,7 +95,52 @@
 50
 51
 52
-53</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,65 +192,155 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-export default <span class="fstat-no" title="function not covered" >{</span>
-	data() {
-<span class="cstat-no" title="statement not covered" >		r</span>eturn {
-			// 消息队列
-			msgQueue: []
-		}
-	},
-	methods: <span class="fstat-no" title="function not covered" >{</span>
-		close(message) {
-<span class="cstat-no" title="statement not covered" >			if (message.timer) {</span>
-<span class="cstat-no" title="statement not covered" >				c</span>learTimeout(message.timer)
-<span class="cstat-no" title="statement not covered" >				m</span>essage.timer = null
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;div class="dx-notify"&gt;
+		&lt;transition-group 
+			name="msg-list" 
+			tag="ul" 
+			mode="out-in"
+		&gt;
+		    &lt;li 
+		    	v-for="(msg, index) in msgQueue" 
+		    	v-bind:key="msg.key" 
+		    	class="dx-notify__msg-list"
+		    &gt;
+		     	&lt;p class="dx-notify__msg-list--title" &gt;
+		     		&lt;span&gt;{{msg.title}}&lt;/span&gt;
+		     		&lt;span
+		     			class="dx-notify__msg-list--close" 
+		     			@click="close(msg)" 
+		     		&gt; 
+		     			x
+		     		&lt;/span&gt;
+		     	&lt;/p&gt;
+				&lt;p class="dx-notify__msg-list--message" &gt;
+					&lt;slot :name="msg.key"&gt;
+						{{msg.content}}
+					&lt;/slot&gt;
+				&lt;/p&gt;
+		    &lt;/li&gt;
+  		&lt;/transition-group&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+	export default {
+		data() {
+<span class="cstat-no" title="statement not covered" >			return {</span>
+				// 消息队列
+				msgQueue: []
 			}
-<span class="cstat-no" title="statement not covered" >			for (let i = message.index + 1; i &lt; this.msgQueue.length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >				t</span>his.msgQueue[i].index--
+		},
+		methods: {
+			close(message) {
+<span class="cstat-no" title="statement not covered" >				if (message.timer) {</span>
+<span class="cstat-no" title="statement not covered" >					clearTimeout(message.timer)</span>
+<span class="cstat-no" title="statement not covered" >					message.timer = null</span>
+				}
+<span class="cstat-no" title="statement not covered" >				for (let i = message.index + 1; i &lt; this.msgQueue.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >					this.msgQueue[i].index--</span>
+				}
+<span class="cstat-no" title="statement not covered" >				this.msgQueue.splice(message.index, 1)</span>
 			}
-<span class="cstat-no" title="statement not covered" >			t</span>his.msgQueue.splice(message.index, 1)
 		}
 	}
-}
-&nbsp;
-&nbsp;</pre></td></tr>
+&lt;/script&gt;
+&lt;style lang="scss"&gt;
+	@include B(notify) {
+		position: fixed;
+		bottom: 1rem;
+		right: 0;
+		z-index: $--dx-notify-z-index;
+		font-size: $--dx-notify-font-size;
+		color: $--dx-notify-color;
+		/* 消息列表样式 */
+		@include E(msg-list) {
+			width: $--dx-notify-msg-list-width;
+			height: $--dx-notify-msg-list-height;
+			border-radius: 0.6rem;
+			box-shadow: 1px 1px 1rem #ccc;
+		  	margin-right: 1rem;
+		  	margin-top: 2rem;
+		  	padding: 1rem 2rem;
+		  	background: #fff;
+		  	transition: all 1s;
+		  	@include M(title) {
+		  		font-weight: bold;
+				color: #000;
+				padding-bottom: 0.5rem;
+		  	}
+		  	@include M(close) {
+		  		font-weight: normal;
+				float: right;
+				color: $--dx-notify-msg-list-title-color;
+				font-size: $--dx-notify-msg-list-title-font-size;
+				cursor: pointer;
+		  	}
+		}
+	}
+	/* 动画 */
+	.msg-list-enter {
+		transform: translateY(8rem);
+	}
+	.msg-list-leave-to {
+		opacity: 0;
+		z-index: -1;
+	}
+	.msg-list-leave-active {
+		position: absolute;
+		right: 0;
+	}
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

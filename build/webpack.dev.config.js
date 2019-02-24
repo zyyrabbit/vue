@@ -4,11 +4,12 @@ const webpackMerge = require('webpack-merge')
 const webpack = require('webpack')
 
 module.exports = webpackMerge(webpackConfig, {
-    devtool: 'source-map',
-    plugins: [
+  mode: 'development', // v3->v4
+	devtool: 'source-map',
+	plugins: [
 		new webpack.HotModuleReplacementPlugin()
-    ],
-    devServer: {
+	],
+	devServer: {
 		publicPath: config.PUBLIC_PATH,
 		stats: {
 			colors: true // 显示不同的颜色区分打包的文件

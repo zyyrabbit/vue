@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15.38% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/13</span>
+        <span class='fraction'>0/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/5</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/12</span>
+        <span class='fraction'>0/11</span>
       </div>
     </div>
   </div>
@@ -233,7 +233,9 @@
 188
 189
 190
-191</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+191
+192
+193</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -423,203 +425,207 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      htmlString: '',
-      scriptString: '',
-      attrDatas: [
-                   {
-                    param: 'message',
-                    illustrate: '消息内容',
-                    type: 'string,Vnode',
-                    optionVal: '---',
-                    defaultVal: '---'
-                   },
-                   {
-                    param: 'cancelBtnText',
-                    illustrate: '取消按钮文字',
-                    type: 'string',
-                    optionVal: '---',
-                    defaultVal: '---'
-                   },
-                   {
-                    param: 'confirmBtnText',
-                    illustrate: '确认按钮文字',
-                    type: 'string',
-                    optionVal: '---',
-                    defaultVal: '---'
-                   },
-                   {
-                    param: 'showBtns',
-                    illustrate: '是否展示按钮',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'true'
-                   },
-                   {
-                    param: 'showConfirm',
-                    illustrate: '是否展示确认按钮',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'true'
-                   },
-                   {
-                    param: 'showCancel',
-                    illustrate: '是否展示取消按钮',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'true'
-                   },
-                   {
-                    param: 'showClose',
-                    illustrate: '是否展示关闭按钮',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'true'
-                   },
-                   {
-                    param: 'center',
-                    illustrate: '按钮是否居中排列',
-                    type: 'Boolean',
-                    optionVal: '---',
-                    defaultVal: 'false'
-                   },
-                   {
-                    param: 'callback',
-                    illustrate: '确认和取消按钮回调, 第一个参数为action[confirm, cancel], 第二个参数为messageBox代表为vue',
-                    type: 'Function',
-                    optionVal: '---',
-                    defaultVal: 'null'
-                   }
-                ]
-    }
-  },
-  created() {
-  // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString = `&lt;template&gt; 
-                          &lt;dx-button @dx-button-click="openMessageBox" type="primary"&gt;点击弹窗&lt;/dx-button&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString = `export default {
-                             methods: {
-                                openMessageBox() {
-                                  this.$messageBox({
-                                    message: '我是快乐的小弹窗'
-                                  })
-                                }
-                              }
-                            }`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString1 = `&lt;template&gt; 
-                          &lt;dx-button @dx-button-click="openMessageBox1" type="primary"&gt;自定义消息内容&lt;/dx-button&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString1 = `export default {
-                             methods: {
-                                openMessageBox1() {
-                                  let h = this.$createElement
-                                  this.$messageBox({
-                                    title: '自定义消息',
-                                    message: h('p', null, [
-                                      h('span', null, '我是自定义的内容啊 '),
-                                      h('i', { style: 'color: teal' }, 'VNode')
-                                    ])
-                                  })
-                                }
-                              }
-                            }`
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString2 = `&lt;template&gt; 
-                            &lt;dx-button @dx-button-click="openMessageBox2" type="primary"&gt;按钮居中&lt;/dx-button&gt;
-                       &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString2 = `export default {
-                              methods: {
-                                openMessageBox2() {
-                                  this.$messageBox({
-                                    center: true,
-                                    title: '自定义消息',
-                                    message: '按钮居中排列'
-                                  })
-                                }
-                              }
-                            }`
-  },
-  methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span>
-    openMessageBox() {
-<span class="cstat-no" title="statement not covered" >      t</span>his.$messageBox({
-        message: '我是快乐的小弹窗'
-      })
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">  &lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;MessageBox 弹窗&lt;/dx-heading&gt;
+	    &lt;p&gt;用于消息弹窗&lt;/p&gt;
+  	&lt;/div&gt;
+  	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;默认消息弹窗&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString" :scriptString="scriptString"&gt;
+        	&lt;dx-button @dx-button-click="openMessageBox" type="primary"&gt;点击弹窗&lt;/dx-button&gt;
+	    &lt;/dx-show-code&gt;
+ 	  &lt;/div&gt;
+    &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;自定义消息内容&lt;/dx-heading&gt;
+      &lt;p&gt;自定义消息内容&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString" :scriptString="scriptString"&gt;
+          &lt;dx-button @dx-button-click="openMessageBox1" type="primary"&gt;自定义消息内容&lt;/dx-button&gt;
+      &lt;/dx-show-code&gt;
+    &lt;/div&gt;
+    &lt;div class="item-content"&gt;
+      &lt;dx-heading :level="1"&gt;按钮居中&lt;/dx-heading&gt;
+      &lt;p&gt;按钮居中排列&lt;/p&gt;
+      &lt;dx-show-code :htmlString="htmlString" :scriptString="scriptString"&gt;
+          &lt;dx-button @dx-button-click="openMessageBox2" type="primary"&gt;按钮居中&lt;/dx-button&gt;
+      &lt;/dx-show-code&gt;
+    &lt;/div&gt;
+    &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;MessageBox Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+      :data="attrDatas" 
+      :borderRow="true" 
+      tableHeadClass="table-head"
+      &gt;
+      &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        htmlString: '',
+        scriptString: '',
+        attrDatas: [
+                     {
+                      param: 'message',
+                      illustrate: '消息内容',
+                      type: 'string,Vnode',
+                      optionVal: '---',
+                      defaultVal: '---'
+                     },
+                     {
+                      param: 'cancelBtnText',
+                      illustrate: '取消按钮文字',
+                      type: 'string',
+                      optionVal: '---',
+                      defaultVal: '---'
+                     },
+                     {
+                      param: 'confirmBtnText',
+                      illustrate: '确认按钮文字',
+                      type: 'string',
+                      optionVal: '---',
+                      defaultVal: '---'
+                     },
+                     {
+                      param: 'showBtns',
+                      illustrate: '是否展示按钮',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'true'
+                     },
+                     {
+                      param: 'showConfirm',
+                      illustrate: '是否展示确认按钮',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'true'
+                     },
+                     {
+                      param: 'showCancel',
+                      illustrate: '是否展示取消按钮',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'true'
+                     },
+                     {
+                      param: 'showClose',
+                      illustrate: '是否展示关闭按钮',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'true'
+                     },
+                     {
+                      param: 'center',
+                      illustrate: '按钮是否居中排列',
+                      type: 'Boolean',
+                      optionVal: '---',
+                      defaultVal: 'false'
+                     },
+                     {
+                      param: 'callback',
+                      illustrate: '确认和取消按钮回调, 第一个参数为action[confirm, cancel], 第二个参数为messageBox代表为vue',
+                      type: 'Function',
+                      optionVal: '---',
+                      defaultVal: 'null'
+                     }
+                  ]
+      }
     },
-    openMessageBox1() {
-<span class="cstat-no" title="statement not covered" >      l</span>et h = this.$createElement
-<span class="cstat-no" title="statement not covered" >      t</span>his.$messageBox({
-        title: '自定义消息',
-        message: h('p', null, [
-          h('span', null, '我是自定义的内容啊 '),
-          h('i', { style: 'color: teal' }, 'VNode')
-        ])
-      })
+    created() {
+    // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString = `&lt;template&gt; </span>
+                            &lt;dx-button @dx-button-click="openMessageBox" type="primary"&gt;点击弹窗&lt;/dx-button&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString = `export default {</span>
+                               methods: {
+                                  openMessageBox() {
+                                    this.$messageBox({
+                                      message: '我是快乐的小弹窗'
+                                    })
+                                  }
+                                }
+                              }`
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt; </span>
+                            &lt;dx-button @dx-button-click="openMessageBox1" type="primary"&gt;自定义消息内容&lt;/dx-button&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString1 = `export default {</span>
+                               methods: {
+                                  openMessageBox1() {
+                                    let h = this.$createElement
+                                    this.$messageBox({
+                                      title: '自定义消息',
+                                      message: h('p', null, [
+                                        h('span', null, '我是自定义的内容啊 '),
+                                        h('i', { style: 'color: teal' }, 'VNode')
+                                      ])
+                                    })
+                                  }
+                                }
+                              }`
+<span class="cstat-no" title="statement not covered" >        this.htmlString2 = `&lt;template&gt; </span>
+                              &lt;dx-button @dx-button-click="openMessageBox2" type="primary"&gt;按钮居中&lt;/dx-button&gt;
+                         &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString2 = `export default {</span>
+                                methods: {
+                                  openMessageBox2() {
+                                    this.$messageBox({
+                                      center: true,
+                                      title: '自定义消息',
+                                      message: '按钮居中排列'
+                                    })
+                                  }
+                                }
+                              }`
     },
-    openMessageBox2() {
-<span class="cstat-no" title="statement not covered" >      t</span>his.$messageBox({
-        center: true,
-        title: '自定义消息',
-        message: '按钮居中排列'
-      })
+    methods: {
+      openMessageBox() {
+<span class="cstat-no" title="statement not covered" >        this.$messageBox({</span>
+          message: '我是快乐的小弹窗'
+        })
+      },
+      openMessageBox1() {
+        let h <span class="cstat-no" title="statement not covered" >= this.$createElemen</span>t
+<span class="cstat-no" title="statement not covered" >        this.$messageBox({</span>
+          title: '自定义消息',
+          message: h('p', null, [
+            h('span', null, '我是自定义的内容啊 '),
+            h('i', { style: 'color: teal' }, 'VNode')
+          ])
+        })
+      },
+      openMessageBox2() {
+<span class="cstat-no" title="statement not covered" >        this.$messageBox({</span>
+          center: true,
+          title: '自定义消息',
+          message: '按钮居中排列'
+        })
+      }
     }
   }
-}
-&nbsp;
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

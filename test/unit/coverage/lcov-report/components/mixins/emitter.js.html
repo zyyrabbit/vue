@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">17.65% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/17</span>
+        <span class='fraction'>0/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">17.65% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/17</span>
+        <span class='fraction'>0/14</span>
       </div>
     </div>
   </div>
@@ -73,17 +73,7 @@
 28
 29
 30
-31
-32
-33
-34
-35
-36</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+31</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -93,7 +83,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -113,48 +103,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-<span class="fstat-no" title="function not covered" >function _broadcast(componentName, eventName, params) {</span>
-<span class="cstat-no" title="statement not covered" >	t</span>his.$children.forEach(<span class="fstat-no" title="function not covered" >function (child, index) {</span>
-<span class="cstat-no" title="statement not covered" >		v</span>ar name = child.$options.componentName;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">function broadcast(componentName, eventName, params) <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >	this.$children.forEach(function(child, index) <span class="fstat-no" title="function not covered" >{</span></span>
+		let name = <span class="cstat-no" title="statement not covered" >child.$options.componentName</span>
 <span class="cstat-no" title="statement not covered" >		if (name !== componentName) {</span>
-<span class="cstat-no" title="statement not covered" >			_</span>broadcast.apply(child, [componentName, eventName].concat(params));
+<span class="cstat-no" title="statement not covered" >			broadcast.apply(child, [componentName, eventName].concat(params))</span>
 		} else {
-<span class="cstat-no" title="statement not covered" >			c</span>hild.$emit.apply(child, [eventName].concat(params));
+<span class="cstat-no" title="statement not covered" >			child.$emit.apply(child, [eventName].concat(params))</span>
 		}
-	});
+	})
 }
-exports.default = {
+export default {
 	methods: {
-		dispatch: <span class="fstat-no" title="function not covered" >function dispatch(componentName, eventName, params) {</span>
-<span class="cstat-no" title="statement not covered" >			v</span>ar parent = this.$parent || this.$root;
-<span class="cstat-no" title="statement not covered" >			v</span>ar name = parent.$options.componentName;
+		dispatch(componentName, eventName, params) {
+			let parent = <span class="cstat-no" title="statement not covered" >this.$parent || this.$root</span>
+			let name = <span class="cstat-no" title="statement not covered" >parent.$options.componentName</span>
 <span class="cstat-no" title="statement not covered" >			while (parent &amp;&amp; (!name || name !== componentName)) {</span>
-<span class="cstat-no" title="statement not covered" >				p</span>arent = parent.$parent;
+<span class="cstat-no" title="statement not covered" >				parent = parent.$parent</span>
 <span class="cstat-no" title="statement not covered" >				if (parent) {</span>
-<span class="cstat-no" title="statement not covered" >					n</span>ame = parent.$options.componentName;
+<span class="cstat-no" title="statement not covered" >					name = parent.$options.componentName</span>
 				}
 			}
 <span class="cstat-no" title="statement not covered" >			if (parent) {</span>
-<span class="cstat-no" title="statement not covered" >				p</span>arent.$emit.apply(parent, [eventName].concat(params));
+<span class="cstat-no" title="statement not covered" >				parent.$emit.apply(parent, [eventName].concat(params))</span>
 			}
 		},
-		broadcast: <span class="fstat-no" title="function not covered" >function broadcast(componentName, eventName, params) {</span>
-<span class="cstat-no" title="statement not covered" >			_</span>broadcast.call(this, componentName, eventName, params);
+		broadcast(componentName, eventName, params) {
+<span class="cstat-no" title="statement not covered" >			broadcast.call(this, componentName, eventName, params)</span>
 		}
 	}
-};
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

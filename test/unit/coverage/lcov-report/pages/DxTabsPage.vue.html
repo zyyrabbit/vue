@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/6</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/5</span>
+        <span class='fraction'>0/4</span>
       </div>
     </div>
   </div>
@@ -162,7 +162,9 @@
 117
 118
 119
-120</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+120
+121
+122</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,132 +283,136 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      tabValue: 0,
-      tabs: [{
-        label: '标签1',
-        value: 0
-      }, {
-        label: '标签2',
-        value: 1
-      }, {
-        label: '标签3',
-        value: 2
-      }],
-      htmlString: '',
-      scriptString: '',
-      attrDatas: [
-                  {
-                    param: 'tabs',
-                    illustrate: '对象数组，注目前label为标签页，value标签页的值',
-                    type: 'Array',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'input',
-                    illustrate: '触发事件,传入的参数为标签页对应的值',
-                    type: 'Function',
-                    defaultVal: '---'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Tabs 标签页&lt;/dx-heading&gt;
+	    &lt;p&gt;用于移动端标签页切换&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;Tabs的基础用法&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString" :scriptString="scriptString"&gt;
+	    	&lt;dx-tabs v-model="tabValue" :tabs="tabs" @input="tabClick"&gt;&lt;/dx-tabs&gt;
+	    &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom: 2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Tabs Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+        :data="attrDatas" 
+        :borderRow="true" 
+        tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom: 2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Tabs Event&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table 
+        :data="eventDatas" 
+        :borderRow="true" 
+        tableHeadClass="table-head"
+      &gt;
+          &lt;dx-table-column prop="eventName"  label="事件名称" &gt;&lt;/dx-table-column&gt;
+          &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+          &lt;dx-table-column prop="cbArgs"  label="回调参数"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        tabValue: 0,
+        tabs: [{
+          label: '标签1',
+          value: 0
+        }, {
+          label: '标签2',
+          value: 1
+        }, {
+          label: '标签3',
+          value: 2
+        }],
+        htmlString: '',
+        scriptString: '',
+        attrDatas: [
+                    {
+                      param: 'tabs',
+                      illustrate: '对象数组，注目前label为标签页，value标签页的值',
+                      type: 'Array',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'input',
+                      illustrate: '触发事件,传入的参数为标签页对应的值',
+                      type: 'Function',
+                      defaultVal: '---'
+                    }
+                  ],
+        eventDatas: [
+                    {
+                       eventName: 'input',
+                       illustrate: '标签页切换触发事件',
+                       cbArgs: '回调参数为标签绑定的值'
+                    }
+                ]
+      }
+    },
+    methods: {
+      tabClick(value) {
+<span class="cstat-no" title="statement not covered" >        console.log(value</span>)
+      }
+    },
+    created() {
+    // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString = `&lt;template&gt; </span>
+                              &lt;dx-tabs v-model="tabValue" :tabs="tabs" @input="tabClick($event)"&gt;&lt;/dx-tabs&gt;
+                            &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString = `export default {</span>
+               data() {
+                  return {
+                    tabValue: 0,
+                    tabs: [{
+                      label: 'tab1',
+                      value: 0
+                    }, {
+                      label: 'tab2',
+                      value: 1
+                    }, {
+                      label: 'tab3',
+                      value: 2
+                    }]
                   }
-                ],
-      eventDatas: [
-                  {
-                     eventName: 'input',
-                     illustrate: '标签页切换触发事件',
-                     cbArgs: '回调参数为标签绑定的值'
+                },
+                methods: {
+                  tabClick(value) {
+                    console.log(value)
                   }
-              ]
-    }
-  },
-  methods: <span class="fstat-no" title="function not covered" >{</span>
-    tabClick(value) {
-<span class="cstat-no" title="statement not covered" >      c</span>onsole.log(value)
-    }
-  },
-  created() {
-  // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString = `&lt;template&gt; 
-                            &lt;dx-tabs v-model="tabValue" :tabs="tabs" @input="tabClick($event)"&gt;&lt;/dx-tabs&gt;
-                          &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString = `export default {
-             data() {
-                return {
-                  tabValue: 0,
-                  tabs: [{
-                    label: 'tab1',
-                    value: 0
-                  }, {
-                    label: 'tab2',
-                    value: 1
-                  }, {
-                    label: 'tab3',
-                    value: 2
-                  }]
                 }
-              },
-              methods: {
-                tabClick(value) {
-                  console.log(value)
-                }
-              }
-            }`
+              }`
+    }
   }
-}
-&nbsp;
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

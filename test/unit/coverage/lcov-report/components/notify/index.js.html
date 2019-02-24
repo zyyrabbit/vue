@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">47.06% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/34</span>
+        <span class='fraction'>6/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">25% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>3/12</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>1/5</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">45.45% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>15/33</span>
+        <span class='fraction'>6/24</span>
       </div>
     </div>
   </div>
@@ -86,42 +86,12 @@
 41
 42
 43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -158,72 +128,57 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-&nbsp;
-var _vue = require('vue');
-&nbsp;
-var _vue2 = _interopRequireDefault(_vue);
-&nbsp;
-var _dxNotify = require('./dx-notify.vue');
-&nbsp;
-var _dxNotify2 = _interopRequireDefault(_dxNotify);
-&nbsp;
-var _utils = require('@/utils/utils.js');
-&nbsp;
-function _interopRequireDefault(obj) { return o</span>bj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj : { default: obj }; }
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue'
+import DxNotify from './dx-notify.vue'
+import { isVNode, merge } from '@/utils/utils.js'
 // 构建构造函数
-var NotifyConstructor = _vue2.default.extend(_dxNotify2.default);
-var instance = void 0;
-var key = 'dx-notify-message';
-var msgId = 0;
-var autoClose = <span class="fstat-no" title="function not covered" >function autoClose(message) {</span>
+const NotifyConstructor = Vue.extend(DxNotify)
+let instance
+let key = 'dx-notify-message'
+let msgId = 0
+const autoClose = message =&gt; <span class="fstat-no" title="function not covered" >{</span>
 	// 标识不会自动关闭
 <span class="cstat-no" title="statement not covered" >	if (message.duration === 0) {</span>
-<span class="cstat-no" title="statement not covered" >		r</span>eturn null;
+<span class="cstat-no" title="statement not covered" >		return null</span>
 	}
-<span class="cstat-no" title="statement not covered" >	r</span>eturn setTimeout(<span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.close(message);
-	}, message.duration || 8000);
-};
+<span class="cstat-no" title="statement not covered" >	return setTimeout(() =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >		instance.close(message)</span>
+	}, message.duration || 8000)
+}
 // 初始化一个全局消息通知实例
-var initInstance = <span class="fstat-no" title="function not covered" >function initInstance() {</span>
-<span class="cstat-no" title="statement not covered" >	v</span>ar mountEl = document.createElement('div');
-<span class="cstat-no" title="statement not covered" >	i</span>nstance = new NotifyConstructor({
+const initInstance = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+	let mountEl = <span class="cstat-no" title="statement not covered" >document.createElement('div')</span>
+<span class="cstat-no" title="statement not covered" >	instance = new NotifyConstructor({</span>
 		el: mountEl
-	});
-};
+	})
+}
 // 打开弹窗
-var Notify = <span class="fstat-no" title="function not covered" >function Notify(message) {</span>
+const Notify = message =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >	if (!instance) {</span>
-<span class="cstat-no" title="statement not covered" >		i</span>nitInstance();
+<span class="cstat-no" title="statement not covered" >		initInstance()</span>
 	}
-<span class="cstat-no" title="statement not covered" >	v</span>ar _message = (0, _utils.merge)({}, message);
-<span class="cstat-no" title="statement not covered" >	_</span>message.key = key + msgId++;
-<span class="cstat-no" title="statement not covered" >	_</span>message.index = instance.msgQueue.length;
-<span class="cstat-no" title="statement not covered" >	_</span>message.timer = autoClose(_message);
-<span class="cstat-no" title="statement not covered" >	if ((0, _utils.isVNode)(_message.content)) {</span>
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.$slots[_message.key] = [_message.content];
-<span class="cstat-no" title="statement not covered" >		_</span>message.content = null;
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.content = null;
+	let _message = <span class="cstat-no" title="statement not covered" >merge({}, message)</span>
+<span class="cstat-no" title="statement not covered" >	_message.key = key + msgId++</span>
+<span class="cstat-no" title="statement not covered" >	_message.index = instance.msgQueue.length</span>
+<span class="cstat-no" title="statement not covered" >	_message.timer = autoClose(_message)</span>
+<span class="cstat-no" title="statement not covered" >	if (isVNode(_message.content)) {</span>
+<span class="cstat-no" title="statement not covered" >		instance.$slots[_message.key] = [_message.content]</span>
+<span class="cstat-no" title="statement not covered" >		_message.content = null</span>
+<span class="cstat-no" title="statement not covered" >		instance.content = null</span>
 	}
-<span class="cstat-no" title="statement not covered" >	i</span>nstance.msgQueue.push(_message);
-	// 设置挂载元素
-<span class="cstat-no" title="statement not covered" >	d</span>ocument.body.appendChild(instance.$el);
-};
-exports.default = Notify;
+<span class="cstat-no" title="statement not covered" >	instance.msgQueue.push(_message)</span>
+    // 设置挂载元素
+<span class="cstat-no" title="statement not covered" >    document.body.appendChild(instance.$el)</span>
+}
+export default Notify
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

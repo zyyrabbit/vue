@@ -1,12 +1,11 @@
 const path = require('path')
-// const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-const vueLoaderConfig = require('./vue-loader.conf')
 const config = require('../config')
-// 这里是为了添加js loaders
-vueLoaderConfig.loaders.js = 'isparta-loader'
-vueLoaderConfig.preserveWhitespace = false
+const cssLoaderConfig = require('./css-loader.conf') // v3->v4
+const VueLoaderPlugin = require('vue-loader/lib/plugin') // v3->v4
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 const webpackConfig = {
+  mode: 'development',
   entry: {
     app: ['./src/components/index.js']
   },
@@ -27,24 +26,24 @@ const webpackConfig = {
   devtool: '#inline-source-map',
   module: {
     rules: [
-      // 支持babel
-      {
-        enforce: 'post',
-        test: /\.js$/,
-        loader: 'isparta-loader',
-        options: { esModules: true },
-        include: /src/
-      },
       {
         test: /\.js$/,
         include: process.cwd(),
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
+      // 支持babel
+      {
+        //  enforce: 'post' 需要去掉
+        test: /\.js$/,
+        loader: 'istanbul-instrumenter-loader',
+        options: { esModules: true },
+        include: /src/,
+        exclude: /node_modules|\.spec\.js$/
+      },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: vueLoaderConfig
+        loader: 'vue-loader'
       },
       {
         test: /\.json$/,
@@ -52,11 +51,11 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+        loaders: cssLoaderConfig.css
       },
        {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: cssLoaderConfig.scss
       },
       {
         test: /\.html$/,
@@ -71,15 +70,7 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.svg(\?\S*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /\.(gif|png|jpe?g)(\?\S*)?$/,
+        test: /\.(svg|gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
@@ -89,6 +80,8 @@ const webpackConfig = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
+    new ProgressBarPlugin()
   ]
 }
 

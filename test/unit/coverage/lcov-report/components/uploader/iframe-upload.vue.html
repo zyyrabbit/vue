@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">6.52% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/46</span>
+        <span class='fraction'>0/43</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/10</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">4.76% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/42</span>
+        <span class='fraction'>0/40</span>
       </div>
     </div>
   </div>
@@ -207,7 +207,41 @@
 162
 163
 164
-165</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -266,7 +300,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -371,177 +405,245 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-import {
-  uploadHelper
-} from './upload-helper'
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span>
-	props: {
-		name: {
-			type: String,
-			default: 'file'
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;div class="dx-upload"&gt;
+		&lt;div 
+			tabindex="0"
+			class="dx-upload--btn"
+			@click="handleClick"
+		&gt;
+			&lt;dx-button type="primary"&gt;
+				上传文件
+			&lt;/dx-button&gt;
+			&lt;!-- 采用form方式 --&gt;
+			&lt;div style="display:none"&gt;
+				&lt;iframe
+					ref="iframe"
+					:name="frameName"
+					@load="onload"
+				&gt;
+				&lt;/iframe&gt;
+				&lt;form
+					ref="form"
+					:action="action"
+					:target="frameName"
+					enctype="multipart/form-data" 
+					method="POST"
+				&gt;
+					&lt;input 
+						:name="name"
+						:multiple="multiple"
+						:accept="accept"
+						class="dx-upload--input" 
+						type="file" 
+						ref="input" 
+						@change="handleChange"
+					/&gt;
+					&lt;input  
+						type="hidden" 
+						name="documentDomain" 
+						:value="this.$isServer ? '' : domain"/&gt;
+					&lt;span ref="data"&gt;&lt;/span&gt;
+				&lt;/form&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div 
+			v-if="tip" 
+			class="dx-upload--tip"
+		&gt;
+			{{tip}}
+		&lt;/div&gt;
+		&lt;ul&gt;
+			&lt;li v-for="file in fileLists"&gt;
+				&lt;a class="dx-upload__file-list--name"&gt;
+					{{file.name}}
+					&lt;span class="dx-upload__file-list--close"&gt; x &lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+	import {
+	  uploadHelper
+	} from './upload-helper'
+	export default {
+		props: {
+			name: {
+				type: String,
+				default: 'file'
+			},
+			action: String,
+			multiple: Boolean,
+			accept: String,
+			httpRequest: {
+				type: Function,
+				default: uploadHelper
+			},
+			tip: String,
+			autoUpload: {
+				type: Boolean,
+				default: true
+			},
+			beforeUpload: Function,
+			data: {}
 		},
-		action: String,
-		multiple: Boolean,
-		accept: String,
-		httpRequest: {
-			type: Function,
-			default: uploadHelper
+		data() {
+<span class="cstat-no" title="statement not covered" >			return {</span>
+				fileLists: [],
+				domain: document.domain
+			}
 		},
-		tip: String,
-		autoUpload: {
-			type: Boolean,
-			default: true
+		methods: {
+			handleChange(ev) {
+				// 单个文件
+				let file =<span class="cstat-no" title="statement not covered" > ev.target.files[0]</span>
+<span class="cstat-no" title="statement not covered" >				if (file) {</span>
+<span class="cstat-no" title="statement not covered" >					this.uploadFiles(file)</span>
+				}
+			},
+			handleClick() {
+<span class="cstat-no" title="statement not covered" >				if (!this.disabled) {</span>
+<span class="cstat-no" title="statement not covered" >					this.$refs.input.value = null</span>
+<span class="cstat-no" title="statement not covered" >					this.$refs.input.click()</span>
+				}
+			},
+			uploadFiles(file) {
+<span class="cstat-no" title="statement not covered" >				if (this.submitting)<span class="cstat-no" title="statement not covered" > return</span></span>
+<span class="cstat-no" title="statement not covered" >				this.submitting = true</span>
+<span class="cstat-no" title="statement not covered" >				this.file = file</span>
+<span class="cstat-no" title="statement not covered" >				this.fileLists.push({</span>
+					status: 'ready',
+					uid: file.uid,
+					raw: file,
+					name: file.name,
+					size: file.size,
+					percentage: 0
+				})
+				let data =<span class="cstat-no" title="statement not covered" > this.data</span>
+<span class="cstat-no" title="statement not covered" >				if (typeof data === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >					data = data(file)</span>
+				}
+				let inputs =<span class="cstat-no" title="statement not covered" > []</span>
+<span class="cstat-no" title="statement not covered" >				for (let key in data) {</span>
+<span class="cstat-no" title="statement not covered" >					if (data.hasOwnProperty(key)) {</span>
+<span class="cstat-no" title="statement not covered" >						inputs.push(`&lt;input name="${key}" value="${data[key]}"/&gt;`)</span>
+					}
+				}
+				let fromDataNode =<span class="cstat-no" title="statement not covered" > this.getFormDataNode()</span>
+				let formNode =<span class="cstat-no" title="statement not covered" > this.getFormNode()</span>
+<span class="cstat-no" title="statement not covered" >				fromDataNode.innerHTML = inputs.join('')</span>
+<span class="cstat-no" title="statement not covered" >				formNode.submit()</span>
+<span class="cstat-no" title="statement not covered" >				fromDataNode.innerHTML = ''</span>
+<span class="cstat-no" title="statement not covered" >				this.submitting = false</span>
+			},
+			getFormNode() {
+<span class="cstat-no" title="statement not covered" >				return this.$refs.form</span>
+			},
+			getFormDataNode() {
+<span class="cstat-no" title="statement not covered" >				return this.$refs.data</span>
+			},
+			onload(ev) {
+				// var targetOrigin = new URL(self.action).origin
+<span class="cstat-no" title="statement not covered" >				this.$refs.iframe.contentWindow.postMessage('hello', '*')</span>
+			}
 		},
-		beforeUpload: Function,
-		data: {}
-	},
-	data() {
-<span class="cstat-no" title="statement not covered" >		r</span>eturn {
-			fileLists: [],
-			domain: document.domain
+		created() {
+<span class="cstat-no" title="statement not covered" >			this.frameName = 'frame-' + Date.now()</span>
+		},
+		mounted() {
+			const self =<span class="cstat-no" title="statement not covered" > this</span>
+<span class="cstat-no" title="statement not covered" >			!this.$isServer &amp;&amp; window.addEventListener('message', (event) =&gt;<span class="fstat-no" title="function not covered" > {</span></span>
+<span class="cstat-no" title="statement not covered" >				if (!self.file)<span class="cstat-no" title="statement not covered" > return</span></span>
+				var targetOrigin =<span class="cstat-no" title="statement not covered" > new URL(self.action).origin</span>
+<span class="cstat-no" title="statement not covered" >				if (event.origin !== targetOrigin)<span class="cstat-no" title="statement not covered" > return</span></span>
+				var response =<span class="cstat-no" title="statement not covered" > event.data</span>
+<span class="cstat-no" title="statement not covered" >				if (response.result === 'success') {</span>
+<span class="cstat-no" title="statement not covered" >					self.onSuccess(response, self.file)</span>
+				} else<span class="cstat-no" title="statement not covered" > if (response.result === 'failed') {</span>
+<span class="cstat-no" title="statement not covered" >					self.onError(response, self.file)</span>
+				}
+<span class="cstat-no" title="statement not covered" >				self.submitting = false</span>
+<span class="cstat-no" title="statement not covered" >				self.file = null</span>
+			}, false)
 		}
-	},
-	methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span></span></span></span>
-		handleChange(ev) {
-			// 单个文件
-<span class="cstat-no" title="statement not covered" >			l</span>et file = ev.target.files[0]
-<span class="cstat-no" title="statement not covered" >			if (file) {</span>
-<span class="cstat-no" title="statement not covered" >				t</span>his.uploadFiles(file)
-			}
-		},
-		handleClick() {
-<span class="cstat-no" title="statement not covered" >			if (!this.disabled) {</span>
-<span class="cstat-no" title="statement not covered" >				t</span>his.$refs.input.value = null
-<span class="cstat-no" title="statement not covered" >				t</span>his.$refs.input.click()
-			}
-		},
-		uploadFiles(file) {
-<span class="cstat-no" title="statement not covered" >			if (this.submitting) <span class="cstat-no" title="statement not covered" >r</span></span>eturn
-<span class="cstat-no" title="statement not covered" >			t</span>his.submitting = true
-<span class="cstat-no" title="statement not covered" >			t</span>his.file = file
-<span class="cstat-no" title="statement not covered" >			t</span>his.fileLists.push({
-				status: 'ready',
-				uid: file.uid,
-				raw: file,
-				name: file.name,
-				size: file.size,
-				percentage: 0
-			})
-<span class="cstat-no" title="statement not covered" >			l</span>et data = this.data
-<span class="cstat-no" title="statement not covered" >			if (typeof data === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >				d</span>ata = data(file)
-			}
-<span class="cstat-no" title="statement not covered" >			l</span>et inputs = []
-<span class="cstat-no" title="statement not covered" >			for (let key in data) {</span>
-<span class="cstat-no" title="statement not covered" >				if (data.hasOwnProperty(key)) {</span>
-<span class="cstat-no" title="statement not covered" >					i</span>nputs.push(`&lt;input name="${key}" value="${data[key]}"/&gt;`)
+	}
+&lt;/script&gt;
+&lt;style lang="scss"&gt;
+	@include B(dx-upload) {
+		@include M(btn) {
+			display: inline-block;
+		}
+		@include M(input) {
+			display: none;
+		}
+		@include M(tip) {
+			font-size: 1.2rem;
+			color: #666;
+			padding-top: 1rem;
+		}
+&nbsp;
+		@include E(file-list) {
+			@include M(name) {
+				display: block;
+				color: #666;
+				font-size: 1.3rem;
+				padding: 0.5rem;
+				cursor: pointer;
+				&amp;:hover {
+					background-color: #eee;
+					color: #879;
+					border-radius: 0.4rem;
 				}
 			}
-<span class="cstat-no" title="statement not covered" >			l</span>et fromDataNode = this.getFormDataNode()
-<span class="cstat-no" title="statement not covered" >			l</span>et formNode = this.getFormNode()
-<span class="cstat-no" title="statement not covered" >			f</span>romDataNode.innerHTML = inputs.join('')
-<span class="cstat-no" title="statement not covered" >			f</span>ormNode.submit()
-<span class="cstat-no" title="statement not covered" >			f</span>romDataNode.innerHTML = ''
-<span class="cstat-no" title="statement not covered" >			t</span>his.submitting = false
-		},
-		getFormNode() {
-<span class="cstat-no" title="statement not covered" >			r</span>eturn this.$refs.form
-		},
-		getFormDataNode() {
-<span class="cstat-no" title="statement not covered" >			r</span>eturn this.$refs.data
-		},
-		onload(ev) {
-			// var targetOrigin = new URL(self.action).origin
-<span class="cstat-no" title="statement not covered" >			t</span>his.$refs.iframe.contentWindow.postMessage('hello', '*')
-		}
-	},
-	created() {
-<span class="cstat-no" title="statement not covered" >		t</span>his.frameName = 'frame-' + Date.now()
-	},
-	mounted() {
-<span class="cstat-no" title="statement not covered" >		c</span>onst self = this
-<span class="cstat-no" title="statement not covered" >		!</span>this.$isServer &amp;&amp; window.addEventListener('message', <span class="fstat-no" title="function not covered" >(event) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >			if (!self.file) <span class="cstat-no" title="statement not covered" >r</span></span>eturn
-<span class="cstat-no" title="statement not covered" >			v</span>ar targetOrigin = new URL(self.action).origin
-<span class="cstat-no" title="statement not covered" >			if (event.origin !== targetOrigin) <span class="cstat-no" title="statement not covered" >r</span></span>eturn
-<span class="cstat-no" title="statement not covered" >			v</span>ar response = event.data
-<span class="cstat-no" title="statement not covered" >			if (response.result === 'success') {</span>
-<span class="cstat-no" title="statement not covered" >				s</span>elf.onSuccess(response, self.file)
-			} else <span class="cstat-no" title="statement not covered" >if (response.result === 'failed') {</span>
-<span class="cstat-no" title="statement not covered" >				s</span>elf.onError(response, self.file)
-			}
-<span class="cstat-no" title="statement not covered" >			s</span>elf.submitting = false
-<span class="cstat-no" title="statement not covered" >			s</span>elf.file = null
-		}, false)
-	}
-}
 &nbsp;
-&nbsp;</pre></td></tr>
+			@include M(name) {
+				float: right;
+				font-size: 1.4rem;
+			}	
+		}
+	}
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

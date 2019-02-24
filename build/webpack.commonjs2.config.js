@@ -1,23 +1,20 @@
 const path = require('path')
 const webpack = require('webpack')
-// const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const config = require('../config')
 const components = require('../components.json')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const vueLoaderConfig = require('./vue-loader.conf')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-// 解决path.join解决路劲替换问题
-/* const pathConvert = (_path, _name) => {
-    return path.join(_path, _name).replace('\\', '/')
-} */
-
+const cssLoaderConfig = require('./css-loader.conf') // v3->v4
+const VueLoaderPlugin = require('vue-loader/lib/plugin') // v3->v4
 const webpackConfig = {
+  mode: 'production', // v3->v4
   entry: components,
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
     filename: '[name].js',
     chunkFilename: '[id].js',
+    library: 'VUEUI',
     libraryTarget: 'commonjs2'
   },
   resolve: {
@@ -34,10 +31,7 @@ const webpackConfig = {
     rules: [
       {
         test: /\.vue$/,
-        use: [{
-            loader: 'vue-loader',
-            options: vueLoaderConfig
-        }]
+        loader: 'vue-loader'
       },
       {
         test: /\.json$/,
@@ -45,11 +39,11 @@ const webpackConfig = {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader']
+        loaders: cssLoaderConfig.css
       },
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loaders: cssLoaderConfig.scss
       },
       {
         test: /\.html$/,
@@ -64,15 +58,7 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.svg(\?\S*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: path.posix.join('static', '[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /\.(gif|png|jpe?g)(\?\S*)?$/,
+        test: /\.(svg|gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
         query: {
           limit: 10000,
@@ -82,15 +68,12 @@ const webpackConfig = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),  // v3->v4
     new ProgressBarPlugin(),
     new CopyWebpackPlugin([{
       from: config.GEN_CSS_PATH_FROM,
       to: './style'
     }]),
-   // new ProgressBarPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })

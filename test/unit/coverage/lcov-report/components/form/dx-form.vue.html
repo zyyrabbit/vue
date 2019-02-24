@@ -20,28 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">21.43% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/28</span>
+        <span class='fraction'>0/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">22.22% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/18</span>
+        <span class='fraction'>0/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/10</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/24</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 branch</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>0/21</span>
       </div>
     </div>
   </div>
@@ -117,15 +113,7 @@
 68
 69
 70
-71
-72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+71</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,6 +123,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,12 +146,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -188,17 +183,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;form&gt;
+		&lt;slot&gt;&lt;/slot&gt;
+	&lt;/form&gt;	
+&lt;/template&gt;
+&lt;script&gt;
  // 用于与组件dx-form-item通信
 	import Bus from '@/utils/bus.js'
 &nbsp;
-	export default<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+	export default{
 		componentName: 'DxForm',
 		name: 'DxForm',
 		props: {
@@ -211,62 +205,61 @@
 			}
 		},
 		data() {
-<span class="cstat-no" title="statement not covered" >			r</span>eturn {
+<span class="cstat-no" title="statement not covered" >			return {</span>
 				fields: []
 			}
 		},
-		watch: <span class="fstat-no" title="function not covered" >{</span>
+		watch: {
 			rules() {
-<span class="cstat-no" title="statement not covered" >				t</span>his.validate()
+<span class="cstat-no" title="statement not covered" >				this.validate()</span>
 			}
 		},
 		// 创建的时候，组件鉴定函数，用于注册表单元素组件实例
-		created() <span class="cstat-no" title="statement not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >			B</span>us.$on('dx-form-addField', <span class="fstat-no" title="function not covered" >(field) =&gt; {</span>
+		created() {
+<span class="cstat-no" title="statement not covered" >			Bus.$on('dx-form-addField', (field) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >				if (field) {</span>
-<span class="cstat-no" title="statement not covered" >					t</span>his.fields.push(field)
+<span class="cstat-no" title="statement not covered" >					this.fields.push(field)</span>
 				}
 			}, this)
-<span class="cstat-no" title="statement not covered" >			B</span>us.$on('dx-form-removeField', <span class="fstat-no" title="function not covered" >(field) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >			Bus.$on('dx-form-removeField', (field) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >				if (field.prop) {</span>
-<span class="cstat-no" title="statement not covered" >					t</span>his.fields.splice(this.fields.indexOf(field), 1)
+<span class="cstat-no" title="statement not covered" >					this.fields.splice(this.fields.indexOf(field), 1)</span>
 				}
 			}, this)
 		},
-		methods: <span class="fstat-no" title="function not covered" >{</span>
+		methods: {
 			// 提交表单时候，验证表单输入是否满足所有的验证规则
 			validate(callback) {
 <span class="cstat-no" title="statement not covered" >				if (!this.model) {</span>
-<span class="cstat-no" title="statement not covered" >					c</span>onsole.warn('[Form]model is required for validate to work!')
-<span class="cstat-no" title="statement not covered" >					r</span>eturn
+<span class="cstat-no" title="statement not covered" >					console.warn('[Form]model is required for validate to work!')</span>
+<span class="cstat-no" title="statement not covered" >					return</span>
 				}
-<span class="cstat-no" title="statement not covered" >				l</span>et valid = true
+				let valid = <span class="cstat-no" title="statement not covered" >true</span>
 <span class="cstat-no" title="statement not covered" >				if (!callback || typeof callback !== 'function') {</span>
-<span class="cstat-no" title="statement not covered" >					c</span>allback = <span class="fstat-no" title="function not covered" >() =&gt; {</span>}
+<span class="cstat-no" title="statement not covered" >					callback = () =&gt; <span class="fstat-no" title="function not covered" >{}</span></span>
 				}
 &nbsp;
 <span class="cstat-no" title="statement not covered" >				if (this.fields.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >					c</span>allback(valid)
+<span class="cstat-no" title="statement not covered" >					callback(valid)</span>
 				}
-<span class="cstat-no" title="statement not covered" >				t</span>his.fields.forEach(<span class="fstat-no" title="function not covered" >function(field, index) {</span>
-<span class="cstat-no" title="statement not covered" >					f</span>ield.validate('', <span class="fstat-no" title="function not covered" >(error) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				this.fields.forEach(function(field, index) <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >					field.validate('', (error) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
 <span class="cstat-no" title="statement not covered" >						if (error) {</span>
-<span class="cstat-no" title="statement not covered" >							v</span>alid = false
+<span class="cstat-no" title="statement not covered" >							valid = false</span>
 						}
 					})
 				})
-<span class="cstat-no" title="statement not covered" >				c</span>allback(valid)
+<span class="cstat-no" title="statement not covered" >				callback(valid)</span>
 			}
 		}
 	}
-&nbsp;
-&nbsp;</pre></td></tr>
+&lt;/script&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

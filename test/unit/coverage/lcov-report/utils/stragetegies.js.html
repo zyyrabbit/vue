@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">7.32% </span>
+        <span class="strong">2.56% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/41</span>
+        <span class='fraction'>1/39</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">7.32% </span>
+        <span class="strong">2.63% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/41</span>
+        <span class='fraction'>1/38</span>
       </div>
     </div>
   </div>
@@ -114,29 +114,13 @@
 69
 70
 71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -183,8 +167,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,93 +185,84 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-// 采用策略模式
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// 采用策略模式
 // 正确返回字符串的长度---1.可以采用Array.from方法 或 使用正则表达式
-var caluStrLen = <span class="fstat-no" title="function not covered" >function caluStrLen(str) {</span>
-<span class="cstat-no" title="statement not covered" >    r</span>eturn str.replace(/[^\x00-\xff]/g, 'aa').length;
-};
+const caluStrLen = (str) =&gt; <span class="fstat-no" title="function not covered" >{ <span class="cstat-no" title="statement not covered" >return str.replace(/[^\x00-\xff]/g, 'aa').length </span>}</span>
 &nbsp;
-exports.default = {
+export default {
     // args值为单个rule对象
-    required: <span class="fstat-no" title="function not covered" >function required(rule, value, callback) {</span>
+    required: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (value === '') {</span>
-<span class="cstat-no" title="statement not covered" >            c</span>allback &amp;&amp; typeof callback === 'function' &amp;&amp; callback();
-<span class="cstat-no" title="statement not covered" >            r</span>eturn false;
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; typeof callback === 'function' &amp;&amp; callback()</span>
+<span class="cstat-no" title="statement not covered" >            return false</span>
         }
-<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+<span class="cstat-no" title="statement not covered" >        return true</span>
     },
-    minLength: <span class="fstat-no" title="function not covered" >function minLength(rule, value, callback) {</span>
+    minLength: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (caluStrLen(value) &lt; rule.min) {</span>
-<span class="cstat-no" title="statement not covered" >            c</span>allback &amp;&amp; typeof callback === 'function' &amp;&amp; callback();
-<span class="cstat-no" title="statement not covered" >            r</span>eturn false;
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; typeof callback === 'function' &amp;&amp; callback()</span>
+<span class="cstat-no" title="statement not covered" >            return false</span>
         }
-<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+<span class="cstat-no" title="statement not covered" >        return true</span>
     },
-    maxLength: <span class="fstat-no" title="function not covered" >function maxLength(rule, value, callback) {</span>
+    maxLength: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (caluStrLen(value) &gt; rule.max) {</span>
-<span class="cstat-no" title="statement not covered" >            c</span>allback &amp;&amp; typeof callback === 'function' &amp;&amp; callback();
-<span class="cstat-no" title="statement not covered" >            r</span>eturn false;
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; typeof callback === 'function' &amp;&amp; callback()</span>
+<span class="cstat-no" title="statement not covered" >            return false</span>
         }
-<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+<span class="cstat-no" title="statement not covered" >        return true</span>
     },
-    isMobile: <span class="fstat-no" title="function not covered" >function isMobile(rule, value, callback) {</span>
+    isMobile: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (!/^1[34578][0-9]{9}$/.test(+value)) {</span>
-<span class="cstat-no" title="statement not covered" >            r</span>eturn false;
+<span class="cstat-no" title="statement not covered" >            return false</span>
         }
-<span class="cstat-no" title="statement not covered" >        c</span>allback &amp;&amp; typeof callback === 'function' &amp;&amp; callback();
-<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+<span class="cstat-no" title="statement not covered" >        callback &amp;&amp; typeof callback === 'function' &amp;&amp; callback()</span>
+<span class="cstat-no" title="statement not covered" >        return true</span>
     },
-    confirmSame: <span class="fstat-no" title="function not covered" >function confirmSame(rule, value, callback) {</span>
+    confirmSame: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (value !== rule.sameFieldValue) {</span>
-<span class="cstat-no" title="statement not covered" >            c</span>allback &amp;&amp; typeof callback === 'function' &amp;&amp; callback();
-<span class="cstat-no" title="statement not covered" >            r</span>eturn false;
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; typeof callback === 'function' &amp;&amp; callback()</span>
+<span class="cstat-no" title="statement not covered" >            return false</span>
         }
-<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+<span class="cstat-no" title="statement not covered" >        return true</span>
     },
     // 判断输入是否为中文、字母，数字，下划线
-    isNumAndCharAnd_: <span class="fstat-no" title="function not covered" >function isNumAndCharAnd_(rule, value, callback) {</span>
+    isNumAndCharAnd_: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >        if (!/^[\w_]|[\u4E00-\u9FA5]*$/.test(value)) {</span>
-<span class="cstat-no" title="statement not covered" >            c</span>allback &amp;&amp; typeof callback === 'function' &amp;&amp; callback();
-<span class="cstat-no" title="statement not covered" >            r</span>eturn false;
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; typeof callback === 'function' &amp;&amp; callback()</span>
+<span class="cstat-no" title="statement not covered" >            return false</span>
         }
-<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+<span class="cstat-no" title="statement not covered" >        return true</span>
     },
-    pwdLevelVerification: <span class="fstat-no" title="function not covered" >function pwdLevelVerification(rule, value, callback) {</span>
-<span class="cstat-no" title="statement not covered" >        v</span>ar level = 0;
-<span class="cstat-no" title="statement not covered" >        v</span>ar min = rule.min,
-            max = rule.max;
+    pwdLevelVerification: (rule, value, callback) =&gt; <span class="fstat-no" title="function not covered" >{</span>
+        let level = <span class="cstat-no" title="statement not covered" >0</span>
+        let { min, max } = <span class="cstat-no" title="statement not covered" >rule</span>
         // 密码长度
-&nbsp;
-<span class="cstat-no" title="statement not covered" >        if (min &amp;&amp; value.length &lt; min || max &amp;&amp; value.length &gt; max) {</span>
-<span class="cstat-no" title="statement not covered" >            r</span>eturn level;
+<span class="cstat-no" title="statement not covered" >        if ((min &amp;&amp; value.length &lt; min) || (max &amp;&amp; value.length &gt; max)) {</span>
+<span class="cstat-no" title="statement not covered" >            return level</span>
         }
 <span class="cstat-no" title="statement not covered" >        if (/[A-Z]/.test(value)) {</span>
-<span class="cstat-no" title="statement not covered" >            l</span>evel++;
+<span class="cstat-no" title="statement not covered" >            level++</span>
         }
 <span class="cstat-no" title="statement not covered" >        if (/[a-z]/.test(value)) {</span>
-<span class="cstat-no" title="statement not covered" >            l</span>evel++;
+<span class="cstat-no" title="statement not covered" >            level++</span>
         }
 <span class="cstat-no" title="statement not covered" >        if (/[0-9]/.test(value)) {</span>
-<span class="cstat-no" title="statement not covered" >            l</span>evel++;
+<span class="cstat-no" title="statement not covered" >            level++</span>
         }
 <span class="cstat-no" title="statement not covered" >        if (/\W|_/.test(value)) {</span>
-<span class="cstat-no" title="statement not covered" >            l</span>evel++;
+<span class="cstat-no" title="statement not covered" >            level++</span>
         }
-<span class="cstat-no" title="statement not covered" >        r</span>eturn level;
+<span class="cstat-no" title="statement not covered" >        return level</span>
     }
-};
+}
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

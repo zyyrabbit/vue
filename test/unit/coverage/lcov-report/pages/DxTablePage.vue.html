@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15.38% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/13</span>
+        <span class='fraction'>0/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/4</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">8.33% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/12</span>
+        <span class='fraction'>0/11</span>
       </div>
     </div>
   </div>
@@ -496,7 +496,8 @@
 451
 452
 453
-454</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+454
+455</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -949,180 +950,181 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
-	export default<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;div class="wrap-content"&gt;
+		&lt;div class="item-content"&gt;
+		    &lt;dx-heading :level="1"&gt;table 表格&lt;/dx-heading&gt;
+		    &lt;p&gt;当数据较多，一般用表格显示数据&lt;/p&gt;
+ 		&lt;/div&gt;
+		&lt;div class="item-content"&gt;
+			 &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    	&lt;p&gt;表格基本数据显示&lt;/p&gt;
+	    	&lt;dx-show-code :htmlString="htmlString1" :scriptString="scriptString1"&gt;
+		    	 &lt;dx-table 
+			    :data="tableData" 
+			    :borderRow="true" 
+			    :borderColumn="true"
+			    &gt;
+			        &lt;dx-table-column prop="name"  label="姓名" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="age"  label="年龄" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="sex"  label="性别"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="height" label="身高" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
+			    &lt;/dx-table&gt;
+		    &lt;/dx-show-code&gt;
+    	&lt;/div&gt;
+    	&lt;div class="item-content"&gt;
+			&lt;dx-heading :level="1"&gt;为表格添加排序功能&lt;/dx-heading&gt;
+	    	&lt;p&gt;当需要给表格中的数据进行排序&lt;/p&gt;
+	    	&lt;dx-show-code :htmlString="htmlString2" :scriptString="scriptString1"&gt;
+		    	 &lt;dx-table 
+			    :data="tableData" 
+			    :borderRow="true" 
+			    :borderColumn="true"
+			    &gt;
+			        &lt;dx-table-column prop="name"  label="姓名" :sortable="true"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="age"  label="年龄" :sortable="true"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="sex"  label="性别"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="height" label="身高" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
+			    &lt;/dx-table&gt;
+		    &lt;/dx-show-code&gt;
+    	&lt;/div&gt;
+    	&lt;div class="item-content"&gt;
+			 &lt;dx-heading :level="1"&gt;添加选择框列功能&lt;/dx-heading&gt;
+	    	 &lt;p&gt;可用于需要从表格选择数据&lt;/p&gt;
+	    	 &lt;dx-show-code :htmlString="htmlString3" :scriptString="scriptString1"&gt;
+		    	 &lt;dx-table 
+			    :data="tableData" 
+			    :borderRow="true" 
+			    :borderColumn="true"
+			    &gt;
+			    	&lt;dx-table-column :width="10" :selectable="true"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="name"  label="姓名" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="age"  label="年龄" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="sex"  label="性别"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="height" label="身高" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
+			    &lt;/dx-table&gt;
+		    &lt;/dx-show-code&gt;
+		&lt;/div&gt;
+		&lt;div class="item-content"&gt;
+			 &lt;dx-heading :level="1"&gt;添加输入查询框功能&lt;/dx-heading&gt;
+	    	&lt;p&gt;用于从表格中查询数据，支持多个字段联查&lt;/p&gt;
+	    	&lt;dx-show-code :htmlString="htmlString4" :scriptString="scriptString1"&gt;
+		    	 &lt;dx-table 
+			    :data="tableData" 
+			    :borderRow="true" 
+			    :borderColumn="true"
+			    &gt;
+			    	&lt;dx-table-column prop="name"  label="姓名" :filterable="true"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="age"  label="年龄" :filterable="true"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="sex"  label="性别"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="height" label="身高" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
+			    &lt;/dx-table&gt;
+		    &lt;/dx-show-code&gt;
+		&lt;/div&gt;
+		&lt;div class="item-content"&gt;
+			&lt;dx-heading :level="1"&gt;添加输入对表格数据编辑/删除按钮&lt;/dx-heading&gt;
+	    	&lt;p&gt;支持对表格中单行数据进行编辑和删除操作，目前尚不支持自定义字段&lt;/p&gt;
+	    	&lt;dx-show-code :htmlString="htmlString5" :scriptString="scriptString2"&gt;
+		    	 &lt;dx-table 
+			    :data="tableData" 
+			    :borderRow="true" 
+			    :borderColumn="true"
+			    :handleEdit="handleEdit"
+			    :handleDelete="handleDelete"
+			    &gt;
+			        &lt;dx-table-column prop="name"  label="姓名" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="age"  label="年龄" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="sex"  label="性别"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="height" label="身高" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column label="操作"&gt;&lt;/dx-table-column&gt;
+			    &lt;/dx-table&gt;
+		    &lt;/dx-show-code&gt;
+		&lt;/div&gt;
+		&lt;div class="item-content"&gt;
+			 &lt;dx-heading :level="1"&gt;添加表格分页功能&lt;/dx-heading&gt;
+	    	&lt;p&gt;当表格数据较多时，可采用分页功能&lt;/p&gt;
+	    	&lt;dx-show-code :htmlString="htmlString5" :scriptString="scriptString2"&gt;
+		    	 &lt;dx-table 
+			    :data="tableData1" 
+			    :borderRow="true" 
+			    :borderColumn="true"
+			    :pagination="true"
+			    &gt;
+			    	&lt;dx-table-column prop="name"  label="姓名"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="age"  label="年龄"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="sex"  label="性别"&gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="height" label="身高" &gt;&lt;/dx-table-column&gt;
+			        &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
+			    &lt;/dx-table&gt;
+		    &lt;/dx-show-code&gt;
+		&lt;/div&gt;
+		&lt;div class="item-content"&gt;
+	      &lt;div style="margin-bottom:2rem"&gt;
+	        &lt;dx-heading :level="1"&gt;Table Attributes&lt;/dx-heading&gt;
+	      &lt;/div&gt;
+	      &lt;dx-table 
+	      :data="attrDatas" 
+	      :borderRow="true" 
+	      tableHeadClass="table-head"
+	      &gt;
+	        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+	      &lt;/dx-table&gt;
+	  	&lt;/div&gt;
+	  	&lt;div class="item-content"&gt;
+	       &lt;div style="margin-bottom:2rem"&gt;
+	         &lt;dx-heading :level="1"&gt;Table Event&lt;/dx-heading&gt;
+	       &lt;/div&gt;
+	       &lt;dx-table 
+	       :data="eventDatas" 
+	       :borderRow="true" 
+	       tableHeadClass="table-head"
+	       &gt;
+	        &lt;dx-table-column prop="eventName"  label="事件名称" &gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="cbArgs"  label="回调参数"&gt;&lt;/dx-table-column&gt;
+	       &lt;/dx-table&gt;
+ 		 &lt;/div&gt;
+ 		 &lt;div class="item-content"&gt;
+	      &lt;div style="margin-bottom:2rem"&gt;
+	        &lt;dx-heading :level="1"&gt;Table-column Attributes&lt;/dx-heading&gt;
+	      &lt;/div&gt;
+	      &lt;dx-table 
+	      :data="attrDatas1" 
+	      :borderRow="true" 
+	      tableHeadClass="table-head"
+	      &gt;
+	        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="optionVal" label="可选值" width="80"&gt;&lt;/dx-table-column&gt;
+	        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+	      &lt;/dx-table&gt;
+	  	&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+	export default{
 		data() {
-<span class="cstat-no" title="statement not covered" >			r</span>eturn {
+<span class="cstat-no" title="statement not covered" >			return {</span>
 				tableData: [
-                    {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
+                    {name: 'abc', age: 26, sex: '男', height: '171cm', blood: 'O'},
                     {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
                     {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
                     {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
                     {name: 'jrf', age: 24, sex: '男', height: '165cm', blood: 'C'}
                     ],
 				tableData1: [
-                    {name: 'zyy', age: 26, sex: '男', height: '171cm', blood: 'O'},
+                    {name: 'abc', age: 26, sex: '男', height: '171cm', blood: 'O'},
                     {name: 'lxf', age: 26, sex: '女', height: '163cm', blood: 'B'},
                     {name: 'zsj', age: 22, sex: '女', height: '155cm', blood: 'O'},
                     {name: 'sxy', age: 25, sex: '男', height: '173cm', blood: 'A'},
@@ -1183,14 +1185,14 @@
                     },
                     {
 						param: 'handleEdit',
-						illustrate: '当设置表格支持编辑row行数据时回调,函数回调参数为row的index以及row数据',
+						illustrate: '当设置表格支持编辑row行数据时回调,函数回调参数为row的index以及row',
 						type: 'Function',
 						optionVal: '---',
 						defaultVal: '---'
                     },
                     {
 						param: 'handleDelete',
-						illustrate: '当设置表格支持删除row行数据时回调函数,回调参数为row的index以及row数据',
+						illustrate: '当设置表格支持删除row行数据时回调函数,回调参数为row的index以及row',
 						type: 'Function',
 						optionVal: '---',
 						defaultVal: '---'
@@ -1200,7 +1202,7 @@
                     {
 						eventName: 'onBefore',
 						illustrate: '表格排序前触发的事件',
-						cbArgs: '回调参数为排序的列row,排序属性键值,排序的方向'
+						cbArgs: '回调参数为排序的列column,排序属性键值,排序的方向'
                     },
                     {
 						eventName: 'select-change',
@@ -1214,8 +1216,8 @@
                     },
                     {
 						eventName: 'filter-change',
-						illustrate: '过滤表格数据后出发的事件',
-						cbArgs: '回调参数为过滤后的包含所有row数据的array变量'
+						illustrate: '过滤表格数据后触发的事件',
+						cbArgs: '回调参数为过滤后的包含所有row数据的array类型变量'
                     }
                     ],
                 attrDatas1: [
@@ -1271,16 +1273,16 @@
                   ]
 			}
 		},
-		methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+		methods: {
 			handleEdit($index, row) {
-<span class="cstat-no" title="statement not covered" >				c</span>onsole.log(row)
+<span class="cstat-no" title="statement not covered" >				console.log(row)</span>
 			},
 			handleDelete($index, row) {
-<span class="cstat-no" title="statement not covered" >				c</span>onsole.log(row)
+<span class="cstat-no" title="statement not covered" >				console.log(row)</span>
 			}
 		},
 		created() {
-<span class="cstat-no" title="statement not covered" >		t</span>his.htmlString1 = `&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >		this.htmlString1 = `&lt;template&gt; </span>
     		&lt;dx-table :data="tableData" :borderRow="true" :borderColumn="true" &gt;
 				 &lt;dx-table-column prop="name"  label="姓名" &gt;&lt;/dx-table-column&gt;
 				 &lt;dx-table-column prop="age"  label="年龄" &gt;&lt;/dx-table-column&gt;
@@ -1289,7 +1291,7 @@
 				 &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
 		    &lt;/dx-table&gt;
           &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >    	    t</span>his.scriptString1 = `export default {
+<span class="cstat-no" title="statement not covered" >		    this.scriptString1 = `export default {</span>
 				data(){
 					return {
 			        tableData:[
@@ -1302,7 +1304,7 @@
 				}
 			  }
    	       }`
-<span class="cstat-no" title="statement not covered" >   	        t</span>his.htmlString2 =`&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >	        this.htmlString2 =`&lt;template&gt; </span>
     		&lt;dx-table :data="tableData" :borderRow="true" :borderColumn="true"&gt;
 				 &lt;dx-table-column prop="name"  label="姓名" :sortable="true"&gt;&lt;/dx-table-column&gt;
 				 &lt;dx-table-column prop="age"  label="年龄" :sortable="true"&gt;&lt;/dx-table-column&gt;
@@ -1311,7 +1313,7 @@
 				 &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
 		    &lt;/dx-table&gt;
           &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >   	       t</span>his.htmlString3 = `&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >	       this.htmlString3 = `&lt;template&gt; </span>
     		&lt;dx-table :data="tableData" :borderRow="true" :borderColumn="true" &gt;
 			&lt;dx-table-column :width="10" :selectable="true"&gt;&lt;/dx-table-column&gt;
 				 &lt;dx-table-column prop="name"  label="姓名" &gt;&lt;/dx-table-column&gt;
@@ -1321,7 +1323,7 @@
 				 &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
 		    &lt;/dx-table&gt;
           &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >          t</span>his.htmlString4 = `&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >          this.htmlString4 = `&lt;template&gt; </span>
     		&lt;dx-table :data="tableData" :borderRow="true" :borderColumn="true"&gt;
 			     &lt;dx-table-column prop="name" label="姓名" :filterable="true" &gt;&lt;/dx-table-column&gt;
 				 &lt;dx-table-column prop="age"  label="年龄" :filterable="true" &gt;&lt;/dx-table-column&gt;
@@ -1330,7 +1332,7 @@
 				 &lt;dx-table-column prop="blood" label="血型"&gt;&lt;/dx-table-column&gt;
 		    &lt;/dx-table&gt;
           &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >         t</span>his.htmlString5 = `&lt;template&gt; 
+<span class="cstat-no" title="statement not covered" >         this.htmlString5 = `&lt;template&gt; </span>
     		&lt;dx-table :data="tableData" :borderRow="true" :borderColumn="true"  :handleEdit="handleEdit" :handleDelete="handleDelete"&gt;
 			     &lt;dx-table-column prop="name" label="姓名" &gt;&lt;/dx-table-column&gt;
 				 &lt;dx-table-column prop="age"  label="年龄" &gt;&lt;/dx-table-column&gt;
@@ -1340,7 +1342,7 @@
 				 &lt;dx-table-column label="操作"&gt;&lt;/dx-table-column&gt;
 		    &lt;/dx-table&gt;
           &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >          t</span>his.scriptString1 = `export default {
+<span class="cstat-no" title="statement not covered" >          this.scriptString1 = `export default {</span>
 				data(){
 					return {
 			        tableData:[
@@ -1353,7 +1355,7 @@
 				}
 			  }
    	       }`
-<span class="cstat-no" title="statement not covered" >	    t</span>his.scriptString2 = `export default {
+<span class="cstat-no" title="statement not covered" >	    this.scriptString2 = `export default {</span>
 				data(){
 					return {
 			        tableData1:[
@@ -1401,14 +1403,15 @@
    	       }`
 		}
 	}
-&nbsp;
-&nbsp;</pre></td></tr>
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

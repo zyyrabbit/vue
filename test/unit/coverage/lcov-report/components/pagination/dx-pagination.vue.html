@@ -20,28 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/20</span>
+        <span class='fraction'>0/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">25% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/16</span>
+        <span class='fraction'>0/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/8</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12.5% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/16</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 branch</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>0/14</span>
       </div>
     </div>
   </div>
@@ -168,7 +164,43 @@
 119
 120
 121
-122</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -210,7 +242,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -289,50 +321,86 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+	&lt;div class="dx-pagination clearfix"&gt;
+		&lt;div 
+			v-if="showPageInfo" 
+			class="dx-pagination--page-info"
+		&gt;
+			当前第{{internalCurPage}}页/共{{pageCount}}页
+		&lt;/div&gt;
+		&lt;div  
+			v-if="showPageSize"
+			class="dx-pagination--page-size"
+		&gt;
+			&lt;dx-select 
+				v-model="internalPageSize"
+				:items="pageSizes" 
+			/&gt;
+			&lt;!-- &lt;span&gt;条/每天&lt;/span&gt; --&gt;
+		&lt;/div&gt;
+		&lt;div class="dx-pagination--pager"&gt;
+			&lt;!-- &lt;span class="narrow"&gt;&amp;lt;&lt;/span&gt; --&gt;
+		    &lt;dx-pager 
+		    	:activeStyle="activeStyle"  
+		    	:current-page="internalCurPage" 
+		    	:page-count="pageCount"
+		    	@dx-pager-change="changePage"
+		    /&gt;
+		   &lt;!--  &lt;span class="narrow"&gt;&amp;gt;&lt;/span&gt; --&gt;
+		&lt;/div&gt;
+		&lt;div 
+			v-if="showJumpPage" 
+			class="dx-pagination--jump-page" 
+		&gt;
+			跳至
+			&lt;input 
+				type="text" 
+				@keyup.enter="jumpTo" 
+			/&gt;
+			页
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
 import DxPager from './dx-pager.vue'
-export default<span class="fstat-no" title="function not covered" >{</span>
+export default{
 	name: 'DxPagination',
 	components: {
 		DxPager
@@ -361,62 +429,98 @@ export default<span class="fstat-no" title="function not covered" >{</span>
 		},
 		pageSizes: {
 			type: Array,
-			default: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >				r</span>eturn [5, 10, 20, 40, 70]
+			default: function() <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >				return [5, 10, 20, 40, 70]</span>
 			}
 		},
 		activeStyle: Object
 	},
 	data() {
-<span class="cstat-no" title="statement not covered" >		r</span>eturn {
+<span class="cstat-no" title="statement not covered" >		return {</span>
 			internalCurPage: this.currentPage,
 			internalPageSize: this.pageSize
 		}
 	},
-	computed: <span class="fstat-no" title="function not covered" >{</span>
+	computed: {
 		pageCount() {
 <span class="cstat-no" title="statement not covered" >			if (this.pageSize !== 0) {</span>
-<span class="cstat-no" title="statement not covered" >				r</span>eturn Math.ceil(this.total / this.internalPageSize)
+<span class="cstat-no" title="statement not covered" >				return Math.ceil(this.total / this.internalPageSize)</span>
 			}
 		}
 	},
-	watch: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+	watch: {
 		internalPageSize(newVal, oldVal) {
-<span class="cstat-no" title="statement not covered" >			l</span>et oldCurPage = this.internalCurPage
-<span class="cstat-no" title="statement not covered" >			l</span>et curIndex = oldCurPage * oldVal
+			let oldCurPage = <span class="cstat-no" title="statement not covered" >this.internalCurPage</span>
+			let curIndex = <span class="cstat-no" title="statement not covered" >oldCurPage * oldVal</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >			t</span>his.internalCurPage = curIndex &gt; this.total ? Math.ceil(this.total / newVal) : Math.ceil(curIndex / newVal)
+<span class="cstat-no" title="statement not covered" >			this.internalCurPage = curIndex &gt; this.total ? Math.ceil(this.total / newVal) : Math.ceil(curIndex / newVal)</span>
 			// 这里修复的bug问题，当internalCurPage的值没有改变的触发不了update-page事件
 <span class="cstat-no" title="statement not covered" >			if (newVal !== oldVal &amp;&amp; this.internalCurPage === oldCurPage) {</span>
-<span class="cstat-no" title="statement not covered" >				t</span>his.$emit('dx-pagination-page-update', {currentPage: oldCurPage, pageSize: newVal})
+<span class="cstat-no" title="statement not covered" >				this.$emit('dx-pagination-page-update', {currentPage: oldCurPage, pageSize: newVal})</span>
 			}
 		},
 		internalCurPage(newVal) {
-<span class="cstat-no" title="statement not covered" >			t</span>his.$emit('dx-pagination-page-update', {currentPage: newVal, pageSize: this.internalPageSize})
+<span class="cstat-no" title="statement not covered" >			this.$emit('dx-pagination-page-update', {currentPage: newVal, pageSize: this.internalPageSize})</span>
 		}
 &nbsp;
 	},
-	methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+	methods: {
 		// 改变页面时
 		changePage(page) {
-<span class="cstat-no" title="statement not covered" >			t</span>his.internalCurPage = page
+<span class="cstat-no" title="statement not covered" >			this.internalCurPage = page</span>
 		},
 		// 跳转到指定页面
 		jumpTo(event) {
-<span class="cstat-no" title="statement not covered" >			l</span>et page = parseInt(event.target.value, 10)
-<span class="cstat-no" title="statement not covered" >			p</span>age = page &lt; 1 ? 1 : page &lt; this.pageCount ? page : this.pageCount
-<span class="cstat-no" title="statement not covered" >			t</span>his.internalCurPage = page
+			let page = <span class="cstat-no" title="statement not covered" >parseInt(event.target.value, 10)</span>
+<span class="cstat-no" title="statement not covered" >			page = page &lt; 1 ? 1 : page &lt; this.pageCount ? page : this.pageCount</span>
+<span class="cstat-no" title="statement not covered" >			this.internalCurPage = page</span>
 		}
 	}
 }
+&lt;/script&gt;
+&lt;style lang="scss"&gt;
+	@include B(pagination) {
+		font-size: $--dx-pagination-font-size;
+		line-height: $--dx-pagination-line-height;
+		/*div 使用inline-block 会出现对不齐的问题 给div添加 vertical-align:top;*/
+		&gt;div {
+			display: inline-block;
+			/*float:left;*/
+			vertical-align: top;
+		}
+		@include M(page-size) {
+			width: 6rem;
+	    	margin-left: 1rem;
+		}
 &nbsp;
-&nbsp;</pre></td></tr>
+		@include M(pager) {
+			margin: 0 1rem;
+		}
+&nbsp;
+		@include M(jump-page) {
+			&gt;input {
+				width: 4rem;
+				margin: 0 0.8rem;
+				border: 0.1rem solid #aaa;
+			    border-radius: 0.5rem;
+				line-height: 3rem;
+				text-align: center;
+				font-size: $--dx-pagination-jump-page-font-size;
+			}
+		}
+&nbsp;
+		@include M(page-size) {
+			width: 6rem;
+	    	margin-left: 1rem;
+		}
+	}
+&lt;/style&gt;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

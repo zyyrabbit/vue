@@ -20,32 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>12/15</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/3</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">62.5% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>5/8</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 branch</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>0/3</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -142,7 +138,9 @@
 93
 94
 95
-96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+96
+97
+98</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -173,10 +171,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -237,108 +235,112 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+ &lt;div class="wrap-content"&gt;
+ 	&lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;Carousel 轮播(至少三张图片)&lt;/dx-heading&gt;
+	    &lt;p&gt;用于图片展示&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+	    &lt;dx-heading :level="1"&gt;基本用法&lt;/dx-heading&gt;
+	    &lt;p&gt;轮播的基础用法&lt;/p&gt;
+	    &lt;dx-show-code :htmlString="htmlString1" :scriptString="scriptString"&gt;
+	    	&lt;dx-carousel :imageUrls="imgUrls" width="100%" height="300px" background&gt;&lt;/dx-carousel&gt;
+	    &lt;/dx-show-code&gt;
+  &lt;/div&gt;
+  &lt;div class="item-content"&gt;
+      &lt;div style="margin-bottom:2rem"&gt;
+        &lt;dx-heading :level="1"&gt;Carousel Attributes&lt;/dx-heading&gt;
+      &lt;/div&gt;
+      &lt;dx-table
+      :data="attrDatas"
+      :borderRow="true"
+      tableHeadClass="table-head"
+      &gt;
+        &lt;dx-table-column prop="param" label="参数" &gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="illustrate"  label="说明"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="type"  label="类型"&gt;&lt;/dx-table-column&gt;
+        &lt;dx-table-column prop="defaultVal" label="默认值" width="80"&gt;&lt;/dx-table-column&gt;
+      &lt;/dx-table&gt;
+  &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  import pic1 from '../images/carousel/1.jpg'
+  import pic2 from '../images/carousel/2.jpg'
+  import pic3 from '../images/carousel/3.jpg'
+  import pic4 from '../images/carousel/4.jpg'
 &nbsp;
-import pic1 from '../images/carousel/1.jpg'
-import pic2 from '../images/carousel/2.jpg'
-import pic3 from '../images/carousel/3.jpg'
-import pic4 from '../images/carousel/4.jpg'
-&nbsp;
-export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
-  data() {
-<span class="cstat-no" title="statement not covered" >    r</span>eturn {
-      htmlString1: '',
-      scriptString: '',
-      attrDatas: [
-                  {
-                    param: 'width',
-                    illustrate: '轮播图片宽度',
-                    type: 'String',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'heihgt',
-                    illustrate: '轮播图片高度',
-                    type: 'String',
-                    defaultVal: '---'
-                  },
-                  {
-                    param: 'background',
-                    illustrate: '是否采用background模式',
-                    type: 'Boolean',
-                    defaultVal: 'false'
-                  },
-                  {
-                    param: 'imgUrls',
-                    illustrate: '轮播图片地址',
-                    type: 'Array',
-                    defaultVal: '[ ]'
-                  }
-                ],
-      imgUrls: [
-                  pic1,
-                  pic2,
-                  pic3,
-                  pic4
-                ]
+  export default {
+    data() {
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        htmlString1: '',
+        scriptString: '',
+        attrDatas: [
+                    {
+                      param: 'width',
+                      illustrate: '轮播图片宽度',
+                      type: 'String',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'heihgt',
+                      illustrate: '轮播图片高度',
+                      type: 'String',
+                      defaultVal: '---'
+                    },
+                    {
+                      param: 'background',
+                      illustrate: '是否采用background模式',
+                      type: 'Boolean',
+                      defaultVal: 'false'
+                    },
+                    {
+                      param: 'imgUrls',
+                      illustrate: '轮播图片地址',
+                      type: 'Array',
+                      defaultVal: '[ ]'
+                    }
+                  ],
+        imgUrls: [
+                    pic1,
+                    pic2,
+                    pic3,
+                    pic4
+                  ]
+      }
+    },
+    created() {
+    // 基本用法
+<span class="cstat-no" title="statement not covered" >        this.htmlString1 = `&lt;template&gt; </span>
+                              &lt;dx-carousel :imageUrls="imgUrls" width="100%" height="300px"&gt;&lt;/dx-carousel&gt;
+                            &lt;/template&gt;`
+<span class="cstat-no" title="statement not covered" >        this.scriptString = `export default {</span>
+                                data() {
+                                  return {
+                                      imgUrls: [
+                                                'images/carousel/1.jpg',
+                                                'images/carousel/2.jpg',
+                                                'images/carousel/3.jpg',
+                                                'images/carousel/4.jpg'
+                                              ]
+                                    }
+                                }
+                              }`
     }
-  },
-  created() {
-  // 基本用法
-<span class="cstat-no" title="statement not covered" >      t</span>his.htmlString1 = `&lt;template&gt; 
-                            &lt;dx-carousel :imageUrls="imgUrls" width="100%" height="300px"&gt;&lt;/dx-carousel&gt;
-                          &lt;/template&gt;`
-<span class="cstat-no" title="statement not covered" >      t</span>his.scriptString = `export default {
-                              data() {
-                                return {
-                                    imgUrls: [
-                                              'images/carousel/1.jpg',
-                                              'images/carousel/2.jpg',
-                                              'images/carousel/3.jpg',
-                                              'images/carousel/4.jpg'
-                                            ]
-                                  }
-                              }
-                            }`
   }
-}
-&nbsp;
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../prettify.js"></script>

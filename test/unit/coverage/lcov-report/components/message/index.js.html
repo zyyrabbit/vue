@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">46.67% </span>
+        <span class="strong">23.81% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>14/30</span>
+        <span class='fraction'>5/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/10</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">25% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>1/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">44.83% </span>
+        <span class="strong">23.81% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>13/29</span>
+        <span class='fraction'>5/21</span>
       </div>
     </div>
   </div>
@@ -90,39 +90,11 @@
 45
 46
 47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+48</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,75 +136,61 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-&nbsp;
-var _vue = require('vue');
-&nbsp;
-var _vue2 = _interopRequireDefault(_vue);
-&nbsp;
-var _dxMessage = require('./dx-message.vue');
-&nbsp;
-var _dxMessage2 = _interopRequireDefault(_dxMessage);
-&nbsp;
-var _utils = require('@/utils/utils.js');
-&nbsp;
-function _interopRequireDefault(obj) { return o</span>bj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj : { default: obj }; }
-&nbsp;
-var defaultOptions = {
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue'
+import DxMessage from './dx-message.vue'
+import { isVNode, merge } from '@/utils/utils.js'
+const defaultOptions = {
 	content: '',
 	visible: false,
 	durationTime: 3000,
 	type: 'info'
-	// 构建构造函数
-};var MessageConstructor = _vue2.default.extend(_dxMessage2.default);
+}
+// 构建构造函数
+const MessageConstructor = Vue.extend(DxMessage)
 // 打开弹窗
-var Message = <span class="fstat-no" title="function not covered" >function Message(messageOptions) {</span>
+const Message = messageOptions =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >	if (typeof messageOptions === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >		m</span>essageOptions = {
+<span class="cstat-no" title="statement not covered" >		messageOptions = {</span>
 			content: messageOptions
-		};
+		}
 	}
-<span class="cstat-no" title="statement not covered" >	v</span>ar instance = new MessageConstructor();
-<span class="cstat-no" title="statement not covered" >	v</span>ar currentOptions = (0, _utils.merge)({}, defaultOptions, messageOptions);
-<span class="cstat-no" title="statement not covered" >	(</span>0, _utils.merge)(instance, currentOptions);
-<span class="cstat-no" title="statement not covered" >	if ((0, _utils.isVNode)(currentOptions.content)) {</span>
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.$slots.default = [currentOptions.content];
-<span class="cstat-no" title="statement not covered" >		c</span>urrentOptions.content = null;
+	let instance = <span class="cstat-no" title="statement not covered" >new MessageConstructor()</span>
+	let currentOptions = <span class="cstat-no" title="statement not covered" >merge({}, defaultOptions, messageOptions)</span>
+<span class="cstat-no" title="statement not covered" >	merge(instance, currentOptions)</span>
+<span class="cstat-no" title="statement not covered" >	if (isVNode(currentOptions.content)) {</span>
+<span class="cstat-no" title="statement not covered" >		instance.$slots.default = [currentOptions.content]</span>
+<span class="cstat-no" title="statement not covered" >		currentOptions.content = null</span>
 		// 必须重新复制为null,否者渲染时候为重新渲染
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.content = null;
+<span class="cstat-no" title="statement not covered" >		instance.content = null</span>
 	}
 	// 手动挂载
-<span class="cstat-no" title="statement not covered" >	i</span>nstance.$mount();
-	// 设置挂载元素
-<span class="cstat-no" title="statement not covered" >	d</span>ocument.body.appendChild(instance.$el);
-<span class="cstat-no" title="statement not covered" >	_</span>vue2.default.nextTick(<span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.visible = true;
-	});
-};
+<span class="cstat-no" title="statement not covered" >	instance.$mount()</span>
+    // 设置挂载元素
+<span class="cstat-no" title="statement not covered" >    document.body.appendChild(instance.$el)</span>
+<span class="cstat-no" title="statement not covered" >    Vue.nextTick(() =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        instance.visible = true</span>
+    })
+}
 // 其他快捷方法
-['info', 'warning', 'error', 'success'].forEach(function (type) {
-	Message[type] = <span class="fstat-no" title="function not covered" >function (messageOptions) {</span>
+['info', 'warning', 'error', 'success'].forEach(type =&gt; {
+	Message[type] = messageOptions =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >		if (typeof messageOptions === 'string') {</span>
-<span class="cstat-no" title="statement not covered" >			m</span>essageOptions = {
+<span class="cstat-no" title="statement not covered" >			messageOptions = {</span>
 				content: messageOptions
-			};
+			}
 		}
-<span class="cstat-no" title="statement not covered" >		M</span>essage((0, _utils.merge)({ type: type }, messageOptions));
-	};
-});
-exports.default = Message;
+<span class="cstat-no" title="statement not covered" >		Message(merge({ type }, messageOptions))</span>
+	}
+})
+export default Message
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>

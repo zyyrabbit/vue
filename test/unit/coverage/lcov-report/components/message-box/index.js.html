@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">36.96% </span>
+        <span class="strong">19.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>17/46</span>
+        <span class='fraction'>7/36</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">15% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>3/20</span>
+        <span class='fraction'>0/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">14.29% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/7</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.56% </span>
+        <span class="strong">19.44% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/45</span>
+        <span class='fraction'>7/36</span>
       </div>
     </div>
   </div>
@@ -138,40 +138,11 @@
 93
 94
 95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -195,7 +166,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -262,26 +232,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
-&nbsp;
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-&nbsp;
-var _vue = require('vue');
-&nbsp;
-var _vue2 = _interopRequireDefault(_vue);
-&nbsp;
-var _dxMessageBox = require('./dx-message-box.vue');
-&nbsp;
-var _dxMessageBox2 = _interopRequireDefault(_dxMessageBox);
-&nbsp;
-var _utils = require('@/utils/utils.js');
-&nbsp;
-function _interopRequireDefault(obj) { return o</span>bj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered" >obj : { default: obj }; }
-&nbsp;
-var defaultOptions = {
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue'
+import DxMessageBox from './dx-message-box.vue'
+import { merge, isVNode } from '@/utils/utils.js'
+const defaultOptions = {
 	visible: false, // 控制弹窗是否可见
 	parentEleId: '', // 挂载的父元素的id
 	showHeader: true,
@@ -304,82 +259,82 @@ var defaultOptions = {
 	titleClass: '',
 	contentClass: '',
 	center: false
-	// 构建构造函数
-};var MessageConstructor = _vue2.default.extend(_dxMessageBox2.default);
-var currentOptions = void 0,
-    instance = void 0;
+}
+// 构建构造函数
+const MessageConstructor = Vue.extend(DxMessageBox)
+let currentOptions, instance
 // let msgQueue = [];
 // 默认回调函数
-var defaultCallback = <span class="fstat-no" title="function not covered" >function defaultCallback(action) {</span>
+const defaultCallback = (action) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >	if (currentOptions) {</span>
-<span class="cstat-no" title="statement not covered" >		v</span>ar callback = currentOptions.callback;
+		let callback = <span class="cstat-no" title="statement not covered" >currentOptions.callback</span>
 <span class="cstat-no" title="statement not covered" >		if (typeof callback === 'function') {</span>
-<span class="cstat-no" title="statement not covered" >			c</span>allback(action);
+<span class="cstat-no" title="statement not covered" >			callback(action)</span>
 		}
 	}
-};
-var uniqueId = 1;
+}
+let uniqueId = 1
 // 初始化一个弹窗实例
-var initInstance = <span class="fstat-no" title="function not covered" >function initInstance() {</span>
-<span class="cstat-no" title="statement not covered" >	v</span>ar mountEl = document.createElement('div');
-<span class="cstat-no" title="statement not covered" >	i</span>nstance = new MessageConstructor({
+const initInstance = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+	let mountEl = <span class="cstat-no" title="statement not covered" >document.createElement('div')</span>
+<span class="cstat-no" title="statement not covered" >	instance = new MessageConstructor({</span>
 		el: mountEl
-	});
-<span class="cstat-no" title="statement not covered" >	i</span>nstance.callback = defaultCallback;
-};
+	})
+<span class="cstat-no" title="statement not covered" >	instance.callback = defaultCallback</span>
+}
 // 打开弹窗
-var OpenMessageBox = <span class="fstat-no" title="function not covered" >function OpenMessageBox(options) {</span>
+const OpenMessageBox = (options) =&gt; <span class="fstat-no" title="function not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >	if (!instance) {</span>
-<span class="cstat-no" title="statement not covered" >		i</span>nitInstance();
+<span class="cstat-no" title="statement not covered" >		initInstance()</span>
 	}
 <span class="cstat-no" title="statement not covered" >	if (!instance.visible) {</span>
-<span class="cstat-no" title="statement not covered" >		c</span>urrentOptions = (0, _utils.merge)({}, defaultOptions, options);
+<span class="cstat-no" title="statement not covered" >		currentOptions = merge({}, defaultOptions, options)</span>
 		// 合并实例上的参数
-<span class="cstat-no" title="statement not covered" >		(</span>0, _utils.merge)(instance, currentOptions);
+<span class="cstat-no" title="statement not covered" >		merge(instance, currentOptions)</span>
 <span class="cstat-no" title="statement not covered" >		if (!currentOptions.callback) {</span>
-<span class="cstat-no" title="statement not covered" >			i</span>nstance.callback = defaultCallback;
+<span class="cstat-no" title="statement not covered" >			instance.callback = defaultCallback</span>
 		}
 		// 判断是否为自定义的内容vnode
-<span class="cstat-no" title="statement not covered" >		if ((0, _utils.isVNode)(instance.message)) {</span>
+<span class="cstat-no" title="statement not covered" >		if (isVNode(instance.message)) {</span>
 			// 如果为vnode,则key设置不一样的可以以强制更新,否者vnode打补丁没更新
 			// if (instance.message.tag.indexOf('vue-component') !== -1) {
-<span class="cstat-no" title="statement not covered" >			i</span>nstance.message.key = uniqueId = (uniqueId + 1) % 2;
+<span class="cstat-no" title="statement not covered" >				instance.message.key = uniqueId = (uniqueId + 1) % 2</span>
 			// }
-<span class="cstat-no" title="statement not covered" >			i</span>nstance.$slots.default = [instance.message];
+<span class="cstat-no" title="statement not covered" >			instance.$slots.default = [instance.message]</span>
 			// 如果自定义传入vnode，则会触发视图更新，从而渲染视图--注意视图渲染是异步更新的
 			// 所以必须把message设置为null,支持视图还没有更新，否则会出现json解析错误
-<span class="cstat-no" title="statement not covered" >			i</span>nstance.message = null;
+<span class="cstat-no" title="statement not covered" >			instance.message = null</span>
 		} else {
-<span class="cstat-no" title="statement not covered" >			d</span>elete instance.$slots.default;
+<span class="cstat-no" title="statement not covered" >			delete instance.$slots.default</span>
 		}
-<span class="cstat-no" title="statement not covered" >		v</span>ar oldCb = instance.callback;
-<span class="cstat-no" title="statement not covered" >		i</span>nstance.callback = <span class="fstat-no" title="function not covered" >function (action, instance) {</span>
-<span class="cstat-no" title="statement not covered" >			o</span>ldCb(action, instance);
-		};
-		// 设置挂载元素
-<span class="cstat-no" title="statement not covered" >		if (instance.parentEleId) {</span>
-<span class="cstat-no" title="statement not covered" >			d</span>ocument.getElementById(instance.parentEleId).appendChild(instance.$el);
-		} else {
-<span class="cstat-no" title="statement not covered" >			d</span>ocument.body.appendChild(instance.$el);
+		let oldCb = <span class="cstat-no" title="statement not covered" >instance.callback</span>
+<span class="cstat-no" title="statement not covered" >			instance.callback = (action, instance) =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >			oldCb(action, instance)</span>
 		}
-<span class="cstat-no" title="statement not covered" >		_</span>vue2.default.nextTick(<span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >			i</span>nstance.visible = true;
-		});
+      // 设置挂载元素
+<span class="cstat-no" title="statement not covered" >      if (instance.parentEleId) {</span>
+<span class="cstat-no" title="statement not covered" >			document.getElementById(instance.parentEleId).appendChild(instance.$el)</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >			document.body.appendChild(instance.$el)</span>
+      }
+<span class="cstat-no" title="statement not covered" >      Vue.nextTick(() =&gt; <span class="fstat-no" title="function not covered" >{</span></span>
+<span class="cstat-no" title="statement not covered" >        instance.visible = true</span>
+      })
 	}
-};
-OpenMessageBox.close = <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >	i</span>nstance.visible = false;
-<span class="cstat-no" title="statement not covered" >	i</span>nstance.callback &amp;&amp; instance.callback('cancel', instance);
+}
+OpenMessageBox.close = () =&gt; <span class="fstat-no" title="function not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >	instance.visible = false</span>
+<span class="cstat-no" title="statement not covered" >	instance.callback &amp;&amp; instance.callback('cancel', instance)</span>
 	// currentOptions = null
-};
-exports.default = OpenMessageBox;
+}
+export default OpenMessageBox
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Sep 26 2018 19:01:33 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 24 2019 15:08:50 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../prettify.js"></script>
